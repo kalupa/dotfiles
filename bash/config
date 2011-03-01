@@ -1,0 +1,47 @@
+export EDITOR="vim -w"
+
+# Disable flow control commands (keeps C-s from freezing everything)
+stty start undef
+stty stop undef
+
+export CLICOLOR=true
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+function parse_git_branch {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "("${ref#refs/heads/}")"
+}
+GREEN="\[\033[01;32m\]"
+BLUE="\[\033[01;34m\]"
+WHITE="\[\033[00m\]"
+YELLOW="\[\033[0;33m\]"
+PS1="\w \$(parse_git_branch)\$ "
+export PS1="$GREEN\h$BLUE \W $YELLOW\$(parse_git_branch)$WHITE\$ "
+
+# ignore the useless cruft from the bash history
+export HISTIGNORE="&:ls:[bf]g:exit"
+
+#####################
+#  ssh-agent stuff  #
+#####################
+# get the ssh agent started
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+	echo "Initialising new SSH agent..."
+	/usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+	echo succeeded
+	chmod 600 "${SSH_ENV}"
+	. "${SSH_ENV}" > /dev/null
+	/usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+	. "${SSH_ENV}" > /dev/null
+	ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+	start_agent;
+	}
+else
+	start_agent;
+fi 

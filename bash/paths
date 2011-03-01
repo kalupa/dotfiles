@@ -1,0 +1,2 @@
+export PATH="~/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin::/usr/local/mysql/bin:$PATH"
+export MANPATH="/usr/local/mysql/man:/opt/local/share/man:$MANPATH"
