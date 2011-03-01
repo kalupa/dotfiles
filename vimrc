@@ -55,6 +55,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set autoindent
 set showmatch
+set scrolloff=4
 " set nowrap
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
