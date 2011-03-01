@@ -1,165 +1,4 @@
 ll
-vim .
-rails server
-svm
-rvm 1.9.2
-sudo gem update
-bundle update
-ruby server
-rails server
-cd public/
-ll
-cd javascripts/
-ll
-mv controller/ controllers
-mv view views
-move model models
-mv model models
-ll
-cd ..
-rails server
-g
-git add .
-git commit -m "localstorage work"
-git push
-git push origin master
-git push origin checklistworking
-git pull origin master
-ll
-g
-git rm public/javascripts/libs/json2.js
-g
-git add .
-git commit -m "merge fix"
-git pull origin master
-g
-git rm public/javascripts/model
-git rm -r public/javascripts/model
-git rm -r public/javascripts/view
-g
-git commit -m "moved to proper subfolder names"
-g
-git push origin checklistworking
-cd projects/kids_n_cash/app/
-ll
-vim
-rails server
-rvm 1.9.2
-rails server
-rake rails:update
-rails server
-bundle update
-vim config.ru 
-ll
-cd config
-ll
-cat application.rb 
-cat environment
-cat environment.rb 
-ll
-vim application.rb 
-vim environment
-vim environment.rb
-less boot.rb 
-ll
-cd ..
-ll
-vim Gemfile
-bundle update
-rails server
-d
-gs
-g
-git diff public/javascripts/
-open -n /Applications/EVE\ Online.app/
-cd projects/neuchatel/site/sites/all/themes/neuchatel/
-mate .
-~/sync.rb 
-cd projects/neuchatel/site/sites/all/themes/neuchatel/
-mate css/panels-styles.css 
-./sync.rb 
-open -n /Applications/EVE\ Online.app/
-./sync.rb 
-open -n /Applications/EVE\ Online.app/
-./sync
-./sync.rb 
-wget
-wget --help
-cd projects/neuchatel
-mkdir mirror
-wget -m http://www.njc.ch
-wget --help
-wget -m http://www.njc.ch --exclude-directories=news_and_events/
-open www.njc.ch/
-ll www.njc.ch/
-cd www.njc.ch/
-ll
-cd about-neuchatel-junior-college
-ll
-mv foreach file (*)
-mv foreach file *
-foreach file (*)
-foreach file *
-for
-cd ..
-cp www.njc.ch/ www.njc.ch-bak
-cp -R www.njc.ch/ www.njc.ch-bak
-cd www.njc.ch
-ll
-cd about-neuchatel-junior-college
-l
-ll
-for file in *; do mv "$file" "${file}".html; done
-ll
-cd ..
-mv --help
-man mv
-ll
-for file in *; do mv "$file" "${file}".html; done
-ll
-man for
-mv about-neuchatel-junior-college.html/ about-neuchatel-junior-college
-mv admissions.html/ admissions
-mv feeds.html/ feeds
-mv news_and_events.html news_and_events
-mv node.html/ node
-mv sites.html/ sites
-mv what-we-offer.html/ what-we-offer
-ll
-cd admissions
-ll
-for file in *; do mv "$file" "${file}".html; done
-ll
-cd ..
-ll
-cd feeds/
-ll
-cd ..
-ll
-cd news_and_events
-ll
-for file in *; do mv "$file" "${file}".html; done
-mv events.html/ events
-mv features features
-mv features. features
-for file in student_*; do mv "$file" "${file}/.html";done
-for file in student_*; do mv "$file" "${file/.html}";done
-ll
-mv features.html/ features
-ll
-cd event
-cd events
-ll
-for file in *; do mv "$file" "${file}".html;done
-cd ..
-cd features
-ll
-for file in *; do mv "$file" "${file}".html; ;done
-ll
-for file in *; do mv "$file" "${file}".html;done
-ll
-cd ..
-ll
 cd student_photos/
 ll
 for file in *; do mv "$file" "${file}".html; done
@@ -498,3 +337,164 @@ vim ~/.siegerc
 vim ~/urls.txt
 siege
 rails server
+cd projects/kids_n_cash/
+g
+cd app/
+g
+git co pk
+git stash
+git co pk
+g
+git -b co pk
+git branch pk
+git co pk
+git stash apply
+git branch rm pk
+git co -b pk
+git branch
+git branch --help
+git branch -D pk
+git branch -D rm
+git co -b pkl
+ll
+g
+git add Gemfile*
+g
+git add lib/tasks/jasmine.rake
+g
+git add public/javascripts/models/
+git add public/javascripts/views
+g
+git commit -m "stub"
+g
+rake jasmine
+ps
+kill -9 93105
+rake jasmine
+ps
+kill -9 4031
+rake jasmine:ci
+autotest
+rake jasmine:ci
+rake jasmine
+ps
+kill -9 88798
+g
+gitx
+open -n /Applications/EVE\ Online.app/
+ll
+mate public/ spec/javascripts/
+g
+rails server
+cd lib
+ll
+cd ICanHaz.js/
+ll
+make
+make test
+less Makefile 
+cd test/
+ll
+open test.html
+open .
+mate .
+vim
+mvim
+echo $EDITOR
+cd ~/src/
+git clone git://github.com/b4winckler/macvim.git
+ssh 184.106.81.21
+vi
+port
+sudo port selfupdate
+why?
+ports --help
+port --help
+port help
+man port
+sudo port -v selfupdate
+tee
+man tee
+cd /opt/local/var/macports/sources/rsync.macports.org/release/base
+./configure --prefix=/opt/local --with-tclpackage=/Library/Tcl --with-install-user=root --with-install-group=admin --with-directory-mode=0755 --enable-readline
+sudo ./configure --prefix=/opt/local --with-tclpackage=/Library/Tcl --with-install-user=root --with-install-group=admin --with-directory-mode=0755 --enable-readline
+sudo make
+cd
+ll
+cd .vim
+ll
+git init
+g
+git add .
+g
+git commit -m "initial"
+cat .vimrc
+cat ~/.vimrc
+ll
+cd ..
+ll
+vim .vimrc 
+cd .vim
+ll
+rm -rf .git
+ll
+cd
+ll
+cd bin
+mkdir dotfiles
+ll
+mv .vim dotfiles/vim
+mv .vimrc dotfiles/vimrc
+ln -nfs dotfiles/vim/ .vim
+ln -nfs dotfiles/vimrc .vimrc
+rm .gvimrc 
+cd vim
+rm .vimtags
+ln -nfs dotfiles/vim/tags .vimtags
+ll
+less .viminfo
+mv .viminfo dotfiles/viminfo
+ln -nfs dotfiles/viminfo .viminfo
+ll
+rm .vimfuzzyfinder 
+ll
+ls bash*
+ls .bash*
+mv .bash dotfiles/bash
+ln -nfs dotfiles/bash .bash
+ll
+mv .bash_history dotfiles/bash_history
+mv .bash_profile dotfiles/bash_profile
+ln -nfs dotfiles/bash_history .bash_history
+ln -nfs dotfiles/bash_profile .bash_profile
+less .heroku/credentials 
+ll
+vim
+cd dotfiles/
+ll
+git init
+git add .
+git remote add origin git@github.com:kalupa/dotfiles.git
+git commit -m "init"
+git push -u origin master
+touch README.markdown
+bim README.markdown 
+vim README.markdown 
+mate README.markdown 
+g
+git commit -a -m "markdowned"
+git push
+ll vim
+ll vim/ftplugin/
+ll vim/colors/
+g
+gf
+gd
+git add .
+git commit -m "lets turn off those lazy save commands"
+git push
+gf
+g
+gd
+git commit -a -m "change scrolloff"
+git push
