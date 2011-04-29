@@ -104,11 +104,12 @@ set autowrite
 set bg=dark
 
 " use our nice colortheme
-colorscheme 10fwd
+" colorscheme solarized
 " colorscheme ir_black
+colorscheme 10fwd
 
 " set font
-" set gfn=Menlo:h12
+set gfn=Menlo:h12
 " Use _ as a word-separator
 set iskeyword-=_
 

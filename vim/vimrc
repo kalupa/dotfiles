@@ -103,7 +103,7 @@ set autowrite
 set bg=dark
 
 " use our nice colortheme
-colorscheme 10fwd
+colorscheme solarized
 " colorscheme ir_black
 
 " set font
