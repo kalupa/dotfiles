@@ -1,135 +1,3 @@
-cd public/
-vim checklist.html 
-git add checklist.html
-cd javascripts/
-vim application.js 
-git add application.js
-vim models/checklist.js 
-git add models/checklist.js
-git add views/checklist.js
-vim views/todo.js 
-g
-cd ..
-git commit -m "f"
-git add javascripts/views/todo.js
-g
-git commit -m "f"
-git co master
-g
-cd ..
-open kidsncash_IA_v1.5-FINAL.pdf 
-git push origin master
-cd app/
-git push
-git help push
-git push --all
-open .
-cd ..
-open .
-cd app
-ll
-g
-git co csswip
-g
-vim public/container.html 
-g
-git branch
-git co pkl
-g
-gitx
-git co master
-git co -b wip
-ll
-cd app
-ll
-vim
-cd ..
-vim Gemfile
-sudo gem update
-rvm
-ruby
-ruby -v
-rvm update
-rvm install 1.9.2
-sudo rvm update
-sudo rvm get head
-rvm get head
-fuck man
-rvm
-sudo rvm get head
-rvm install 1.9.2
-sudo rvm install 1.9.2
-rvm reload
-rvm install 1.9.2
-cd .rvm
-ll
-cd ~/.rvm
-ll
-sudo rvm install 1.9.2
-rvm 1.9.2
-cd
-rvm --default 1.9.2
-sudo rvm --default 1.9.2
-ll
-ruby
-ruby -v
-cd projects/kids_n_cash/app/
-bundle install
-cd projects/kids_n_cash/app/
-vim
-open -n /Applications/EVE\ Online.app/
-ssh paul@njc.ch
-cd projects/kids_n_cash/app
-ll
-g
-git stash
-g
-ll rvm
-rm -rf rvm
-git co master
-git co wip
-git stash apply
-git diff
-git add Gemfile*
-g
-git commit -m "add inherited resources gem"
-g
-git stash
-git co master
-git stash apply
-g
-git diff
-git co wip
-g
-git add *
-cd ..
-cd app_new/
-g
-git add db/seeds.rb
-git commit -m "fix default seed"
-rake test user
-ll
-cd test
-ll
-cd fixtures/
-ll
-less users.yml 
-vim users.yml 
-cd ..
-ll
-rake -T
-rake spec
-ll
-cd spec
-ll
-cd factories/
-ll
-less users.rb 
-vim users.rb 
-cd 
-cd projects/kids_n_cash/app_new/
-rake spec
-rake spec user
 ll
 cd spec
 ll
@@ -498,3 +366,135 @@ ll
 g
 gitx
 open -n /Applications/EVE\ Online.app/
+cd projects/bdellium/wordpress/
+cd wp-content/themes/bdellium/
+l
+ll
+vim sidebar.php 
+vim functions.php 
+ll
+less license.txt 
+g
+cd ..
+ll
+rm -rf twentyten/
+cd ..
+ll
+g
+git co master
+g
+git add themes/bdellium/*
+g
+git commit -m "adding sidebar"
+g
+git co wp3.1.2
+git co -b wp3.1.2
+g
+cd ..
+g
+git add wp-admin wp-includes readme.html
+g
+git commit -m "upgrade to wp3.1.2"
+git co master
+git merge wp3.1.2
+g
+git co pk
+g
+git add wp-content/plugins/yd-recent-posts-widget/
+g
+git commit -m "add recent posts with thumbnails plugin"
+g
+cd wp-content/themes/bdellium/
+g
+git merge master
+g
+cd ..
+pwd
+cd ..
+cd plugins/
+ll
+cd yd-recent-posts-widget/
+ll
+ll inc/
+vim yd-recent-posts-widget.php 
+grep display_yd_recent_posts_here *
+man grep
+grep -R display_yd_recent_posts_here *
+grep -R widget_yd_rp *
+cd ..
+cd themes/
+ll
+cd bdellium/
+ll
+g
+cd ..
+g
+git add plugins/
+git rm plugins/yd-recent-posts-widget/*
+g
+git commit -a -m "add new plugin for recent posts, remove old one. add custom field editor"
+g
+ll uploads/
+open -n /Applications/EVE\ Online.app/
+g
+git co -b develop pk
+g
+gitx
+git branch
+git branch -d wp3.1.2 
+ll ~/.bash
+cd ~/dotfiles/bash
+ll
+cd completion_scripts/
+ll
+less git_completion 
+g
+cd ..
+ll
+cd ..
+ll
+g
+git add vim/*
+g
+git add vimrc
+git add vim/vimrc
+g
+ll
+less README.markdown 
+cd bash
+ll
+less completions 
+rm .bash
+g
+ll
+git rm .bash
+g
+cd ..
+g
+git commit -a -m "fixes"
+g
+git push'
+git push
+cd bash/completion_scripts/
+ll
+less project_completion 
+less git_completion 
+cd 
+cd projects/bdellium/wordpress/
+f
+g
+git co master
+g
+git push -u origin master
+git push --set-upstream origin develop
+git co develop 
+g
+git branch
+git branch -r
+g
+git co pk
+g
+gitx
+open -n /Applications/EVE\ Online.app/
+cd src
+git clone https://github.com/git/git.git
