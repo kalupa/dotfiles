@@ -1,6 +1,7 @@
 filetype off 
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+call ucompleteme#Setup()
 
 " ================
 " Ruby stuff
