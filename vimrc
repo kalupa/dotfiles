@@ -24,7 +24,7 @@ endif
 
 " Some new git bindings.  I do this stuff too often not to have shortcuts.
 map <Leader>gc :Gcommit -m ""<LEFT>
-map <Leader>gac :Gcommit -m -a ""<LEFT>
+" map <Leader>gac :Gcommit -m -a ""<LEFT>
 map <Leader>gs :Gstatus<CR>
 
 
@@ -137,7 +137,8 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-set nofoldenable " Fuck code folding...
+" set nofoldenable " Fuck code folding...
+set foldmethod=marker
 
 command Q q " Bind :Q to :q
 command Qall qall 
@@ -148,13 +149,13 @@ set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let html_use_css = 1
 
 " Only do this part when compiled with support for autocommands.
-" if has("autocmd")
+if has("autocmd")
 
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
-"  filetype plugin indent on
+ filetype plugin indent on
 
   " Put these in an autocmd group, so that we can delete them easily.
 "  augroup vimrcEx
@@ -173,8 +174,8 @@ let html_use_css = 1
 
 "  augroup END
 
-" endif " has("autocmd")
+  " scss/sass highlighting
+  au BufRead,BufNewFile *.scss set filetype=scss
+endif " has("autocmd")
 
-" scss/sass highlighting
-" au BufRead,BufNewFile *.scss set filetype=scss
 " au BufNewFile,BufRead *.liquid	 setf liquid
