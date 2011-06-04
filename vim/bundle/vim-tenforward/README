@@ -1,0 +1,10 @@
+Converted from Textmate theme 10 Forward using Coloration v0.2.2 (http://github.com/sickill/coloration)
+10 Forward for Textmate (http://github.com/Maciek416/tmtheme10forward)
+
+Installation:
+
+place into ~/.vim/colors
+add 
+  colorscheme 10fwd
+
+to your ~/.vimrc
