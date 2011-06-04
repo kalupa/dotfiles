@@ -1,500 +1,500 @@
-ll
-cd spec
-ll
-cd models/
-ll
-vim user_spec.rb 
-rake -T
-rake stats
-rake spec:models
-pwd
-rake spec:models
-rake spec user
-rake spec:models
-ssh mc.controllercode.com
-ssh minecraft@mc.controllercode.com
-l
-ll
-ssh mc.controllercode.com
-ssh minecraft@mc.controllercode.com
-clear
-fuck man
-open -n /Applications/EVE\ Online.app/
-cd projects/kids_n_cash/app/
-ll
-less Gemfile
-ruby server
-rails server
-less Gemfile
-cd app/
-cd ..
-ll
-less ..\Gemfile
-less ../Gemfile
-cd ..
-cd app
-less Gemfile
-cd spec
-ll
-cd models
-ll
-less user_spec.rb 
-less family_spec.rb 
-cd ..
-cd factories/
-ll
-less families.rb 
-cd ..
-ll
-cd ..
-ll
-cd vendor/
-ll
-cd plugins/
-ll
-cd ..
-ll
-cd spec
-ll
-cd models/
-ll
-less user_type_spec.rb 
-cd ..
-open -n /Applications/EVE\ Online.app/
-ifconfig
-ll
-git clone app app_new
-cd app_new/
-ll
-less config.ru 
-cd config
-ll
-vim database.yml 
-rake
-cd ..
-rake -T
-rake db:setup
-vi config/database.yml 
-rake db:setup
-vim db/schema.rb 
-vim db/migrate/20101122094134_remove_login_field_from_users.rb 
-rake db:migrate
-rake db:seed
-ll
-vim db/seeds.rb 
-rake db:seed
-rails server
-cd projects/kids_n_cash/app_new/
 g
+git stash
+git checkout -b plugin/contact_form_7
+G
+g
+git branch -m plugin/contact_form_7 plugin/fast_secure_contact_form
+g
+git add ../si-contact-form/
+g
+git commit -m "Add Fast Secure Contact Form plugin"
+git checkout develop
+git merge --no-ff plugin/fast_secure_contact_form 
 git push
-rails server
-vim .
-rails server
-rake db:seed
-rails server
+git branch -m wordpress/slug-config feature/wordpress-slug-config
+git stash apply
+git stash clear
 g
-cd ..
-cd app
+git checkout feature/sidebar_recent_articles 
+git merge --no-ff develop
 g
-git pull ../app_new
-g
-gitx
-cd ..
-cd app
-rails server
-bundle install
-rails server
-g
-git merge wip
-git push
-git push origin --all
-git co wip
-g
-open -n /Applications/EVE\ Online.app/
-ll
-cd config
-ll
-cd locales/
-ll
-vim en.yml 
-rails server
-cd
-cd projects/
-ll
-cd bdellium/
-ll
-mkdir wp-site
-cd wp-site/
-cp /Users/paul/src/rack-php
-cp /Users/paul/src/rack-php/config.ru .
-cp /Users/paul/src/rack-php/rackup.php 
-cp /Users/paul/src/rack-php/rackup.php .
-mkdir tmp
-cp /Users/paul/src/rack-php/lib .
-cp /Users/paul/src/rack-php/lib ./
-cp -R /Users/paul/src/rack-php/lib ./lib
-ll
-ll lib/
-cd ~
-cd .pow
-ln -s ~/projects/bdellium/bdellium/
-ln -s ~/projects/bdellium/bdellium
-ll
-cd
-cd projects/bdellium/bdellium/
-ll
-rm -rf *
-w get http://wordpress.org/latest.tar.gz
-ll
-cd ..
-cd 
-cd projects/bdellium/wordpress/
-ll
-cp wp-config-sample.php wp-config.php
-vim wp-config
-vim wp-config.php 
-cd
-cd projects/wp-plugin-test/
-ll
-cd wordpress/
-ll
-less wp-config.php 
-ll
-cd wp-content/
-ll
-cd themes/
-ll
-cd projects/kids_n_cash/
-ll
-cd app/public/
-ll
-open -n /Applications/EVE\ Online.app/
-cd
-cd src
-ll
-cd gtkevemon/
-svn up
-make
-ll
-less CHANGES 
-open -n /Applications/EVE\ Online.app/
-mail
-mail -help
-man mail
-clear
-cd
-clear
-cd src
-curl get.pow.cx | sh
-git clone https://github.com/creationix/rack-php.git
-cd rack-php/
-ll
-ll views/
-pwd
-cp cd
-cd
-cd projects/bdellium/wp-site/
-cd ..
-mv wp-site/ bdellium
-ll
-cd bdellium/
-ll
-mkdir public
-cd public/
-touch index.php
-vim index.php 
-cd ~/Library/Application Support/Pow/Versions
-cd ~/Library/Application\ Support/Pow/Versions
-ll
-cd 0.2.2/
-ll
-cd lib/
-ll
-less rack_application.js 
-cd
-cd .pow
-ll
-rm -rf bdellium
-cd ~/Library/Application\ Support/Pow/Versions/0.2.2/
-ll
-less package.json 
-cd
-cd projects/
-ll
-git clone http://github.com/sstephenson/pow.git
-git clone https://github.com/37signals/pow.git
- curl get.pow.cx/uninstall.sh | sh
-cd pow/
-npm install --dev
-npm upd
-npm up
-curl http://npmjs.org/install.sh | sh
-cd ~/src
-git clone https://github.com/joyent/node.git
-cd node
-export JOBS=2 # optional, sets number of parallel commands.
-mkdir ~/local
-./configure --prefix=$HOME/local/node
-make
-make install
-export PATH=$HOME/local/node/bin:$PATH
-curl http://npmjs.org/install.sh | sh
-cd ..
-cd
-cd projects/pow
-ll
-cd ..
-rm -rf pow/
-git clone git@github.com:kalupa/pow.git
-cd pow/
-ll
-npm install --dev
-sudo port install php +fpm
-sudo port selfupdate
-sudo port upgrade outdated
-mail
-open -n /Applications/EVE\ Online.app/
-cd projects/
-ll
-open .
-cd bdellium/wordpress/wp-content/themes/
-ll
-cd bdellium/
-ll
-vim index.php 
-vim functions.php 
-vim page.php 
-vim style.css 
-cd ..
-ll
-rm -rf twentyten/
-ll
-cd bdellium/
-ll
-vim content-page.php 
-vim functions.php 
-vim header.php 
-ll
-less bonus/
-ll bonus/
-cd bonus/
-ll
-less sample.css 
-cp sample.css ..
-mate sample.css 
-vi ~/.vimrc 
-vim sample.css 
-cd ..
-vim main.css
-g
-pwd
-git init .
-g
-rm -rf .git
-cd ..
-ll
-cd ..
-l
-g
-ll
-cd ..
-ll
-git init .
-git
-g
-git add .
-g
-git commit -a -m "init"
-g
-host spenz.com
-host spenz.co
-cd projects/bdellium/wordpress/
-ll
-cd wp-content/themes/
-ll
-cd bdellium/
-ll
-ll bonus/
-vim main.css 
-g
-git diff style.css
-git add style.css
-git commit -m "merging in main styles to style.css"
-g
-git add style.css; git commit -m "reformat tabs"
-g
-git rm main.css
-git rm -f main.css
-g
-git add style.css img header.php
-g
-git diff footer
-git diff footer.php
-git commit -m "merged in main css and removed it from header"
-git commit -a -m 'moved footer into main for better floating'
-g
-git push
-ll
-less sidebar.php 
-ssh pkalupa@ec2-50-16-132-216.compute-1.amazonaws.com
-ssh root@ec2-50-16-132-216.compute-1.amazonaws.com
-ssh ubuntu@ec2-50-16-132-216.compute-1.amazonaws.com
-git remote add origin git@github.com:kalupa/BDellium.git
-git push -u origin master
-ssh ubuntu@ec2-50-16-132-216.compute-1.amazonaws.com
-g
-git add .
-git commit -m "sidebar and footer bnav"
-git push
-pwd
-mkdir js
-touch js/them_script.js
-mv js/them_script.js js/theme_script.jsw
-mv js/theme_script.jsw js/theme_script.js
-g
-git add .
-git commit -m "footer styles and added hooks for js"
+git checkout develop 
+git merge feature/sidebar_recent_articles 
+git reset HEAD^
+git merge --no-ff feature/sidebar_recent_articles 
 g
 git diff
-git commit -m "fix drop shadow"
-git commit -a -m "fix drop shadow"
+git reset HEAD^
+g
+git checkout feature/sidebar_recent_articles 
+git reset HEAD^
+git reset fb8c0bf9a45ab39049e749b85ec1705e28fa0614
+git reset --hard 2fefb9d022e31d6b7f01a31fb4a27845b4b088b1
+git merge --no-ff feature/sidebar_recent_articles 
+g
 git push
+git checkout -b feature/contact-form
+clear
 g
-rm -rf :2
-rm -rf :w
-ll
-g
-gitx
-open -n /Applications/EVE\ Online.app/
-cd projects/bdellium/wordpress/
-cd wp-content/themes/bdellium/
-l
-ll
-vim sidebar.php 
-vim functions.php 
-ll
-less license.txt 
-g
-cd ..
-ll
-rm -rf twentyten/
-cd ..
-ll
-g
-git co master
-g
-git add themes/bdellium/*
-g
-git commit -m "adding sidebar"
-g
-git co wp3.1.2
-git co -b wp3.1.2
-g
-cd ..
-g
-git add wp-admin wp-includes readme.html
-g
-git commit -m "upgrade to wp3.1.2"
-git co master
-git merge wp3.1.2
-g
-git co pk
-g
-git add wp-content/plugins/yd-recent-posts-widget/
-g
-git commit -m "add recent posts with thumbnails plugin"
-g
-cd wp-content/themes/bdellium/
-g
-git merge master
-g
-cd ..
+vim ~/projects/bdellium/wordpress/.gitignore
 pwd
 cd ..
-cd plugins/
 ll
-cd yd-recent-posts-widget/
+cd si-contact-form/
 ll
-ll inc/
-vim yd-recent-posts-widget.php 
-grep display_yd_recent_posts_here *
-man grep
-grep -R display_yd_recent_posts_here *
-grep -R widget_yd_rp *
-cd ..
-cd themes/
-ll
-cd bdellium/
+cd captcha-secureimage/
 ll
 g
-cd ..
+git add ~/projects/bdellium/wordpress/.gitignore
 g
-git add plugins/
-git rm plugins/yd-recent-posts-widget/*
+git checkout plugin/fast_secure_contact_form 
 g
-git commit -a -m "add new plugin for recent posts, remove old one. add custom field editor"
-g
-ll uploads/
-open -n /Applications/EVE\ Online.app/
-g
-git co -b develop pk
-g
+git commit -m "ignore generated temp captcha files"
+git checkout develop 
+git merge --no-ff plugin/fast_secure_contact_form 
 gitx
-git branch
-git branch -d wp3.1.2 
-ll ~/.bash
-cd ~/dotfiles/bash
-ll
-cd completion_scripts/
-ll
-less git_completion 
-g
-cd ..
-ll
-cd ..
-ll
-g
-git add vim/*
-g
-git add vimrc
-git add vim/vimrc
-g
-ll
-less README.markdown 
-cd bash
-ll
-less completions 
-rm .bash
-g
-ll
-git rm .bash
-g
-cd ..
-g
-git commit -a -m "fixes"
-g
-git push'
+git help merge
+git checkout feature/contact-form 
+git merge --no-ff develop 
+git checkout develop 
 git push
-cd bash/completion_scripts/
-ll
-less project_completion 
-less git_completion 
-cd 
-cd projects/bdellium/wordpress/
-f
+git checkout feature/contact-form 
 g
-git co master
+pwd
+vim ~/projects/bdellium/wordpress/.gitignore 
 g
-git push -u origin master
-git push --set-upstream origin develop
+ll captcha-temp/
 git co develop 
 g
-git branch
-git branch -r
+cd
+cd projects/bdellium/wordpress/
 g
-git co pk
+git stat
+git blame wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/*
+git reflog wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/*
+git log wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/*
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/*
+ls wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/*
+ll wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/*
+g
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/6F4CO0Dn41lt3uxo.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/GXAydHs1o8TvmaKU.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/SCOMhV6ikXtIJLOA.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/SOaTe9437FR78P8X.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/TJdWW7Aq2bqObO37.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/TMHvg9u7iUmxNdwM.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/cleDLELtKxi7Htr8.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/fgHhhXTK6viu2dqW.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/nOgWUPoFSsgDD3qa.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/pAcn6SAz6Kcb2qGp.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/qEceh8nlSur9ZRzT.php
+git rm --cached wp-content/plugins/si-contact-form/captcha-secureimage/captcha-temp/zffrIgA2wBNTF2ud.php
+g
+git checkout fix/gitignore_captcha-temp
+git checkout -b fix/gitignore_captcha-temp
+g
+git commit -m "rm cached"
+g
+git co develop 
+g
+git merge --no-ff fix/gitignore_captcha-temp 
+g
+open ~/projects/bdellium/
+g
+git push
+git checkout -b feature/custom_content-case_study
+pwd
+cd wp-content/themes/bdellium/
+vim functions.php 
+pwd
+g
+touch single-case_study.php
+touch case_studies.php
+cd
+cd projects/checklist/
+ll
+cd public/
+ll
+cd js
+ll
+cd ..
+vim index.html 
+mkdir js/templates
+cd 
+cd projects/kids_n_cash/kidsncash/
+g
+git pull
+git co aac
+git co accounts 
+g
+gix
+gitx
+git pull
+cd 
+cd projects/checklist/
+ll
+g
+git diff
+gitx
+git checkout -b feature/haml_templates
+g
+rm -rf public/js/templates/
+g
+git checkout develop 
+git stash
+git checkout develop 
+git merge feature/haml_templates 
+git stash apply
+g
+git push
+git stash clean
+git stash drop
+
+git checkout -b feature/Backbone-relational
+g
+cp ~/projects/forks/Backbone-relational/backbone-relational.js 
+cp ~/projects/forks/Backbone-relational/backbone-relational.js ./public/js/
+g
+git checkout develop
+cd 
+cd projects/bdellium/wordpress/
+gitx
+ll
+cd wp-content/themes/bdellium/
+ll
+vim functions.php 
+g
+git stash
+git checkout develop 
+git stash apply
+git diff
+git add functions.php
+g
+git commit -m "comments in functions to better describe what's going on."
+git merge feature/contact-form 
+g
+git stash drop
+git push
+git branch -d fix/gitignore_captcha-temp 
+git checkout -b plugin/custom_content_type_manager
+ll
+touch g
+gitx
+ll
+rm g
+git checkout develop 
+git merge plugin/custom_content_type_manager 
+gitx
+git reset --hard HEAD^
+git merge --no-ff plugin/custom_content_type_manager 
+g
+git push
+cd
+cd projects/kids_n_cash/kidsncash/
+ll
+cd
+cd projects/kids_n_cash/kidsncash/
+g
+git branch
+git branch -m pk/feature/checklist_javascript feature/checklist_javascript
+g
+git checkout feature/checklist_javascript 
+git diff
+g
+git pull
+g
+bundle
+bundle update
+g
+git diff
+gitx
+git checkout -b gems/upgrade
+ruby
+ruby --version
+g
+rm -rf nokogiri/ 
+rm -rf tmp/
+ll
+g
+git checkout dev 
+g
+git merge gems/upgrade 
+g
+git add db/seeds.rb
+git commit -m "bad seed fix"
+g
+git commit -a -m "jasmine doesn't need it's own task setup now"
+g
+git checkout feature/checklist_javascript 
+git merge --no-ff dev 
+g
+bundle upgrade
+bundle update
 g
 gitx
-open -n /Applications/EVE\ Online.app/
+vim Gemfile.lock 
+git checkout -b merge_fix
+g
+git add Gemfile.lock
+g
+ll nokogiri/
+ll nokogiri/ruby/
+ll nokogiri/ruby/1.9.1/
+ruby -v
+l
+ll
+g
+vim public/javascripts/application.js 
+g
+git add .
+cd ..
+git clonell
+ll
+ll other/
+git clone git@github.com:kalupa/Kids-n-Cash.git
+cd Kids-n-Cash/
+ll
+cd ..
+mv kidsncash/ kidsncash_old
+mv Kids-n-Cash/ kidsncash_old/
+mv kidsncash_old/Kids-n-Cash/ ./kidsncash
+ll
+cd kidsncash
+gitx
+git branch -d wip
+git branch -d origin/wip
+git branch --help
+g
+git push
+rm ~/.pow/kidsncash
+powder
+touch tmp/
+ll
+mkdir tmp
+touch tmp/restart.txt
+g
+git checkout -b feature/checklist_backbone
+ll
+cd public/
+ll
+cd javascripts/
+ll
+git rm Player.js Song.js
+ll
+ll libs/
+git checkout -b merge/from_external_checklist
+ll
+git merge ~/projects/checklist/
+git merge ~/projects/checklist
+git pull ~/projects/checklist/
+g
+cd ..
+vim index.html 
+git rm index.html
+g
+git mv js/* javascripts/
+git mv js/* javascripts
+git cp js/* javascripts
+cp -R js/* javascripts/
+g
+gitx
+rm js/*
+rm -rf js/*(
+rm -rf js/*
+g
+rm javascripts/ICanHaz.js javascripts/mustache.js 
+g
+git commit -m "merge from checklist work in progress"
+g
+cp ~/projects/checklist/public/index.html ./checklist_new.html 
+vim checklist.html 
+ll
+rm -rf js
+g
+cd javascripts/
+ll
+open .
+g
+f
+g
+git rm app.js
+git checkout feature/checklist_backbone 
+g
+git merge merge/from_external_checklist 
+g
+git checkout -b javascript/upgrades
+ll
+cd libs/
+ll
+g
+git add underscore*
+git commit -m "upgrade - underscore 1.1.6"
+cd ..
+cd libs/
+ll
+g
+git checkout dev
+g
+git rm ../Player.js
+git rm ../Song.js
+g
+git commit -m "unneeded files"
+git merge --no-ff javascript/upgrades 
+g
+git push
+git co accounts 
+g
+git pull
+pwd
+cd projects/
+cd forks/
+ll
+cd ..
 cd src
-git clone https://github.com/git/git.git
+ll
+cd ~/s
+cd ~/src/
+ll
+cd
+cd projects/forks/
+git clone https://github.com/documentcloud/backbone.git
+git clone https://github.com/documentcloud/underscore.git
+git clone https://github.com/Modernizr/Modernizr.git
+cd underscore/
+ll
+cp underscore*.js ~/projects/kids_n_cash/kidsncash/public/javascripts/libs/
+git co 1.1.6
+cp underscore*.js ~/projects/kids_n_cash/kidsncash/public/javascripts/libs/
+cd ..
+cd backbone/
+ll
+git branch 
+git co 0.4.0
+ll
+cp backbone.js ~/projects/kids_n_cash/kidsncash/public/javascripts/libs/
+cd ..
+cd Modernizr/
+ll
+git branch
+git co v1.7
+ll
+cp modernizr.js ~/projects/kids_n_cash/kidsncash/public/javascripts/libs/
+cd projects/forks/
+ll
+cd haml-js/
+ll
+git remote
+cat .git/config 
+cd ..
+rm -rf haml-js/
+git clone https://github.com/aaronblohowiak/shared-views.git
+cd shared-views/example/
+node server.js 
+npm install shared-views
+node server.js 
+npm install connect
+node server.js 
+npm install haml
+node server.js 
+npm install glob
+node server.js 
+npm
+npm update
+node --help
+which node
+brew update node
+node server
+your application is broken
+pwd
+cd
+cd projects/kids_n_cash/
+cd kidsncash
+ll
+gitx
+git checkout feature/checklist_backbone 
+git merge dev
+git reset --hard HEAD^
+git reset --hard e2daecbc1e1c3492b5f01cd0a58e0f70a124221f
+git merge --no-ff dev
+cd public/
+ll
+vim checklist.html 
+g
+pwd
+cd ..
+ll
+cd app
+ll
+cd views/
+ll
+cd checklist
+cd checklists
+ll
+vim _checklist.haml
+cd ..
+ll
+cd ..
+rails --help
+man rails
+rails generate
+git checkout dev
+g
+git checkout feature/checklist_backbone 
+g
+rake -T
+bundle install
+rake -T
+rails -h
+rails -h generate
+rails generate -h
+rails generate controller templates
+vim app/controllers/templates_controller.rb 
+cd app/views/
+ll
+mkdir templates
+cp checklists/_checklist.haml templates/
+rm checklists/_checklist.haml
+mv checklist_items/_checklist_item.haml templates/
+cd templates/
+ll
+mv _checklist.haml checklist.haml
+mv _checklist_item.haml checklist_item.haml 
+wha?
+rails generate -h
+rake routes
+touch ../../../tmp/restart.txt 
+ll
+touch show.haml
+rm show.haml 
+cp checklist.haml show.haml
+pwd
+ll
+rake routes
+ll
+git pull
+g
+gitx
+git stash
+g
+git co dev
+git pull
+git co accounts 
+git pull
+pwd
+cd
+cd projects/kids_n_cash/kidsncash
+vim public/javascripts/views/account.js 
+vim app/views/accounts/index.html.haml 
+vim app/views/layouts/application.html.haml 
+vim public/javascripts/views/account_summary.js 
+git checkout  feature/checklist_backbone 
+git checkout accounts 
+touch tmp/restart.txt 
+g
+git checkout feature/checklist_backbone 
+touch tmp/restart.txt 
+which gtkevemon
+g
+brew install zsh
+cd projects/kids_n_cash/kidsncash/app/controllers/
+ll
