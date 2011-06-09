@@ -1,11 +1,46 @@
+set nocompatible               " be iMproved
 filetype off 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-call ucompleteme#Setup()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" ================
-" Ruby stuff
-" ================
+Bundle "altercation/vim-colors-solarized"
+Bundle "astashov/vim-ruby-debugger"
+Bundle "msanders/snipmate.vim"
+Bundle "timcharper/textile.vim"
+Bundle "tpope/vim-cucumber"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-git"
+Bundle "tpope/vim-haml"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-ragtag"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-vividchalk"
+Bundle "kchmck/vim-coffee-script"
+Bundle "digitaltoad/vim-jade"
+Bundle "wavded/vim-stylus"
+Bundle "itspriddle/vim-jquery"
+Bundle "MartinLafreniere/vim-PairTools"
+" personal
+Bundle "kalupa/vim-tenforward"
+Bundle "kalupa/javaScriptLint.vim"
+Bundle "tsaleh/vim-align"
+Bundle "tsaleh/vim-shoulda"
+" Bundle "tsaleh/vim-supertab"
+Bundle "tsaleh/vim-tcomment"
+Bundle "vim-scripts/IndexedSearch"
+Bundle "vim-ruby/vim-ruby"
+Bundle "shemerey/vim-peepopen"
+Bundle "westoque/molly.vim"
+Bundle "aaronj1335/ucompleteme"
+Bundle "mattn/gist-vim"
+Bundle "davidoc/todo.txt-vim"
+Bundle "airblade/vim-rooter"
+Bundle "mattn/gist-vim"
+
+
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
 
@@ -19,18 +54,15 @@ augroup END
 
 let mapleader = ","
 
-" map <Leader>h :FuzzyFinderFileWithCurrentBufferDir<CR>
-" map <Leader>h :FuzzyFinderTextMate<CR>
-
 map <Leader>co :TComment<CR>
 if &t_Co > 2 || has("gui_running")
   map <D-/> :TComment<CR>
 endif
 
 " Some new git bindings.  I do this stuff too often not to have shortcuts.
-map <Leader>gc :Gcommit -m ""<LEFT>
+" map <Leader>gc :Gcommit -m ""<LEFT>
 " map <Leader>gac :Gcommit -m -a ""<LEFT>
-map <Leader>gst :GStatus<CR>
+" map <Leader>gst :GStatus<CR>
 
 
 " map <Leader>rf :FuzzyFinderTextMateRefreshFiles<CR>
@@ -41,19 +73,13 @@ map <Leader>w <C-w>w
 
 map <C-h> :nohl<CR>
 imap <C-l> <Space>=><Space>
-" map <C-s> <esc>:w<CR>
-" imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
-" if has("gui_macvim")
-"  macmenu &File.New\ Tab key=<nop>
-"  map <D-t> <Plug>PeepOpen
-" end
+
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-set nocompatible
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=500		" keep 500 lines of command line history
 set ruler		" show the cursor position all the time
@@ -167,6 +193,7 @@ if has("autocmd")
   " Also load indent files, to automatically do language-dependent indenting.
  filetype plugin indent on
 
+ " autocmd FileType todo set syntax=todo foldmethod=indent
   " Put these in an autocmd group, so that we can delete them easily.
 "  augroup vimrcEx
 "  au!
