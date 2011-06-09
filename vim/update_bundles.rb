@@ -15,6 +15,7 @@ git_bundles = [
   "git://github.com/tpope/vim-repeat.git",
   "git://github.com/tpope/vim-surround.git",
   "git://github.com/tpope/vim-vividchalk.git",
+  "git://github.com/altercation/vim-colors-solarized.git",
   "git://github.com/kchmck/vim-coffee-script.git",
   "git://github.com/digitaltoad/vim-jade.git",
   "git://github.com/wavded/vim-stylus.git",
@@ -32,12 +33,16 @@ git_bundles = [
   "git://github.com/westoque/molly.vim.git",
   "https://github.com/aaronj1335/ucompleteme.git",
   "git://github.com/mattn/gist-vim.git",
+  "git://github.com/davidoc/todo.txt-vim.git",
+  "git://github.com/airblade/vim-rooter.git",
 ]
 
 vim_org_scripts = [
   # ["IndexedSearch", "7062",  "plugin"],
   # ["gist",          "12732", "plugin"],
   # ["jquery",        "12107", "syntax"],
+  # ["RTM",             "2827", "plugin"],
+
 ]
 
 require 'fileutils'

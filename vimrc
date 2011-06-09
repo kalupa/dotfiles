@@ -13,7 +13,7 @@ augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
   " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+  " autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 augroup END
 " ================
 
@@ -30,7 +30,7 @@ endif
 " Some new git bindings.  I do this stuff too often not to have shortcuts.
 map <Leader>gc :Gcommit -m ""<LEFT>
 " map <Leader>gac :Gcommit -m -a ""<LEFT>
-map <Leader>gs :Gstatus<CR>
+map <Leader>gst :GStatus<CR>
 
 
 " map <Leader>rf :FuzzyFinderTextMateRefreshFiles<CR>
@@ -107,11 +107,16 @@ set autowrite
 
 " we use a dark background, don't we?
 set bg=dark
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 
 " use our nice colortheme
-" colorscheme solarized
+colorscheme solarized
 " colorscheme ir_black
-colorscheme 10fwd
+" colorscheme 10fwd
 
 " set font
 set gfn=Menlo:h12
