@@ -1,45 +1,69 @@
 set nocompatible               " be iMproved
+
+" bundles for awesomeness
 filetype off 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Bundle/vimscript managers
+Bundle "gmarik/vundle"
+Bundle "tpope/vim-pathogen"
+
+" Themes 
+" Bundle "tpope/vim-vividchalk"
+" Bundle "kalupa/vim-tenforward"
 Bundle "altercation/vim-colors-solarized"
-Bundle "astashov/vim-ruby-debugger"
-Bundle "msanders/snipmate.vim"
-Bundle "timcharper/textile.vim"
-Bundle "tpope/vim-cucumber"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-fugitive"
+
+" Git tools
 Bundle "tpope/vim-git"
+Bundle "tpope/vim-fugitive"
+
+" Global editor usefulness
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-ragtag"
+Bundle "tsaleh/vim-tcomment"
+Bundle "tpope/vim-surround"
+" Bundle "msanders/snipmate.vim"
+Bundle "tpope/vim-endwise"
+Bundle "MartinLafreniere/vim-PairTools"
+Bundle "godlygeek/tabular"
+Bundle "aaronj1335/ucompleteme"
+Bundle "vim-scripts/IndexedSearch"
+Bundle "shemerey/vim-peepopen"
+Bundle "mattn/gist-vim"
+Bundle "airblade/vim-rooter"
+" syntax checking
+" Bundle "scrooloose/syntastic"
+Bundle "tsaleh/vim-supertab"
+
+" Ruby and Rails 
+Bundle "vim-ruby/vim-ruby"
+Bundle "tpope/vim-rails"
+Bundle "astashov/vim-ruby-debugger"
+Bundle "tpope/vim-cucumber"
+Bundle "tsaleh/vim-shoulda"
+
+" Javascript/Coffeescript
+" Bundle "javaScriptLint"
+Bundle "hallettj/jslint.vim"
+Bundle "kchmck/vim-coffee-script"
+Bundle "itspriddle/vim-jquery"
+
+" HTML/CSS generating modes
 Bundle "tpope/vim-haml"
 Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-ragtag"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-vividchalk"
-Bundle "kchmck/vim-coffee-script"
+Bundle "timcharper/textile.vim"
 Bundle "digitaltoad/vim-jade"
 Bundle "wavded/vim-stylus"
-Bundle "itspriddle/vim-jquery"
-Bundle "MartinLafreniere/vim-PairTools"
-" personal
-Bundle "kalupa/vim-tenforward"
-Bundle "kalupa/javaScriptLint.vim"
-Bundle "tsaleh/vim-align"
-Bundle "tsaleh/vim-shoulda"
-" Bundle "tsaleh/vim-supertab"
-Bundle "tsaleh/vim-tcomment"
-Bundle "vim-scripts/IndexedSearch"
-Bundle "vim-ruby/vim-ruby"
-Bundle "shemerey/vim-peepopen"
-Bundle "westoque/molly.vim"
-Bundle "aaronj1335/ucompleteme"
-Bundle "mattn/gist-vim"
-Bundle "davidoc/todo.txt-vim"
-Bundle "airblade/vim-rooter"
-Bundle "mattn/gist-vim"
 
+" PHP-Related
+Bundle "vim-scripts/php.vim"
+
+" Misc
+Bundle "davidoc/todo.txt-vim"
+
+" DISABLED FOR NOW
+" Bundle "tsaleh/vim-align"
 
 syntax on                 " Enable syntax highlighting
 filetype plugin indent on " Enable filetype-specific indenting and plugins
@@ -48,10 +72,11 @@ augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
   " autoindent with two spaces, always expand tabs
-  " autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+  autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 augroup END
 " ================
 
+let g:gist_clip_command = 'pbcopy'
 let mapleader = ","
 
 map <Leader>co :TComment<CR>
@@ -59,26 +84,17 @@ if &t_Co > 2 || has("gui_running")
   map <D-/> :TComment<CR>
 endif
 
-" Some new git bindings.  I do this stuff too often not to have shortcuts.
-" map <Leader>gc :Gcommit -m ""<LEFT>
-" map <Leader>gac :Gcommit -m -a ""<LEFT>
-" map <Leader>gst :GStatus<CR>
-
-
-" map <Leader>rf :FuzzyFinderTextMateRefreshFiles<CR>
-" remove trailing whitespace
-" map <Leader>rw :%s/\s\+$//
-
+" window movement speed
 map <Leader>w <C-w>w
 
-map <C-h> :nohl<CR>
 imap <C-l> <Space>=><Space>
 map <C-t> <esc>:tabnew<CR>
 map <C-x> <C-w>c
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+map <C-h> :nohl<CR>
+" nnoremap <silent> <C-l> :nohl<CR><C-l>
 
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set history=500		" keep 500 lines of command line history
@@ -131,21 +147,44 @@ set showmatch
 " write before hiding a buffer
 set autowrite
 
-" we use a dark background, don't we?
+" ------------------------------------------------------------------
+" Solarized Colorscheme Config
+" ------------------------------------------------------------------
+let g:solarized_termcolors=256
+syntax enable
 set bg=dark
 if has('gui_running')
     set background=light
 else
     set background=dark
 endif
-
-" use our nice colortheme
 colorscheme solarized
+" ------------------------------------------------------------------
+
+" The following items are available options, but do not need to be
+" included in your .vimrc as they are currently set to their defaults.
+
+" let g:solarized_termtrans=0
+" let g:solarized_degrade=0
+" let g:solarized_bold=1
+" let g:solarized_underline=1
+" let g:solarized_italic=1
+" let g:solarized_termcolors=16
+" let g:solarized_contrast="normal"
+" let g:solarized_visibility="normal"
+" let g:solarized_diffmode="normal"
+" let g:solarized_menu=1
+
 " colorscheme ir_black
 " colorscheme 10fwd
 
+if has("gui_running")
+  set guioptions-=T
+endif
 " set font
-set gfn=Menlo:h12
+if has("gui_running")
+  set gfn=Menlo:h12
+endif
 " Use _ as a word-separator
 set iskeyword-=_
 
@@ -154,9 +193,6 @@ set grepprg=ack
 
 " Make the omnicomplete text readable
 :highlight PmenuSel ctermfg=black
-
-" Fuzzy finder: ignore stuff that can't be opened, and generated files
-" let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
 " Highlight the status line
 highlight StatusLine ctermfg=blue ctermbg=yellow
@@ -176,43 +212,27 @@ autocmd BufReadPost *
 " set nofoldenable " Fuck code folding...
 set foldmethod=marker
 
-command Q q " Bind :Q to :q
-command Qall qall 
-
 set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " better html mode
 let html_use_css = 1
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
- filetype plugin indent on
-
- " autocmd FileType todo set syntax=todo foldmethod=indent
-  " Put these in an autocmd group, so that we can delete them easily.
-"  augroup vimrcEx
-"  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-"  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-"  autocmd BufReadPost *
-"    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-"    \   exe "normal g`\"" |
-"    \ endif
-
-"  augroup END
-
-  " scss/sass highlighting
-  au BufRead,BufNewFile *.scss set filetype=scss
-endif " has("autocmd")
-
+au BufRead,BufNewFile *.scss set filetype=scss
 " au BufNewFile,BufRead *.liquid	 setf liquid
+" lazy method of appending this onto your .vimrc ":w! >> ~/.vimrc"
+"
+"
+
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
