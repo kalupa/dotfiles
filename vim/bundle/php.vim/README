@@ -1,0 +1,15 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=346
+
+This was the original vim php indent file written in 2002 and included in Vim 6.X releases.
+
+Indents after <?php tag, <? tag (optional), ( )or { }.  The script can also format switch/case statements and more recently will automatically format /* comment sections */
+
+It likes the following format:
+<pre>
+    if($something)
+    {
+         dothis();
+    }
+</pre>
+It was not designed to and will not handle if blocks etc. without braces and also does not format html.  Please use braces and separate display logic for more readable code.
+
