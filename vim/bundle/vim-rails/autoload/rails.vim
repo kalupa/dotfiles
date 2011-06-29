@@ -2259,7 +2259,7 @@ endfunction
 
 function! s:javascriptList(A,L,P)
   let list = rails#app().relglob('app/assets/javascripts/','**/*.js*','')
-  call map(list,'s:sub(v:val,"\\.js\%(\\.\\w+\)\=$","")')
+  call map(list,'s:sub(v:val,"\\.js\%(\\.\\w+\)*$","")')
   let list += rails#app().relglob("public/javascripts/","**/*",".js")
   return s:completion_filter(list,a:A)
 endfunction
@@ -3068,6 +3068,10 @@ function! s:readable_related(...) dict abort
     return "config/application.rb\nconfig/environment.rb"
   elseif f =~ '\<config/\%(application\|environment\)\.rb$'
     return "config/database.yml"
+  elseif f ==# 'Gemfile'
+    return 'Gemfile.lock'
+  elseif f ==# 'Gemfile.lock'
+    return 'Gemfile'
   elseif f =~ '\<db/migrate/'
     let migrations = sort(self.app().relglob('db/migrate/','*','.rb'))
     let me = matchstr(f,'\<db/migrate/\zs.*\ze\.rb$')
