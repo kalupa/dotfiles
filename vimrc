@@ -39,7 +39,7 @@ Bundle "tsaleh/vim-supertab"
 " Ruby and Rails 
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-rails"
-Bundle "astashov/vim-ruby-debugger"
+" Bundle "astashov/vim-ruby-debugger"
 Bundle "tpope/vim-cucumber"
 Bundle "tsaleh/vim-shoulda"
 
