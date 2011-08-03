@@ -23,7 +23,6 @@ Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-ragtag"
 Bundle "tsaleh/vim-tcomment"
 Bundle "tpope/vim-surround"
-" Bundle "msanders/snipmate.vim"
 Bundle "tpope/vim-endwise"
 Bundle "MartinLafreniere/vim-PairTools"
 Bundle "godlygeek/tabular"
@@ -35,6 +34,7 @@ Bundle "airblade/vim-rooter"
 " syntax checking
 " Bundle "scrooloose/syntastic"
 Bundle "tsaleh/vim-supertab"
+Bundle "msanders/snipmate.vim"
 
 " Ruby and Rails 
 Bundle "vim-ruby/vim-ruby"

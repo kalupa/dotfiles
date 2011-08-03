@@ -12,6 +12,7 @@ func! vundle#scripts#all(bang, ...)
     setl hls
     let b:match = a:1
   endif
+  redraw!
   echo len(matches).' bundles found'
 endf
 
@@ -60,24 +61,40 @@ func! s:display(headers, results)
 endf
 
 func! s:fetch_scripts(to)
-  let temp = shellescape(tempname())
-  if has('win32') || has('win64')
-    let scripts_dir = fnamemodify(expand(a:to), ":h")
-    if !isdirectory(scripts_dir)
-      call mkdir(scripts_dir, "p")
-    endif
-    exec '!curl http://vim-scripts.org/api/scripts.json > '.temp.
-      \  '&& move /Y '.temp.' '.shellescape(a:to)
-  else
-    exec '!curl http://vim-scripts.org/api/scripts.json > '.temp.
-      \  '&& mkdir -p $(dirname  '.shellescape(a:to).') && mv -f '.temp.' '.shellescape(a:to)
+  let scripts_dir = fnamemodify(expand(a:to), ":h")
+  if !isdirectory(scripts_dir)
+    call mkdir(scripts_dir, "p")
   endif
+
+  let l:vim_scripts_json = 'http://vim-scripts.org/api/scripts.json'
+  if executable("curl")
+    silent exec '!curl --fail -s -o '.shellescape(a:to).' '.l:vim_scripts_json
+  elseif executable("wget")
+    let temp = shellescape(tempname())
+    let cmd = 'wget -q -O '.temp.' '.l:vim_scripts_json. ' && mv -f '.temp.' '.shellescape(a:to)
+    if (has('win32') || has('win64')) 
+      let cmd = substitute(cmd, 'mv -f ', 'mv /Y ') " change force flag
+      let cmd = '"'.cmd.'"'                         " enclose in quotes so && joined cmds work
+    end
+    silent exec '!'.cmd
+  else
+    echoerr 'Error curl or wget is not available!'
+    return 1
+  endif
+
+  if (0 != v:shell_error)
+    echoerr 'Error fetching scripts!'
+    return v:shell_error
+  endif
+  return 0
 endf
 
 func! s:load_scripts(bang)
   let f = expand('$HOME/.vim-vundle/vim-scripts.org.json')
   if a:bang || !filereadable(f)
-    call s:fetch_scripts(f)
+    if 0 != s:fetch_scripts(f)
+      return []
+    end
   endif
   return eval(readfile(f, 'b')[0])
 endf
