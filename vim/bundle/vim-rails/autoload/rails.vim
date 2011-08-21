@@ -1,5 +1,5 @@
 " autoload/rails.vim
-" Author:       Tim Pope <vimNOSPAM@tpope.org>
+" Author:       Tim Pope <http://tpo.pe/>
 
 " Install this file as autoload/rails.vim.
 
@@ -3358,7 +3358,7 @@ function! s:invertrange(beg,end)
       endif
       let add .= s:mkeep(line)
     elseif line =~ '\<remove_index\>'
-      let add = s:sub(s:sub(line,'<remove_index','add_index'),':column\s*=>\s*','')
+      let add = s:sub(s:sub(line,'<remove_index','add_index'),':column\s*\=\>\s*','')
     elseif line =~ '\<rename_\%(table\|column\|index\)\>'
       let add = s:sub(line,'<rename_%(table\s*\(=\s*|%(column|index)\s*\(=\s*[^,]*,\s*)\zs([^,]*)(,\s*)([^,]*)','\3\2\1')
     elseif line =~ '\<change_column\>'

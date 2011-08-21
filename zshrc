@@ -21,7 +21,7 @@ export ZSH_THEME="../custom/themes/sunaku-dbln"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails3 git brew bundler osx github gem ssh-agent ec2 node npm rvm pow)
+plugins=(rails3 git brew bundler osx github gem ssh-agent ec2 node npm rvm pow powder heroku)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,4 +30,4 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X1
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-export TODO_DIR='/Users/paul/Dropbox/Public/Todo'
+source /usr/local/Cellar/coreutils/8.12/aliases

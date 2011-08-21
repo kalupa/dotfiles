@@ -55,12 +55,15 @@ Bundle "tpope/vim-markdown"
 Bundle "timcharper/textile.vim"
 Bundle "digitaltoad/vim-jade"
 Bundle "wavded/vim-stylus"
+" Bundle "cakebaker/scss-syntax.vim" 
+Bundle "vesan/scss-syntax.vim" 
+" using this one until official version does pull request
 
 " PHP-Related
 Bundle "vim-scripts/php.vim"
 
 " Misc
-Bundle "davidoc/todo.txt-vim"
+" Bundle "davidoc/todo.txt-vim"
 
 " DISABLED FOR NOW
 " Bundle "tsaleh/vim-align"
@@ -183,7 +186,8 @@ if has("gui_running")
 endif
 " set font
 if has("gui_running")
-  set gfn=Menlo:h12
+  " set gfn=Menlo:h12
+  set guifont=Meslo\ LG\ S\ DZ:h13
 endif
 " Use _ as a word-separator
 set iskeyword-=_
