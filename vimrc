@@ -35,6 +35,7 @@ Bundle "airblade/vim-rooter"
 " Bundle "scrooloose/syntastic"
 Bundle "tsaleh/vim-supertab"
 Bundle "msanders/snipmate.vim"
+Bundle "scrooloose/syntastic"
 
 " Ruby and Rails 
 Bundle "vim-ruby/vim-ruby"
@@ -240,3 +241,11 @@ function! s:align()
   endif
 endfunction
 
+" Syntastic setup
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
