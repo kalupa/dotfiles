@@ -31,6 +31,7 @@ Bundle "vim-scripts/IndexedSearch"
 Bundle "shemerey/vim-peepopen"
 Bundle "mattn/gist-vim"
 Bundle "airblade/vim-rooter"
+Bundle "nathanaelkane/vim-indent-guides"
 " syntax checking
 " Bundle "scrooloose/syntastic"
 Bundle "tsaleh/vim-supertab"
@@ -184,10 +185,7 @@ colorscheme solarized
 
 if has("gui_running")
   set guioptions-=T
-endif
-" set font
-if has("gui_running")
-  " set gfn=Menlo:h12
+  " set font
   set guifont=Meslo\ LG\ S\ DZ:h13
 endif
 " Use _ as a word-separator
@@ -200,9 +198,9 @@ set grepprg=ack
 :highlight PmenuSel ctermfg=black
 
 " Highlight the status line
-highlight StatusLine ctermfg=blue ctermbg=yellow
+" highlight StatusLine ctermfg=blue ctermbg=yellow
 " Format xml files
-au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null" 
+" au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null" 
 
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
@@ -214,7 +212,6 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" set nofoldenable " Fuck code folding...
 set foldmethod=marker
 
 set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -223,13 +220,9 @@ set statusline+=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 let html_use_css = 1
 
 au BufRead,BufNewFile *.scss set filetype=scss
-" au BufNewFile,BufRead *.liquid	 setf liquid
-" lazy method of appending this onto your .vimrc ":w! >> ~/.vimrc"
-"
-"
 
+" auto-format cucumber-type tables
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -249,3 +242,8 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+" indent guides
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
