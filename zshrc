@@ -31,3 +31,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X1
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 source /usr/local/Cellar/coreutils/8.12/aliases
+
+EDITOR=/usr/bin/vim
+
