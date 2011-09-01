@@ -64,6 +64,9 @@ Bundle "vesan/scss-syntax.vim"
 " PHP-Related
 Bundle "vim-scripts/php.vim"
 
+" Clojure
+Bundle "VimClojure"
+
 " Misc
 " Bundle "davidoc/todo.txt-vim"
 
