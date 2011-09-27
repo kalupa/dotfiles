@@ -1,11 +1,15 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="../custom/themes/sunaku-dbln"
+ZSH_THEME="../custom/themes/sunaku-dbln"
+
+EDITOR=/usr/bin/vim
+
+export ZSH ZSH_THEME PATH
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -21,16 +25,23 @@ export ZSH_THEME="../custom/themes/sunaku-dbln"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
+
 plugins=(rails3 git brew bundler osx github gem ssh-agent ec2 node npm rvm pow powder heroku)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/bin:/usr/local/git/bin:~/bin:$HOME/Library/Haskell/bin:
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/bin:/usr/local/git/bin:~/bin:$HOME/Library/Haskell/bin:$HOME/.cljr/bin:
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-source /usr/local/Cellar/coreutils/8.12/aliases
+# source /usr/local/Cellar/coreutils/8.12/aliases
 
-EDITOR=/usr/bin/vim
+# personally added aliases - inline for now
+alias t='python ~/src/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
+
+. `brew --prefix`/etc/profile.d/z.sh
+function precmd () {
+  z --add "$(pwd -P)"
+}
 

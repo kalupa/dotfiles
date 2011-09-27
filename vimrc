@@ -32,8 +32,11 @@ Bundle "shemerey/vim-peepopen"
 Bundle "mattn/gist-vim"
 Bundle "airblade/vim-rooter"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle "sjl/gundo.vim"
+Bundle "scrooloose/nerdtree"
+Bundle "taglist.vim"
+
 " syntax checking
-" Bundle "scrooloose/syntastic"
 Bundle "tsaleh/vim-supertab"
 Bundle "msanders/snipmate.vim"
 Bundle "scrooloose/syntastic"
@@ -44,6 +47,9 @@ Bundle "tpope/vim-rails"
 " Bundle "astashov/vim-ruby-debugger"
 Bundle "tpope/vim-cucumber"
 Bundle "tsaleh/vim-shoulda"
+Bundle "dbext.vim"
+Bundle "tpope/vim-abolish"
+Bundle "tpope/vim-bundler"
 
 " Javascript/Coffeescript
 " Bundle "javaScriptLint"

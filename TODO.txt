@@ -1,3 +1,0 @@
-make installer for linking files
-bring in bin folder
-do i need the bash stuff?
