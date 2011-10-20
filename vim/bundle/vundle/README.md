@@ -61,6 +61,13 @@
      *Windows users* see [Vundle for Windows](https://github.com/gmarik/vundle/wiki/Vundle-for-Windows)
 
      Installing requires [Git] and triggers [Git clone](http://gitref.org/creating/#clone) for each configured repo to `~/.vim/bundle/`.
+     
+4. Consider donating
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=T44EJZX8RBUWY)
+
+*Thank you* for supporting this project! )
+
 
 ## Why Vundle
 
@@ -82,9 +89,10 @@ Also [Vundle]:
 
 see [`:h vundle`](vundle/blob/master/doc/vundle.txt#L1) vimdoc for more details.
 
-## Examples
+## People Using Vundle
 
-   See [gmarik's vimrc](https://github.com/gmarik/vimfiles/blob/1f4f26d42f54443f1158e0009746a56b9a28b053/vimrc#L136) for working example.
+   * [gmarik's vimrc](https://github.com/gmarik/vimfiles/blob/1f4f26d42f54443f1158e0009746a56b9a28b053/vimrc#L136)
+   * [mutewinter's Vim Config of Champions](https://github.com/mutewinter/dot_vim)
 
    If you have an interesting example, feel free to send a pull request with link to your config. Thx!
 
