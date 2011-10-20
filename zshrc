@@ -26,12 +26,12 @@ export ZSH ZSH_THEME PATH
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(rails3 git brew bundler osx github gem ssh-agent ec2 node npm rvm pow powder heroku)
+plugins=(rails3 git brew bundler osx github gem ssh-agent ec2 node npm pow powder heroku cloudapp ruby)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/bin:/usr/local/git/bin:~/bin:$HOME/Library/Haskell/bin:$HOME/.cljr/bin:
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/bin:/usr/local/git/bin:~/bin:$HOME/Library/Haskell/bin:$HOME/.cljr/bin:$HOME/.rbenv/bin:
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
@@ -44,4 +44,6 @@ alias t='python ~/src/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 function precmd () {
   z --add "$(pwd -P)"
 }
+
+eval "$(rbenv init -)"
 
