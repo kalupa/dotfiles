@@ -1,8 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/paul/Projects/bernard_kidsandcash_app'
-let g:netrw_dirhist_2='/Users/paul/Projects/bernard_kidsandcash_app/app'
-let g:netrw_dirhist_3='/Users/paul/Projects/bernard_kidsandcash_app/app/assets'
-let g:netrw_dirhist_4='/Users/paul/Projects/bernard_kidsandcash_app/app/assets/stylesheets'
-let g:netrw_dirhist_5='/Users/paul/Projects/bernard_kidsandcash_app/app/assets/stylesheets/partials'
-let g:netrw_dirhist_6='/Users/paul/Projects/bernard_kidsandcash_app/app/views/accounts'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/paul/Projects/karrupa/site/source'
+let g:netrw_dirhist_2='/Users/paul/Projects/karrupa/site/source/_posts'
