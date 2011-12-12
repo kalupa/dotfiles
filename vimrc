@@ -1,88 +1,33 @@
 set nocompatible               " be iMproved
 
-" bundles for awesomeness
-filetype off 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+source ~/dotfiles/vim/bundle_list.vim " load bundle list with vundler
 
-" Bundle/vimscript managers
-Bundle "gmarik/vundle"
-Bundle "tpope/vim-pathogen"
+set encoding=utf-8
+set showcmd		" display incomplete commands
+set autoread " re-read files if they change on disk
 
-" Themes 
-" Bundle "tpope/vim-vividchalk"
-" Bundle "kalupa/vim-tenforward"
-Bundle "altercation/vim-colors-solarized"
+set nowrap
+set tabstop=2 shiftwidth=2
+set expandtab smarttab
+set backspace=indent,eol,start
+set autoindent
 
-" Git tools
-Bundle "tpope/vim-git"
-Bundle "tpope/vim-fugitive"
+set hlsearch incsearch
+set ignorecase smartcase
 
-" Global editor usefulness
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-ragtag"
-Bundle "tsaleh/vim-tcomment"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-endwise"
-Bundle "MartinLafreniere/vim-PairTools"
-Bundle "godlygeek/tabular"
-Bundle "aaronj1335/ucompleteme"
-Bundle "vim-scripts/IndexedSearch"
-" Bundle "shemerey/vim-peepopen"
-Bundle "mattn/gist-vim"
-Bundle "airblade/vim-rooter"
-Bundle "nathanaelkane/vim-indent-guides"
-Bundle "sjl/gundo.vim"
-Bundle "scrooloose/nerdtree"
-Bundle "taglist.vim"
-Bundle "wincent/Command-T"
+set history=500		" keep 500 lines of command line history
+set ruler		" show the cursor position all the time
+set showmatch " show matching braces
+set scrolloff=8
+set sidescrolloff=10
+set backupdir=~/.tmp
+set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
+set winminheight=2
+set viminfo+=!
 
-" syntax checking
-Bundle "tsaleh/vim-supertab"
-Bundle "msanders/snipmate.vim"
-Bundle "scrooloose/syntastic"
-
-" Ruby and Rails 
-Bundle "vim-ruby/vim-ruby"
-Bundle "tpope/vim-rails"
-" Bundle "astashov/vim-ruby-debugger"
-Bundle "tpope/vim-cucumber"
-Bundle "tsaleh/vim-shoulda"
-Bundle "dbext.vim"
-Bundle "tpope/vim-abolish"
-Bundle "tpope/vim-bundler"
-Bundle "vim-rspec"
-
-" Javascript/Coffeescript
-" Bundle "javaScriptLint"
-Bundle "hallettj/jslint.vim"
-" Bundle "kchmck/vim-coffee-script"
-Bundle "itspriddle/vim-jquery"
-
-" HTML/CSS generating modes
-" Bundle "tpope/vim-haml"
-" Bundle "tpope/vim-markdown"
-" Bundle "timcharper/textile.vim"
-" Bundle "digitaltoad/vim-jade"
-" Bundle "wavded/vim-stylus"
-Bundle "cakebaker/scss-syntax.vim" 
-" Bundle "vesan/scss-syntax.vim" 
-" using this one until official version does pull request
-
-" PHP-Related
-" Bundle "vim-scripts/php.vim"
-
-" Clojure
-" Bundle "VimClojure"
-
-" Misc
-" Bundle "davidoc/todo.txt-vim"
-
-" DISABLED FOR NOW
-" Bundle "tsaleh/vim-align"
-
-syntax on                 " Enable syntax highlighting
-filetype plugin indent on " Enable filetype-specific indenting and plugins
+set laststatus=2  " Always show status line.
+set number " show line numbers
+set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 
 augroup myfiletypes
   " Clear old autocmds in group
@@ -96,20 +41,17 @@ let g:gist_clip_command = 'pbcopy'
 let mapleader = ","
 
 map <Leader>co :TComment<CR>
+
+" gui-specific commands
 if &t_Co > 2 || has("gui_running")
   map <D-/> :TComment<CR>
-endif
-" rebind command-t to CommandT
-" if has("gui_macvim")
-"  macmenu &File.New\ Tab key=<nop>
-"  map <D-t> :CommandT<CR>
-" endif
-
-if has("gui_macvim")
+  set hlsearch
   map <D-d> :IndentGuidesToggle<CR>
+  set guioptions-=T
+  set guifont=Meslo\ LG\ S\ DZ:h13 " set font
 endif
 
-" window movement speed
+" using leader instead of ctrl-w for window switching is amazing
 map <Leader>w <C-w>w
 
 imap <C-l> <Space>=><Space>
@@ -119,30 +61,6 @@ map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
 map <C-h> :nohl<CR>
-" nnoremap <silent> <C-l> :nohl<CR><C-l>
-
-set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set history=500		" keep 500 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set autoindent
-set showmatch
-set scrolloff=4
-" set nowrap
-set backupdir=~/.tmp
-set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
-set autoread
-set wmh=0
-set viminfo+=!
-" set guioptions-=T
-set et
-set sw=2
-set smarttab
-set noincsearch
-set ignorecase smartcase
-set laststatus=2  " Always show status line.
-set number 
-set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
@@ -153,21 +71,8 @@ map <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " Expand the command line using tab
 set wildchar=<Tab>
 
-" show line numbers
-set number
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-
 " 1000 undo levels
 set undolevels=1000
-
-" show matching braces
-set showmatch
 
 " write before hiding a buffer
 set autowrite
@@ -186,28 +91,6 @@ endif
 colorscheme solarized
 " ------------------------------------------------------------------
 
-" The following items are available options, but do not need to be
-" included in your .vimrc as they are currently set to their defaults.
-
-" let g:solarized_termtrans=0
-" let g:solarized_degrade=0
-" let g:solarized_bold=1
-" let g:solarized_underline=1
-" let g:solarized_italic=1
-" let g:solarized_termcolors=16
-" let g:solarized_contrast="normal"
-" let g:solarized_visibility="normal"
-" let g:solarized_diffmode="normal"
-" let g:solarized_menu=1
-
-" colorscheme ir_black
-" colorscheme 10fwd
-
-if has("gui_running")
-  set guioptions-=T
-  " set font
-  set guifont=Meslo\ LG\ S\ DZ:h13
-endif
 " Use _ as a word-separator
 set iskeyword-=_
 
