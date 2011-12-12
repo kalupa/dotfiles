@@ -26,14 +26,14 @@ export ZSH ZSH_THEME PATH
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(rails3 git brew bundler osx github gem ssh-agent ec2 node npm pow powder heroku cloudapp ruby)
+plugins=(rails3 git brew bundler osx github gem ssh-agent ec2 node npm pow powder heroku cloudapp ruby rvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/bin:/usr/local/git/bin:~/bin:$HOME/Library/Haskell/bin:$HOME/.cljr/bin:$HOME/.rbenv/bin:
 
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # source /usr/local/Cellar/coreutils/8.12/aliases
 
@@ -44,6 +44,14 @@ alias t='python ~/src/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 function precmd () {
   z --add "$(pwd -P)"
 }
+function git(){hub "$@"}
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
+export ANT_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=512m"
 
+function kicknginx () {
+  kill -HUP `cat /usr/local/var/run/nginx.pid`
+  touch ./tmp/restart.txt
+}
+
+[[ -s "/Users/paul/.rvm/scripts/rvm" ]] && source "/Users/paul/.rvm/scripts/rvm"  # This loads RVM into a shell session.

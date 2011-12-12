@@ -28,13 +28,14 @@ Bundle "MartinLafreniere/vim-PairTools"
 Bundle "godlygeek/tabular"
 Bundle "aaronj1335/ucompleteme"
 Bundle "vim-scripts/IndexedSearch"
-Bundle "shemerey/vim-peepopen"
+" Bundle "shemerey/vim-peepopen"
 Bundle "mattn/gist-vim"
 Bundle "airblade/vim-rooter"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "sjl/gundo.vim"
 Bundle "scrooloose/nerdtree"
 Bundle "taglist.vim"
+Bundle "wincent/Command-T"
 
 " syntax checking
 Bundle "tsaleh/vim-supertab"
@@ -50,28 +51,29 @@ Bundle "tsaleh/vim-shoulda"
 Bundle "dbext.vim"
 Bundle "tpope/vim-abolish"
 Bundle "tpope/vim-bundler"
+Bundle "vim-rspec"
 
 " Javascript/Coffeescript
 " Bundle "javaScriptLint"
 Bundle "hallettj/jslint.vim"
-Bundle "kchmck/vim-coffee-script"
+" Bundle "kchmck/vim-coffee-script"
 Bundle "itspriddle/vim-jquery"
 
 " HTML/CSS generating modes
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-markdown"
-Bundle "timcharper/textile.vim"
-Bundle "digitaltoad/vim-jade"
-Bundle "wavded/vim-stylus"
-" Bundle "cakebaker/scss-syntax.vim" 
-Bundle "vesan/scss-syntax.vim" 
+" Bundle "tpope/vim-haml"
+" Bundle "tpope/vim-markdown"
+" Bundle "timcharper/textile.vim"
+" Bundle "digitaltoad/vim-jade"
+" Bundle "wavded/vim-stylus"
+Bundle "cakebaker/scss-syntax.vim" 
+" Bundle "vesan/scss-syntax.vim" 
 " using this one until official version does pull request
 
 " PHP-Related
-Bundle "vim-scripts/php.vim"
+" Bundle "vim-scripts/php.vim"
 
 " Clojure
-Bundle "VimClojure"
+" Bundle "VimClojure"
 
 " Misc
 " Bundle "davidoc/todo.txt-vim"
@@ -96,6 +98,15 @@ let mapleader = ","
 map <Leader>co :TComment<CR>
 if &t_Co > 2 || has("gui_running")
   map <D-/> :TComment<CR>
+endif
+" rebind command-t to CommandT
+" if has("gui_macvim")
+"  macmenu &File.New\ Tab key=<nop>
+"  map <D-t> :CommandT<CR>
+" endif
+
+if has("gui_macvim")
+  map <D-d> :IndentGuidesToggle<CR>
 endif
 
 " window movement speed
@@ -202,6 +213,9 @@ set iskeyword-=_
 
 " Use Ack instead of grep
 set grepprg=ack
+
+" set shell to sh so RVM doesn't bungle the bundles
+set shell=/bin/sh
 
 " Make the omnicomplete text readable
 :highlight PmenuSel ctermfg=black

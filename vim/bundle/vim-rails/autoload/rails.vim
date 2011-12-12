@@ -3600,7 +3600,7 @@ function! s:BufSyntax()
         syn match rubyRailsTestMethod '\.\@<!\<stub\>!\@!'
         if !buffer.type_name('spec-model')
           syn match   rubyRailsTestControllerMethod  '\.\@<!\<\%(get\|post\|put\|delete\|head\|process\|assigns\)\>'
-          syn keyword rubyRailsTestControllerMethod  integrate_views
+          syn keyword rubyRailsTestControllerMethod  integrate_views render_views
           syn keyword rubyRailsMethod params request response session flash
           syn keyword rubyRailsMethod polymorphic_path polymorphic_url
         endif
@@ -3699,6 +3699,9 @@ function! s:BufSyntax()
       set isk+=$
       exe "syn keyword javascriptRailsFunction ".s:javascript_functions
 
+    elseif &syntax == "scss" || &syntax == "sass"
+      syn match sassFunction "\<\%(\%(asset\|image\|font\|video\|audio\|javascript\|stylesheet\)-\%(url\|path\)\)\>(\@=" contained
+      syn match sassFunction "\<\asset-data-url\>(\@=" contained
     endif
   endif
   call s:HiDefaults()
@@ -4536,9 +4539,7 @@ augroup railsPluginAuto
   autocmd BufWritePost */tasks/**.rake            call rails#cache_clear("rake_tasks")
   autocmd BufWritePost */generators/**            call rails#cache_clear("generators")
   autocmd FileType * if exists("b:rails_root") | call s:BufSettings() | endif
-  autocmd Syntax ruby,eruby,yaml,haml,javascript,coffee,railslog if exists("b:rails_root") | call s:BufSyntax() | endif
-  autocmd QuickFixCmdPre  *make* call s:push_chdir()
-  autocmd QuickFixCmdPost *make* call s:pop_command()
+  autocmd Syntax ruby,eruby,yaml,haml,javascript,coffee,railslog,sass,scss if exists("b:rails_root") | call s:BufSyntax() | endif
 augroup END
 
 " }}}1

@@ -33,7 +33,7 @@ func! s:view_log()
   wincmd P | wincmd H
 endf
 
-func vundle#scripts#bundle_names(names)
+func! vundle#scripts#bundle_names(names)
   return map(copy(a:names), ' printf("Bundle ' ."'%s'".'", v:val) ')
 endf
 
@@ -47,6 +47,10 @@ func! vundle#scripts#view(title, headers, results)
   wincmd P | wincmd H
 
   let g:vundle_view = bufnr('%')
+  "
+  " make buffer modifiable 
+  " to append without errors
+  set modifiable
 
   call append(0, a:headers + a:results)
 
@@ -93,7 +97,7 @@ func! vundle#scripts#view(title, headers, results)
   nnoremap <buffer> c :BundleClean<CR>
   nnoremap <buffer> C :BundleClean!<CR>
 
-  nnoremap <buffer> s :BundleSearch
+  nnoremap <buffer> s :BundleSearch 
   nnoremap <buffer> R :call vundle#scripts#reload()<CR>
 
   " goto first line after headers
@@ -101,7 +105,7 @@ func! vundle#scripts#view(title, headers, results)
 endf
 
 func! s:fetch_scripts(to)
-  let scripts_dir = fnamemodify(expand(a:to), ":h")
+  let scripts_dir = fnamemodify(expand(a:to, 1), ":h")
   if !isdirectory(scripts_dir)
     call mkdir(scripts_dir, "p")
   endif
@@ -130,7 +134,7 @@ func! s:fetch_scripts(to)
 endf
 
 func! s:load_scripts(bang)
-  let f = expand(g:bundle_dir.'/.vundle/script-names.vim-scripts.org.json')
+  let f = expand(g:bundle_dir.'/.vundle/script-names.vim-scripts.org.json', 1)
   if a:bang || !filereadable(f)
     if 0 != s:fetch_scripts(f)
       return []

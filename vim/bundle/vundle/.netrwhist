@@ -1,4 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/paul/Projects/karrupa/site/source'
-let g:netrw_dirhist_2='/Users/paul/Projects/karrupa/site/source/_posts'
+let g:netrw_dirhist_cnt =0
