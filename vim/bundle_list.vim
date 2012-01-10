@@ -39,13 +39,13 @@ Bundle "scrooloose/syntastic"
 " Ruby and Rails 
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-rails"
-Bundle "astashov/vim-ruby-debugger"
+" Bundle "astashov/vim-ruby-debugger"
 Bundle "tpope/vim-cucumber"
 Bundle "tsaleh/vim-shoulda"
 Bundle "dbext.vim"
 Bundle "tpope/vim-abolish"
 Bundle "tpope/vim-bundler"
-Bundle "vim-rspec"
+" Bundle "vim-rspec"
 
 " Javascript/Coffeescript
 " Bundle "javaScriptLint"

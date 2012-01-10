@@ -22,7 +22,7 @@ set scrolloff=8
 set sidescrolloff=10
 set backupdir=~/.tmp
 set directory=~/.tmp " Don't clutter my dirs up with swp and tmp files
-set winminheight=2
+set winminheight=0
 set viminfo+=!
 
 set laststatus=2  " Always show status line.
