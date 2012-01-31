@@ -30,6 +30,8 @@ Bundle "airblade/vim-rooter"
 Bundle "sjl/gundo.vim"
 Bundle "taglist.vim"
 Bundle "wincent/Command-T"
+Bundle "sickill/vim-pasta"
+Bundle "kien/ctrlp.vim"
 
 " syntax checking
 Bundle "tsaleh/vim-supertab"
