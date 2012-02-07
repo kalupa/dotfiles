@@ -1,6 +1,3 @@
 [submodule "janus/vim-bunder"]
 	path = janus/vim-bunder
 	url = https://github.com/tpope/vim-bundler.git
-[submodule "janus/vim-align"]
-	path = janus/vim-align
-	url = https://github.com/tsaleh/vim-align.git
