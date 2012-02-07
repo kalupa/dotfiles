@@ -3,4 +3,4 @@
 	url = https://github.com/tpope/vim-bundler.git
 [submodule "janus/vim-align"]
 	path = janus/vim-align
-	url = https://github.com/vim-scripts/Align.vim.git
+	url = https://github.com/tsaleh/vim-align.git
