@@ -1,3 +1,6 @@
 [submodule "janus/vim-bunder"]
 	path = janus/vim-bunder
 	url = https://github.com/tpope/vim-bundler.git
+[submodule "janus/vim-rake"]
+	path = janus/vim-rake
+	url = https://github.com/tpope/vim-rake.git
