@@ -1,3 +1,6 @@
 [submodule "janus/vim-rake"]
 	path = janus/vim-rake
 	url = https://github.com/tpope/vim-rake.git
+[submodule "janus/command-t"]
+	path = janus/command-t
+	url = https://github.com/wincent/Command-T.git
