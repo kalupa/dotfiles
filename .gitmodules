@@ -7,3 +7,6 @@
 [submodule "janus/vim-jade"]
 	path = janus/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "janus/vim-less"]
+	path = janus/vim-less
+	url = https://github.com/groenewege/vim-less.git
