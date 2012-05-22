@@ -31,6 +31,16 @@ function kicknginx () {
   touch ./tmp/restart.txt
 }
 
+function staging-console () {
+  ssh woople_staging -t "cd /data/Woople/current/ && RAILS_ENV=staging bundle exec rails c "
+}
+function utility-console () {
+  ssh utility -t "cd /data/Woople/current/ && RAILS_ENV=production bundle exec rails c "
+}
+function woople-console () {
+  ssh woople -t "cd /data/Woople/current/ && RAILS_ENV=production bundle exec rails c "
+}
+
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm  # This loads RVM into a shell session.
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
@@ -44,3 +54,6 @@ RUBY_HEAP_FREE_MIN=500000
 export RUBY_HEAP_FREE_MIN RUBY_GC_MALLOC_LIMIT RUBY_HEAP_SLOTS_GROWTH_FACTOR RUBY_HEAP_SLOTS_INCREMENT RUBY_HEAP_MIN_SLOTS
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export WOOPLE_SECRET='123456789'
+export WOOPLE_KEY='woople'
