@@ -1,8 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="../custom/themes/sunaku-dbln"
+ZSH_THEME="sunaku-dbln"
 
 EDITOR=/usr/local/bin/vim
 
@@ -10,14 +7,19 @@ export ZSH ZSH_THEME PATH EDITOR
 
 plugins=(ruby rails3 rake gem brew osx git github ssh-agent node npm heroku cloudapp)
 
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+plugins=(git)
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/bin:/usr/local/git/bin:~/bin:$HOME/Library/Haskell/bin:$HOME/.cljr/bin:
-
-# source /usr/local/Cellar/coreutils/8.12/aliases
+#/Users/paul/.rvm/gems/ruby-1.9.3-p194/bin:/Users/paul/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/paul/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/paul/.rvm/bin:
+export PATH=/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin:~/bin:$HOME/Library/Haskell/bin:$HOME/.cljr/bin:
 
 . `brew --prefix`/etc/profile.d/z.sh
+
 function precmd () {
   z --add "$(pwd -P)"
 }
@@ -27,7 +29,9 @@ export ANT_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=512m"
 
 # dirty little alias to restart nginx and passenger
 function kicknginx () {
-  kill -HUP `cat /usr/local/var/run/nginx.pid`
+  #kill -HUP `cat /usr/local/var/run/nginx.pid`
+  launchctl stop homebrew.mxcl.nginx
+  launchctl start homebrew.mxcl.nginx
   touch ./tmp/restart.txt
 }
 
@@ -55,3 +59,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export WOOPLE_SECRET='123456789'
 export WOOPLE_KEY='woople'
+
+source /Users/paul/.rvm/scripts/rvm
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
