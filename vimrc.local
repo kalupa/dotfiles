@@ -1,0 +1,31 @@
+set background=light
+set tabstop=2 shiftwidth=2
+set expandtab smarttab
+set backspace=indent,eol,start
+set autoindent
+set hlsearch incsearch
+set ignorecase smartcase
+
+if &t_Co > 2 || has("gui_running")
+  map <D-/> :TComment<CR>
+  set hlsearch
+  map <D-d> :IndentGuidesToggle<CR>
+  set guioptions-=T
+  set guifont=Meslo\ LG\ S\ DZ:h13 " set font
+endif
+
+" using leader instead of ctrl-w for window switching is amazing
+map <Leader>w <C-w>w
+
+map <CR> :nohl<CR>
+
+set autowrite
+
+" Use Ack instead of grep
+set grepprg=ack
+
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+
+" better html mode
+let html_use_css = 1
+
