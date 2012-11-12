@@ -8,7 +8,7 @@ EDITOR=/usr/local/bin/vim
 
 export ZSH ZSH_THEME PATH EDITOR
 
-plugins=(ruby rvm rails3 rake gem brew osx git github ssh-agent node npm heroku cloudapp)
+plugins=(ruby rails3 rake gem brew osx git github ssh-agent node npm heroku cloudapp)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,8 +40,6 @@ function utility-console () {
 function woople-console () {
   ssh woople -t "cd /data/Woople/current/ && RAILS_ENV=production bundle exec rails c "
 }
-
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm  # This loads RVM into a shell session.
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
 
