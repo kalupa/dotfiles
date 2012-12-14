@@ -29,3 +29,15 @@ set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 " better html mode
 let html_use_css = 1
 
+" RSpec awesomeness
+function! RSpecFile()
+  execute("!clear && rspec " . expand("%p"))
+endfunction
+map <leader>R :call RSpecFile() <CR>
+command! RSpecFile call RSpecFile()
+
+function! RSpecCurrent()
+  execute("!clear && rspec " . expand("%p") . ":" . line("."))
+endfunction
+map <leader>r :call RSpecCurrent() <CR>
+command! RSpecCurrent call RSpecCurrent()
