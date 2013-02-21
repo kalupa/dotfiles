@@ -41,3 +41,5 @@ function! RSpecCurrent()
 endfunction
 map <leader>r :call RSpecCurrent() <CR>
 command! RSpecCurrent call RSpecCurrent()
+UnBundle 'AutoClose'
+UnBundle 'PIV'
