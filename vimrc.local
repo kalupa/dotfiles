@@ -1,33 +1,27 @@
+" unbundle
+UnBundle 'spf13/vim-autoclose'
+UnBundle 'spf13/PIV'
+
+" Personal configs
 set background=dark
 set tabstop=2 shiftwidth=2
 set expandtab smarttab
 set backspace=indent,eol,start
-set autoindent
 set hlsearch incsearch
 set ignorecase smartcase
+set autowrite
+set grepprg=ack " Use Ack instead of grep
+set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 
-if &t_Co > 2 || has("gui_running")
-  map <D-/> :TComment<CR>
-  set hlsearch
-  map <D-d> :IndentGuidesToggle<CR>
-  set guioptions-=T
-  set guifont=Meslo\ LG\ S\ DZ:h13 " set font
+if has("autocmd")
+  filetype plugin indent on " let the filetype determine autoindenting method
 endif
 
 " using leader instead of ctrl-w for window switching is amazing
 map <Leader>w <C-w>w
-
+" clear highlights on pressing Enter
 map <CR> :nohl<CR>
 
-set autowrite
-
-" Use Ack instead of grep
-set grepprg=ack
-
-set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
-
-" better html mode
-let html_use_css = 1
 
 " RSpec awesomeness
 function! RSpecFile()
@@ -35,11 +29,8 @@ function! RSpecFile()
 endfunction
 map <leader>R :call RSpecFile() <CR>
 command! RSpecFile call RSpecFile()
-
 function! RSpecCurrent()
   execute("!clear && rspec " . expand("%p") . ":" . line("."))
 endfunction
 map <leader>r :call RSpecCurrent() <CR>
 command! RSpecCurrent call RSpecCurrent()
-UnBundle 'AutoClose'
-UnBundle 'PIV'
