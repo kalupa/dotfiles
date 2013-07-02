@@ -10,6 +10,7 @@ set backspace=indent,eol,start
 set hlsearch incsearch
 set ignorecase smartcase
 set autowrite
+set cc=80
 set grepprg=ack " Use Ack instead of grep
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
 

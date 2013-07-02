@@ -3,12 +3,15 @@ EDITOR=/usr/local/bin/vim
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
 export ZSH ZSH_THEME PATH EDITOR
-plugins=(ruby rails3 rake gem brew osx git github ssh-agent node npm heroku cloudapp)
+plugins=(brew bundler cloudapp coffee gem git git-extras github heroku node npm osx rake rails3 ruby ssh-agent)
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin:./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin:$HOME/bin:$HOME/Library/Haskell/bin:$HOME/.cljr/bin:
+export PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
+export PATH=$PATH:$HOME/bin:./bin
+
+#Postgres
+export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
 
 . `brew --prefix`/etc/profile.d/z.sh
 
