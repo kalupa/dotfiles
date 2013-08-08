@@ -1,3 +1,5 @@
 Bundle 'epmatsw/ag.vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-rbenv'
+Bundle 'tpope/vim-dispatch'
+Bundle 'nono/vim-handlebars'

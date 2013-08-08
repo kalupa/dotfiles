@@ -13,6 +13,7 @@ set autowrite
 set cc=80
 set grepprg=ack " Use Ack instead of grep
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5.
+set clipboard=unnamed
 
 if has("autocmd")
   filetype plugin indent on " let the filetype determine autoindenting method
