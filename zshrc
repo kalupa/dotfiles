@@ -38,5 +38,18 @@ function psy(){python -m SimpleHTTPServer 8000 && open "http://localhost:8000"}
 #nvm setup
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
+# ImageMagick fun times
+export MAGICK_HOME="/usr/local/ImageMagick-6.8.7-7"
+export PATH="$MAGICK_HOME/bin:$PATH"
+export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+### Cudaminer
+export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+source $HOME/.awsenv

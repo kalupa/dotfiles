@@ -1,6 +1,14 @@
+" unbundle
+UnBundle 'spf13/vim-autoclose'
+UnBundle 'spf13/PIV'
+UnBundle 'justinmk/vim-sneak'
+UnBundle ''
+
+Bundle 'hail2u/vim-css3-syntax'
 Bundle 'epmatsw/ag.vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-rbenv'
 Bundle 'tpope/vim-dispatch'
 Bundle 'nono/vim-handlebars'
-Bundle 'cakebaker/scss-syntax'
+Bundle 'Valloric/YouCompleteMe'
+" Bundle 'cakebaker/scss-syntax'

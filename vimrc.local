@@ -1,6 +1,3 @@
-" unbundle
-UnBundle 'spf13/vim-autoclose'
-UnBundle 'spf13/PIV'
 
 " Personal configs
 set background=dark
