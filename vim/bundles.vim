@@ -66,6 +66,19 @@ Bundle 'PeterRincker/vim-argumentative'
 " Enable some syntax settings that had to be disabled for Vundle.
 filetype plugin indent on
 
+" do some solarized tweaks
+
+try
+    set t_Co=256 " 256 colors
+    set background=dark
+    let g:solarized_termcolors=256
+    let g:solarized_termtrans=1
+    let g:solarized_contrast="normal"
+    let g:solarized_visibility="normal"
+    colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+endtry
+
 " Configure syntastic.
 let g:syntastic_mode_map={ 'mode': 'active',
       \ 'active_filetypes': [],

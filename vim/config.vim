@@ -24,17 +24,6 @@ set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-try
-    set t_Co=256 " 256 colors
-    set background=dark
-    let g:solarized_termcolors=256
-    let g:solarized_termtrans=1
-    let g:solarized_contrast="normal"
-    let g:solarized_visibility="normal"
-    colorscheme solarized
-catch /^Vim\%((\a\+)\)\=:E185/
-endtry
-
 " a more natural leader
 let mapleader = ","
 
