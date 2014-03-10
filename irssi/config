@@ -25,6 +25,7 @@ servers = (
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
   {
     address = "pau.lk";
+    chatnet = "freenode";
     port = "0";
     password = "sinner";
     use_ssl = "no";
@@ -212,7 +213,6 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -262,6 +262,13 @@ statusbar = {
         topicbarend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
@@ -271,5 +278,6 @@ settings = {
     nick = "paul";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = { awl_block = "-14"; };
 };
 logs = { };

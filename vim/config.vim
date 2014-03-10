@@ -50,8 +50,15 @@ set title
 " Enable line numbers.
 set number
 
+" show tab characters and line endings
+set list
+set listchars=tab:▸\ ,trail:¬
+
 " Enable mouse support.
 set mouse=a
+
+" Show a column marker at 80
+set colorcolumn=80
 
 " Highlight searches.
 set hlsearch

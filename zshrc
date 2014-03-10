@@ -3,9 +3,10 @@ EDITOR=/usr/local/bin/vim
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
 export ZSH ZSH_THEME PATH EDITOR
-plugins=(brew bundler cloudapp coffee gem git git-extras github heroku node npm osx rake rails ruby ssh-agent pip)
+plugins=(battery bower brew bundler coffee emoji-clock gem git git-extras gitignore github knife node npm osx pip pow powder rake rails rbenv ruby ssh-agent tmuxinator)
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 export PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 export PATH=$PATH:$HOME/bin:./bin
@@ -15,6 +16,12 @@ export PATH=$PATH:$HOME/bin:./bin
 
 . `brew --prefix`/etc/profile.d/z.sh
 # function git(){hub "$@"}
+
+#git
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gl='git pull --prune'
+alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
+perl -pe 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
 
 #[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
 

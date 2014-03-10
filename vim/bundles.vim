@@ -151,7 +151,7 @@ let g:tmuxline_preset = {
   \'cwin' : ['#I','#W'],
   \'y'    : '%H:%M'}
 
-" Tabularize 
+" Tabularize
 nmap <Leader>a& :Tabularize /&<CR>
 vmap <Leader>a& :Tabularize /&<CR>
 nmap <Leader>a= :Tabularize /=<CR>
