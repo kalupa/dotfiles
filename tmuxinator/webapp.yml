@@ -1,0 +1,41 @@
+# ~/.tmuxinator/webapp.yml
+
+name: webapp
+root: ~/apps/lp-webapp/
+
+# Optional tmux socket
+socket_name: lpwebapp
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - vim: /usr/local/bin/vim
+  - consoles:
+      layout: 0772,204x45,0,0[204x31,0,0,1,204x14,0,32{102x14,0,32,6,101x14,103,32,7}]
+      panes:
+        - guard
+        - bundle exec rails c
+        - nginx
+  - app:
+      panes:
+        - passenger start
+        - rake jobs:work
+  - services:
+      panes:
+        - pagebundler:
+          - cd ~/apps/lp-page-bundler/
+          - foreman start
+        - publisher:
+          - cd ~/apps/lp-publisher/
+          - ./run-webapp
+
