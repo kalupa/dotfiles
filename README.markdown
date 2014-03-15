@@ -1,31 +1,34 @@
+## On Mac
 Install homebrew
 ```sh
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+brew install ctags mercurial git hub vim z zsh rbenv ruby-build irssi openssl tmux the_silver_searcher
 ```
 
-Install dependencies
+## On Linux
 ```sh
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-brew install ack ctags mercurial git hub vim z zsh gnu-tar rbenv ruby-build irssi openssl
+sudo apt-get install mercurial git libssl-dev exuberant-ctags silversearcher-ag irssi rbenv ruby-build tmux zsh
 ```
 
-Install node, ruby
+## On Any
+
+Install ruby
 ```sh
-nvm install 0.8
-rbenv install 1.9.3-p385
+rbenv install 1.9.3
 ```
 
-Install spf13-vim
 ```sh
-curl http://j.mp/spf13-vim3 -L -o - | sh
+gem install tmuxinator
+curl -L http://install.ohmyz.sh | sh
 ```
 
 Symlink the appropriate files to the folders/files here in your home.
 ```sh
-ln -nfs ~/dotfiles/vimrc.local ~/.vimrc.local
-ln -nfs ~/dotfiles/vimrc.bundles.local ~/.vimrc.bundles.local
+ln -nfs ~/dotfiles/vimrc ~/.vimrc
+ln -nfs ~/dotfiles/vim ~/.vim
 ln -nfs ~/dotfiles/zshrc ~/.zshrc
 ln -nfs ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -nfs ~/dotfiles/tmuxinator ~/.tmuxinator
 ln -nfs ~/dotfiles/screenrc ~/.screenrc
 ln -nfs ~/dotfiles/irssi ~/.irssi
 ```
