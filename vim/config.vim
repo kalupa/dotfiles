@@ -8,9 +8,9 @@ set nocompatible
 set mousehide               " Hide the mouse cursor while typing
 
 " Enable better indentation.
-set autoindent smartindent
-set smarttab
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set autoindent
+
 let g:html_indent_inctags='html,body,head,tbody'
 set nowrap                      " Do not wrap long lines
 set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
@@ -211,4 +211,3 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
-

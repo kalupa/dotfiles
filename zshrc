@@ -3,7 +3,7 @@ EDITOR=/usr/local/bin/vim
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
 export ZSH ZSH_THEME PATH EDITOR
-plugins=(battery bower brew bundler coffee emoji-clock gem git git-extras gitignore github knife node npm osx pip pow powder rake rails rbenv ruby ssh-agent tmuxinator)
+plugins=(battery brew bundler coffee emoji-clock gem git git-extras gitignore github knife node npm osx pip pow powder rake rails rbenv ruby ssh-agent tmuxinator)
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 zstyle :omz:plugins:ssh-agent agent-forwarding on
