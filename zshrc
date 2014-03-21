@@ -3,7 +3,7 @@ EDITOR=/usr/local/bin/vim
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
 export ZSH ZSH_THEME PATH EDITOR
-plugins=(battery brew bundler coffee emoji-clock gem git git-extras gitignore github knife node npm osx pip pow powder rake rails rbenv ruby ssh-agent tmuxinator)
+plugins=(battery brew bundler coffee emoji-clock gem git git-extras git-flow gitignore github knife node npm osx pip pow powder rake rails rbenv ruby ssh-agent tmuxinator)
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -26,7 +26,7 @@ perl -pe 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
 #[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
 
 # ruby performance enhancements
-RUBY_HEAP_MIN_SLOTS=1000000
+RUBY_GC_HEAP_INIT_SLOTS=1000000
 RUBY_HEAP_SLOTS_INCREMENT=1000000
 RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 RUBY_GC_MALLOC_LIMIT=1000000000
@@ -60,3 +60,4 @@ export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 source $HOME/.awsenv
+source $HOME/.browserstackenv
