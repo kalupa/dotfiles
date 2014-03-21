@@ -8,8 +8,10 @@ set nocompatible
 set mousehide               " Hide the mouse cursor while typing
 
 " Enable better indentation.
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set softtabstop=2
+set shiftwidth=2
 set autoindent
+set expandtab
 
 let g:html_indent_inctags='html,body,head,tbody'
 set nowrap                      " Do not wrap long lines
@@ -88,9 +90,9 @@ set scrolloff=3
 
 if has('clipboard')
     if has('unnamedplus')  " When possible use + register for copy-paste
-	set clipboard=unnamedplus
+        set clipboard=unnamedplus
     else         " On mac and Windows, use * register for copy-paste
-	set clipboard=unnamed
+        set clipboard=unnamed
     endif
 endif
 
@@ -155,7 +157,7 @@ if gitroot != ''
     let &tags = &tags . ',' . gitroot . '/.git/tags'
 endif
 
-" Tabularize 
+" Tabularize
 nmap <Leader>a& :Tabularize /&<CR>
 vmap <Leader>a& :Tabularize /&<CR>
 nmap <Leader>a= :Tabularize /=<CR>
@@ -205,9 +207,10 @@ function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
     if new_name != '' && new_name != old_name
-	exec ':saveas ' . new_name
-	exec ':silent !rm ' . old_name
-	redraw!
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+

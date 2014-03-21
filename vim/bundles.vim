@@ -86,6 +86,9 @@ let g:syntastic_mode_map={ 'mode': 'active',
       \ 'passive_filetypes': ['html', 'cpp'] }
 let g:syntastic_check_on_open=1
 
+" vim-javascript set
+let g:javascript_conceal=1
+let javascript_enable_domhtmlcss=1
 " Configure airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
@@ -193,4 +196,3 @@ nnoremap <silent> <leader>gw :Gwrite<CR>
 nnoremap <silent> <leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
 nnoremap <silent> <leader>gi :Git add -p %<CR>
-
