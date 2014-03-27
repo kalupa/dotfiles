@@ -25,7 +25,7 @@ windows:
       panes:
         - guard
         - bundle exec rails c
-        - nginx
+        - # just start a shell
   - app:
       panes:
         - passenger start
