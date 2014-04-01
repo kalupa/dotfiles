@@ -87,7 +87,6 @@ let g:syntastic_mode_map={ 'mode': 'active',
 let g:syntastic_check_on_open=1
 
 " vim-javascript set
-let g:javascript_conceal=1
 let javascript_enable_domhtmlcss=1
 " Configure airline
 let g:airline#extensions#tabline#enabled=1
