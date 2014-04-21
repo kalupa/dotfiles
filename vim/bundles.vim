@@ -20,6 +20,7 @@ Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-cucumber'
 Bundle 'chrisbra/csv.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'mxw/vim-jsx'
 
 " tpope rules
 Bundle 'tpope/vim-rsi'
