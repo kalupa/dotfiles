@@ -12,6 +12,7 @@ set softtabstop=2
 set shiftwidth=2
 set autoindent
 set expandtab
+autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=2
 
 let g:html_indent_inctags='html,body,head,tbody'
 set nowrap                      " Do not wrap long lines
