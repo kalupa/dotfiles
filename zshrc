@@ -23,7 +23,7 @@ alias gl='git pull --prune'
 alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
 perl -pe 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
 
-#[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
 
 # ruby performance enhancements
 RUBY_GC_HEAP_INIT_SLOTS=1000000
@@ -53,11 +53,8 @@ export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-
-### Cudaminer
-export PATH=/Developer/NVIDIA/CUDA-5.5/bin:$PATH
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# java
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7.0_21`
 
 source $HOME/.awsenv
 source $HOME/.browserstackenv
