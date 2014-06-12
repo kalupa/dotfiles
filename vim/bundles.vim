@@ -9,17 +9,18 @@ Bundle 'helino/vim-json'
 Bundle 'mustache/vim-mode'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'vim-scripts/JavaScript-Indent'
+Bundle 'othree/javascript-libraries-syntax'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-jdaddy'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-cucumber'
 Bundle 'chrisbra/csv.vim'
-Bundle 'kchmck/vim-coffee-script'
+"Bundle 'kchmck/vim-coffee-script'
 Bundle 'mxw/vim-jsx'
 
 " tpope rules
@@ -30,7 +31,6 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-projectile'
@@ -87,8 +87,9 @@ let g:syntastic_mode_map={ 'mode': 'active',
       \ 'passive_filetypes': ['html', 'cpp'] }
 let g:syntastic_check_on_open=1
 
-" vim-javascript set
-let javascript_enable_domhtmlcss=1
+" Javascript settings
+let g:used_javascript_libs = 'jquery, jasmine'
+
 " Configure airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
@@ -168,31 +169,3 @@ let g:tmuxline_preset = {
   \'cwin' : ['#I','#W'],
   \'y'    : '%H:%M'}
 
-" Tabularize
-nmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a& :Tabularize /&<CR>
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a,, :Tabularize /,\zs<CR>
-vmap <Leader>a,, :Tabularize /,\zs<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" Fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
-" Mnemonic _i_nteractive
-nnoremap <silent> <leader>gi :Git add -p %<CR>
