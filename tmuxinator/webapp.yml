@@ -18,22 +18,27 @@ socket_name: lpwebapp
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
+pre: mysql.server start
+
 windows:
   - vim: /usr/local/bin/vim
+  - guard: guard
   - consoles:
-      layout: 0772,204x45,0,0[204x31,0,0,1,204x14,0,32{102x14,0,32,6,101x14,103,32,7}]
+      layout: main-vertical
       panes:
-        - guard
         - bundle exec rails c
         - # just start a shell
   - app:
       panes:
-        - passenger start
-        - rake jobs:work
+        - lp-webapp:
+          - passenger start
+        - delayedjobs:
+          - rake jobs:work
   - services:
       panes:
         - pagebundler:
           - cd ~/apps/lp-page-bundler/
+          - rbenv shell jruby-1.7.8
           - foreman start
         - publisher:
           - cd ~/apps/lp-publisher/
