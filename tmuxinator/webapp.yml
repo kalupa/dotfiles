@@ -38,7 +38,6 @@ windows:
       panes:
         - pagebundler:
           - cd ~/apps/lp-page-bundler/
-          - rbenv shell jruby-1.7.8
           - foreman start
         - publisher:
           - cd ~/apps/lp-publisher/

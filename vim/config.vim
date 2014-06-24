@@ -20,15 +20,18 @@ set nojoinspaces                " Prevents inserting two spaces after punctuatio
 set splitright                  " Puts new vsplit windows to the right of the current
 set splitbelow                  " Puts new split windows to the bottom of the current
 
+" esc key is evil
+inoremap jk <ESC>
+
+" a more natural leader
+let mapleader = " "
+
 source $HOME/.vim/bundles.vim
 
 " don't litter
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-" a more natural leader
-let mapleader = ","
 
 " Disable the swap files.
 set noswapfile
@@ -44,7 +47,7 @@ set number
 
 " show tab characters and line endings
 set list
-set listchars=tab:▸\ ,trail:¬
+set listchars=tab:▸\ ,trail:¬,extends:>,precedes:< 
 
 " Enable mouse support.
 set mouse=a
@@ -132,7 +135,7 @@ noremap j gj
 noremap k gk
 
 " ,/ to clear those searches
-nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <CR> :nohlsearch<CR>
 
 " Shortcuts
 " Change Working Directory to that of the current file

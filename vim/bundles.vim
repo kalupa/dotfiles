@@ -10,7 +10,8 @@ Bundle 'mustache/vim-mode'
 Bundle 'pangloss/vim-javascript'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'vim-scripts/JavaScript-Indent'
-Bundle 'othree/javascript-libraries-syntax'
+Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'bigfish/vim-js-context-coloring'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
@@ -88,12 +89,12 @@ let g:syntastic_mode_map={ 'mode': 'active',
 let g:syntastic_check_on_open=1
 
 " Javascript settings
-let g:used_javascript_libs = 'jquery, jasmine'
+let g:used_javascript_libs = 'jquery, jasmine, prototype, underscore'
 
 " Configure airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
-let g:airline_theme = 'solarized'
+let g:airline_theme='solarized'
 
 " Shows the errors window. (e)
 nmap <silent> <leader>e :Errors<CR>
@@ -153,9 +154,9 @@ endif
 set completeopt-=preview
 
 " UndoTree
-nnoremap <Leader>u :UndotreeToggle<CR>
+"nnoremap <Leader>u :UndotreeToggle<CR>
 " If undotree is opened, it is likely one wants to interact with it.
-let g:undotree_SetFocusWhenToggle=1
+"let g:undotree_SetFocusWhenToggle=1
 
 " NerdTree
 map <C-e> :NERDTreeToggle<CR>
@@ -164,8 +165,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 "let g:tmuxline_preset = 'righteous'
 let g:tmuxline_preset = {
-  \'a'    : '⌘',
+  \'a'    : [ '☀️ ' ],
+  \'b'    : [ '#h' ],
+  \'c'    : [ '#(whoami)' ],
   \'win'  : ['#I','#W'],
   \'cwin' : ['#I','#W'],
-  \'y'    : '%H:%M'}
+  \'x'    : [ '%a/%D' ],
+  \'y'    : [ '%R' ],
+  \'z'    : [ '🌙 ' ]}
 

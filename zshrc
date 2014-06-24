@@ -1,4 +1,4 @@
-EDITOR=/usr/local/bin/vim
+EDITOR=/usr/local/bin/im
 #omyzsh
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
@@ -10,6 +10,9 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 export PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 export PATH=$PATH:$HOME/bin:./bin
+
+# use vim bindings in shell
+#bindkey -v
 
 #Postgres
 #export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH

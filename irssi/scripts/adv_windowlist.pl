@@ -8,7 +8,7 @@ use if IN_IRSSI, 'Irssi::TextUI' => ();
 use v5.10;
 use Encode;
 
-our $VERSION = '0.8b2';
+our $VERSION = '0.8b';
 our %IRSSI = (
     authors     => 'Nei',
     contact     => 'Nei @ anti@conference.jabber.teamidiot.de',
@@ -34,11 +34,8 @@ our %IRSSI = (
 #
 # In your shell (for example a tmux split):
 #
-#		perl ~/.irssi/scripts/adv_windowlist.pl
+#		perl adv_windowlist.pl
 #
-# To use sbar mode instead:
-#
-#		/toggle awl_viewer
 #
 # Hint: to get rid of the old [Act:] display
 #     /statusbar window remove act
@@ -203,7 +200,7 @@ my $print_text_activity;
 my ($screenHeight, $screenWidth);
 my %viewer;
 
-my (%keymap, %nummap, %wnmap, %specialmap, %wnmap_exp, %custom_key_map);
+my (%keymap, %nummap, %wnmap, %specialmap, %wnmap_exp);
 my %banned_channels;
 my %abbrev_cache;
 
@@ -306,50 +303,39 @@ sub awl {
 sub get_keymap {
     my ($textDest, undef, $cont_stripped) = @_;
     if ($textDest->{level} == 524288 and $textDest->{target} eq '' and !defined $textDest->{server}) {
-	my $one_meta_or_ctrl_key = qr/((?:meta-)*?)(?:(meta-|\^)(\S)|(\w+))/;
-	if ($cont_stripped =~ m/((?:$one_meta_or_ctrl_key-)*$one_meta_or_ctrl_key)\s+(.*)$/) {
-	    my ($combo, $command) = ($1, $10);
-	    my $map = '';
-	    while ($combo =~ s/(?:-|^)$one_meta_or_ctrl_key$//) {
-		my ($level, $ctl, $key, $nkey) = ($1, $2, $3, $4);
-		my $numlevel = ($level =~ y/-//);
-		$ctl = '' if !$ctl || $ctl ne '^';
-		$map = ('-' x ($numlevel%2)) . ('+' x ($numlevel/2)) .
-		    $ctl . (defined $key ? $key : "\01$nkey\01") . $map;
+	if ($cont_stripped =~ m/((?:meta-)*)(meta-|\^)(\S)\s+(.*)$/) {
+	    my ($level, $ctl, $key, $command) = ($1, $2, $3, $4);
+	    my $numlevel = ($level =~ y/-//);
+	    $ctl eq '^' or $ctl = '';
+	    my $map = ('-' x ($numlevel%2)) . ('+' x ($numlevel/2)) .
+		$ctl . "$key";
+	    if ($command =~ m/^change_window (\d+)/i) {
+		$nummap{$1} = $map;
 	    }
-	    for ($command) {
-		last unless length $map;
-		if (/^change_window (\d+)/i) {
-		    $nummap{$1} = $map;
+	    elsif ($command =~ m/^command window goto (\S+)/i) {
+		my $window = $1;
+		if ($window !~ /\D/) {
+		    $nummap{$window} = $map;
 		}
-		elsif (/^command window goto (\S+)/i) {
-		    my $window = $1;
-		    if ($window !~ /\D/) {
-			$nummap{$window} = $map;
-		    }
-		    elsif (lc $window eq 'active') {
-			$specialmap{_active} = $map;
-		    }
-		    else {
-			$wnmap{$window} = $map;
-		    }
-		}
-		elsif (/^(?:active_window|command (ack))/i) {
+		elsif (lc $window eq 'active') {
 		    $specialmap{_active} = $map;
-		    $viewer{use_ack} = !!$1;
 		}
-		elsif (/^command window last/i) {
-		    $specialmap{_last} = $map;
+		else {
+		    $wnmap{$window} = $map;
 		}
-		elsif (/^(?:upper_window|command window up)/i) {
-		    $specialmap{_up} = $map;
-		}
-		elsif (/^(?:lower_window|command window down)/i) {
-		    $specialmap{_down} = $map;
-		}
-		elsif (/^key\s+(\w+)/i) {
-		    $custom_key_map{$1} = $map;
-		}
+	    }
+	    elsif ($command =~ m/^(?:active_window|command (ack))/i) {
+		$specialmap{_active} = $map;
+		$viewer{use_ack} = !!$1;
+	    }
+	    elsif ($command =~ m/^command window last/i) {
+		$specialmap{_last} = $map;
+	    }
+	    elsif ($command =~ m/^(?:upper_window|command window up)/i) {
+		$specialmap{_up} = $map;
+	    }
+	    elsif ($command =~ m/^(?:lower_window|command window down)/i) {
+		$specialmap{_down} = $map;
 	    }
 	}
 	Irssi::signal_stop;
@@ -357,31 +343,11 @@ sub get_keymap {
 }
 
 sub update_keymap {
-    %nummap = %wnmap = %specialmap = %custom_key_map = ();
+    %nummap = %wnmap = %specialmap = ();
     Irssi::signal_remove('command bind' => 'watch_keymap');
     Irssi::signal_add_first('print text' => 'get_keymap');
     Irssi::command('bind');
     Irssi::signal_remove('print text' => 'get_keymap');
-    for (keys %custom_key_map) {
-	if (exists $custom_key_map{$_} &&
-		$custom_key_map{$_} =~ s/\01(\w+)\01/exists $custom_key_map{$1} ? $custom_key_map{$1} : "\02"/ge) {
-	    if ($custom_key_map{$_} =~ /\02/) {
-		delete $custom_key_map{$_};
-	    }
-	    else {
-		redo;
-	    }
-	}
-    }
-    for my $keymap (\(%specialmap, %wnmap, %nummap)) {
-	for (keys %$keymap) {
-	    if ($keymap->{$_} =~ s/\01(\w+)\01/exists $custom_key_map{$1} ? $custom_key_map{$1} : "\02"/ge) {
-		if ($keymap->{$_} =~ /\02/) {
-		    delete $keymap->{$_};
-		}
-	    }
-	}
-    }
     Irssi::signal_add('command bind' => 'watch_keymap');
     delete $viewer{client_keymap};
     &wl_changed;
@@ -401,8 +367,8 @@ sub watch_keymap {
    );
   sub ir_strip_codes { # strip %codes
       my $o = shift;
-      $o =~ s/(%(%|Z.{6}|z.{6}|X..|x..|.))/exists $strip_table{$2} ? $strip_table{$2} :
-	  $2 =~ m{x(?:0[a-f]|[1-6][0-9a-z]|7[a-x])|z[0-9a-f]{6}}i ? '' : $1/gex;
+      $o =~ s/(%(X..|x..|.))/exists $strip_table{$2} ? $strip_table{$2} :
+	  $2 =~ m{x(?:0[a-f]|[1-6][0-9a-z]|7[a-x])}i ? '' : $1/gex;
       $o
   }
 }
@@ -1137,7 +1103,7 @@ sub awl_init {
     termsize_changed();
     update_keymap();
     print setc(), " is brand new beta release, please report issues and do read the upgrade notes. thanks!"
-	if $VERSION =~ /b/;
+	if $VERSION =~ /b$/;
 }
 
 sub runsub {
@@ -1266,7 +1232,7 @@ UNITCHECK
 
   my $sockpath;
 
-  our $VERSION = '0.2';
+  our $VERSION = '0.1';
 
   our ($got_int, $resized, $timeout);
 
@@ -1740,18 +1706,17 @@ UNITCHECK
 
 # Changelog
 # =========
-# 0.8b2
+# 0.8b+
 # - replace fifo mode with external viewer script
 # - remove bundled cpan modules
 # - work around bogus irssi warning
 # - improve mouse support
 # - workaround for broken cumode in irssi 0.8.15
 # - fix handling of non-meta windows (uninitialized warning)
-# - add 256 color support, strip true color codes
+# - add 256 color support
 # - fix totally bogus $N padding reported by Ed S.
 # - make /window goto #name mappings work but ignore non-existant ones
 # - improve incomplete reads reported by bcode
-# - add support for key bindings by nike and ferret
 #
 # 0.7g
 # - remove screen support and replace it with fifo support
