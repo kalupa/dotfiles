@@ -1,4 +1,4 @@
-EDITOR=/usr/local/bin/im
+EDITOR=/usr/local/bin/vim
 #omyzsh
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
@@ -57,7 +57,17 @@ export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7.0_21`
+export JAVA_HOME=`/usr/libexec/java_home`
 
 source $HOME/.awsenv
 source $HOME/.browserstackenv
+
+# added by travis gem
+[ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
+
+source /usr/local/bin/virtualenvwrapper.sh
+
+# zsh online help
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/helpfiles

@@ -22,16 +22,19 @@ pre: mysql.server start
 
 windows:
   - vim: /usr/local/bin/vim
-  - guard: guard
+  - karma: # console
   - consoles:
       layout: main-vertical
       panes:
         - bundle exec rails c
-        - # just start a shell
+        - # console
   - app:
       panes:
         - lp-webapp:
-          - passenger start
+            layout: main-vertical
+            panes:
+              - gulp webserver
+              - passenger start
         - delayedjobs:
           - rake jobs:work
   - services:

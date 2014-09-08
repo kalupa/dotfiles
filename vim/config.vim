@@ -21,7 +21,7 @@ set splitright                  " Puts new vsplit windows to the right of the cu
 set splitbelow                  " Puts new split windows to the bottom of the current
 
 " esc key is evil
-inoremap jk <ESC>
+inoremap hh <esc>
 
 " a more natural leader
 let mapleader = " "
@@ -126,9 +126,10 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 " fix trailing whitespace
-autocmd FileType c,cpp,java,go,php,javascript,python,twig,xml,yml autocmd BufWritePre <buffer> call StripTrailingWhitespace()
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType javascript,json,python,yml,ruby autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+autocmd BufNewFile,BufRead *.cap set filetype=ruby
 "
 " Wrapped lines goes down/up to next row, rather than next line in file.
 noremap j gj
