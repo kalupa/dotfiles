@@ -27,14 +27,12 @@ windows:
       layout: main-vertical
       panes:
         - bundle exec rails c
-        - # console
+        - # just start a shell
+  - utility: # console
   - app:
       panes:
         - lp-webapp:
-            layout: main-vertical
-            panes:
-              - gulp webserver
-              - passenger start
+          - passenger start
         - delayedjobs:
           - rake jobs:work
   - services:
