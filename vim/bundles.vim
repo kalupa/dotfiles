@@ -165,12 +165,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 "let g:tmuxline_preset = 'righteous'
 let g:tmuxline_preset = {
-  \'a'    : [ '☀️ ' ],
-  \'b'    : [ '#h' ],
+  \'a'    : [ '#(moonmoji) ' ],
+  \'b'    : [ '#W' ],
   \'c'    : [ '#(whoami)' ],
   \'win'  : ['#I','#W'],
-  \'cwin' : ['#I','#W'],
-  \'x'    : [ '%a/%D' ],
-  \'y'    : [ '%R' ],
-  \'z'    : [ '🌙 ' ]}
+  \'cwin' : ['#I','#W #F'],
+  \'x'    : [ '%a %Y/%m/%d' ],
+  \'y'    : [ '%R %Z' ]}
 

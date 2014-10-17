@@ -3,7 +3,7 @@ EDITOR=/usr/local/bin/vim
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
 export ZSH ZSH_THEME PATH EDITOR
-plugins=(battery brew bundler coffee emoji-clock gem git git-extras git-flow gitignore knife node npm osx pip pow powder rake rails rbenv ruby ssh-agent tmuxinator)
+plugins=(brew bundler coffee gem git git-extras gitignore node npm osx pip rake rails rbenv ruby ssh-agent tmuxinator)
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -43,7 +43,7 @@ if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
 
-function psy(){python -m SimpleHTTPServer 8000 && open "http://localhost:8000"}
+function psy(){python -m SimpleHTTPServer 8900 && open "http://localhost:8900"}
 
 #nvm setup
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
@@ -71,3 +71,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
+export DYLD_LIBRARY_PATH=/usr/local/ImageMagick-6.8.7-7/lib/
