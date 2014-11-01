@@ -1,9 +1,17 @@
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
 " Add better UTF-8 support.
 scriptencoding utf-8
 
 " Make vim more useful. I think this drops vi compatibility.
 " This allows vim to do a lot more and stray from it's roots.
-set nocompatible
+if has('vim_starting')
+    set nocompatible               " Be iMproved
+
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
 set mousehide               " Hide the mouse cursor while typing
 
@@ -52,8 +60,8 @@ set listchars=tab:▸\ ,trail:¬,extends:>,precedes:<
 " Enable mouse support.
 set mouse=a
 
-" Show a column marker at 80
-set colorcolumn=80
+" Show a column marker at 90
+set colorcolumn=90
 
 " Highlight searches.
 set hlsearch
