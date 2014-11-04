@@ -1,19 +1,7 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
 " Add better UTF-8 support.
 scriptencoding utf-8
 
-" Make vim more useful. I think this drops vi compatibility.
-" This allows vim to do a lot more and stray from it's roots.
-if has('vim_starting')
-    set nocompatible               " Be iMproved
-
-    " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-set mousehide               " Hide the mouse cursor while typing
+set nocompatible               " Be iMproved
 
 " Enable better indentation.
 set softtabstop=2
@@ -34,14 +22,13 @@ inoremap hh <esc>
 " a more natural leader
 let mapleader = " "
 
-source $HOME/.vim/bundles.vim
+source $HOME/.vim/neobundle.vim
+source $HOME/.vim/pluginsconfig.vim
 
 " don't litter
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-" Disable the swap files.
 set noswapfile
 
 " Disabled code folding. It can be weird sometimes.
@@ -58,6 +45,7 @@ set list
 set listchars=tab:▸\ ,trail:¬,extends:>,precedes:< 
 
 " Enable mouse support.
+set mousehide               " Hide the mouse cursor while typing
 set mouse=a
 
 " Show a column marker at 90
@@ -134,7 +122,7 @@ set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 " fix trailing whitespace
-autocmd FileType javascript,json,python,yml,ruby autocmd BufWritePre <buffer> call StripTrailingWhitespace()
+autocmd FileType coffee,sh,javascript,json,python,yml,ruby autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
 autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 autocmd BufNewFile,BufRead *.cap set filetype=ruby
@@ -143,7 +131,7 @@ autocmd BufNewFile,BufRead *.cap set filetype=ruby
 noremap j gj
 noremap k gk
 
-" ,/ to clear those searches
+" enter key to clear those searches
 nmap <silent> <CR> :nohlsearch<CR>
 
 " Shortcuts
@@ -196,33 +184,4 @@ function! RenameFile()
     endif
 endfunction
 map <leader>n :call RenameFile()<cr>
-
-" Tabularize
-nmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a& :Tabularize /&<CR>
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a,, :Tabularize /,\zs<CR>
-vmap <Leader>a,, :Tabularize /,\zs<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" Fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
-" Mnemonic _i_nteractive
-nnoremap <silent> <leader>gi :Git add -p %<CR>
 

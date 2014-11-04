@@ -1,11 +1,11 @@
 JavaScript-Indent
-YouCompleteMe
 ag.vim
 csv.vim
-ctrlp.vim
 delimitMate
 javascript-libraries-syntax.vim
 neobundle.vim
+neocomplete.vim
+neomru.vim
 nerdcommenter
 nerdtree
 numbers.vim
@@ -17,6 +17,7 @@ unite.vim
 vim-airline
 vim-argumentative
 vim-bundler
+vim-colors-solarized
 vim-cucumber
 vim-dispatch
 vim-easymotion
