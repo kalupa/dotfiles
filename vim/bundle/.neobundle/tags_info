@@ -18,7 +18,6 @@ vim-airline
 vim-argumentative
 vim-bundler
 vim-colors-solarized
-vim-cucumber
 vim-dispatch
 vim-easymotion
 vim-endwise
