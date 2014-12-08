@@ -57,7 +57,7 @@ export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home`
+#export JAVA_HOME=`/usr/libexec/java_home`
 
 source $HOME/.awsenv
 source $HOME/.browserstackenv
@@ -72,3 +72,5 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 export DYLD_LIBRARY_PATH=/usr/local/ImageMagick-6.8.7-7/lib/
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

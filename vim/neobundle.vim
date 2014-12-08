@@ -29,7 +29,7 @@ NeoBundle 'Shougo/vimproc.vim', {
             \    },
             \ }
 NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 
@@ -70,6 +70,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-tbone'
 
 " General
+NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'godlygeek/tabular'
@@ -82,13 +83,25 @@ NeoBundle 'bruno-/vim-vertical-move'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'christoomey/vim-run-interactive'
+
+" Org Mode
+"NeoBundle 'chrisbra/NrrwRgn'
+"NeoBundle 'vim-scripts/utl.vim'
+
+"NeoBundle 'hsitz/VimOrganizer'
+
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'vim-scripts/tagbar'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'vim-orgmode'
 
 " tmux integrations
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 
 " experimental
-NeoBundle 'PeterRincker/vim-argumentative'
+"NeoBundle 'PeterRincker/vim-argumentative'
 
 call neobundle#end()
 
