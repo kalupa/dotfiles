@@ -74,7 +74,13 @@ NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'marijnh/tern_for_vim', {'build' : 'npm install'}
+NeoBundle 'marijnh/tern_for_vim', {
+            \ 'build' : {
+            \     'mac' : 'npm install',
+            \     'linux' : 'npm install',
+            \     'unix' : 'npm install',
+            \    },
+            \ }
 NeoBundle 'myusuf3/numbers.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'airblade/vim-gitgutter'
