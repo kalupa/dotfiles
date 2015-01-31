@@ -7,6 +7,8 @@ let g:airline_theme='solarized'
 
 let g:used_javascript_libs = 'jquery, jasmine, prototype, underscore, react, lo-dash, requirejs'
 
+" Syntastic
+
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
@@ -28,9 +30,13 @@ let g:tmuxline_preset = {
   \'x'    : [ '%a %Y/%m/%d' ],
   \'y'    : [ '%R %Z' ]}
 
-"map <C-e> :NERDTreeToggle<CR>
-" close vim if the only window left open is a NERDTree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"NERDCommenter
+let NERDCompactSexyComs=1
+
+" GoldenView
+let g:goldenview__enable_default_mapping = 0
+
+nmap <silent> <C-g> <Plug>GoldenViewSplit
 
 " Shows the errors window. (e)
 nmap <silent> <leader>e :Errors<CR>
@@ -69,24 +75,3 @@ nmap <Leader>a,, :Tabularize /,\zs<CR>
 vmap <Leader>a,, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" Fugitive
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gc :Gcommit<CR>
-nnoremap <silent> <leader>gb :Gblame<CR>
-nnoremap <silent> <leader>gl :Glog<CR>
-nnoremap <silent> <leader>gp :Git push<CR>
-nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>gw :Gwrite<CR>
-nnoremap <silent> <leader>ge :Gedit<CR>
-" Mnemonic _i_nteractive
-nnoremap <silent> <leader>gi :Git add -p %<CR>
-
-
-" Org Mode
-"au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-"au BufEnter *.org            call gitgutter#disable()
-"au BufEnter *.org            call org#SetOrgFileType()
-"let g:org_command_for_emacsclient = "/usr/local/bin/emacsclient"
-

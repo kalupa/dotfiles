@@ -3,7 +3,7 @@ EDITOR=/usr/local/bin/vim
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sunaku-dbln"
 export ZSH ZSH_THEME PATH EDITOR
-plugins=(brew bundler coffee gem git git-extras gitignore node npm osx pip rake rails rbenv ruby ssh-agent tmuxinator)
+plugins=(brew bundler coffee gem git git-extras gitignore node npm osx pip rake rails rbenv ruby ssh-agent)
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -26,7 +26,7 @@ alias gl='git pull --prune'
 alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
 perl -pe 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
 
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
+#[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator # load tmuxinator project scripts
 
 # ruby performance enhancements
 RUBY_GC_HEAP_INIT_SLOTS=1000000
@@ -49,9 +49,10 @@ function psy(){python -m SimpleHTTPServer 8900 && open "http://localhost:8900"}
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # ImageMagick fun times
-export MAGICK_HOME="/usr/local/ImageMagick-6.8.7-7"
-export PATH="$MAGICK_HOME/bin:$PATH"
-export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
+#export MAGICK_HOME="/usr/local/ImageMagick-6.8.7-7"
+#export PATH="$MAGICK_HOME/bin:$PATH"
+#export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
+#export DYLD_LIBRARY_PATH=/usr/local/ImageMagick-6.8.7-7/lib/
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -71,6 +72,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
-export DYLD_LIBRARY_PATH=/usr/local/ImageMagick-6.8.7-7/lib/
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"

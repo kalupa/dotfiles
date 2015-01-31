@@ -15,21 +15,30 @@ set nojoinspaces                " Prevents inserting two spaces after punctuatio
 set splitright                  " Puts new vsplit windows to the right of the current
 set splitbelow                  " Puts new split windows to the bottom of the current
 
-let mapleader = " " " a more natural leader
 let g:html_indent_inctags='html,body,head,tbody'
 
-" esc key is evil
-inoremap hh <esc>
-" Switch between the last two files
-"nnoremap <leader><leader> <c-^>
-
+source $HOME/.vim/keys.vim
 source $HOME/.vim/neobundle.vim
 source $HOME/.vim/pluginsconfig.vim
+
+if exists("+undofile")
+  " undofile - This allows you to use undos after exiting and restarting
+  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
+  " :help undo-persistence
+  " This is only present in 7.3+
+  if isdirectory($HOME . '/.vim/undo') == 0
+    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+  endif
+  set undodir=./.vim-undo//
+  set undodir+=~/.vim/undo//
+  set undofile
+endif
 
 set backup " don't litter
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set noswapfile
+
 "set nofoldenable " Disabled code folding. It can be weird sometimes.
 set title " Show the file name in the window title bar.
 set number " Enable line numbers.
@@ -40,8 +49,10 @@ set textwidth=90 " Show a column marker at 90
 set colorcolumn=90
 set hlsearch " Highlight searches.
 set ignorecase " Ignore case of searches.
+
 " If the search contains an upper-case character, become case sensitive.
 set smartcase
+
 " Configure the spelling language and file.
 set spelllang=en_us
 set spellfile=$HOME/.vim/spell/en.utf-8.add
@@ -62,7 +73,6 @@ if has('clipboard')
     endif
 endif
 
-
 if has('persistent_undo')
     set undofile                " So is persistent undo ...
     set undolevels=1000         " Maximum number of changes that can be undone
@@ -73,6 +83,7 @@ set cursorline                  " Highlight current line
 highlight clear SignColumn      " SignColumn should match background
 highlight clear LineNr          " Current line number row will have same background color in relative mode
 
+" STATUS LINE
 " Broken down into easily includeable segments
 set statusline=%<%f\                     " Filename
 set statusline+=%w%h%m%r                 " Options
@@ -114,32 +125,14 @@ augroup vimrcEx
     autocmd BufNewFile,BufRead *.cap set filetype=ruby
 augroup END
 
-" Wrapped lines goes down/up to next row, rather than next line in file.
-noremap j gj
-noremap k gk
-
-" enter key to clear those searches
-nmap <silent> <CR> :nohlsearch<CR>
-
 " Shortcuts
 " Change Working Directory to that of the current file
 cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
 
-" Visual shifting (does not exit Visual mode)
-"vnoremap < <gv
-"vnoremap > >gv
-
-" Allow using the repeat operator with a visual selection (!)
-" http://stackoverflow.com/a/8064607/127816
-vnoremap . :normal .<CR>
-
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor " Use Ag over Grep
 endif
-
-" Adjust viewports to the same size
-map <Leader>= <C-w>=
 
 set tags=./tags;/,~/.vimtags
 
@@ -161,17 +154,3 @@ function! StripTrailingWhitespace()
     let @/=_s
     call cursor(l, c)
 endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RENAME CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-map <leader>n :call RenameFile()<cr>
