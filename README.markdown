@@ -7,7 +7,7 @@ brew install ctags mercurial git hub vim z zsh rbenv ruby-build irssi openssl tm
 
 ## On Linux
 ```sh
-sudo apt-get install mercurial git libssl-dev exuberant-ctags silversearcher-ag irssi rbenv ruby-build tmux zsh
+sudo apt-get install mercurial git libssl-dev exuberant-ctags silversearcher-ag irssi rbenv ruby-build tmux zsh irssi
 ```
 
 ## On Any
@@ -17,8 +17,8 @@ Install ruby
 rbenv install 1.9.3
 ```
 
+Install Oh My Zsh
 ```sh
-gem install tmuxinator
 curl -L http://install.ohmyz.sh | sh
 ```
 
@@ -31,4 +31,10 @@ ln -nfs ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -nfs ~/dotfiles/tmuxinator ~/.tmuxinator
 ln -nfs ~/dotfiles/screenrc ~/.screenrc
 ln -nfs ~/dotfiles/irssi ~/.irssi
+```
+
+Install neocomplete
+```sh
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+vim # and let neobundle install it's packages 
 ```
