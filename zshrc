@@ -10,6 +10,8 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 export PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 export PATH=$PATH:$HOME/bin:./bin
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+
 
 # use vim bindings in shell
 #bindkey -v
