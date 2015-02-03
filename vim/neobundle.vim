@@ -67,7 +67,9 @@ NeoBundle 'tpope/vim-tbone'
 
 " General
 "NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'bling/vim-airline'
+"NeoBundle 'bling/vim-airline'
+NeoBundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'marijnh/tern_for_vim', {
             \ 'build' : {
@@ -85,7 +87,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 
 " tmux integrations
-NeoBundle 'edkolev/tmuxline.vim'
+"NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 
 NeoBundle 'zhaocai/GoldenView.Vim' "Always have a nice view for vim split windows

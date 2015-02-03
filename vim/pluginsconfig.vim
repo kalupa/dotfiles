@@ -1,9 +1,9 @@
 source $HOME/.vim/unite.vim
 source $HOME/.vim/neocomplete.vim
 
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-let g:airline_theme='solarized'
+"let g:airline#extensions#tabline#enabled=1
+"let g:airline_powerline_fonts=1
+"let g:airline_theme='solarized'
 
 let g:used_javascript_libs = 'jquery, jasmine, prototype, underscore, react, lo-dash, requirejs'
 
@@ -21,14 +21,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:tmuxline_preset = {
-  \'a'    : [ '#(moonmoji) ' ],
-  \'b'    : [ '#W' ],
-  \'c'    : [ '#(whoami)' ],
-  \'win'  : ['#I','#W'],
-  \'cwin' : ['#I','#W #F'],
-  \'x'    : [ '%a %Y/%m/%d' ],
-  \'y'    : [ '%R %Z' ]}
+"let g:tmuxline_preset = {
+  "\'a'    : [ '#(moonmoji) ' ],
+  "\'b'    : [ '#W' ],
+  "\'c'    : [ '#(whoami)' ],
+  "\'win'  : ['#I','#W'],
+  "\'cwin' : ['#I','#W #F'],
+  "\'x'    : [ '%a %Y/%m/%d' ],
+  "\'y'    : [ '%R %Z' ]}
 
 "NERDCommenter
 let NERDCompactSexyComs=1

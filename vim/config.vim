@@ -87,10 +87,12 @@ highlight clear LineNr          " Current line number row will have same backgro
 " Broken down into easily includeable segments
 set statusline=%<%f\                     " Filename
 set statusline+=%w%h%m%r                 " Options
-set statusline+=%{fugitive#statusline()} " Git Hotness
+"set statusline+=%{fugitive#statusline()} " Git Hotness
 set statusline+=\ [%{&ff}/%Y]            " Filetype
 set statusline+=\ [%{getcwd()}]          " Current dir
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+
+" visualize the invisibles
 set listchars=tab:▸\ ,trail:¬,extends:>,precedes:.
 
 augroup vimrcEx
