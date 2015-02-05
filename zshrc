@@ -1,8 +1,7 @@
 #!/usr/local/bin/zsh
-
-powerline-daemon -q
-
 export EDITOR=/usr/local/bin/vim
+
+[ -f "/usr/local/bin/powerline-daemon" ] && powerline-daemon -q
 
 #omyzsh
 ZSH=$HOME/.oh-my-zsh
@@ -47,31 +46,22 @@ if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
 
-. /usr/local/bin/virtualenvwrapper_lazy.sh
-. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+[ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
+[ -f "/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh" ] && . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 function psy(){
   python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
 }
 
-#nvm setup
-#[[ -s "${ HOME }/.nvm/nvm.sh" ]] && . "${ HOME }/.nvm/nvm.sh" # This loads NVM
-
-# ImageMagick fun times
-#export MAGICK_HOME="/usr/local/ImageMagick-6.8.7-7"
-#export PATH="$MAGICK_HOME/bin:$PATH"
-#export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib/"
-#export DYLD_LIBRARY_PATH=/usr/local/ImageMagick-6.8.7-7/lib/
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-source "$HOME/.awsenv"
-source "$HOME/.browserstackenv"
+[ -f "$HOME/.awsenv.sh" ] && . "$HOME/.awsenv.sh"
+[ -f "$HOME/.browserstackenv.sh" ] && . "$HOME/.browserstackenv.sh"
 
 # added by travis gem
-[ -f "$HOME/.travis/travis.sh" ] && source /Users/paul/.travis/travis.sh
+[ -f "$HOME/.travis/travis.sh" ] && . /Users/paul/.travis/travis.sh
 
 # java
 eval "$(jenv init -)"
 export JAVA_HOME="$(jenv javahome)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
