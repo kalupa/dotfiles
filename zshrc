@@ -24,9 +24,9 @@ unalias run-help
 autoload run-help
 export HELPDIR=/usr/local/share/zsh/helpfiles
 
-# z quick cd
-. "$( brew --prefix )/etc/profile.d/z.sh"
-
+# quick jump
+#. "$( brew --prefix )/etc/profile.d/z.sh"
+[[ -s "$(brew --prefix)/etc/profile.d/autojump.sh" ]] && . "$(brew --prefix)/etc/profile.d/autojump.sh"
 #git
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gl='git pull --prune'
@@ -45,9 +45,9 @@ if [ -d "${RBENV_ROOT}" ]; then
   eval "$(rbenv init -)"
   export PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
-
+export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
 [ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
-[ -f "/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh" ] && . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+[ -f "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh" ] && . "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh"
 
 function psy(){
   python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
@@ -62,6 +62,9 @@ function psy(){
 # java
 eval "$(jenv init -)"
 export JAVA_HOME="$(jenv javahome)"
+
+#gulp
+ eval "$(gulp --completion=zsh)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

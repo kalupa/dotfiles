@@ -1,5 +1,8 @@
 let mapleader = " " " a more natural leader
 
+" I never use Ex mode
+nnoremap Q <Nop>
+
 " esc key is evil
 inoremap jk <Esc>
 inoremap <Esc> <NOP>

@@ -39,12 +39,11 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set noswapfile
 
-"set nofoldenable " Disabled code folding. It can be weird sometimes.
 set title " Show the file name in the window title bar.
 set number " Enable line numbers.
 set list " show tab characters and line endings
-set mousehide               " Hide the mouse cursor while typing
-set mouse=a
+"set mousehide               " Hide the mouse cursor while typing
+"set mouse=a
 set textwidth=90 " Show a column marker at 90
 set colorcolumn=90
 set hlsearch " Highlight searches.
