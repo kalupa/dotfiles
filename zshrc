@@ -24,12 +24,20 @@ unalias run-help
 autoload run-help
 export HELPDIR=/usr/local/share/zsh/helpfiles
 
+BREW_PREFIX=$(brew --prefix)
 # quick jump
 #. "$( brew --prefix )/etc/profile.d/z.sh"
-[[ -s "$(brew --prefix)/etc/profile.d/autojump.sh" ]] && . "$(brew --prefix)/etc/profile.d/autojump.sh"
+[[ -s "$BREW_PREFIX/etc/profile.d/autojump.sh" ]] && . "$BREW_PREFIX/etc/profile.d/autojump.sh"
+
+# brew completions
+ZSHBREWPATH=$BREW_PREFIX/share/zsh/
+[ -f "$ZSHBREWPATH/_git" ] && . "$ZSHBREWPATH/_git"
+#[ -f "$ZSHBREWPATH/_hub" ] && . "$ZSHBREWPATH/_hub"
+[ -f "$ZSHBREWPATH/_docker" ] && . "$ZSHBREWPATH/_docker"
+
 #git
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gl='git pull --prune'
+#alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+#alias gl='git pull --prune'
 
 # ruby performance enhancements
 RUBY_GC_HEAP_INIT_SLOTS=1000000
@@ -45,7 +53,7 @@ if [ -d "${RBENV_ROOT}" ]; then
   eval "$(rbenv init -)"
   export PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
-export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
+export PYTHONPATH=$BREW_PREFIX/lib/python2.7/site-packages
 [ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
 [ -f "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh" ] && . "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh"
 

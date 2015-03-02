@@ -49,7 +49,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 
 " tpope rules
 NeoBundleLazy 'tpope/vim-markdown'
-NeoBundleLazy 'tpope/vim-haml'
+"NeoBundleLazy 'tpope/vim-haml'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tpope/vim-rsi'
