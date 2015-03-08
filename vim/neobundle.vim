@@ -29,7 +29,7 @@ NeoBundle 'Shougo/vimproc.vim', {
             \    },
             \ }
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'h1mesuke/unite-outline'
+"NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'Shougo/neomru.vim'
 
 " intelligent completion
@@ -61,13 +61,11 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-projectile'
 NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'tpope/vim-dispatch'
+"NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-tbone'
 
 " General
-"NeoBundle 'rizzatti/dash.vim'
-"NeoBundle 'bling/vim-airline'
 NeoBundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 NeoBundle 'godlygeek/tabular'
@@ -87,7 +85,6 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 
 " tmux integrations
-"NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'christoomey/vim-tmux-navigator'
 
 NeoBundle 'zhaocai/GoldenView.Vim' "Always have a nice view for vim split windows
@@ -101,4 +98,5 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 
 NeoBundleCheck
+NeoBundleClean
 

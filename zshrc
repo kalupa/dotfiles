@@ -24,20 +24,31 @@ unalias run-help
 autoload run-help
 export HELPDIR=/usr/local/share/zsh/helpfiles
 
-BREW_PREFIX=$(brew --prefix)
-# quick jump
-#. "$( brew --prefix )/etc/profile.d/z.sh"
-[[ -s "$BREW_PREFIX/etc/profile.d/autojump.sh" ]] && . "$BREW_PREFIX/etc/profile.d/autojump.sh"
+# homebrew related configs
+if [ -f "/usr/local/bin/brew" ]; then
+  BREW_PREFIX=$(brew --prefix)
 
-# brew completions
-ZSHBREWPATH=$BREW_PREFIX/share/zsh/
-[ -f "$ZSHBREWPATH/_git" ] && . "$ZSHBREWPATH/_git"
-#[ -f "$ZSHBREWPATH/_hub" ] && . "$ZSHBREWPATH/_hub"
-[ -f "$ZSHBREWPATH/_docker" ] && . "$ZSHBREWPATH/_docker"
+  # quick jump
+  #. "$( brew --prefix )/etc/profile.d/z.sh"
+  [[ -s "$BREW_PREFIX/etc/profile.d/autojump.sh" ]] && . "$BREW_PREFIX/etc/profile.d/autojump.sh"
 
-#git
-#alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-#alias gl='git pull --prune'
+  # brew completions
+  ZSHBREWPATH=$BREW_PREFIX/share/zsh/
+  [ -f "$ZSHBREWPATH/_git" ] && . "$ZSHBREWPATH/_git"
+  #[ -f "$ZSHBREWPATH/_hub" ] && . "$ZSHBREWPATH/_hub"
+  [ -f "$ZSHBREWPATH/_docker" ] && . "$ZSHBREWPATH/_docker"
+
+  # here for now since I'm only really using python stuff on the mac
+  export PYTHONPATH=$BREW_PREFIX/lib/python2.7/site-packages
+fi
+
+# python-related
+[ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
+[ -f "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh" ] && . "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh"
+# quick and dirty web server
+function psy(){
+  python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
+}
 
 # ruby performance enhancements
 RUBY_GC_HEAP_INIT_SLOTS=1000000
@@ -53,26 +64,27 @@ if [ -d "${RBENV_ROOT}" ]; then
   eval "$(rbenv init -)"
   export PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
-export PYTHONPATH=$BREW_PREFIX/lib/python2.7/site-packages
-[ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
-[ -f "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh" ] && . "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh"
 
-function psy(){
-  python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
-}
-
+# Amazon keys
 [ -f "$HOME/.awsenv.sh" ] && . "$HOME/.awsenv.sh"
+
 [ -f "$HOME/.browserstackenv.sh" ] && . "$HOME/.browserstackenv.sh"
 
 # added by travis gem
 [ -f "$HOME/.travis/travis.sh" ] && . /Users/paul/.travis/travis.sh
 
 # java
-eval "$(jenv init -)"
-export JAVA_HOME="$(jenv javahome)"
+if [ -f "$HOME/.browserstackenv.sh" ]; then
+  eval "$(jenv init -)"
+  export JAVA_HOME="$(jenv javahome)"
+fi
 
 #gulp
- eval "$(gulp --completion=zsh)"
+if [ -f "/usr/local/bin/gulp" ]; then
+  eval "$(gulp --completion=zsh)"
+fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+if [ -f "/usr/local/heroku/bin" ]; then
+  ### Added by the Heroku Toolbelt
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi

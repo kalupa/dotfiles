@@ -3,6 +3,7 @@ let g:unite_split_rule = 'botright'
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_selecta'])
+
 call unite#custom#source('buffer,file,file_rec/git', 'sorters', 'sorter_selecta')
 call unite#custom#source('file,file_rec/git','max_candidates', 0)
 call unite#custom#source(
@@ -23,7 +24,7 @@ elseif executable('ack-grep')
         \ '--no-heading --no-color -a -H'
   let g:unite_source_grep_recursive_opt = ''
 endif
-autocmd FileType unite call s:unite_my_settings()
+
 function! s:unite_my_settings()
   " Overwrite settings.
   imap <silent><buffer><expr> <C-s> unite#do_action('split')
@@ -32,7 +33,10 @@ function! s:unite_my_settings()
   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
 endfunction
 
+autocmd FileType unite call s:unite_my_settings()
+
 nnoremap <silent> <C-p> :Unite -start-insert -no-split -buffer-name=files -winheight=10 -prompt-direction=top file_rec/git file_mru<CR>
+nnoremap <Leader>p :Unite -start-insert -no-split -buffer-name=files -winheight=10 -prompt-direction=top file_rec/git file_mru<CR>
 nnoremap <Leader>l :Unite -start-insert -buffer-name=lines line -prompt-direction=top<CR>
 nnoremap <Leader>b :Unite -start-insert -buffer-name=buffers buffer -prompt-direction=top<CR>
 nnoremap <Leader>f :Unite grep:. -prompt-direction=top<CR>
