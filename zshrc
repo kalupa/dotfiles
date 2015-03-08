@@ -5,7 +5,6 @@ export EDITOR=/usr/local/bin/vim
 
 #omyzsh
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="sunaku-dbln"
 COMPLETION_WAITING_DOTS="true"
 export ZSH ZSH_THEME PATH EDITOR COMPLETION_WAITING_DOTS
 plugins=(brew bundler coffee gem git git-extras gitignore node npm osx pip rake rails rbenv ruby ssh-agent)
