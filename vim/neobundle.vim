@@ -39,16 +39,19 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 NeoBundleLazy 'vim-scripts/JavaScript-Indent'
 NeoBundleLazy 'othree/javascript-libraries-syntax.vim'
-NeoBundleLazy 'mxw/vim-jsx'
 
 " other lang syntax
+NeoBundleLazy 'mxw/vim-jsx'
 NeoBundleLazy 'vim-ruby/vim-ruby'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundleLazy 'raichoo/purescript-vim'
 
 " colors
 NeoBundle 'altercation/vim-colors-solarized'
 
 " tpope rules
 NeoBundleLazy 'tpope/vim-markdown'
+
 "NeoBundleLazy 'tpope/vim-haml'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-ragtag'

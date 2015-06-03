@@ -122,7 +122,11 @@ augroup vimrcEx
     " fix trailing whitespace
     autocmd FileType coffee,sh,javascript,json,python,yml,ruby autocmd BufWritePre <buffer> call StripTrailingWhitespace()
 
-    autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+    autocmd FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+
+    "autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+    autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+    "autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
     autocmd BufNewFile,BufRead *.cap set filetype=ruby
 augroup END
 

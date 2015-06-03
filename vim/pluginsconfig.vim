@@ -17,6 +17,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Purescript
+
+let g:purescript_indent_if = 2
+let g:purescript_indent_case = 2
+let g:purescript_indent_where = 2
+let g:purescript_indent_do = 2
+
 "NERDCommenter
 let NERDCompactSexyComs=1
 
