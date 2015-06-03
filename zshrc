@@ -76,7 +76,11 @@ fi
 if [ -f "$HOME/.browserstackenv.sh" ]; then
   eval "$(jenv init -)"
   export JAVA_HOME="$(jenv javahome)"
+
+  export PUBLISHER_CONF="${HOME}/lp-publisher-conf.properties"
+
 fi
+
 
 #gulp
 if [ -f "/usr/local/bin/gulp" ]; then
