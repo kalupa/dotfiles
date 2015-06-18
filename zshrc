@@ -1,7 +1,5 @@
 #!/usr/local/bin/zsh
-export EDITOR=/usr/local/bin/vim
-
-[ -f "/usr/local/bin/powerline-daemon" ] && powerline-daemon -q
+export EDITOR=/usr/local/bin/emacs
 
 #omyzsh
 ZSH=$HOME/.oh-my-zsh
@@ -43,6 +41,7 @@ fi
 
 # python-related
 [ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
+[ -f "/usr/local/bin/powerline-daemon" ] && powerline-daemon -q
 [ -f "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh" ] && . "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh"
 # quick and dirty web server
 function psy(){
@@ -81,6 +80,11 @@ if [ -f "$HOME/.browserstackenv.sh" ]; then
 
 fi
 
+# emacs gui cli
+if [ -f "/Applications/Emacs.app/contents/MacOS/Emacs" ]; then
+  export EDITOR="/usr/local/bin/emacsclient -c"
+  alias emc=$EDITOR
+fi
 
 #gulp
 if [ -f "/usr/local/bin/gulp" ]; then
