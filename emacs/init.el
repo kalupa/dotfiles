@@ -9,28 +9,25 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ac-auto-show-menu 1.0)
- '(align-c++-modes (quote (c++-mode c-mode java-mode js2-mode)))
+ '(align-c++-modes (quote (c++-mode c-mode java-mode)))
  '(align-dq-string-modes
    (quote
-    (vhdl-mode emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode c++-mode c-mode java-mode perl-mode cperl-mode python-mode js2-mode)))
+    (vhdl-mode emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode c++-mode c-mode java-mode perl-mode cperl-mode python-mode)))
  '(align-open-comment-modes
    (quote
     (vhdl-mode emacs-lisp-mode lisp-interaction-mode lisp-mode scheme-mode c++-mode c-mode java-mode perl-mode cperl-mode python-mode makefile-mode js2-mode)))
+ '(align-text-modes (quote (text-mode outline-mode markdown-mode)))
  '(auto-image-file-mode t)
  '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/\\1" t))))
  '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
- '(blink-cursor-mode nil)
  '(blink-matching-paren-dont-ignore-comments t)
- '(column-number-mode t)
+ '(comment-auto-fill-only-comments t)
  '(compilation-message-face (quote default))
- '(cua-global-mark-cursor-color "#2aa198")
- '(cua-normal-cursor-color "#839496")
- '(cua-overwrite-cursor-color "#b58900")
- '(cua-read-only-cursor-color "#859900")
+ '(current-language-environment "UTF-8")
+ '(custom-enabled-themes (quote (solarized)))
  '(custom-safe-themes
    (quote
-    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "26614652a4b3515b4bbbb9828d71e206cc249b67c9142c06239ed3418eff95e2" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+    ("26614652a4b3515b4bbbb9828d71e206cc249b67c9142c06239ed3418eff95e2" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "358738e12848b6acba290352cd8d4625a6ec9e79122dcbda11e2ea9e4b0f00c4" default)))
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-format nil)
@@ -43,7 +40,6 @@
  '(evil-shift-width 2)
  '(evil-symbol-word-search t)
  '(evil-vsplit-window-right t)
- '(fci-rule-color "#073642")
  '(flycheck-completion-system (quote grizzl))
  '(flycheck-highlighting-mode (quote symbols))
  '(flycheck-indication-mode (quote right-fringe))
@@ -54,8 +50,10 @@
  '(global-hl-line-sticky-flag t)
  '(global-linum-mode t)
  '(global-whitespace-mode nil)
+ '(helm-autoresize-mode t)
  '(indicate-buffer-boundaries (quote ((t . right) (top . left))))
  '(inhibit-startup-screen t)
+ '(js-indent-level 2)
  '(js2-concat-multiline-strings nil)
  '(js2-global-externs nil)
  '(js2-highlight-level 3)
@@ -64,81 +62,18 @@
  '(js2-indent-switch-body t)
  '(js2-missing-semi-one-line-override t)
  '(js2-mode-show-parse-errors nil)
+ '(line-number-mode nil)
  '(magit-diff-use-overlays nil)
  '(mouse-avoidance-mode (quote banish) nil (avoid))
  '(mouse-wheel-progressive-speed nil)
  '(osx-clipboard-mode t)
- '(pos-tip-background-color "#073642")
- '(pos-tip-foreground-color "#93a1a1")
  '(save-place t nil (saveplace))
  '(show-paren-mode t)
- '(sml/mode-width
-   (if
-       (eq powerline-default-separator
-           (quote arrow))
-       (quote right)
-     (quote full)))
- '(sml/pos-id-separator
-   (quote
-    (""
-     (:propertize " " face powerline-active1)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s" powerline-default-separator
-                            (car powerline-default-separator-dir)))
-                   (quote powerline-active1)
-                   (quote powerline-active2))))
-     (:propertize " " face powerline-active2))))
- '(sml/pos-minor-modes-separator
-   (quote
-    (""
-     (:propertize " " face powerline-active1)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s" powerline-default-separator
-                            (cdr powerline-default-separator-dir)))
-                   (quote powerline-active1)
-                   nil)))
-     (:propertize " " face sml/global))))
- '(sml/pre-id-separator
-   (quote
-    (""
-     (:propertize " " face sml/global)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s" powerline-default-separator
-                            (car powerline-default-separator-dir)))
-                   nil
-                   (quote powerline-active1))))
-     (:propertize " " face powerline-active1))))
- '(sml/pre-minor-modes-separator
-   (quote
-    (""
-     (:propertize " " face powerline-active2)
-     (:eval
-      (propertize " "
-                  (quote display)
-                  (funcall
-                   (intern
-                    (format "powerline-%s-%s" powerline-default-separator
-                            (cdr powerline-default-separator-dir)))
-                   (quote powerline-active2)
-                   (quote powerline-active1))))
-     (:propertize " " face powerline-active1))))
- '(sml/pre-modes-separator (propertize " " (quote face) (quote sml/modes)))
- '(sml/theme (quote respectful))
  '(standard-indent 2)
  '(tab-always-indent (quote complete))
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(vc-annotate-background nil)
+ '(vc-annotate-very-old-color nil))
 
 (require 'server)
 
@@ -165,14 +100,17 @@
                          ;))
 (when (not package-archive-contents)
   (package-refresh-contents))
-(setq url-http-attempt-keepalives nil)
+(setq-default url-http-attempt-keepalives nil)
 
-(setq default-frame-alist '((width . 180) (height . 90)))
+;; Use Emacs terminfo, not system terminfo
+(setq-default system-uses-terminfo nil)
+
+(setq-default default-frame-alist '((width . 180) (height . 90)))
 
 ;; highlight when past 90
-(setq column-enforce-column 90)
+(setq-default column-enforce-column 90)
 (add-hook 'js2-mode-hook 'column-enforce-mode)
-;; (add-hook 'coffee-mode-hook 'column-enforce-mode)
+(add-hook 'coffee-mode-hook 'column-enforce-mode)
 
 ;; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
@@ -184,17 +122,13 @@
 (require 'helm-misc)
 (require 'helm-projectile)
 (require 'helm-locate)
-(setq helm-quick-update t)
-(setq helm-bookmark-show-location t)
-(setq helm-buffers-fuzzy-matching t)
+(setq-default helm-quick-update t)
+(setq-default helm-bookmark-show-location t)
+(setq-default helm-buffers-fuzzy-matching t)
 (helm-mode 1)
-;; (after 'projectile
-;;   (package 'helm-projectile))
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 
-;; (projectile-global-mode t)
-;; (setq projectile-completion-system 'grizzl)
 (defun helm-my-buffers ()
   (interactive)
   (let ((helm-ff-transformer-show-only-basename nil))
@@ -208,20 +142,22 @@
 ;;; begin the evil ;;;
 (setq-default tab-width 2 indent-tabs-mode nil)
 
-(setq-local shift-width 2)
-(dtrt-indent-mode 1)
+(setq-default shift-width 2)
+;; (dtrt-indent-mode 1)
+
+(evil-mode t)
 
 ;; not sure if I like the vim or emacs default
-;; (define-key global-map (kbd "RET") 'newline-and-indent)
+(define-key global-map (kbd "RET") 'newline-and-indent)
 
 (evilnc-default-hotkeys)
-(setq evil-want-C-i-jump nil)
+(setq-default evil-want-C-i-jump nil)
 
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
-(setq evil-leader/in-all-states 1)
+(setq-default evil-leader/in-all-states 1)
 
-(setq evilnc-hotkey-comment-operator ",,")
+(setq-default evilnc-hotkey-comment-operator ",,")
 
 (evil-leader/set-key
   "<SPC>" 'helm-my-buffers
@@ -231,27 +167,26 @@
   "k" (kbd "C-w k")
   )
 
-(setq evil-search-module 'evil-search
+(setq-default evil-search-module 'evil-search
       evil-want-C-u-scroll t
       evil-want-C-w-in-emacs-state t)
 
 (global-evil-surround-mode 1)
 (global-evil-matchit-mode 1)
 
-(evil-mode t)
 
-(setq evil-emacs-state-cursor '("green" box))
-(setq evil-normal-state-cursor '("red" box))
-(setq evil-visual-state-cursor '("orange" box))
-(setq evil-insert-state-cursor '("green" bar))
-(setq evil-replace-state-cursor '("green" bar))
-(setq evil-operator-state-cursor '("green" hollow))
+(setq-default evil-emacs-state-cursor '("green" box))
+(setq-default evil-normal-state-cursor '("red" box))
+(setq-default evil-visual-state-cursor '("orange" box))
+(setq-default evil-insert-state-cursor '("green" bar))
+(setq-default evil-replace-state-cursor '("green" bar))
+(setq-default evil-operator-state-cursor '("green" hollow))
 
 ;; escape all the things
-(setq-default evil-escape-key-sequence "jk")
+;; (setq-default evil-escape-key-sequence "jk")
 ;;; use jk for going to command mode
-(key-chord-mode 1)
-(key-chord-define-global "jk" 'evil-normal-state)
+;; (key-chord-mode 1)
+;; (key-chord-define-global "jk" 'evil-normal-state)
 
 (defun minibuffer-keyboard-quit ()
   "Abort recursive edit.
@@ -280,8 +215,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (evil-ex-define-cmd "W[rite]" 'evil-write)
 
 ;;; use vim movement everywhere
-(setq evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
-(setq evil-emacs-state-modes nil)
+(setq-default evil-motion-state-modes (append evil-emacs-state-modes evil-motion-state-modes))
+(setq-default evil-emacs-state-modes nil)
 
 ;;; RET and space should be more vim
 (defun my-move-key (keymap-from keymap-to key)
@@ -302,7 +237,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . gfm-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
 
-(setq linum-format "%4d \u2502")
+(setq-default linum-format "%4d \u2502")
 (global-linum-mode 1)
 
 (global-git-gutter-mode t)
@@ -311,15 +246,36 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (global-hl-line-mode)
 (display-time-mode t)
 
-(load-theme 'solarized-dark)
-(load-theme 'smart-mode-line-powerline)
+(setq-default magit-last-seen-setup-instructions "1.4.0")
 
-(powerline-default-theme)
+(load-theme 'solarized)
+
 (setq sml/theme 'respectful)
+(setq sml/no-confirm-load-theme t
+      sml/shorten-directory t
+      sml/shorten-modes t
+      sml/name-width 40
+      sml/mode-width "full")
+
+(setq rm-blacklist '(" GitGutter"
+                     " Helm"
+                     " Undo-Tree"
+                     " OSX-Clipboard"
+                     " ColorIds"
+                     " AC"
+                     " yas"
+                     " 90col"))
+
 (sml/setup)
+(add-to-list 'sml/replacer-regexp-list '("^~/apps/lp-builder" " Bldr ") t)
+(add-to-list 'sml/replacer-regexp-list '("^~/apps/builder-tools" " BldTls ") t)
+(add-to-list 'sml/replacer-regexp-list '("^~/dotfiles/emacs" "Emcs") t)
+
+
 
 ; active Babel languages
-(setq org-src-fontify-natively t)
+(require 'evil-org)
+(setq-default org-src-fontify-natively t)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((css . t)
@@ -330,75 +286,110 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
    (haskell . t)
    ))
 
-;; Use tern for syntax highlighting, and semantic analysis
-;; (require 'tern-lint)
-;; (with-eval-after-load 'tern
-;;   (flycheck-tern-lint-setup))
-;; (add-to-list 'auto-mode-alist '("\\.js\\'" . tj-mode))
-;; (add-to-list 'interpreter-mode-alist '("node" . tj-mode))
-
 (setq-default js2-basic-indent 2)
-
 (setq-default js2-basic-offset 2)
-(setq-default js2-auto-indent-p t)
+(setq-default js2-bounce-indent-p t)
+(setq-default js2-auto-indent-p nil)
 (setq-default js2-cleanup-whitespace t)
 (setq-default js2-enter-indents-newline t)
 (setq-default js2-indent-on-enter-key t)
 (setq-default js2-mode-indent-ignore-first-tab t)
-;; color any defined variables with color-identifiers-mode
-(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(add-hook 'js2-mode-hook 'flycheck-mode)
+
+
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-hook 'js2-mode-hook 'flycheck-mode)
+
 (add-to-list 'auto-mode-alist '(".jshintrc$" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jscsrc$" . json-mode))
+
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+
+; use web-mode for .jsx files
+(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(json-jsonlist)))
 
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
-(add-hook 'after-init-hook 'global-color-identifiers-mode)
+;; disable jshint since we prefer eslint checking
+;; (setq-default flycheck-disabled-checkers 
+;;   (append flycheck-disabled-checkers    
+;;     '(javascript-jshint)))             
+
+;; automatically clean up bad whitespace
+(setq whitespace-action '(auto-cleanup))
+;; only show bad whitespace
+(setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
+
+;; color any defined variables with color-identifiers-mode
+;; (add-hook 'after-init-hook 'global-color-identifiers-mode)
+(add-hook 'js2-mode-hook 'rainbow-identifiers-mode)
+(add-hook 'coffee-mode-hook 'rainbow-identifiers-mode)
+
+;; (defun align-colons (beg end)
+;;   (interactive "r")
+;;   (align-regexp beg end ":\\(\\s-*\\)" 1 1 t))
+
+;; adjust indents for web-mode to 2 spaces
+;; (defun my-web-mode-hook ()
+;;   "Hooks for Web mode. Adjust indent"
+;;   ;;; http://web-mode.org/
+;;   (setq-default web-mode-markup-indent-offset 2)
+;;   (setq-default web-mode-css-indent-offset 2)
+;;   (setq-default web-mode-code-indent-offset 2))
+;; (add-hook 'web-mode-hook  'my-web-mode-hook)
 
 ;; Paradox
-(setq paradox-github-token "c9186f445f57866c06142e94e5b31e7749d4f11d")
+(setq-default paradox-github-token "c9186f445f57866c06142e94e5b31e7749d4f11d")
 
 ;; auto-complete
-(setq ac-auto-show-menu t)
-(setq ac-auto-start t)
-(setq ac-quick-help-delay 0.3)
-(setq ac-quick-help-height 30)
-(setq ac-show-menu-immediately-on-auto-complete t)
+(setq-default ac-auto-show-menu t)
+(setq-default ac-auto-start t)
+(setq-default ac-quick-help-delay 0.3)
+(setq-default ac-quick-help-height 30)
+(setq-default ac-show-menu-immediately-on-auto-complete t)
 
 (ac-config-default)
 
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(setq ac-js2-evaluate-calls t)
+
 (tool-bar-mode -1)
-(setq frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
+(setq-default frame-title-format '(buffer-file-name "Emacs: %b (%f)" "Emacs: %b"))
 
 ;; prefer fringe
-(setq next-error-highlight 'fringe-arrow)
+(setq-default next-error-highlight 'fringe-arrow)
 
-(diminish 'visual-line-mode)
-(diminish 'undo-tree-mode)
-(diminish 'auto-complete-mode)
+;; (diminish 'visual-line-mode)
+;; (diminish 'undo-tree-mode)
+;; (diminish 'auto-complete-mode)
+;; (diminish 'git-gutter-mode)
+;; (diminish 'osx-clipboard-mode)
+;; (diminish 'helm-mode)
+;; (diminish 'column-enforce-mode)
+;; (diminish 'dtrt-indent-mode)
 ;; (diminish 'projectile-mode)
-(diminish 'git-gutter-mode)
-(diminish 'osx-clipboard-mode)
-(diminish 'helm-mode)
 ;; (diminish 'golden-ratio-mode)
-;; (add-hook 'color-identifiers-mode (diminish 'color-identifiers-mode))
 ;; (diminish 'color-identifiers-mode)
-;; (diminish 'autopair-mode)
-;; (diminish 'smartparens-mode)
-;; (diminish 'yas-minor-mode)
-;; (diminish 'guide-key-mode)
-;; (diminish 'eldoc-mode)
-;; (diminish 'company-mode)
-;; (diminish 'elisp-slime-nav-mode)
-;; (diminish 'magit-auto-revert-mode)
-;; (diminish 'hs-minor-mode)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line-highlight ((t (:underline t)))))
+ )
+
+(provide 'init)
+;;; init.el ends here
