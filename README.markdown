@@ -1,8 +1,11 @@
 ## On Mac
-Install homebrew
+Install homebrew, cli tools, cask apps
 ```sh
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-brew install ctags mercurial git hub vim z zsh rbenv ruby-build irssi openssl tmux the_silver_searcher
+./homebrew_install.sh
+```
+Optionally install cask-based native apps
+```sh
+./caskapps.sh
 ```
 
 ## On Linux
@@ -26,24 +29,7 @@ rbenv install --list
 rbenv install <latest>
 ```
 
-Install Oh My Zsh
+Install node
 ```sh
-curl -L http://install.ohmyz.sh | sh
-```
-
-Symlink the appropriate files to the folders/files here in your home.
-```sh
-ln -nfs ~/dotfiles/vimrc ~/.vimrc
-ln -nfs ~/dotfiles/vim ~/.vim
-ln -nfs ~/dotfiles/zshrc ~/.zshrc
-ln -nfs ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -nfs ~/dotfiles/tmuxinator ~/.tmuxinator
-ln -nfs ~/dotfiles/screenrc ~/.screenrc
-ln -nfs ~/dotfiles/irssi ~/.irssi
-```
-
-Install neocomplete
-```sh
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
-vim # and let neobundle install it's packages 
+./install_node.sh
 ```

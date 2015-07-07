@@ -1,0 +1,15 @@
+{
+  "eqeqeq"        : true,
+  "latedef"       : true,
+  "noarg"         : true,
+  "nonew"         : true,
+  "undef"         : true,
+  "unused"        : true,
+  "esnext"        : true,
+  "trailing"      : true,
+  "laxcomma"      : true,
+  "camelcase"     : true,
+  "maxdepth"      : 2,
+  "maxstatements" : 10,
+  "maxcomplexity" : 11
+}
