@@ -1,3 +1,6 @@
 [submodule "tmux/vendor/tmux-colors-solarized"]
 	path = tmux/vendor/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
+[submodule "oh-my-zsh/themes/bullet-train-oh-my-zsh-theme"]
+	path = oh-my-zsh/themes/bullet-train-oh-my-zsh-theme
+	url = git@github.com:caiogondim/bullet-train-oh-my-zsh-theme.git

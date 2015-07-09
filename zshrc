@@ -1,21 +1,16 @@
 #!/usr/local/bin/zsh
+
 EDITOR=/usr/local/bin/emacs
 TERM="xterm-256color"
-LANG="en_US.utf8"
-export LANG TERM EDITOR
+# LC_CTYPE="en_US.utf8"
+# LANG="en_US.utf8"
+# export LC_ALL LC_CTYPE LANG TERM EDITOR
 
 #omyzsh
 ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
-ZSH_THEME="powerline"
-POWERLINE_RIGHT_A="mixed"
-# POWERLINE_RIGHT_A="exit-status"
-# POWERLINE_RIGHT_B="none"
-POWERLINE_HIDE_USER_NAME="true"
-POWERLINE_HIDE_HOST_NAME="true"
-# POWERLINE_SHOW_GIT_ON_RIGHT="true"
+ZSH_THEME="bullet-train"
 export ZSH ZSH_THEME PATH EDITOR COMPLETION_WAITING_DOTS
-export POWERLINE_HIDE_USER_NAME POWERLINE_SHOW_GIT_ON_RIGHT
 
 plugins=(
     battery brew bower bundler
@@ -69,31 +64,11 @@ if [ -f "/usr/local/bin/brew" ]; then
 fi
 
 # python-related
-
-# pyenv
-# export PYENV_VERSION=2.7.10
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-# if which powerline-daemon > /dev/null; then powerline-daemon -q; fi
-# . "powerline.zsh"
-
 [ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
-# [ -f "/usr/local/bin/powerline-daemon" ] && powerline-daemon -q
-# [ -f "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh" ] && . "$PYTHONPATH/powerline/bindings/zsh/powerline.zsh"
-
 # quick and dirty web server
 function psy(){
   python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
 }
-
-# if which boot2docker > /dev/null; then eval "$(boot2docker shellinit)"; fi
-# ruby performance enhancements
-# RUBY_GC_HEAP_INIT_SLOTS=1000000
-# RUBY_HEAP_SLOTS_INCREMENT=1000000
-# RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-# RUBY_GC_MALLOC_LIMIT=1000000000
-# RUBY_HEAP_FREE_MIN=500000
-# export RUBY_GC_HEAP_INIT_SLOTS RUBY_HEAP_FREE_MIN RUBY_GC_MALLOC_LIMIT RUBY_HEAP_SLOTS_GROWTH_FACTOR RUBY_HEAP_SLOTS_INCREMENT RUBY_HEAP_MIN_SLOTS
 
 # rbenv configuation
 export RBENV_ROOT="${HOME}/.rbenv"
@@ -132,3 +107,6 @@ if [ -f "/usr/local/heroku/bin" ]; then
   ### Added by the Heroku Toolbelt
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
+
+export NVM_DIR="/Users/paul/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
