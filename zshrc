@@ -38,13 +38,6 @@ PATH="$HOME/.jenv/bin:$PATH"
 # PATH="$HOME/.pyenv/shims:$PATH"
 export PATH
 
-# zsh online help
-if which run-help > /dev/null; then
-    unalias run-help
-    autoload run-help
-    export HELPDIR=/usr/local/share/zsh/helpfiles
-fi
-
 # homebrew related configs
 if [ -f "/usr/local/bin/brew" ]; then
   BREW_PREFIX=$(brew --prefix)
