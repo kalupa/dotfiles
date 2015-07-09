@@ -4,3 +4,6 @@
 [submodule "oh-my-zsh/themes/bullet-train-oh-my-zsh-theme"]
 	path = oh-my-zsh/themes/bullet-train-oh-my-zsh-theme
 	url = git@github.com:caiogondim/bullet-train-oh-my-zsh-theme.git
+[submodule "maglev"]
+	path = maglev
+	url = git@github.com:caiogondim/maglev.git
