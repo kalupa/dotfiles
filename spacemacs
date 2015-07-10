@@ -32,9 +32,6 @@
      diff-hl
      html
      haskell
-     sentence-highlight
-     tabula-rasa
-     rainbow-mode
      javascript
      (javascript :variables
                  js-indent-level 2)
@@ -53,10 +50,15 @@
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages
    '(
-     neotree
+     sentence-highlight
+     tabula-rasa
+     rainbow-mode
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages
+   '(
+     neotree
+   )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
