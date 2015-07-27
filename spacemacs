@@ -209,10 +209,21 @@ before layers configuration."
 This function is called at the very end of Spacemacs initialization after
 layers configuration."
 
+  (setq-default dotspacemacs-persistent-server t)
   (setq powerline-default-separator 'arrow)
 
   ;; coffeescript
   (setq whitespace-action '(auto-cleanup))
+
+  ;; Make evil-mode up/down operate in screen lines instead of logical lines
+  (define-key evil-motion-state-map "j" 'evil-next-visual-line)
+  (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
+  ;; Also in visual mode
+  (define-key evil-visual-state-map "j" 'evil-next-visual-line)
+  (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+
+  (setq magit-repository-directories '("~/apps/"))
+
 )
 
 (provide '.spacemacs)
@@ -234,7 +245,7 @@ layers configuration."
  '(coffee-tab-width 2)
  '(custom-buffer-indent 2)
  '(electric-indent-mode nil)
- '(helm-ag-base-command "pt -e --nocolor --nogroup")
+ '(helm-ag-use-agignore t)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(js2-basic-offset 2)

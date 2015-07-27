@@ -1,10 +1,7 @@
 #!/usr/local/bin/zsh
 
-EDITOR=/usr/local/bin/emacs
+EDITOR="emacsclient -t"
 TERM="xterm-256color"
-# LC_CTYPE="en_US.utf8"
-# LANG="en_US.utf8"
-# export LC_ALL LC_CTYPE LANG TERM EDITOR
 
 #omyzsh
 ZSH=$HOME/.oh-my-zsh

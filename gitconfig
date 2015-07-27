@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/paul/.gitignore_global
-  editor = emacsclient -c
+  editor = /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c
 [hub]
   protocol = https
 [user]
