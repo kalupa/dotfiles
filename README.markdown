@@ -28,8 +28,3 @@ Install ruby
 rbenv install --list
 rbenv install <latest>
 ```
-
-Install node
-```sh
-./install_node.sh
-```
