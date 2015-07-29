@@ -15,7 +15,8 @@ brew update
 brew install ack ag apple-gcc42 atk casperjs colordiff coreutils ctags gnutls
 brew install gnu-typist gpg-agent imagemagick jpeg jq markdown meld mercurial
 brew install mysql openssl parallel pt python rbenv ruby-build tree tmux
-brew install tmux-mem-cpu-load vim watchman zsh 
+brew install tmux-mem-cpu-load vim watchman zsh jenv
+brew install emacs-mac --with-spacemacs-icon --with-xml2 --with-gnutls --with-ctags --with-imagemagick --with-glib
 
 # brew install flow
 printf "\n"
