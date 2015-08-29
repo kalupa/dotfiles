@@ -75,9 +75,9 @@ fi
 # added by travis gem
 [ -f "$HOME/.travis/travis.sh" ] && . /Users/paul/.travis/travis.sh
 
-export JAVA_HOME="$(jenv javahome)"
 # java
 if [ -f "$HOME/.browserstackenv.sh" ]; then
+    export JAVA_HOME="$(jenv javahome)"
   eval "$(jenv init -)"
   export PUBLISHER_CONF="${HOME}/lp-publisher-conf.properties"
 fi
