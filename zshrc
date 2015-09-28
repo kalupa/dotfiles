@@ -25,15 +25,13 @@ plugins=(
     virtualenv virtualenvwrapper
 )
 export plugins
+
 source "$ZSH/oh-my-zsh.sh"
+
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
-PATH=$PATH:$HOME/bin:./bin
-PATH="$HOME/Library/Haskell/bin:$PATH"
-PATH="$HOME/.jenv/bin:$PATH"
-# PATH="$HOME/.pyenv/shims:$PATH"
-export PATH
+PATH=$PATH:$HOME/bin:./bin:$HOME/Library/Haskell/bin:
 
 # homebrew related configs
 if [ -f "/usr/local/bin/brew" ]; then
@@ -54,7 +52,6 @@ if [ -f "/usr/local/bin/brew" ]; then
 fi
 
 # python-related
-[ -f "/usr/local/bin/virtualenvwrapper.sh" ] && . /usr/local/bin/virtualenvwrapper.sh
 # quick and dirty web server
 function psy(){
   python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
@@ -67,36 +64,17 @@ if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
 
-# Amazon keys
-[ -f "$HOME/.aws/env.sh" ] && . "$HOME/.aws/env.sh"
-
-[ -f "$HOME/.browserstackenv.sh" ] && . "$HOME/.browserstackenv.sh"
-
-# added by travis gem
-[ -f "$HOME/.travis/travis.sh" ] && . /Users/paul/.travis/travis.sh
-
-# java
-if [ -f "$HOME/.browserstackenv.sh" ]; then
-    export JAVA_HOME="$(jenv javahome)"
-  eval "$(jenv init -)"
-  export PUBLISHER_CONF="${HOME}/lp-publisher-conf.properties"
-fi
-
-# emacs gui cli
-# if [ -f "/Applications/Emacs.app/contents/MacOS/Emacs" ]; then
-#   export EDITOR="/usr/local/bin/emacsclient -c -n"
-#   alias emc=$EDITOR
-# fi
-
 #gulp
 if [ -f "/usr/local/bin/gulp" ]; then
   eval "$(gulp --completion=zsh)"
 fi
+
+source "$HOME/.zshrc_local"
+
+export PATH
 
 if [ -f "/usr/local/heroku/bin" ]; then
   ### Added by the Heroku Toolbelt
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
 
-export NVM_DIR="/Users/paul/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
