@@ -6,23 +6,26 @@ TERM="xterm-256color"
 #omyzsh
 ZSH=$HOME/.oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
+if [[ -n ${INSIDE_EMACS} ]]; then
+    BULLETTRAIN_GIT_SHOW=false
+fi
 ZSH_THEME="bullet-train"
 export ZSH ZSH_THEME PATH EDITOR COMPLETION_WAITING_DOTS
 
 plugins=(
     battery brew bower bundler
-    coffee colorize
-    emoji-clock
-    gem git git-extras gitignore gnu-utils
-    jira
+    cabal coffee colorize
+    emacs
+    gem git git-extras gitignore gnu-utils 
     mosh
     node npm
     osx
     pip python
-    rake rails rbenv ruby
+    rake-fast rails rbenv ruby
     ssh-agent
-    thor
-    virtualenv virtualenvwrapper
+    thor # tmux
+    virtualenv # virtualenvwrapper
+    zsh_reload
 )
 export plugins
 
@@ -32,6 +35,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 PATH=$PATH:$HOME/bin:./bin:$HOME/Library/Haskell/bin:
+PATH=$PATH:$HOME/.local/bin::
 
 # homebrew related configs
 if [ -f "/usr/local/bin/brew" ]; then
