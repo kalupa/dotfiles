@@ -16,7 +16,7 @@ plugins=(
     battery brew bower bundler
     cabal coffee colorize
     emacs
-    gem git git-extras gitignore gnu-utils 
+    gem git git-extras gitignore gnu-utils
     mosh
     node npm
     osx
@@ -34,8 +34,9 @@ source "$ZSH/oh-my-zsh.sh"
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
-PATH=$PATH:$HOME/bin:./bin:$HOME/Library/Haskell/bin:
-PATH=$PATH:$HOME/.local/bin::
+PATH=$PATH:$HOME/bin:./bin:
+PATH=$PATH:$HOME/.local/bin:
+# PATH=$PATH:$HOME/Library/Haskell/bin:
 
 # homebrew related configs
 if [ -f "/usr/local/bin/brew" ]; then

@@ -9,7 +9,7 @@
 You should not put any user code in this function besides modifying the variable
 values."
   (setq-default
-   ;; Base distribution to use. This is a layer contained in the directory
+   ;; Base to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
@@ -30,15 +30,24 @@ values."
                       auto-completion-enable-sort-by-usage t)
      better-defaults
      clojure
-     colors
+     ;; colors
+     (colors :variables
+             colors-enable-rainbow-identifiers t
+             ;; colors-enable-nyan-cat-progress-bar t
+             )
      dash
+     ;; diff-h1
      emacs-lisp
-     evernote
+     ;; evernote
      eyebrowse
      (git :variables
-          git-gutter-use-fringe t)
+          git-gutter-use-fringe t
+          git-enable-github-support t)
      github
-     haskell
+     ;; haskell
+     (haskell :variables
+              haskell-enable-hindent-style "chris-done"
+              haskell-enable-shm-support t)
      html
      (javascript :variables
                  js-indent-level 2)
@@ -54,7 +63,7 @@ values."
             shell-default-term-shell "/usr/local/bin/zsh")
      ;; shell-scripts
      spell-checking
-     spotify
+     ;; spotify
      syntax-checking
      version-control
      yaml
@@ -227,6 +236,13 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (add-to-list 'exec-path "~/.local/bin")
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+
+  (setq-default dotspacemacs-smartparens-strict-mode t)
+  ;; coffeescript
+  (setq whitespace-action '(auto-cleanup))
+
 )
 
 (defun dotspacemacs/user-config ()
@@ -234,7 +250,6 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
-  (setq-default dotspacemacs-smartparens-strict-mode t)
 
   ;; (setq-default dotspacemacs-persistent-server t)
   ;; (setq powerline-default-separator 'arrow)
@@ -246,9 +261,6 @@ layers configuration. You are free to put any user code."
   ;; (centered-cursor-mode)
   ;; (global-linum-mode)
   ;; (visual-line-mode)
-
-  ;; coffeescript
-  (setq whitespace-action '(auto-cleanup))
 
   ;; git/magit
   (setq magit-repository-directories '("~/apps/"))
