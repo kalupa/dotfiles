@@ -32,7 +32,7 @@ values."
      clojure
      ;; colors
      (colors :variables
-             colors-enable-rainbow-identifiers t
+             colors-enable-rainbow-identifiers nil
              ;; colors-enable-nyan-cat-progress-bar t
              )
      dash
@@ -62,7 +62,7 @@ values."
             shell-default-position 'bottom
             shell-default-term-shell "/usr/local/bin/zsh")
      ;; shell-scripts
-     spell-checking
+     ;; spell-checking
      ;; spotify
      syntax-checking
      version-control
@@ -221,7 +221,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil advises quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
@@ -251,7 +251,6 @@ user code."
 layers configuration. You are free to put any user code."
 
 
-  ;; (setq-default dotspacemacs-persistent-server t)
   ;; (setq powerline-default-separator 'arrow)
 
   ;; (setq clojure-enable-fancify-symbols t)

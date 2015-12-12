@@ -15,7 +15,7 @@ export ZSH ZSH_THEME PATH EDITOR COMPLETION_WAITING_DOTS
 plugins=(
     battery brew bower bundler
     cabal coffee colorize
-    emacs
+    # emacs
     gem git git-extras gitignore gnu-utils
     mosh
     node npm
