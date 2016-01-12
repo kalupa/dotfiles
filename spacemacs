@@ -1,5 +1,5 @@
 ;; -*- mode: emacs-lisp -*-
-;;; Commentary:
+;; Commentary:
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -63,8 +63,9 @@ values."
             shell-default-term-shell "/usr/local/bin/zsh")
      ;; shell-scripts
      ;; spell-checking
-     ;; spotify
+     spotify
      syntax-checking
+     themes-megapack
      version-control
      yaml
      )
@@ -84,7 +85,7 @@ values."
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
-     neotree
+     ;; neotree
      )
 
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -114,7 +115,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -122,8 +123,11 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-solarized-dark
+   dotspacemacs-themes '(
+                         gruber-darker
+                         sanityinc-solarized-dark
                          solarized-light
+                         spacemacs-light
                          spacemacs-dark)
 
 
@@ -243,7 +247,7 @@ user code."
   ;; coffeescript
   (setq whitespace-action '(auto-cleanup))
 
-)
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -263,7 +267,7 @@ layers configuration. You are free to put any user code."
 
   ;; git/magit
   (setq magit-repository-directories '("~/apps/"))
-)
+  )
 
 ;; (provide '.spacemacs)
 
