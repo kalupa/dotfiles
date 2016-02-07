@@ -299,6 +299,7 @@ layers configuration. You are free to put any user code."
  '(cua-read-only-cursor-color "#859900")
  '(custom-buffer-indent 2)
  '(electric-indent-mode nil)
+ '(exec-path-from-shell-arguments (quote ("-l")))
  '(fancy-battery-mode t)
  '(fci-rule-color "#073642" t)
  '(helm-ag-use-agignore t)
@@ -326,7 +327,7 @@ layers configuration. You are free to put any user code."
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(indent-tabs-mode nil)
- '(js-indent-level 2)
+ '(js-indent-level 2 t)
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
  '(js2-highlight-external-variables t)
