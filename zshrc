@@ -55,8 +55,3 @@ fi
 
 source "$HOME/.zshrc_local"
 
-if [ -f "/usr/local/heroku/bin" ]; then
-  ### Added by the Heroku Toolbelt
-  export PATH="/usr/local/heroku/bin:$PATH"
-fi
-
