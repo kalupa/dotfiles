@@ -33,7 +33,7 @@ values."
      ;; colors
      (colors :variables
              colors-enable-rainbow-identifiers nil
-             ;; colors-enable-nyan-cat-progress-bar t
+             colors-enable-nyan-cat-progress-bar t
              )
      dash
      ;; diff-h1
@@ -55,6 +55,7 @@ values."
      org
      osx
      python
+     react
      ruby
      ruby-on-rails
      (shell :variables
@@ -85,7 +86,7 @@ values."
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
    '(
-     ;; neotree
+     neotree
      )
 
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -247,6 +248,22 @@ user code."
   ;; coffeescript
   (setq whitespace-action '(auto-cleanup))
 
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2
+   )
+  ;; 2 space indent also for element’s attributes
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
   )
 
 (defun dotspacemacs/user-config ()
@@ -259,13 +276,14 @@ layers configuration. You are free to put any user code."
 
   ;; (setq clojure-enable-fancify-symbols t)
 
-  ;; (fancy-battery-mode)
+  (fancy-battery-mode)
   ;; (indent-guide-mode)
   ;; (centered-cursor-mode)
-  ;; (global-linum-mode)
+  (global-linum-mode)
   ;; (visual-line-mode)
 
-  ;; git/magit
+  (centered-cursor-mode)
+
   (setq magit-repository-directories '("~/apps/"))
   )
 
