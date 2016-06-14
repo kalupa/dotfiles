@@ -1,6 +1,6 @@
 #!/usr/local/bin/zsh
 
-export EDITOR=~/bin/emc
+# export EDITOR=~/bin/emc
 export TERM="xterm-256color"
 
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin

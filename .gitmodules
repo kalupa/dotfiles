@@ -7,3 +7,6 @@
 [submodule "maglev"]
 	path = maglev
 	url = git@github.com:caiogondim/maglev.git
+[submodule "bullet-train-oh-my-zsh-theme"]
+	path = bullet-train-oh-my-zsh-theme
+	url = https://github.com/caiogondim/bullet-train-oh-my-zsh-theme

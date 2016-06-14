@@ -11,14 +11,15 @@ export ZSH_THEME="bullet-train"
 plugins=(
     battery brew bower bundler
     cabal coffee colorize
-    # emacs
+    emacs
     gem git git-extras gitignore gnu-utils
-    mosh
+    lein
+    man mosh
     node npm
     osx
     pip python
     rake-fast rails rbenv ruby
-    ssh-agent
+    safe-paste ssh-agent stack
     thor # tmux
     virtualenv # virtualenvwrapper
     zsh_reload
@@ -54,4 +55,3 @@ if [ -f "/usr/local/bin/gulp" ]; then
 fi
 
 source "$HOME/.zshrc_local"
-
