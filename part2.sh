@@ -26,6 +26,7 @@ case $yn in
             ln -nfs ~/dotfiles/screenrc ~/.screenrc
             ln -nfs ~/dotfiles/irssi ~/.irssi
             ln -nfs ~/dotfiles/oh-my-zsh/themes/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme
+            ln -nfs ~/dotfiles/oh-my-zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
             break;;
     [Nn]* ) echo "skipping ..."; break;;
     * ) echo "Please answer yes or no.";;
