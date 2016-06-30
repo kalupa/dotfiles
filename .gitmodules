@@ -1,15 +1,6 @@
 [submodule "tmux/vendor/tmux-colors-solarized"]
 	path = tmux/vendor/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
-[submodule "oh-my-zsh/themes/bullet-train-oh-my-zsh-theme"]
-	path = oh-my-zsh/themes/bullet-train-oh-my-zsh-theme
-	url = git@github.com:caiogondim/bullet-train-oh-my-zsh-theme.git
 [submodule "maglev"]
 	path = maglev
 	url = git@github.com:caiogondim/maglev.git
-[submodule "bullet-train-oh-my-zsh-theme"]
-	path = bullet-train-oh-my-zsh-theme
-	url = https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
-[submodule "oh-my-zsh/plugins/zsh-syntax-highlighting"]
-	path = oh-my-zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
