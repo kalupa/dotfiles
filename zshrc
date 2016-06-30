@@ -11,16 +11,21 @@ source ~/.antigen.git/antigen.zsh
 antigen use oh-my-zsh
 
 # macos specific
-# homebrew related configs
-if [ -f "/usr/local/bin/brew" ]; then
-    BREW_PREFIX=$(brew --prefix)
+# Load OS specific bundles
+if [[ `uname` == "Darwin" ]]; then
+    # homebrew related configs
+    if [ -f "/usr/local/bin/brew" ]; then
+        BREW_PREFIX=$(brew --prefix)
+    fi
+    antigen bundles <<EOBUNDLES
+    battery
+    brew
+    brew-cask
+    osx
+    EOBUNDLES
+elif [[ `uname` == "Linux" ]]; then
+    antigen bundle debian
 fi
-antigen bundles <<EOBUNDLES
-battery
-brew
-brew-cask
-osx
-EOBUNDLES
 
 antigen bundles <<EOBUNDLES
 autojump
