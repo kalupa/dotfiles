@@ -19,14 +19,13 @@ case $yn in
     [Yy]* ) ln -nfs ~/dotfiles/vimrc ~/.vimrc
             ln -nfs ~/dotfiles/vim ~/.vim
             ln -nfs ~/dotfiles/spacemacs ~/.spacemacs
+            ln -nfs ~/dotfiles/gitconfig ~/.gitconfig
             ln -nfs ~/dotfiles/zshrc ~/.zshrc
             ln -nfs ~/dotfiles/zsh_env ~/.zshenv
             ln -nfs ~/dotfiles/tmux.conf ~/.tmux.conf
             ln -nfs ~/dotfiles/tmuxinator ~/.tmuxinator
             ln -nfs ~/dotfiles/screenrc ~/.screenrc
             ln -nfs ~/dotfiles/irssi ~/.irssi
-            ln -nfs ~/dotfiles/oh-my-zsh/themes/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme ~/.oh-my-zsh/custom/themes/bullet-train.zsh-theme
-            ln -nfs ~/dotfiles/oh-my-zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
             break;;
     [Nn]* ) echo "skipping ..."; break;;
     * ) echo "Please answer yes or no.";;

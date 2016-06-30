@@ -1,47 +1,65 @@
 #!/usr/local/bin/zsh
+[[ ! -d ~/.antigen.git ]] && \
+    git clone https://github.com/zsh-users/antigen.git ~/.antigen.git
 
-#omyzsh
-export ZSH=$HOME/.oh-my-zsh
-export COMPLETION_WAITING_DOTS="true"
+BULLETTRAIN_RUBY_SHOW=false
 if [[ -n ${INSIDE_EMACS} ]]; then
     BULLETTRAIN_GIT_SHOW=false
 fi
-export ZSH_THEME="bullet-train"
 
-plugins=(
-    battery brew bundler
-    cabal coffee colorize
-    emacs
-    gem git git-extras gitignore gnu-utils
-    history-substring-search
-    lein
-    mosh
-    node npm
-    osx
-    pip python
-    rake-fast rails rbenv ruby
-    safe-paste ssh-agent stack
-    virtualenv virtualenvwrapper
-    zsh_reload zsh-syntax-highlighting
-)
-export plugins
-source "$ZSH/oh-my-zsh.sh"
+source ~/.antigen.git/antigen.zsh
+antigen use oh-my-zsh
 
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-
+# macos specific
 # homebrew related configs
 if [ -f "/usr/local/bin/brew" ]; then
-  BREW_PREFIX=$(brew --prefix)
-
-  # quick jump
-  #. "$( brew --prefix )/etc/profile.d/z.sh"
-  [[ -s "$BREW_PREFIX/etc/profile.d/autojump.sh" ]] && . "$BREW_PREFIX/etc/profile.d/autojump.sh"
-
-  # brew completions
-  ZSHBREWPATH=$BREW_PREFIX/share/zsh/
-  [ -f "$ZSHBREWPATH/_git" ] && . "$ZSHBREWPATH/_git"
-  [ -f "$ZSHBREWPATH/_docker" ] && . "$ZSHBREWPATH/_docker"
+    BREW_PREFIX=$(brew --prefix)
 fi
+antigen bundles <<EOBUNDLES
+battery
+brew
+brew-cask
+osx
+EOBUNDLES
+
+antigen bundles <<EOBUNDLES
+autojump
+bundler
+cabal
+colorize
+emacs
+gem
+git
+git-extras
+gitignore
+gnu-utils
+history-substring-search
+lein
+mosh
+node
+npm
+per-directory-history
+pip
+python
+rails
+rbenv
+ruby
+safe-paste
+ssh-agent
+stack
+virtualenv
+virtualenvwrapper
+zsh_reload
+djui/alias-tips
+unixorn/autoupdate-antigen.zshplugin
+KevinBongart/rake-fast
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+EOBUNDLES
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
@@ -61,7 +79,6 @@ bindkey -M emacs '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-
 # python-related
 # quick and dirty web server
 function psy(){
@@ -69,3 +86,5 @@ function psy(){
 }
 
 source "$HOME/.zshrc_local"
+
+antigen apply

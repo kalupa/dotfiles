@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# TODO: make an apt version for linux installations
+
 echo "Installing homebrew from source"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 printf "\n"
@@ -22,7 +24,7 @@ printf "\n"
 
 echo "Installing tools with options"
 brew install emacs-mac --with-spacemacs-icon --with-xml2 --with-gnutls --with-ctags --with-imagemagick --with-glib
-brew install git --with-brewed-curl --with-brewed-openssl --with-gettext --with-pcre --with-blk-sha1
+brew install git --with-brewed-curl --with-brewed-openssl --with-gettext --with-pcre --with-blk-sha1 git-extras
 brew install gnugo2 --with-readline
 brew install reattach-to-user-namespace  --with-wrap-launchctl --with-wrap-pbcopy-and-pbpaste
 printf "\n"
