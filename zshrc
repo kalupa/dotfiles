@@ -1,6 +1,5 @@
 #!/usr/local/bin/zsh
-[[ ! -d ~/.antigen.git ]] && \
-    git clone https://github.com/zsh-users/antigen.git ~/.antigen.git
+[[ ! -d ~/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git ~/.antigen.git
 
 BULLETTRAIN_RUBY_SHOW=false
 if [[ -n ${INSIDE_EMACS} ]]; then
@@ -12,6 +11,7 @@ antigen use oh-my-zsh
 
 # macos specific
 # Load OS specific bundles
+
 if [[ `uname` == "Darwin" ]]; then
     # homebrew related configs
     if [ -f "/usr/local/bin/brew" ]; then
@@ -87,5 +87,4 @@ function psy(){
 }
 
 source "$HOME/.zshrc_local"
-
 antigen apply
