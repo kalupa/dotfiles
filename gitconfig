@@ -1,8 +1,8 @@
 [core]
-	excludesfile = /Users/paul/.gitignore_global
-  editor = /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c
+	excludesfile = ~/.gitignore_global
+	editor = emacsclient -t -a=\\\"\\\"
 [hub]
-  protocol = https
+  protocol = git
 [user]
 	name = Paul Kalupnieks
 	email = paul@unbounce.com
@@ -20,11 +20,5 @@
 	prompt = false
 [rerere]
   enabled = true
-[gui]
-	fontdiff = -family \"Inconsolata-dz for Powerline\" -size 12 -weight normal -slant roman -underline 0 -overstrike 0
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.3/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[diff]
+	compactionHeuristic = true
