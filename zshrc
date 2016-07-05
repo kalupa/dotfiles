@@ -17,51 +17,47 @@ if [[ `uname` == "Darwin" ]]; then
     if [ -f "/usr/local/bin/brew" ]; then
         BREW_PREFIX=$(brew --prefix)
     fi
-    antigen bundles <<EOBUNDLES
-    battery
-    brew
-    brew-cask
-    osx
-    EOBUNDLES
+    antigen bundle battery
+    antigen bundle brew
+    antigen bundle brew-cask
+    antigen bundle osx
 elif [[ `uname` == "Linux" ]]; then
     antigen bundle debian
 fi
 
-antigen bundles <<EOBUNDLES
-autojump
-bundler
-cabal
-colorize
-emacs
-gem
-git
-git-extras
-gitignore
-gnu-utils
-history-substring-search
-lein
-mosh
-node
-npm
-per-directory-history
-pip
-python
-rails
-rbenv
-ruby
-safe-paste
-ssh-agent
-stack
-virtualenv
-virtualenvwrapper
-zsh_reload
-djui/alias-tips
-unixorn/autoupdate-antigen.zshplugin
-KevinBongart/rake-fast
-zsh-users/zsh-completions
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-autosuggestions
-EOBUNDLES
+antigen bundle autojump
+antigen bundle bundler
+antigen bundle cabal
+antigen bundle colorize
+antigen bundle emacs
+antigen bundle gem
+antigen bundle git
+antigen bundle git-extras
+antigen bundle gitignore
+antigen bundle gnu-utils
+antigen bundle history-substring-search
+antigen bundle lein
+antigen bundle mosh
+antigen bundle node
+antigen bundle npm
+antigen bundle per-directory-history
+antigen bundle pip
+antigen bundle python
+antigen bundle rails
+antigen bundle rbenv
+antigen bundle ruby
+antigen bundle safe-paste
+antigen bundle ssh-agent
+antigen bundle stack
+antigen bundle virtualenv
+antigen bundle virtualenvwrapper
+antigen bundle zsh_reload
+antigen bundle djui/alias-tips
+antigen bundle unixorn/autoupdate-antigen.zshplugin
+antigen bundle KevinBongart/rake-fast
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
