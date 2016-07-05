@@ -129,7 +129,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruber-darker spacemacs-dark sanityinc-solarized-dark)
+   dotspacemacs-themes '(gruber-darker spacemacs-light)
 
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -338,7 +338,6 @@ layers configuration. You are free to put any user code."
  '(blink-cursor-mode nil)
  '(clean-aindent-mode t)
  '(coffee-tab-width 2)
- '(column-number-mode t)
  '(compilation-message-face (quote default))
  '(css-indent-offset 2 t)
  '(cua-global-mark-cursor-color "#2aa198")
@@ -354,7 +353,6 @@ layers configuration. You are free to put any user code."
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
-    (solarized-color-blend it "#002b36" 0.25)
     (quote
      ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
  '(highlight-symbol-foreground-color "#93a1a1")
@@ -390,7 +388,6 @@ layers configuration. You are free to put any user code."
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(ring-bell-function (quote ignore) t)
- '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(standard-indent 2)
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
