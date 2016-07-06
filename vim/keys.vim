@@ -4,8 +4,8 @@ let mapleader = " " " a more natural leader
 nnoremap Q <Nop>
 
 " esc key is evil
-inoremap jk <Esc>
-inoremap <Esc> <NOP>
+" inoremap jk <Esc>
+" inoremap <Esc> <NOP>
 
 " Wrapped lines goes down/up to next row, rather than next line in file.
 noremap j gj
