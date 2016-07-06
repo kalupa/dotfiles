@@ -73,9 +73,7 @@ values."
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
-   '(
-     neotree
-     )
+   '()
 
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; declared in a layer which is not a member of
@@ -277,6 +275,8 @@ user code."
   (setq-default dotspacemacs-smartparens-strict-mode t)
   ;; coffeescript
   (setq whitespace-action '(auto-cleanup))
+
+  (setq neo-smart-open t)
 
   (setq-default
    ;; js2-mode
