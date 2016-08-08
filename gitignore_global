@@ -75,3 +75,4 @@ config/secrets.yml
 /.java-version
 
 .tern-port
+.rake_tasks

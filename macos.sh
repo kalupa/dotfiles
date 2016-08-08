@@ -90,6 +90,9 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
+# needs testing
+# defaults import com.googlecode.iterm2 - < com.googlecode.iterm2.plist.xml
+
 # Kill affected applications
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" > /dev/null 2>&1; done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

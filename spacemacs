@@ -32,7 +32,7 @@ values."
      clojure
      (colors :variables
              colors-enable-rainbow-identifiers nil
-             colors-enable-nyan-cat-progress-bar t
+             ;; colors-enable-nyan-cat-progress-bar t
              )
      dash
      elm-lang
@@ -348,7 +348,7 @@ layers configuration. You are free to put any user code."
  '(electric-indent-mode nil)
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fancy-battery-mode t)
- '(fci-rule-color "#073642" t)
+ '(fci-rule-color "#073642")
  '(helm-ag-use-agignore t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -373,8 +373,8 @@ layers configuration. You are free to put any user code."
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(indent-tabs-mode nil)
- '(js-indent-level 2 t)
- '(js2-basic-offset 2 t)
+ '(js-indent-level 2)
+ '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
  '(js2-highlight-external-variables t)
  '(js2-indent-switch-body t)

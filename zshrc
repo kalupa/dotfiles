@@ -30,6 +30,7 @@ antigen bundle autojump
 antigen bundle bundler
 antigen bundle cabal
 antigen bundle colorize
+antigen bundle docker
 antigen bundle gem
 antigen bundle git
 antigen bundle git-extras
@@ -86,7 +87,8 @@ function psy(){
   python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
 }
 
-source "$HOME/.zshrc_local"
 antigen apply
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source "$HOME/.zshrc_local"
