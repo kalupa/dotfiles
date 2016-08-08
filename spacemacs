@@ -309,7 +309,7 @@ layers configuration. You are free to put any user code."
   (fancy-battery-mode)
   ;; (indent-guide-mode)
   ;; (centered-cursor-mode)
-  (global-linum-mode)
+  ;; (global-linum-mode)
   ;; (visual-line-mode)
 
   (centered-cursor-mode)
