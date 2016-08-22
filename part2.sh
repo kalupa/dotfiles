@@ -24,6 +24,7 @@ ln -nfs ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -nfs ~/dotfiles/tmuxinator ~/.tmuxinator
 ln -nfs ~/dotfiles/screenrc ~/.screenrc
 ln -nfs ~/dotfiles/irssi ~/.irssi
+ln -nfs ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 
 echo "Installing Spacemacs"
 cd ~

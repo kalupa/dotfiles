@@ -38,6 +38,7 @@ values."
      elm-lang
      emacs-lisp
      eyebrowse
+     floobits
      (git :variables
           git-gutter-use-fringe t
           git-enable-github-support t)
@@ -56,6 +57,7 @@ values."
      ruby
      ruby-on-rails
      (shell :variables
+            shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom
             shell-default-term-shell "/usr/local/bin/zsh")
@@ -69,7 +71,10 @@ values."
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
    dotspacemacs-additional-packages
-   '(nginx-mode)
+   '(
+     nginx-mode
+     mocha
+     )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages
@@ -170,18 +175,18 @@ values."
    ;; If non nil `Y' is remapped to `y$'. (default t)
    dotspacemacs-remap-Y-to-y$ t
    ;; Name of the default layout (default "Default")
-   dotspacemacs-default-layout-name "Default"
+   dotspacemacs-default-layout-name 'nil
    ;; If non nil the default layout name is displayed in the mode-line.
    ;; (default nil)
    dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
    ;; (default 'cache)
-   dotspacemacs-auto-save-file-location 'nil
+   dotspacemacs-auto-save-file-location 'cache
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
    ;; If non nil then `ido' replaces `helm' for some commands. For now only
@@ -348,7 +353,7 @@ layers configuration. You are free to put any user code."
  '(electric-indent-mode nil)
  '(exec-path-from-shell-arguments (quote ("-l")))
  '(fancy-battery-mode t)
- '(fci-rule-color "#073642")
+ '(fci-rule-color "#073642" t)
  '(helm-ag-use-agignore t)
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -388,6 +393,11 @@ layers configuration. You are free to put any user code."
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(ring-bell-function (quote ignore) t)
+ '(safe-local-variable-values
+   (quote
+    ((mocha-project-test-directory . "testunits")
+     (mocha-options . "--recursive --reporter dot -t 5000")
+     (mocha-environment-variables . "NODE_PATH=tests/extra_node_path"))))
  '(standard-indent 2)
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")

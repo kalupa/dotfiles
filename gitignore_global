@@ -76,3 +76,5 @@ config/secrets.yml
 
 .tern-port
 .rake_tasks
+.floo
+.flooignore
