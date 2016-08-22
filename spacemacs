@@ -32,7 +32,6 @@ values."
      clojure
      (colors :variables
              colors-enable-rainbow-identifiers nil
-             ;; colors-enable-nyan-cat-progress-bar t
              )
      dash
      elm-lang
@@ -64,6 +63,9 @@ values."
      syntax-checking
      themes-megapack
      version-control
+     (wakatime :variables
+               wakatime-api-key (getenv "WAKATIME_SECRET_KEY")
+               wakatime-cli-path "/usr/local/bin/wakatime")
      yaml
      )
    ;; List of additional packages that will be installed wihout being
@@ -292,7 +294,18 @@ user code."
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2
+
+   ;; moved from customize
+   js2-bounce-indent-p t
+   js2-highlight-external-variables t
+   js2-indent-switch-body t
+   js2-missing-semi-one-line-override t
+   js2-mode-show-parse-errors nil
+   js2-mode-show-strict-warnings nil
+   js2-strict-inconsistent-return-warning nil
+   js2-strict-trailing-comma-warning nil
    )
+
   ;; 2 space indent also for element’s attributes
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
@@ -319,6 +332,9 @@ layers configuration. You are free to put any user code."
 
   (centered-cursor-mode)
 
+  ((mocha-options . "--recursive --reporter dot -t 5000")
+   (mocha-environment-variables . "NODE_PATH=tests/extra_node_path"))
+
   (setq magit-repository-directories '("~/apps/"))
   )
 
@@ -344,7 +360,6 @@ layers configuration. You are free to put any user code."
  '(clean-aindent-mode t)
  '(coffee-tab-width 2)
  '(compilation-message-face (quote default))
- '(css-indent-offset 2 t)
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
@@ -379,25 +394,11 @@ layers configuration. You are free to put any user code."
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
- '(js2-basic-offset 2)
- '(js2-bounce-indent-p t)
- '(js2-highlight-external-variables t)
- '(js2-indent-switch-body t)
- '(js2-missing-semi-one-line-override t)
- '(js2-mode-show-parse-errors nil)
- '(js2-mode-show-strict-warnings nil)
- '(js2-strict-inconsistent-return-warning nil)
- '(js2-strict-trailing-comma-warning nil)
  '(magit-diff-use-overlays nil)
  '(magit-log-arguments (quote ("--graph" "--color" "--decorate")))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(ring-bell-function (quote ignore) t)
- '(safe-local-variable-values
-   (quote
-    ((mocha-project-test-directory . "testunits")
-     (mocha-options . "--recursive --reporter dot -t 5000")
-     (mocha-environment-variables . "NODE_PATH=tests/extra_node_path"))))
  '(standard-indent 2)
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
@@ -425,6 +426,7 @@ layers configuration. You are free to put any user code."
      (340 . "#268fc6")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
+ '(wakatime-api-key "7b955758-a13a-4d25-8e0a-e3dc52f14699")
  '(weechat-color-list
    (quote
     (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
