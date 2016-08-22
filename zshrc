@@ -59,8 +59,9 @@ antigen bundle KevinBongart/rake-fast
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+antigen bundle wbinglee/zsh-wakatime
 
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # bind UP and DOWN arrow keys
