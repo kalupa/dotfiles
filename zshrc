@@ -20,7 +20,7 @@ if [[ `uname` == "Darwin" ]]; then
     antigen bundle battery
     antigen bundle brew
     antigen bundle brew-cask
-    antigen bundle emacs # this activates emacsclient alias
+    # antigen bundle emacs # this activates emacsclient alias
     antigen bundle osx
 elif [[ `uname` == "Linux" ]]; then
     antigen bundle debian
@@ -89,7 +89,17 @@ function psy(){
 }
 
 antigen apply
+unalias gl
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+function emc-start() {
+    echo "Daemonizing ..."
+    emacs --daemon &&
+        echo "Starting GUI" &&
+        emacsclient -n -c
+}
+
+function emc() {
+    emacsclient -n $*
+}
 
 source "$HOME/.zshrc_local"

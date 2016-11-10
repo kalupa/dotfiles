@@ -19,7 +19,7 @@ ln -nfs ~/dotfiles/vim ~/.vim
 ln -nfs ~/dotfiles/spacemacs ~/.spacemacs
 ln -nfs ~/dotfiles/gitconfig ~/.gitconfig
 ln -nfs ~/dotfiles/zshrc ~/.zshrc
-ln -nfs ~/dotfiles/zsh_env ~/.zshenv
+ln -nfs ~/dotfiles/zshenv ~/.zshenv
 ln -nfs ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -nfs ~/dotfiles/tmuxinator ~/.tmuxinator
 ln -nfs ~/dotfiles/screenrc ~/.screenrc

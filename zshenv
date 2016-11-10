@@ -1,4 +1,6 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # export EDITOR=~/bin/emc
 export TERM="xterm-256color"
