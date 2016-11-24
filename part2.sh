@@ -28,18 +28,18 @@ ln -nfs ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 
 echo "Installing Spacemacs"
 cd ~
-mv .emacs.d .emacs.bak
-git clone --recursive https://github.com/syl20bnr/spacemacs ~/.emacs.d
+#mv .emacs.d .emacs.bak
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-echo "Setting up GitHub ssh keys"
-echo "login to github.com before proceeding ...\n\n"
-read -p "Please enter email address:" gh_email
-ssh-keygen -t rsa -b 4096 -C "$gh_email"
+# echo "Setting up GitHub ssh keys"
+# echo "login to github.com before proceeding ...\n\n"
+# read -p "Please enter email address:" gh_email
+# ssh-keygen -t rsa -b 4096 -C "$gh_email"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 
-echo "Copying pub key to macOS clipboard"
-pbcopy < ~/.ssh/id_rsa.pub
+# echo "Copying pub key to macOS clipboard"
+# pbcopy < ~/.ssh/id_rsa.pub
 
 read -p "Install python things?" yn
 case $yn in
