@@ -1,6 +1,7 @@
 #!/bin/bash
 brew tap d12frosted/emacs-plus
 brew install emacs-plus
+brew linkapps 
 
 brew cask install java
 
