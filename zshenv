@@ -8,14 +8,14 @@ export TERM="xterm-256color"
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 PATH=$PATH:$HOME/bin:./bin:
 PATH=$PATH:$HOME/.local/bin:
-PATH=$PATH:$HOME/Library/Haskell/bin:
+# PATH=$PATH:$HOME/Library/Haskell/bin:
 
-# rbenv configuation
-export RBENV_ROOT="${HOME}/.rbenv"
-if [ -d "${RBENV_ROOT}" ]; then
-  eval "$(rbenv init -)"
-  PATH="${RBENV_ROOT}/bin:${PATH}"
-fi
+# # rbenv configuation
+# export RBENV_ROOT="${HOME}/.rbenv"
+# if [ -d "${RBENV_ROOT}" ]; then
+#   eval "$(rbenv init -)"
+#   PATH="${RBENV_ROOT}/bin:${PATH}"
+# fi
 
 export PATH
 
