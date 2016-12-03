@@ -23,26 +23,22 @@ ln -nfs ~/dotfiles/zshenv ~/.zshenv
 ln -nfs ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -nfs ~/dotfiles/tmuxinator ~/.tmuxinator
 ln -nfs ~/dotfiles/screenrc ~/.screenrc
-ln -nfs ~/dotfiles/irssi ~/.irssi
 ln -nfs ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 
 mkdir ~/bin
 ln -nfs ~/dotfiles/ubuntu_update.sh ~/bin/system_update
 
 echo "Installing Spacemacs"
-cd ~
+pushd ~
 #mv .emacs.d .emacs.bak
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+popd
 
-# echo "Setting up GitHub ssh keys"
-# echo "login to github.com before proceeding ...\n\n"
-# read -p "Please enter email address:" gh_email
-# ssh-keygen -t rsa -b 4096 -C "$gh_email"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-
-# echo "Copying pub key to macOS clipboard"
-# pbcopy < ~/.ssh/id_rsa.pub
+read -p "Generate new ssh keys for github?" yn
+case $yn in
+    [Yy]* ) $(bash ./generate-github-ssh-keys.sh); break;;
+    [Nn]* ) echo "skipping ..."; break;;
+esac
 
 read -p "Install python things?" yn
 case $yn in
@@ -53,13 +49,7 @@ esac
 
 read -p "Install powerline-enabled fonts?"
 case $yn in
-    [Yy]* ) cd ~
-            mkdir -p tmp
-            cd ~/tmp
-            git clone https://github.com/powerline/fonts.git powerline-fonts
-            cd powerline-fonts
-            ./install.sh
-            break;;
+    [Yy]* ) $(bash ./install-powerline-fonts.sh)break;;
     [Nn]* ) echo "skipping ..."; break;;
     * ) echo "Please answer yes or no.";;
 esac
