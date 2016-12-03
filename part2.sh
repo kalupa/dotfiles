@@ -26,6 +26,9 @@ ln -nfs ~/dotfiles/screenrc ~/.screenrc
 ln -nfs ~/dotfiles/irssi ~/.irssi
 ln -nfs ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 
+mkdir ~/bin
+ln -nfs ~/dotfiles/ubuntu_update.sh ~/bin/system_update
+
 echo "Installing Spacemacs"
 cd ~
 #mv .emacs.d .emacs.bak
