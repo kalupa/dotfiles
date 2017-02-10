@@ -26,6 +26,11 @@ elif [[ `uname` == "Linux" ]]; then
     antigen bundle debian
 fi
 
+exists ()
+{
+    command -v "$1" >/dev/null 2>&1
+}
+
 antigen bundle autojump
 antigen bundle bundler
 antigen bundle cabal
@@ -44,7 +49,10 @@ antigen bundle npm
 antigen bundle per-directory-history
 antigen bundle pip
 antigen bundle python
-antigen bundle rails
+if exists rails; then
+    antigen bundle rails
+fi
+
 antigen bundle rbenv
 antigen bundle ruby
 antigen bundle safe-paste
@@ -84,23 +92,27 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # python-related
 # quick and dirty web server
-function psy(){
-  python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
-}
+if exists python; then
+    function psy(){
+        python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
+    }
+fi
 
 antigen apply
 unalias gl
 
-function emc-start() {
-    echo "Daemonizing ..."
-    emacs --daemon &&
-        echo "Starting GUI" &&
-        emacsclient -n -c
-}
+if exists emacs; then
+    function emc-start() {
+        echo "Daemonizing ..."
+        emacs --daemon &&
+            echo "Starting GUI" &&
+            emacsclient -n -c
+    }
 
-function emc() {
-    emacsclient -n $*
-}
+    function emc() {
+        emacsclient -n $*
+    }
+fi
 
 source "$HOME/.zshrc_local"
 
