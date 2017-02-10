@@ -103,3 +103,13 @@ function emc() {
 }
 
 source "$HOME/.zshrc_local"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+iterm2_print_user_vars() {
+    iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+}
+printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
+
+# added by travis gem
+[ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
