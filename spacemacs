@@ -153,11 +153,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fura Code Nerd Font Retina"
+    dotspacemacs-default-font '("FuraCode Nerd Font"
                                :size 13
                                :height 130
                                :slant normal
-                               :weight normal
+                               :weight semi-light
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -312,47 +312,22 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (add-to-list 'exec-path "~/.local/bin")
-
-  ;; (editorconfig-mode 1)
-
   (mac-auto-operator-composition-mode)
-
   (setq whitespace-action '(auto-cleanup))
   (setq neo-smart-open t)
-
-  (setq taskpaper-append-date-to-done t)
-  (font-lock-add-keywords 'taskpaper-mode
-                          '(
-                            ("@important" . font-lock-keyword-face)
-                            ("@today" . font-lock-string-face)))
   (setq-default
-   ;; js2-mode
-   ;; js2-basic-offset 2
-   ;; js-indent-level 2
-   ;; web-mode
-   ;; css-indent-offset 2
-   ;; web-mode-markup-indent-offset 2
-   ;; web-mode-css-indent-offset 2
-   ;; web-mode-code-indent-offset 2
-   ;; web-mode-attr-indent-offset 2
-
-   ;; moved from customize
    js2-bounce-indent-p t
    js2-highlight-external-variables t
-   ;; js2-indent-switch-body t
    js2-missing-semi-one-line-override t
    js2-mode-show-parse-errors nil
    js2-mode-show-strict-warnings nil
    js2-strict-inconsistent-return-warning nil
    js2-strict-trailing-comma-warning nil
    )
-
-  ;; 2 space indent also for element’s attributes
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-
   )
 
 (defun dotspacemacs/user-config ()
@@ -362,15 +337,16 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
   (evil-leader/set-key "oc" `string-inflection-lower-camelcase)
   (evil-leader/set-key "od" `string-inflection-kebab-case)
-
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator 'brace)
+  ;; (setq powerline-default-separator 'utf-8)
+  ;; (setq powerline-utf-8-separator-left 57542)
+  ;; (setq powerline-utf-8-separator-right 57543)
+  (setq magit-repository-directories '("~/src/"))
   (fancy-battery-mode)
   (centered-cursor-mode)
-
-  (setq magit-repository-directories '("~/apps/"))
+  (editorconfig-mode 1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -380,10 +356,13 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-cursor-mode nil)
+ '(column-number-mode t)
  '(package-selected-packages
    (quote
     (editorconfig docker-tramp evil avy dash mocha org packed auto-complete simple-httpd string-inflection restclient ob-http tern iedit request markdown-mode alert haml-mode bind-key bind-map flycheck js2-mode smartparens hydra helm-core yasnippet with-editor company highlight helm skewer-mode magit magit-popup git-commit inflections projectile inf-ruby powerline define-word yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify wakatime-mode volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters quelpa pug-mode projectile-rails popwin persp-mode pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree mwim multi-term move-text mmm-mode minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode launchctl js2-refactor js-doc info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruber-darker-theme google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker diff-hl dash-at-point csv-mode company-web company-tern company-statistics column-enforce-mode coffee-mode clean-aindent-mode chruby bundler auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(safe-local-variable-values))
+ '(safe-local-variable-values nil)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
