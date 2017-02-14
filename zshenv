@@ -1,5 +1,4 @@
-#!/bin/zsh
-
+#!/usr/local/bin/zsh
 
 # export EDITOR=~/bin/emc
 export TERM="xterm-256color"
