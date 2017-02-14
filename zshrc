@@ -42,6 +42,7 @@ antigen bundle git-extras
 antigen bundle gitignore
 antigen bundle gnu-utils
 antigen bundle history-substring-search
+antigen bundle kubectl
 antigen bundle lein
 antigen bundle mosh
 antigen bundle node
@@ -52,7 +53,6 @@ antigen bundle python
 if exists rails; then
     antigen bundle rails
 fi
-
 antigen bundle rbenv
 antigen bundle ruby
 antigen bundle safe-paste
@@ -125,5 +125,3 @@ printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
 
 # added by travis gem
 [ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
-
-source <(kubectl completion zsh)
