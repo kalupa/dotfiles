@@ -6,6 +6,7 @@ export TERM="xterm-256color"
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 PATH=$PATH:$HOME/bin:./bin:
 PATH=$PATH:$HOME/.local/bin:
+export PATH="$PATH:`yarn global bin`"
 # PATH=$PATH:$HOME/Library/Haskell/bin:
 
 # rbenv configuation
