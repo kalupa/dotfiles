@@ -33,40 +33,40 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 
 " intelligent completion
-NeoBundle 'Shougo/neocomplete.vim'
+" NeoBundle 'Shougo/neocomplete.vim'
 
 " js syntax
-NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
-NeoBundleLazy 'vim-scripts/JavaScript-Indent'
-NeoBundleLazy 'othree/javascript-libraries-syntax.vim'
+" NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+" NeoBundleLazy 'vim-scripts/JavaScript-Indent'
+"NeoBundleLazy 'othree/javascript-libraries-syntax.vim'
 
 " other lang syntax
-NeoBundleLazy 'mxw/vim-jsx'
-NeoBundleLazy 'vim-ruby/vim-ruby'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundleLazy 'raichoo/purescript-vim'
+" NeoBundleLazy 'mxw/vim-jsx'
+" NeoBundleLazy 'vim-ruby/vim-ruby'
+" NeoBundle 'kchmck/vim-coffee-script'
+" NeoBundleLazy 'raichoo/purescript-vim'
 
 " colors
 NeoBundle 'altercation/vim-colors-solarized'
 
 " tpope rules
-NeoBundleLazy 'tpope/vim-markdown'
+"NeoBundleLazy 'tpope/vim-markdown'
 
 "NeoBundleLazy 'tpope/vim-haml'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tpope/vim-rsi'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-projectile'
-NeoBundle 'tpope/vim-jdaddy'
-NeoBundle 'tpope/vim-sleuth'
+" NeoBundle 'tpope/vim-endwise'
+" NeoBundle 'tpope/vim-ragtag'
+" NeoBundle 'tpope/vim-rsi'
+" NeoBundle 'tpope/vim-sensible'
+" NeoBundle 'tpope/vim-vinegar'
+" NeoBundle 'tpope/vim-eunuch'
+" NeoBundle 'tpope/vim-surround'
+" NeoBundle 'tpope/vim-unimpaired'
+" NeoBundle 'tpope/vim-projectile'
+" NeoBundle 'tpope/vim-jdaddy'
+" NeoBundle 'tpope/vim-sleuth'
 "NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-tbone'
+" NeoBundle 'tpope/vim-repeat'
+"NeoBundle 'tpope/vim-tbone'
 
 " General
 NeoBundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -83,14 +83,14 @@ NeoBundle 'myusuf3/numbers.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'bruno-/vim-vertical-move'
-NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'Raimondi/delimitMate'
+" NeoBundle 'scrooloose/nerdcommenter'
+"NeoBundle 'scrooloose/syntastic'
 
 " tmux integrations
-NeoBundle 'christoomey/vim-tmux-navigator'
+"NeoBundle 'christoomey/vim-tmux-navigator'
 
-NeoBundle 'zhaocai/GoldenView.Vim' "Always have a nice view for vim split windows
+"NeoBundle 'zhaocai/GoldenView.Vim' "Always have a nice view for vim split windows
 
 call neobundle#end()
 
