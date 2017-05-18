@@ -8,5 +8,6 @@ end
 
 require('super')
 require('control-escape')
+require('hyper')
 
 hs.notify.new({title='Hammerspoon', informativeText='Ready to rock 🤘'}):send()

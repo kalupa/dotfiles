@@ -13,7 +13,13 @@ hyperMode = hs.hotkey.modal.new({}, 'F17')
 --   { 't', 'iTerm' },             -- "T" for "Terminal"
 -- }
 hyperModeAppMappings = {
-  { 'e', 'Emacs' }
+  { 'e', 'Emacs' }, -- E-ditor
+  { 't', 'iTerm' }, -- T-erminal
+  { 'c', 'Slack' }, -- C-hat
+  { 'd', 'Things' }, -- to-D-o
+  { 'm', 'Airmail 3'}, -- e-M-ail
+  { 'b', 'Google Chrome' }, -- B-rowser
+  { 'k', 'Fantastical 2' }, -- K-alendar
 }
 
 for i, mapping in ipairs(hyperModeAppMappings) do
@@ -22,12 +28,12 @@ for i, mapping in ipairs(hyperModeAppMappings) do
   end)
 end
 
--- Enter Hyper Mode when F17 (right option key) is pressed
+-- Enter Hyper Mode when F17 (Left Alt) is pressed
 pressedF18 = function()
   hyperMode:enter()
 end
 
--- Leave Hyper Mode when F17 (right option key) is released.
+-- Leave Hyper Mode when F17 (Left alt) is released.
 releasedF18 = function()
   hyperMode:exit()
 end
