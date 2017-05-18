@@ -4,7 +4,7 @@ local eventTypes = hs.eventtap.event.types
 -- If 's' and 'd' are *both* pressed within this time period, consider this to
 -- mean that they've been pressed simultaneously, and therefore we should enter
 -- Super Duper Mode.
-local MAX_TIME_BETWEEN_SIMULTANEOUS_KEY_PRESSES = 0.05 -- 20 milliseconds
+local MAX_TIME_BETWEEN_SIMULTANEOUS_KEY_PRESSES = 0.04 -- 20 milliseconds
 
 local superDuperMode = {
   reset = function(self)
