@@ -1,0 +1,13 @@
+-- HYPER+E: Act like ⌃e and move to end of line.
+-- efun = function()
+--   hs.eventtap.keyStroke({'⌃'}, 'e')
+--   k.triggered = true
+-- end
+-- k:bind({}, 'e', nil, efun)
+
+-- HYPER+A: Act like ⌃a and move to beginning of line.
+-- afun = function()
+--   hs.eventtap.keyStroke({'⌃'}, 'a')
+--   k.triggered = true
+-- end
+-- k:bind({}, 'a', nil, afun)
