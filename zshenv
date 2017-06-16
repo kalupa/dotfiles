@@ -32,9 +32,9 @@ export GOPATH="${HOME}/gocode"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-iterm2_print_user_vars() {
-    iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
-}
-printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
+# iterm2_print_user_vars() {
+#     iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+# }
+# printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.

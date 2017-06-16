@@ -1334,11 +1334,11 @@
 	<key>HideStuckTooltips</key>
 	<true/>
 	<key>HideTab</key>
-	<true/>
+	<false/>
 	<key>HideTabCloseButton</key>
 	<true/>
 	<key>HideTabNumber</key>
-	<true/>
+	<false/>
 	<key>HighlightTabLabels</key>
 	<false/>
 	<key>HotKeyBookmark</key>
@@ -1418,11 +1418,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>173 361 599 388 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>223 794 796 473 0 0 2560 1417 </string>
+	<string>-1568 419 770 381 -1680 -104 1680 1027 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>230 833 592 584 0 0 2560 1417 </string>
+	<string>-1553 339 592 584 -1680 -104 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 8 1274 1409 0 0 2560 1417 </string>
+	<string>-1680 -70 1674 993 -1680 -104 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1689,7 +1689,7 @@
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Flashing Bell</key>
-			<false/>
+			<true/>
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2212,7 +2212,7 @@
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
-			<false/>
+			<true/>
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
@@ -2325,6 +2325,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>2</integer>
 	<key>PerformDictionaryLookupOnQuickLook</key>
 	<false/>
 	<key>PointerActions</key>
@@ -2383,7 +2385,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-14T22:26:22Z</date>
+	<date>2017-06-07T15:27:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2393,7 +2395,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<false/>
 	<key>ShowPaneTitles</key>
@@ -2423,7 +2425,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1486490112</real>
+	<real>1496769792</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseAdaptiveFrameRate</key>

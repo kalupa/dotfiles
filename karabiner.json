@@ -131,7 +131,7 @@
                 "f8": "play_or_pause",
                 "f9": "fastforward"
             },
-            "name": "plk",
+            "name": "pnk",
             "selected": false,
             "simple_modifications": {},
             "virtual_hid_keyboard": {
@@ -159,15 +159,35 @@
                         "product_id": 628,
                         "vendor_id": 1452
                     },
-                    "ignore": true
+                    "ignore": false
                 },
                 {
-                    "disable_built_in_keyboard_if_exists": true,
+                    "disable_built_in_keyboard_if_exists": false,
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
                         "product_id": 7,
                         "vendor_id": 1523
+                    },
+                    "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 257,
+                        "vendor_id": 1204
+                    },
+                    "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 257,
+                        "vendor_id": 1204
                     },
                     "ignore": false
                 }
@@ -189,7 +209,80 @@
             "name": "dflt",
             "selected": true,
             "simple_modifications": {
-                "caps_lock": "f18"
+                "caps_lock": "f18",
+                "f13": "f13",
+                "grave_accent_and_tilde": "grave_accent_and_tilde",
+                "help": "help",
+                "non_us_backslash": "non_us_backslash"
+            },
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "keyboard_type": "ansi"
+            }
+        },
+        {
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 628,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 257,
+                        "vendor_id": 1204
+                    },
+                    "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 257,
+                        "vendor_id": 1204
+                    },
+                    "ignore": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 359,
+                        "vendor_id": 1241
+                    },
+                    "ignore": false
+                }
+            ],
+            "fn_function_keys": {
+                "f1": "display_brightness_decrement",
+                "f10": "mute",
+                "f11": "volume_decrement",
+                "f12": "volume_increment",
+                "f2": "display_brightness_increment",
+                "f3": "mission_control",
+                "f4": "launchpad",
+                "f5": "illumination_decrement",
+                "f6": "illumination_increment",
+                "f7": "rewind",
+                "f8": "play_or_pause",
+                "f9": "fastforward"
+            },
+            "name": "p3r",
+            "selected": false,
+            "simple_modifications": {
+                "left_command": "left_option",
+                "left_option": "left_command",
+                "right_control": "f18"
             },
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,

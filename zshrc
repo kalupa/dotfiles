@@ -15,7 +15,7 @@ BULLETTRAIN_PROMPT_ORDER=(
 if [[ -n ${INSIDE_EMACS} ]]; then
   BULLETTRAIN_CONTEXT_HOSTNAME="%M"
 	BULLETTRAIN_IS_SSH_CLIENT=true
-  BULLETTRAIN_GIT_SHOW=false
+  # BULLETTRAIN_GIT_SHOW=false
 fi
 
 source ~/antigen/antigen.zsh

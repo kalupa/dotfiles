@@ -1,43 +1,29 @@
--- Credit for this implementation goes to @arbelt and @jasoncodes 🙇⚡️😻
---
---   https://gist.github.com/arbelt/b91e1f38a0880afb316dd5b5732759f1
---   https://github.com/jasoncodes/dotfiles/blob/ac9f3ac/hammerspoon/control_escape.lua
+-- lifted from https://gist.github.com/rjhilgefort/07ce5cdd3832083d7e94113d54372b1c
 
-send_escape = false
-last_mods = {}
+local sendEscape = true
+local ctrlKeyTimer = hs.timer.delayed.new(0.15, function()
+                                            sendEscape = false
+end)
+local lastMods = {}
 
-control_key_handler = function()
-  send_escape = false
-end
+local flagsChangedHandler = function(event)
+  local newMods = event:getFlags()
 
-control_key_timer = hs.timer.delayed.new(0.15, control_key_handler)
+  if lastMods.ctrl == newMods.ctrl then return false end
 
-control_handler = function(evt)
-  local new_mods = evt:getFlags()
-  if last_mods["ctrl"] == new_mods["ctrl"] then
-    return false
-  end
-  if not last_mods["ctrl"] then
-    last_mods = new_mods
-    send_escape = true
-    control_key_timer:start()
+  if not lastMods.ctrl then
+    sendEscape = true
+    lastMods = newMods
+    ctrlKeyTimer:start()
   else
-    if send_escape then
-      hs.eventtap.keyStroke({}, "ESCAPE")
-    end
-    last_mods = new_mods
-    control_key_timer:stop()
+    if sendEscape then hs.eventtap.keyStroke({}, "escape") end
+    lastMods = newMods
+    ctrlKeyTimer:stop()
   end
+
   return false
+
 end
 
-control_tap = hs.eventtap.new({hs.eventtap.event.types.flagsChanged}, control_handler)
-control_tap:start()
-
-other_handler = function(evt)
-  send_escape = false
-  return false
-end
-
-other_tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, other_handler)
-other_tap:start()
+flagsChanged = hs.eventtap.new({ hs.eventtap.event.types.flagsChanged }, flagsChangedHandler)
+flagsChanged:start()
