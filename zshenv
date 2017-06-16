@@ -1,7 +1,11 @@
 #!/usr/local/bin/zsh
 
+# echo "loading zshenv"
+
 # export EDITOR=~/bin/emc
 export TERM="xterm-256color"
+# export TERM="eterm-color"
+export TERMINFO="$HOME/.terminfo"
 
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 PATH=$PATH:$HOME/bin:./bin:
@@ -38,3 +42,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
+
+source "$HOME/.zshenv_local"

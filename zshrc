@@ -1,22 +1,11 @@
 #!/usr/local/bin/zsh
+
+# echo 'loading zshrc'
+
+# export TERM="xterm-256color"
+export TERMINFO="$HOME/.terminfo"
+
 [[ ! -d ~/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git ~/.antigen.git
-
-BULLETTRAIN_DIR_EXTENDED=0
-BULLETTRAIN_CONTEXT_DEFAULT_USER="paul"
-
-BULLETTRAIN_PROMPT_ORDER=(
-  time
-  status
-  context
-  dir
-  virtualenv
-  cmd_exec_time
-)
-if [[ -n ${INSIDE_EMACS} ]]; then
-  BULLETTRAIN_CONTEXT_HOSTNAME="%M"
-	BULLETTRAIN_IS_SSH_CLIENT=true
-  # BULLETTRAIN_GIT_SHOW=false
-fi
 
 source ~/antigen/antigen.zsh
 
@@ -32,8 +21,13 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
+
+autoload -U promptinit; promptinit; prompt pure
+
 antigen use oh-my-zsh
-antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+# antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # macos specific
 # Load OS specific bundles
@@ -90,7 +84,6 @@ antigen bundle virtualenv
 antigen bundle virtualenvwrapper
 antigen bundle zsh_reload
 
-
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # bind UP and DOWN arrow keys
@@ -137,9 +130,8 @@ if exists emacs; then
     }
 fi
 
-source "$HOME/.zshrc_local"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # iterm2_print_user_vars() {
 #     iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
@@ -150,3 +142,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
 
 eval "$(ssh-agent -s)"
+
+source "$HOME/.zshrc_local"
