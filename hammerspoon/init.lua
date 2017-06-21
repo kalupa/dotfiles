@@ -6,7 +6,7 @@ keyUpDown = function(modifiers, key)
   hs.eventtap.event.newKeyEvent(modifiers, key, false):post()
 end
 
-require('control-escape')
+-- require('control-escape')
 require('hyper')
 
 -- require('super')
