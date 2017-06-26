@@ -10,7 +10,8 @@ export TERMINFO="$HOME/.terminfo"
 PATH=./.bundle/bin:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin
 PATH=$PATH:$HOME/bin:./bin:
 PATH=$PATH:$HOME/.local/bin:
-export PATH="$PATH:`yarn global bin`"
+PATH="$PATH:`yarn global bin`"
+PATH="~/.cabal/bin:$PATH" # cabal *really* likes to be first
 # PATH=$PATH:$HOME/Library/Haskell/bin:
 
 # rbenv configuation
