@@ -144,3 +144,5 @@ fi
 eval "$(ssh-agent -s)"
 
 source "$HOME/.zshrc_local"
+
+PATH="$PATH:`yarn global bin`"
