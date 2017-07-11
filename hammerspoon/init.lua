@@ -6,24 +6,40 @@ keyUpDown = function(modifiers, key)
   hs.eventtap.event.newKeyEvent(modifiers, key, false):post()
 end
 
--- require('control-escape')
 require('hyper')
+require('muteonsleep')
 
--- require('super')
--- require('tab-backtick')
+require('reloadconfig')
 
--- Reload config when any lua file in config directory changes
-function reloadConfig(files)
-  doReload = false
-  for _,file in pairs(files) do
-    if file:sub(-4) == '.lua' then
-      doReload = true
-    end
-  end
-  if doReload then
-    hs.reload()
-  end
+--- Filter that includes full-screen apps
+-- hs.window.filter.ignoreAlways['Alfred3'] = true
+hs.window.filter.ignoreAlways['iTerm2'] = true
+hs.window.filter.ignoreAlways['Emacs'] = true
+hs.window.filter.ignoreAlways['Slack'] = true
+hs.window.filter.ignoreAlways['Mailplane 3'] = true
+hs.window.filter.ignoreAlways['Fantastical'] = true
+-- hs.window.filter.ignoreAlways['Airmail 3'] = true
+
+globalfilter = function()
+  return hs.window.filter.new()
+  -- :setDefaultFilter(true, {allowRoles = 'AXStandardWindow'})
+  -- :setAppFilter('Emacs', {allowRoles={'AXUnknown', 'AXStandardWindow'}})
+  -- :setAppFilter('iTerm2', {allowRoles='AXUnknown'})
 end
-local myWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/.hammerspoon/', reloadConfig):start()
 
-hs.notify.new({title='Hammerspoon', informativeText='Loading complete ...'}):send()
+-- ----------------------------
+-- App switcher with Cmd++j/k
+-- ----------------------------
+-- switcher = hs.window.switcher.new(hs.window.filter.new(),
+switcher = hs.window.switcher.new(globalfilter(),
+                                  {textSize = 12,
+                                   showTitles = false,
+                                   showThumbnails = false,
+                                   showSelectedTitle = false,
+                                   selectedThumbnailSize = 128,
+                                   backgroundColor = {0, 0, 0, 0}})
+-- -- switcher = hs.window.switcher.new()
+
+hs.hotkey.bind({'cmd'},'j', function() switcher:next() end)
+hs.hotkey.bind({'cmd'},'k', function() switcher:previous() end)
+

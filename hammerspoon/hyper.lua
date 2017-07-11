@@ -33,8 +33,16 @@ fullscreen = function()
 end
 
 -- Set some resize grids up
+hs.grid.setGrid('8x4', '3840x2160')
+hs.grid.setGrid('8x4', '3840x2160')
 hs.grid.setGrid('6x4', '2560x1440')
-hs.grid.setGrid('4x3', '1920x1200')
+hs.grid.setGrid('6x4', '1680x1050')
+hs.grid.setGrid('6x4', '1920x1200')
+hs.grid.setGrid('6x4', '1920x1080')
+hs.grid.setGrid('6x4', '1440x900')
+hs.grid.setMargins({0,0}) -- gapless
+hs.window.animationDuration = 0 -- disable animations
+
 hyperMode:bind({}, 'g', hs.grid.toggleShow)
 
 hyperMode:bind({}, "space", fullscreen) -- BAM!
