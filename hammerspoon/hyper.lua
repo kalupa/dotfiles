@@ -19,6 +19,29 @@ for i, mapping in ipairs(hyperModeAppMappings) do
   end)
 end
 
+-- clear sticky alert notificationb
+function clearNotification()
+  local script = [[
+    tell application "System Events" to tell process "Notification Center"
+      try
+        click button 1 of last item of windows
+      end try
+    end tell
+    return input]]
+  hs.osascript.applescript(script)
+end
+hyperMode:bind({}, 'escape', clearNotification)
+
+function clearAllNotifications()
+  local script = [[
+    tell application "System Events" to tell process "Notification Center"
+      click button 1 in every window
+    end tell
+    return input]]
+  hs.osascript.applescript(script)
+end
+hyperMode:bind({'shift'}, 'escape', clearNotification)
+
 fullscreen = function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
