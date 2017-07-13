@@ -3,14 +3,18 @@
 # echo "loading zshenv"
 
 # export EDITOR=~/bin/emc
-export TERM="xterm-256color"
 # export TERM="eterm-color"
+
 export TERMINFO="$HOME/.terminfo"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export TERM=xterm-256color
 
 PATH="$HOME/.cabal/bin" # cabal *really* likes to be first
 PATH="$PATH:./.bundle/bin" # danger!
 PATH="$PATH:$HOME/bin:./bin:$HOME/.local/bin"
 PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
+PATH="$PATH:`yarn global bin`"
 # PATH=$PATH:$HOME/Library/Haskell/bin:
 
 # rbenv configuation
@@ -34,12 +38,14 @@ fi
 
 export GOPATH="${HOME}/gocode"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+if [ -z "$EMACS" ]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# iterm2_print_user_vars() {
-#     iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
-# }
-# printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
+  iterm2_print_user_vars() {
+    iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+  }
+  printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
+fi
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
 
