@@ -133,13 +133,9 @@ if exists emacs; then
     }
 fi
 
-
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# iterm2_print_user_vars() {
-#     iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
-# }
-# printf "\e]1337;SetBadgeFormat=%s\a" $(echo -n "\(user.gitBranch)" | base64)
+if [ -z "$EMACS" ]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
 # added by travis gem
 [ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
@@ -149,10 +145,11 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+if [ -n "$INSIDE_EMACS" ]; then
+  chpwd() { print -P "\033AnSiTc %d" }
+  print -P "\033AnSiTu %n"
+  print -P "\033AnSiTc %d"
+fi
+
 source "$HOME/.zshrc_local"
 
-# if [ -n "$INSIDE_EMACS" ]; then
-#   chpwd() { print -P "\033AnSiTc %d" }
-#   print -P "\033AnSiTu %n"
-#   print -P "\033AnSiTc %d"
-# fi
