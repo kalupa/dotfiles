@@ -56,8 +56,7 @@ fullscreen = function()
 end
 
 -- Set some resize grids up
-hs.grid.setGrid('8x4', '3840x2160')
-hs.grid.setGrid('8x4', '3840x2160')
+hs.grid.setGrid('8x6', '3840x2160')
 hs.grid.setGrid('6x4', '2560x1440')
 hs.grid.setGrid('6x4', '1680x1050')
 hs.grid.setGrid('6x4', '1920x1200')
