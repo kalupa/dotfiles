@@ -31,15 +31,15 @@ end
 -- App switcher with Cmd++j/k
 -- ----------------------------
 -- switcher = hs.window.switcher.new(hs.window.filter.new(),
-switcher = hs.window.switcher.new(globalfilter(),
-                                  {textSize = 12,
-                                   showTitles = false,
-                                   showThumbnails = false,
-                                   showSelectedTitle = false,
-                                   selectedThumbnailSize = 128,
-                                   backgroundColor = {0, 0, 0, 0}})
+-- switcher = hs.window.switcher.new(globalfilter(),
+--                                   {textSize = 12,
+--                                    showTitles = false,
+--                                    showThumbnails = false,
+--                                    showSelectedTitle = false,
+--                                    selectedThumbnailSize = 128,
+--                                    backgroundColor = {0, 0, 0, 0}})
 -- -- switcher = hs.window.switcher.new()
 
-hs.hotkey.bind({'cmd'},'j', function() switcher:next() end)
-hs.hotkey.bind({'cmd'},'k', function() switcher:previous() end)
+-- hs.hotkey.bind({'cmd'},'j', function() switcher:next() end)
+-- hs.hotkey.bind({'cmd'},'k', function() switcher:previous() end)
 
