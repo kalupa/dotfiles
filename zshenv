@@ -17,6 +17,13 @@ PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X1
 PATH="$PATH:`yarn global bin`"
 # PATH=$PATH:$HOME/Library/Haskell/bin:
 
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+  eval "$(pyenv init -)"
+  PATH="$(pyenv root)/shims:$PATH"
+  export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+fi
+
 # rbenv configuation
 export RBENV_ROOT="${HOME}/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
@@ -24,20 +31,10 @@ if [ -d "${RBENV_ROOT}" ]; then
   PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
 
-export PATH
-
-# homebrew related configs
-if [ -f "/usr/local/bin/brew" ]; then
-    BREW_PREFIX=$(brew --prefix)
-    # here for now since I'm only really using python stuff on the mac
-    export PYTHONPATH=$BREW_PREFIX/lib/python2.7/site-packages
-fi
-
-# export GITHUB_SSH_PRIVATE_KEY_FILE="$HOME/.ssh/id_rsa"
-# export GITHUB_SSH_PUBLIC_KEY_FILE="$HOME/.ssh/id_rsa.pub"
-
 export GOPATH="${HOME}/gocode"
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
 
 source "$HOME/.zshenv_local"
+
+export PATH

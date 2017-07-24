@@ -26,7 +26,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
-autoload -U promptinit; promptinit; prompt pure
 
 antigen use oh-my-zsh
 # antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
@@ -68,9 +67,9 @@ antigen bundle kubectl
 antigen bundle lein
 antigen bundle mosh
 antigen bundle node
-# antigen bundle npm
-antigen bundle per-directory-history
-antigen bundle pip
+antigen bundle npm
+# antigen bundle per-directory-history
+# antigen bundle pip
 antigen bundle python
 
 if exists rails; then
@@ -83,8 +82,8 @@ fi
 antigen bundle safe-paste
 antigen bundle ssh-agent
 # antigen bundle stack
-antigen bundle virtualenv
-antigen bundle virtualenvwrapper
+# antigen bundle virtualenv
+# antigen bundle virtualenvwrapper
 antigen bundle zsh_reload
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
@@ -107,7 +106,6 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 # bindkey -M vicmd 'k' history-substring-search-up
 # bindkey -M vicmd 'j' history-substring-search-down
 
-# python-related
 # quick and dirty web server
 if exists python; then
     function psy(){
@@ -116,29 +114,13 @@ if exists python; then
 fi
 
 antigen apply
+
+autoload -U promptinit; promptinit; prompt pure
+
+source "$HOME/.zshrc_local"
+
 unalias gl
-
 alias grbm="git fetch; git rebase origin/master"
-
-if exists emacs; then
-    function emc-start() {
-        echo "Daemonizing ..."
-        emacs --daemon &&
-            echo "Starting GUI" &&
-            emacsclient -n -c
-    }
-
-    function emc() {
-        emacsclient -n $*
-    }
-fi
-
-if [ -z "$EMACS" ]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
-# added by travis gem
-[ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)"
@@ -151,5 +133,10 @@ if [ -n "$INSIDE_EMACS" ]; then
   print -P "\033AnSiTc %d"
 fi
 
-source "$HOME/.zshrc_local"
+# added by travis gem
+[ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
+
+if [ -z "$EMACS" ]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
