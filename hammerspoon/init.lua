@@ -6,26 +6,21 @@ keyUpDown = function(modifiers, key)
   hs.eventtap.event.newKeyEvent(modifiers, key, false):post()
 end
 
-require('hyper')
+require('hyper2')
 require('muteonsleep')
+require('wifi-status-change')
 
 require('reloadconfig')
 
 --- Filter that includes full-screen apps
 -- hs.window.filter.ignoreAlways['Alfred3'] = true
-hs.window.filter.ignoreAlways['iTerm2'] = true
-hs.window.filter.ignoreAlways['Emacs'] = true
-hs.window.filter.ignoreAlways['Slack'] = true
-hs.window.filter.ignoreAlways['Mailplane 3'] = true
-hs.window.filter.ignoreAlways['Fantastical'] = true
+-- hs.window.filter.ignoreAlways['iTerm2'] = true
+-- hs.window.filter.ignoreAlways['Emacs'] = true
+-- hs.window.filter.ignoreAlways['Slack'] = true
+-- hs.window.filter.ignoreAlways['Mailplane 3'] = true
+-- hs.window.filter.ignoreAlways['Fantastical'] = true
 -- hs.window.filter.ignoreAlways['Airmail 3'] = true
 
-globalfilter = function()
-  return hs.window.filter.new()
-  -- :setDefaultFilter(true, {allowRoles = 'AXStandardWindow'})
-  -- :setAppFilter('Emacs', {allowRoles={'AXUnknown', 'AXStandardWindow'}})
-  -- :setAppFilter('iTerm2', {allowRoles='AXUnknown'})
-end
 
 -- ----------------------------
 -- App switcher with Cmd++j/k
