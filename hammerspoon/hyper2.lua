@@ -12,6 +12,7 @@ hyperModeAppMappings = {
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
 }
+  -- { 't', 'Hyper' }, -- T-erminal
   -- { 'm', 'Mailplane 3' }, -- e-M-ail
 
 for i, mapping in ipairs(hyperModeAppMappings) do
