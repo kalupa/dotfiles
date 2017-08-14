@@ -11,3 +11,4 @@ emacs/.*
 emacs/*.dat
 emacs/places
 emacs/u.DS_Store
+.local
