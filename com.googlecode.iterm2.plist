@@ -1759,17 +1759,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1101 152 753 77 0 0 2560 1417 </string>
+	<string>1293 342 753 77 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>-1270 335 620 392 -1920 -254 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1091 610 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1427 994 918 416 0 0 2560 1417 </string>
+	<string>1427 996 916 416 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>-1553 339 592 584 -1680 -104 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 375 842 1042 0 0 2560 1417 </string>
+	<string>639 0 1277 1177 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2457,7 +2457,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraCodeNerdFontC-Retina 13</string>
+			<string>FuraCodeNerdFontC-Retina 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Place Prompt at First Column</key>
@@ -4582,7 +4582,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-08-03T20:24:09Z</date>
+	<date>2017-08-08T02:47:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
