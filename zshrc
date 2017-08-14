@@ -26,7 +26,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
-
 antigen use oh-my-zsh
 # antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
@@ -115,7 +114,9 @@ fi
 
 antigen apply
 
-autoload -U promptinit; promptinit; prompt pure
+autoload -U promptinit; promptinit;
+PURE_GIT_PULL=0
+prompt pure
 
 source "$HOME/.zshrc_local"
 
