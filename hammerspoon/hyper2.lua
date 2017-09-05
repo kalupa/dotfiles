@@ -7,13 +7,13 @@ hyperModeAppMappings = {
   { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
   { 't', 'iTerm' }, -- T-erminal
   { 'c', 'Slack' }, -- C-hat
+  { 'm', 'Mailplane 3' }, -- e-M-ail
   { 'd', 'Things3' }, -- to-D-o
-  { 'm', 'Airmail 3'},
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
 }
+  -- { 'm', 'Airmail 3'},
   -- { 't', 'Hyper' }, -- T-erminal
-  -- { 'm', 'Mailplane 3' }, -- e-M-ail
 
 for i, mapping in ipairs(hyperModeAppMappings) do
   hs.hotkey.bind({'cmd,ctrl,alt,shift'}, mapping[1], function()

@@ -7,11 +7,12 @@ hyperModeAppMappings = {
   { 't', 'iTerm' }, -- T-erminal
   { 'c', 'Slack' }, -- C-hat
   { 'd', 'Things3' }, -- to-D-o
-  { 'm', 'Airmail 3'},
+  { 'm', 'Mailplane 3' }, -- e-M-ail
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
 }
-  -- { 'm', 'Mailplane 3' }, -- e-M-ail
+
+-- { 'm', 'Airmail 3'},
 
 for i, mapping in ipairs(hyperModeAppMappings) do
   hyperMode:bind({}, mapping[1], function()
