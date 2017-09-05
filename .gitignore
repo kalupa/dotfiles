@@ -12,3 +12,9 @@ emacs/*.dat
 emacs/places
 emacs/u.DS_Store
 .local
+.DS_Store
+bvm
+run-diff-tests
+start-webapp
+stop-webapp
+test-builder
