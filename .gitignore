@@ -18,3 +18,4 @@ run-diff-tests
 start-webapp
 stop-webapp
 test-builder
+.slack-token

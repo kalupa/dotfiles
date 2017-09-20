@@ -22,3 +22,5 @@
   enabled = true
 [diff]
 	compactionHeuristic = true
+[magit]
+	hideCampaign = true
