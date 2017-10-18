@@ -62,6 +62,8 @@ hs.grid.setGrid('6x4', '1440x900')
 hs.grid.setMargins({0,0}) -- gapless
 hs.window.animationDuration = 0 -- disable animations
 
+hs.hotkey.bind({'cmd,ctrl,alt,shift'}, '=', hs.caffeinate.startScreensaver)
+
 hs.hotkey.bind({'cmd,ctrl,alt,shift'}, 'g', hs.grid.toggleShow)
 
 hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "space", fullscreen) -- BAM!
