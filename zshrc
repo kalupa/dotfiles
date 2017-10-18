@@ -141,3 +141,10 @@ if [ -z "$EMACS" ]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
+if exists stack; then
+  autoload -U +X compinit && compinit
+  autoload -U +X bashcompinit && bashcompinit
+  eval "$(stack --bash-completion-script stack)"
+fi
+
+eval "$(thefuck --alias)"

@@ -29,28 +29,25 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
     dotspacemacs-configuration-layers
-    '(python
-       csv
-       markdown
-       yaml
-       ;; ----------------------------------------------------------------
-       ;; Example of useful layers you may want to use right away.
-       ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-       ;; <M-m f e R> (Emacs style) to install them.
-       ;; ----------------------------------------------------------------
-       helm
+    '(
        auto-completion
        better-defaults
+       csv
        dash
        docker
        emacs-lisp
+       eyebrowse
        git
+       handlebars
+       haskell
+       helm
        html
        javascript
-       markdown
        lua
+       markdown
        org
        osx
+       python
        react
        restclient
        ruby-on-rails
@@ -61,6 +58,7 @@ This function should only modify configuration layer settings."
        syntax-checking
        themes-megapack
        version-control
+       yaml
        )
     ;; List of additional packages that will be installed without being
     ;; wrapped in a layer. If you need some configuration for these
@@ -363,10 +361,12 @@ you should place your code here."
   (add-to-list 'exec-path "~/bin")
 
   (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
+  ;;(add-hook 'web-mode-hook 'prettier-js-mode)
   (setq prettier-js-args '(
                             "--single-quote"
                             "--print-width 100"
+                            "--ignore-path ~/.prettierignore"
+                            "--config-preference prefer-file"
                             ))
 
   (setq powerline-default-separator 'brace)
@@ -410,11 +410,11 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (goto-chg exotica-theme yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic doom-themes all-the-icons font-lock+ white-sand-theme symon ruby-refactor rebecca-theme password-generator org-brain impatient-mode helm-purpose window-purpose imenu-list flycheck-bashate evil-org evil-lion company-lua browse-at-remote zonokai-theme zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme prettier-js org-category-capture sourcemap memoize undo-tree js2-refactor lua-mode s indium websocket seq diminish f winum unfill restclient-helm ob-restclient fuzzy company-restclient know-your-http-well json-mode log4e color-theme-sanityinc-tomorrow tomorrow-dark-theme tablist multiple-cursors async insert-shebang fish-mode company-shell editorconfig docker-tramp evil avy dash mocha org packed auto-complete simple-httpd string-inflection restclient ob-http tern iedit request markdown-mode alert haml-mode bind-key bind-map flycheck js2-mode smartparens hydra helm-core yasnippet with-editor company highlight helm skewer-mode magit magit-popup git-commit inflections projectile inf-ruby powerline define-word yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify wakatime-mode volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters quelpa pug-mode projectile-rails popwin persp-mode pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree mwim multi-term move-text mmm-mode minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode launchctl j Flycheck version: 31snapshot
-              (package: 20170428.1244)
-              s Flycheck version: 31snapshot
-              (package: 20170428.1244)
-              2-refactor js-doc info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruber-darker-theme google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker diff-hl dash-at-point csv-mode company-web company-tern company-statistics column-enforce-mode coffee-mode clean-aindent-mode chruby bundler auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (rake intero hlint-refactor hindent helm-hoogle haskell-snippets flycheck-haskell dante company-ghci company-ghc ghc haskell-mode company-cabal cmm-mode goto-chg exotica-theme yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic doom-themes all-the-icons font-lock+ white-sand-theme symon ruby-refactor rebecca-theme password-generator org-brain impatient-mode helm-purpose window-purpose imenu-list flycheck-bashate evil-org evil-lion company-lua browse-at-remote zonokai-theme zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme prettier-js org-category-capture sourcemap memoize undo-tree js2-refactor lua-mode s indium websocket seq diminish f winum unfill restclient-helm ob-restclient fuzzy company-restclient know-your-http-well json-mode log4e color-theme-sanityinc-tomorrow tomorrow-dark-theme tablist multiple-cursors async insert-shebang fish-mode company-shell editorconfig docker-tramp evil avy dash mocha org packed auto-complete simple-httpd string-inflection restclient ob-http tern iedit request markdown-mode alert haml-mode bind-key bind-map flycheck js2-mode smartparens hydra helm-core yasnippet with-editor company highlight helm skewer-mode magit magit-popup git-commit inflections projectile inf-ruby powerline define-word yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify wakatime-mode volatile-highlights vi-tilde-fringe uuidgen use-package toc-org tagedit spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters quelpa pug-mode projectile-rails popwin persp-mode pbcopy paradox osx-trash osx-dictionary orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file neotree mwim multi-term move-text mmm-mode minitest markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode linum-relative link-hint less-css-mode launchctl j Flycheck version: 31snapshot
+          (package: 20170428.1244)
+          s Flycheck version: 31snapshot
+          (package: 20170428.1244)
+          2-refactor js-doc info+ indent-guide ido-vertical-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruber-darker-theme google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker diff-hl dash-at-point csv-mode company-web company-tern company-statistics column-enforce-mode coffee-mode clean-aindent-mode chruby bundler auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(safe-local-variable-values nil)
  '(tool-bar-mode nil))
 (custom-set-faces
