@@ -7,7 +7,7 @@ hyperModeAppMappings = {
   { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
   { 't', 'iTerm' }, -- T-erminal
   { 'c', 'Slack' }, -- C-hat
-  { 'm', 'Mailplane 3' }, -- e-M-ail
+  { 'm', 'Spark' }, -- e-M-ail
   { 'd', 'Things3' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar

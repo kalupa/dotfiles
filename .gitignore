@@ -19,3 +19,4 @@ start-webapp
 stop-webapp
 test-builder
 .slack-token
+.slack-token.lua
