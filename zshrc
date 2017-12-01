@@ -22,6 +22,7 @@ antigen bundle lukechilds/zsh-better-npm-completion
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-history-substring-search
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
@@ -64,6 +65,7 @@ antigen bundle gnu-utils
 antigen bundle history-substring-search
 antigen bundle kubectl
 antigen bundle lein
+# antigen bundle maven
 antigen bundle mosh
 antigen bundle node
 antigen bundle npm
@@ -87,24 +89,6 @@ antigen bundle zsh_reload
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-# bind UP and DOWN arrow keys
-# zmodload zsh/terminfo
-# bindkey "$terminfo[kcuu1]" history-substring-search-up
-# bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# # bind UP and DOWN arrow keys (compatibility fallback
-# # for Ubuntu 12.04, Fedora 21, and MacOSX 10.9 users)
-# bindkey '^[[A' history-substring-search-up
-# bindkey '^[[B' history-substring-search-down
-
-# # bind P and N for EMACS mode
-# bindkey -M emacs '^P' history-substring-search-up
-# bindkey -M emacs '^N' history-substring-search-down
-
-# # bind k and j for VI mode
-# bindkey -M vicmd 'k' history-substring-search-up
-# bindkey -M vicmd 'j' history-substring-search-down
-
 # quick and dirty web server
 if exists python; then
     function psy(){
@@ -113,6 +97,11 @@ if exists python; then
 fi
 
 antigen apply
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
 
 autoload -U promptinit; promptinit;
 PURE_GIT_PULL=0
@@ -146,5 +135,3 @@ if exists stack; then
   autoload -U +X bashcompinit && bashcompinit
   eval "$(stack --bash-completion-script stack)"
 fi
-
-eval "$(thefuck --alias)"
