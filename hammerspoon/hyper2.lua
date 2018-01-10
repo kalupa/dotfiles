@@ -4,15 +4,16 @@
 
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
+  { 'c', 'Slack' }, -- C-hat
   { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
   { 't', 'iTerm' }, -- T-erminal
-  { 'c', 'Slack' }, -- C-hat
-  { 'm', 'Spark' }, -- e-M-ail
   { 'd', 'Things3' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
 }
-  -- { 'm', 'Airmail 3'},
+
+  -- { 'm', 'Airmail 3'}, -- e-M-ail
+  -- { 'm', 'Spark' }, -- e-M-ail
   -- { 't', 'Hyper' }, -- T-erminal
 
 for i, mapping in ipairs(hyperModeAppMappings) do

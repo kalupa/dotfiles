@@ -7,8 +7,8 @@ keyUpDown = function(modifiers, key)
 end
 
 require('hyper2')
-require('muteonsleep')
-require('wifi-status-change')
+-- require('muteonsleep')
+-- require('wifi-status-change')
 
 require('reloadconfig')
 
@@ -37,4 +37,3 @@ require('reloadconfig')
 
 -- hs.hotkey.bind({'cmd'},'j', function() switcher:next() end)
 -- hs.hotkey.bind({'cmd'},'k', function() switcher:previous() end)
-
