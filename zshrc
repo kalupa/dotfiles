@@ -107,31 +107,8 @@ autoload -U promptinit; promptinit;
 PURE_GIT_PULL=0
 prompt pure
 
-source "$HOME/.zshrc_local"
 
 unalias gl
 alias grbm="git fetch; git rebase origin/master"
 
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval "$(ssh-agent -s)"
-  ssh-add
-fi
-
-if [ -n "$INSIDE_EMACS" ]; then
-  chpwd() { print -P "\033AnSiTc %d" }
-  print -P "\033AnSiTu %n"
-  print -P "\033AnSiTc %d"
-fi
-
-# added by travis gem
-[ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
-
-if [ -z "$EMACS" ]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-fi
-
-if exists stack; then
-  autoload -U +X compinit && compinit
-  autoload -U +X bashcompinit && bashcompinit
-  eval "$(stack --bash-completion-script stack)"
-fi
+source "$HOME/.zshrc_local"
