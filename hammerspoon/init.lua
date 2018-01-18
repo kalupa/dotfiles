@@ -6,7 +6,7 @@ keyUpDown = function(modifiers, key)
   hs.eventtap.event.newKeyEvent(modifiers, key, false):post()
 end
 
-require('hyper2')
+require('hyper')
 -- require('muteonsleep')
 -- require('wifi-status-change')
 
