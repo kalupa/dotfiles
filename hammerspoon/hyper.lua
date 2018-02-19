@@ -7,13 +7,14 @@ hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
   { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
   { 't', 'iTerm' }, -- T-erminal
+  { 'm', 'Mail.app'}, -- Mail
   { 'd', 'Things3' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
 }
 
-  -- { 'm', 'Airmail 3'}, -- e-M-ail
   -- { 'm', 'Spark' }, -- e-M-ail
+  -- { 'm', 'Airmail 3'}, -- e-M-ail
   -- { 't', 'Hyper' }, -- T-erminal
 
 for i, mapping in ipairs(hyperModeAppMappings) do
@@ -117,17 +118,3 @@ hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "]", function()
     f.h = max.h
     win:setFrame(f, 0)
 end)
--- hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Right", function()
-
--- Enter Hyper Mode when F17 (Left Alt) is pressed
--- pressedF18 = function()
---   hyperMode:enter()
--- end
-
--- -- Leave Hyper Mode when F17 (Left alt) is released.
--- releasedF18 = function()
---   hyperMode:exit()
--- end
-
--- -- Bind the Hyper key
--- f17 = hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
