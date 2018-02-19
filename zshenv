@@ -62,9 +62,7 @@ export GOPATH="${HOME}/gocode"
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
 
-# yep, just parse that and eval an exports generated from nod
-
-  e
+# yep, just parse that and eval an exports generated from node
 eval $(node dotfiles/creds-to-env.js)
 
 source "$HOME/.zshenv_local"
