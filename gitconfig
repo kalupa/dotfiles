@@ -24,3 +24,5 @@
 	compactionHeuristic = true
 [magit]
 	hideCampaign = true
+[credential]
+	helper = osxkeychain

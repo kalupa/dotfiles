@@ -47,8 +47,8 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
   eval "$(pyenv init -)"
-  PATH="$(pyenv root)/shims:$PATH"
   export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+  pyenv virtualenvwrapper
 fi
 
 # rbenv configuation
@@ -61,6 +61,11 @@ fi
 export GOPATH="${HOME}/gocode"
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
+
+# yep, just parse that and eval an exports generated from nod
+
+  e
+eval $(node dotfiles/creds-to-env.js)
 
 source "$HOME/.zshenv_local"
 
