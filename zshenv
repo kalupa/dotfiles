@@ -5,7 +5,7 @@
 # export EDITOR=~/bin/emc
 # export TERM="eterm-color"
 
-PATH="$HOME/.cabal/bin" # cabal *really* likes to be first
+PATH="$HOME/.cabal/bin:$PATH" # cabal *really* likes to be first
 PATH="$PATH:./.bundle/bin" # danger!
 PATH="$PATH:$HOME/bin:./bin:$HOME/.local/bin"
 PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
@@ -42,15 +42,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM=xterm-256color
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-export PYENV_ROOT="${HOME}/.pyenv"
-if [ -d "${PYENV_ROOT}" ]; then
-  eval "$(pyenv init -)"
-  export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-  pyenv virtualenvwrapper
-fi
-
 # rbenv configuation
 export RBENV_ROOT="${HOME}/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
@@ -62,7 +53,7 @@ export GOPATH="${HOME}/gocode"
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
 
-eval $(dotfiles/start-aws-session.sh 900)
+# eval $($HOME/dotfiles/start-aws-session.sh 900)
 
 source "$HOME/.zshenv_local"
 

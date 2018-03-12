@@ -1,5 +1,8 @@
 #!/usr/local/bin/zsh
 
+export PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+source /usr/local/bin/virtualenvwrapper.sh
+
 # echo 'loading zshrc'
 
 [[ ! -d ~/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git ~/.antigen.git
@@ -31,10 +34,11 @@ if exists gtar; then
   alias tar="$(which gtar)"
 fi
 
-source "$HOME/.zshrc_local"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source "$HOME/.zshrc_local"
