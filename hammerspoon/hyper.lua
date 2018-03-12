@@ -7,14 +7,14 @@ hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
   { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
   { 't', 'iTerm' }, -- T-erminal
-  { 'm', 'Mail.app'}, -- Mail
+  { 'm', 'Airmail 3'}, -- e-M-ail
   { 'd', 'Things3' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
 }
 
   -- { 'm', 'Spark' }, -- e-M-ail
-  -- { 'm', 'Airmail 3'}, -- e-M-ail
+  -- { 'm', 'Mail.app'}, -- Mail
   -- { 't', 'Hyper' }, -- T-erminal
 
 for i, mapping in ipairs(hyperModeAppMappings) do
