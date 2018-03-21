@@ -5,14 +5,17 @@
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
-  { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
-  { 't', 'iTerm' }, -- T-erminal
+  { 'e', 'Visual Studio Code' }, -- vscode E-ditor
+  { 'r', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs edito-R
+  -- { 't', 'iTerm' }, -- T-erminal
   { 'm', 'Airmail 3'}, -- e-M-ail
   { 'd', 'Things3' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
+  { 'p', 'Postman' }, -- P-ostman
 }
 
+  -- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
   -- { 'm', 'Spark' }, -- e-M-ail
   -- { 'm', 'Mail.app'}, -- Mail
   -- { 't', 'Hyper' }, -- T-erminal
@@ -56,9 +59,9 @@ end
 
 -- Set some resize grids up
 hs.grid.setGrid('8x6', '3840x2160')
-hs.grid.setGrid('6x4', '2560x1440')
-hs.grid.setGrid('6x4', '1680x1050')
-hs.grid.setGrid('6x4', '1920x1200')
+hs.grid.setGrid('7x4', '2560x1440')
+hs.grid.setGrid('7x4', '1680x1050')
+hs.grid.setGrid('7x4', '1920x1200')
 hs.grid.setGrid('6x4', '1920x1080')
 hs.grid.setGrid('6x4', '1440x900')
 hs.grid.setMargins({0,0}) -- gapless
@@ -80,18 +83,18 @@ hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "Right", function()
 end)
 
 -- center window
-hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "delete", function()
-    local win = hs.window.focusedWindow()
-    local f = win:frame()
-    local screen = win:screen()
-    local max = screen:frame()
+-- hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "delete", function()
+--     local win = hs.window.focusedWindow()
+--     local f = win:frame()
+--     local screen = win:screen()
+--     local max = screen:frame()
 
-    f.x = max.x + (max.w / 4)
-    f.y = max.y + (max.h / 4)
-    f.w = max.w / 2
-    f.h = max.h / 2
-    win:setFrame(f, 0)
-end)
+--     f.x = max.x + (max.w / 4)
+--     f.y = max.y + (max.h / 4)
+--     -- f.w = max.w / 2
+--     -- f.h = max.h / 2
+--     win:setFrame(f, 0)
+-- end)
 
 hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "[", function()
     local win = hs.window.focusedWindow()
