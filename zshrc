@@ -5,9 +5,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # echo 'loading zshrc'
 
-[[ ! -d ~/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git ~/.antigen.git
-source ~/antigen/antigen.zsh
-antigen init .antigenrc
+[[ ! -d $HOME/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git $HOME/.antigen.git
+source $HOME/antigen/antigen.zsh
+antigen init $HOME/.antigenrc
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 

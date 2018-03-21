@@ -9,6 +9,7 @@ PATH="$HOME/.cabal/bin:$PATH" # cabal *really* likes to be first
 PATH="$PATH:./.bundle/bin" # danger!
 PATH="$PATH:$HOME/bin:./bin:$HOME/.local/bin"
 PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
+PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
 # PATH="$PATH:`yarn global bin`"
 # PATH=$PATH:$HOME/Library/Haskell/bin:
@@ -50,6 +51,7 @@ if [ -d "${RBENV_ROOT}" ]; then
 fi
 
 export GOPATH="${HOME}/gocode"
+PATH="$PATH:$GOPATH/bin"
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
 
