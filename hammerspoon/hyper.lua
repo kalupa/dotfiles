@@ -5,11 +5,11 @@
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
-  { 'e', 'Visual Studio Code' }, -- vscode E-ditor
-  { 'r', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs edito-R
-  -- { 't', 'iTerm' }, -- T-erminal
+  { 'e', 'Visual Studio Code' }, -- vscode
+  { 'r', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
+  { 't', 'iTerm' }, -- T-erminal
   { 'm', 'Airmail 3'}, -- e-M-ail
-  { 'd', 'Things3' }, -- to-D-o
+  { 'd', 'OmniFocus' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'k', 'Fantastical 2' }, -- K-alendar
   { 'p', 'Postman' }, -- P-ostman
@@ -19,6 +19,7 @@ hyperModeAppMappings = {
   -- { 'm', 'Spark' }, -- e-M-ail
   -- { 'm', 'Mail.app'}, -- Mail
   -- { 't', 'Hyper' }, -- T-erminal
+  -- { 'd', 'Things3' }, -- to-D-o
 
 for i, mapping in ipairs(hyperModeAppMappings) do
   hs.hotkey.bind({'cmd,ctrl,alt,shift'}, mapping[1], function()
