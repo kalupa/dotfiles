@@ -2,36 +2,28 @@
 
 # echo "loading zshenv"
 
-# export EDITOR=~/bin/emc
-# export TERM="eterm-color"
-
 PATH="$HOME/.cabal/bin:$PATH" # cabal *really* likes to be first
+PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+
 PATH="$PATH:./.bundle/bin" # danger!
+
 PATH="$PATH:$HOME/bin:./bin:$HOME/.local/bin"
 PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
-# PATH="$PATH:`yarn global bin`"
-# PATH=$PATH:$HOME/Library/Haskell/bin:
+PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)"
   ssh-add
 fi
 
-if [ -n "$INSIDE_EMACS" ]; then
-  chpwd() { print -P "\033AnSiTc %d" }
-  print -P "\033AnSiTu %n"
-  print -P "\033AnSiTc %d"
-fi
-
-# added by travis gem
-[ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
-
 if [ -z "$EMACS" ]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
+# Haskell-related
+# PATH=$PATH:$HOME/Library/Haskell/bin:
 # if exists stack; then
 #   autoload -U +X compinit && compinit
 #   autoload -U +X bashcompinit && bashcompinit
@@ -55,7 +47,8 @@ PATH="$PATH:$GOPATH/bin"
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
 
-# eval $($HOME/dotfiles/start-aws-session.sh 900)
+# added by travis gem
+[ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh
 
 source "$HOME/.zshenv_local"
 
