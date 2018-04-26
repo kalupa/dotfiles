@@ -14,7 +14,7 @@ PURE_GIT_PULL=0
 prompt pure
 
 # quick and dirty web server
-if exists python; then
+if (( $+commands[python] )); then
     function psy(){
         python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
     }
@@ -28,7 +28,7 @@ bindkey -M emacs '^N' history-substring-search-down
 unalias gl
 alias grbm="git fetch; git rebase origin/master"
 
-if exists gtar; then
+if (( $+commands[gtar] )); then
   alias tar="$(which gtar)"
 fi
 
