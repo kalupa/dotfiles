@@ -5,8 +5,8 @@
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
-  { 'e', 'Visual Studio Code' }, -- vscode
-  { 'r', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
+  { 'r', 'Visual Studio Code' }, -- vscode
+  { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
   { 't', 'iTerm' }, -- T-erminal
   { 'm', 'Airmail 3'}, -- e-M-ail
   { 'd', 'OmniFocus' }, -- to-D-o

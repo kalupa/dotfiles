@@ -6,6 +6,7 @@
 [user]
 	name = Paul Kalupnieks
 	email = paul@unbounce.com
+	signingkey = 1492966B071DEDA6
 [push]
 	default = simple
 [github]
@@ -26,3 +27,5 @@
 	hideCampaign = true
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true
