@@ -2,15 +2,6 @@ away.log
 vim/undo
 vim/bundle
 vim/.cache
-emacs/.cask
-emacs/autosaves
-emacs/elpa
-emacs/#*
-emacs/projectile-bookmarks.eld
-emacs/.*
-emacs/*.dat
-emacs/places
-emacs/u.DS_Store
 .local
 .DS_Store
 bvm
