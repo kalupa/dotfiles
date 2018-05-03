@@ -6,7 +6,8 @@
 hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
   { 'r', 'Visual Studio Code' }, -- vscode
-  { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
+--  { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
+  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Emacs
   { 't', 'iTerm' }, -- T-erminal
   { 'm', 'Airmail 3'}, -- e-M-ail
   { 'd', 'OmniFocus' }, -- to-D-o
