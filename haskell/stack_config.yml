@@ -1,0 +1,5 @@
+templates:
+  params:
+    author-email: paul@karrupa.com
+    author-name: Paul Kalupnieks
+    github-username: kalupa

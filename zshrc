@@ -65,4 +65,10 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+if exists stack; then
+  autoload -U +X compinit && compinit
+  autoload -U +X bashcompinit && bashcompinit
+  eval "$(stack --bash-completion-script stack)"
+fi
+
 source "$HOME/.zshrc_local"

@@ -2,8 +2,10 @@ away.log
 vim/undo
 vim/bundle
 vim/.cache
+
 .local
 .DS_Store
+
 bvm
 run-diff-tests
 start-webapp
@@ -11,4 +13,6 @@ stop-webapp
 test-builder
 .slack-token
 .slack-token.lua
+
 node_modules
+
