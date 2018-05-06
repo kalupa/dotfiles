@@ -5,7 +5,7 @@
   protocol = git
 [user]
 	name = Paul Kalupnieks
-	email = paul@unbounce.com
+	email = paul@karrupa.com
 	signingkey = 1492966B071DEDA6
 [push]
 	default = simple
@@ -28,4 +28,4 @@
 [credential]
 	helper = osxkeychain
 [commit]
-	gpgsign = true
+	gpgsign = false
