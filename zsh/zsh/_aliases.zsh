@@ -1,7 +1,7 @@
 #!/usr/local/bin/zsh
 
 # quick and dirty web server
-if exists python; then
+if ! type python > /dev/null; then
 	function psy() {
 		python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
 	}
@@ -11,6 +11,6 @@ unalias gl
 alias grbm="git fetch; git rebase origin/master"
 alias gpl="git pull"
 
-if exists gtar; then
+if ! type gtar > /dev/null; then
 	alias tar="$(which gtar)"
 fi

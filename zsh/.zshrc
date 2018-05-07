@@ -9,13 +9,6 @@ source $HOME/.antigen.git/antigen.zsh
 antigen init $HOME/.antigenrc
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-fpath+=('/home/paul/.nvm/versions/node/v8.11.1/lib/node_modules/pure-prompt/functions')
-
-# pure prompt comes from antigen loading .zshenv or .zshrc
-autoload -U promptinit
-promptinit
-PURE_GIT_PULL=0
-prompt pure
 
 source "zsh/_aliases.zsh"
 
@@ -27,29 +20,37 @@ export NVM_DIR="$HOME/.nvm"
 # place this after nvm initialization!
 autoload -U add-zsh-hook
 load-nvmrc() {
-	local node_version="$(nvm version)"
-	local nvmrc_path="$(nvm_find_nvmrc)"
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
 
-	if [ -n "$nvmrc_path" ]; then
-		local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-		if [ "$nvmrc_node_version" = "N/A" ]; then
-			nvm install
-		elif [ "$nvmrc_node_version" != "$node_version" ]; then
-			nvm use
-		fi
-	elif [ "$node_version" != "$(nvm version default)" ]; then
-		echo "Reverting to nvm default version"
-		nvm use default
-	fi
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-#if exists stack; then
-#  autoload -U +X compinit && compinit
-#  autoload -U +X bashcompinit && bashcompinit
-#  eval "$(stack --bash-completion-script stack)"
-#fi
+if ! type stack > /dev/null; then
+  autoload -U +X compinit && compinit
+  autoload -U +X bashcompinit && bashcompinit
+  eval "$(stack --bash-completion-script stack)"
+fi
+
+fpath+=("$NVM_DIR/versions/node/v8.11.1/lib/node_modules/pure-prompt/functions")
+
+# pure prompt comes from antigen loading .zshenv or .zshrc
+autoload -U promptinit
+promptinit
+PURE_GIT_PULL=0
+prompt pure
 
 source "$HOME/.zshrc_local"
