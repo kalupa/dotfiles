@@ -16,7 +16,6 @@ antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
 antigen use oh-my-zsh
-# antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # macos specific
 # Load OS specific bundles
@@ -53,11 +52,10 @@ antigen bundle gnu-utils
 antigen bundle history-substring-search
 antigen bundle kubectl
 antigen bundle lein
-# antigen bundle maven
+antigen bundle maven
 antigen bundle mosh
 antigen bundle node
 antigen bundle npm
-# antigen bundle per-directory-history
 # antigen bundle pip
 antigen bundle python
 
@@ -70,10 +68,7 @@ fi
 
 antigen bundle safe-paste
 antigen bundle ssh-agent
-# antigen bundle stack
-# antigen bundle virtualenv
-# antigen bundle virtualenvwrapper
+antigen bundle stack
 antigen bundle zsh_reload
-
 
 antigen apply

@@ -22,9 +22,6 @@ if [ -z "$EMACS" ]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
-# Haskell-related
-# PATH=$PATH:$HOME/Library/Haskell/bin:
-
 export TERMINFO="$HOME/.terminfo"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
