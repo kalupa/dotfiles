@@ -345,11 +345,12 @@ you should place your code here."
 
   (add-to-list 'exec-path "~/.local/bin")
   (add-to-list 'exec-path "~/bin")
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
   ;; Speed up magit a bit
   (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
 
+  ;; jsmodestuff
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook 'web-mode-hook 'prettier-js-mode)
   (setq
     js2-bounce-indent-p t
     js2-highlight-external-variables t
@@ -360,34 +361,30 @@ you should place your code here."
     js2-mode-show-strict-warnings nil
     js2-strict-inconsistent-return-warning nil
     js2-strict-trailing-comma-warning nil
+    jrettier-js-args '("--single-quote" "--print-width 100")
+    )
+
+  (setq
     magit-repository-directories '("~/src/ub/" "~/src/other/")
     neo-smart-open t
     powerline-default-separator 'brace
-    ;; prettier-js-args '("--single-quote" "--print-width 100")
-    prettier-js-command "/usr/local/bin/prettier-eslint"
     vc-handled-backends nil
     whitespace-action '(auto-cleanup)
     )
 
-  ;; FFS EMACS USE 2!
+  ;; FFS EMACS USE 2 spaces!
   (setq
-    json-encoding-default-indentation 2
     lua-indent-level 2
     evil-shift-width 2
-    web-mode-markup-indent-offset 2
-    web-mode-css-indent-offset 2
-    typescript-indent-level 2
-    css-indent-offset 2
-    js-indent-level 2
-    js2-basic-offset 2
-    json-reformat:indent-width 2
-    web-mode-code-indent-offset 2
     standard-indent 2
     c-basic-offset 2
     javascript-indent-level 2 ; javascript-mode
     js-indent-level 2 ; js-mode
     react-indent-level 2 ; react-mode
     js2-basic-offset 2 ; js2-mode, in latest js2-mode, it's alias of js-indent-level
+    typescript-indent-level 2
+    json-encoding-default-indentation 2
+    json-reformat:indent-width 2
     web-mode-attr-indent-offset 2 ; web-mode
     web-mode-code-indent-offset 2 ; web-mode, js code in html file
     web-mode-css-indent-offset 2 ; web-mode, css in html file
@@ -395,8 +392,7 @@ you should place your code here."
     web-mode-sql-indent-offset 2 ; web-mode
     web-mode-attr-value-indent-offset 2 ; web-mode
     css-indent-offset 2 ; css-mode
-    sh-basic-offset 2 ; shell scripts
-    sh-indentation 2 )
+    )
 
   (fancy-battery-mode)
   (centered-cursor-mode)
