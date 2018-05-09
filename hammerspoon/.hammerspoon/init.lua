@@ -7,5 +7,6 @@ keyUpDown = function(modifiers, key)
 end
 
 require('hyper')
+require('wifi-status-change')
 
 require('reloadconfig')

@@ -28,7 +28,7 @@ function postResp(status, body, headers)
 end
 
 function token()
-  local f = assert(io.open(".slack-token", "rb"))
+  local f = assert(io.open(os.getenv ("HOME") .. "/.hammerspoon/.slack-token", "rb"))
   local token = f:read("*line")
   f:close()
 
@@ -59,10 +59,8 @@ end
 function encoded_status(current_wifi_name)
   if current_wifi_name == home then
     status = home_status()
-  elseif current_wifi_name == work then
-    status = empty_status()
   else
-    status = gone_status()
+    status = empty_status()
   end
 
   return encode(hs.json.encode(status))
@@ -73,16 +71,6 @@ function status_url(current_wifi_name)
   return "https://slack.com/api/users.profile.set?token=" .. token() .. "&profile=" .. encoded_status(current_wifi_name)
 end
 
--- function wfhWifiChanger()
---   current_wifi_name = hs.wifi.currentNetwork() or ""
---   log.d("last:" .. last_wifi .. " --- current:" .. current_wifi_name)
---   -- if current_wifi_name ~= last_wifi then
---     url = status_url(current_wifi_name)
---     log.d(url)
---     hs.http.asyncPost(url, nil, nil, postResp)
---     last_wifi = current_wifi_name
---   end
--- end
 
 function wfhWifiChanger(watcher, eventName, interface)
   log.d(eventName)
@@ -94,7 +82,7 @@ function wfhWifiChanger(watcher, eventName, interface)
   end
 end
 
--- wfhWifiChanger()
+wfhWifiChanger()
 local wfhWatcher = hs.wifi.watcher.new(wfhWifiChanger)
 wfhWatcher:start()
--- wfhWatcher:watchingFor('linkChange', 'SSIDChange', 'powerChange')
+wfhWatcher:watchingFor('linkChange', 'SSIDChange', 'powerChange')
