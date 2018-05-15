@@ -10,7 +10,7 @@ antigen init $HOME/.antigenrc
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 
-source "zsh/_aliases.zsh"
+source "$HOME/zsh/_aliases.zsh"
 
 # TODO test for nvm
 export NVM_DIR="$HOME/.nvm"

@@ -44,7 +44,7 @@ antigen bundle bundler
 antigen bundle cabal
 antigen bundle colorize
 antigen bundle docker
-antigen bundle emacs
+#antigen bundle emacs
 antigen bundle git
 antigen bundle git-extras
 antigen bundle gitignore
