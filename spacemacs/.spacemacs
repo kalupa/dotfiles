@@ -57,7 +57,9 @@ This function should only modify configuration layer settings."
        shell-scripts
        syntax-checking
        themes-megapack
-       typescript
+       (typescript :variables
+         typescript-fmt-on-save t)
+       ;; typescript
        vagrant
        version-control
        yaml
@@ -370,6 +372,7 @@ you should place your code here."
     powerline-default-separator 'brace
     vc-handled-backends nil
     whitespace-action '(auto-cleanup)
+    ;; flycheck-check-syntax-automatically '(save mode-enabled)
     )
 
   ;; FFS EMACS USE 2 spaces!

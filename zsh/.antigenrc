@@ -21,22 +21,23 @@ antigen use oh-my-zsh
 # Load OS specific bundles
 
 if [[ `uname` == "Darwin" ]]; then
-    # homebrew related configs
-    if [ -f "/usr/local/bin/brew" ]; then
-        BREW_PREFIX=$(brew --prefix)
-    fi
-    antigen bundle battery
-    antigen bundle brew
-    antigen bundle brew-cask
-    # antigen bundle emacs # this activates emacsclient alias
-    antigen bundle osx
+  antigen bundle battery
+  antigen bundle osx
+  # antigen bundle emacs # this activates emacsclient alias
+
+  # homebrew related configs
+  if [ -f "/usr/local/bin/brew" ]; then
+    BREW_PREFIX=$(brew --prefix)
+  fi
+  # antigen bundle brew
+  # antigen bundle brew-cask
 elif [[ `uname` == "Linux" ]]; then
-    antigen bundle debian
+  antigen bundle debian
 fi
 
 exists ()
 {
-    command -v "$1" >/dev/null 2>&1
+  command -v "$1" >/dev/null 2>&1
 }
 
 antigen bundle autojump
