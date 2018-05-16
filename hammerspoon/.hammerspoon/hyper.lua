@@ -4,16 +4,16 @@
 
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
-  { 'c', 'Slack' }, -- C-hat
-  { 'r', 'Visual Studio Code' }, -- vscode
---  { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
+  -- { 'c', 'Slack' }, -- C-hat
+  -- { 'r', 'Visual Studio Code' }, -- vscode
+  -- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
   { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Emacs
   { 't', 'iTerm' }, -- T-erminal
-  { 'm', 'Airmail 3'}, -- e-M-ail
+  -- { 'm', 'Airmail 3'}, -- e-M-ail
   { 'd', 'OmniFocus' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
-  { 'k', 'Fantastical 2' }, -- K-alendar
-  { 'p', 'Postman' }, -- P-ostman
+  -- { 'k', 'Fantastical 2' }, -- K-alendar
+  -- { 'p', 'Postman' }, -- P-ostman
 }
 
   -- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
