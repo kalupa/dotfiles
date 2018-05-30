@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const os = require("os");
 const fs = require("fs");
 const path = require("path");
@@ -8,6 +10,6 @@ const awsCreds = ini.parse(
 );
 
 console.log(`
-export AWS_ACCESS_KEY_ID="${awsCreds.default.aws_access_key_id}"
-export AWS_SECRET_ACCESS_KEY="${awsCreds.default.aws_secret_access_key}"
+export AWS_ACCESS_KEY_ID=${awsCreds.default.aws_access_key_id}
+export AWS_SECRET_ACCESS_KEY=${awsCreds.default.aws_secret_access_key}
 `);
