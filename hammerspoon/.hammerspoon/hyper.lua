@@ -47,25 +47,12 @@ end
 -- ---------------------------------------------------------------------------------------
 
 fullscreen = function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w
-  f.h = max.h
-  win:setFrame(f, 0)
+  hs.grid.maximizeWindow(hs.window.focusedWindow())
 end
 
 -- Set some resize grids up
-hs.grid.setGrid('8x6', '3840x2160')
-hs.grid.setGrid('7x4', '2560x1440')
-hs.grid.setGrid('7x4', '1680x1050')
-hs.grid.setGrid('7x4', '1920x1200')
-hs.grid.setGrid('6x4', '1920x1080')
-hs.grid.setGrid('6x4', '1440x900')
+hs.grid.setGrid('10x3') -- default to something that maps nicely ...
+hs.grid.setGrid('8x3', '1680x1050')
 hs.grid.setMargins({0,0}) -- gapless
 hs.window.animationDuration = 0 -- disable animations
 
