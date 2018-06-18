@@ -4,23 +4,22 @@
 
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
-  -- { 'c', 'Slack' }, -- C-hat
-  -- { 'r', 'Visual Studio Code' }, -- vscode
-  -- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- Emacs
   { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Emacs
   { 't', 'iTerm' }, -- T-erminal
-  -- { 'm', 'Airmail 3'}, -- e-M-ail
   { 'd', 'OmniFocus' }, -- to-D-o
   { 'b', 'Google Chrome' }, -- B-rowser
-  -- { 'k', 'Fantastical 2' }, -- K-alendar
-  -- { 'p', 'Postman' }, -- P-ostman
 }
 
-  -- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
-  -- { 'm', 'Spark' }, -- e-M-ail
-  -- { 'm', 'Mail.app'}, -- Mail
-  -- { 't', 'Hyper' }, -- T-erminal
-  -- { 'd', 'Things3' }, -- to-D-o
+-- { 'c', 'Slack' }, -- C-hat
+-- { 'r', 'Visual Studio Code' }, -- vscode
+-- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
+-- { 'm', 'Airmail 3'}, -- e-M-ail
+-- { 'm', 'Spark' }, -- e-M-ail
+-- { 'm', 'Mail.app'}, -- Mail
+-- { 't', 'Hyper' }, -- T-erminal
+-- { 'd', 'Things3' }, -- to-D-o
+-- { 'k', 'Fantastical 2' }, -- K-alendar
+-- { 'p', 'Postman' }, -- P-ostman
 
 for i, mapping in ipairs(hyperModeAppMappings) do
   hs.hotkey.bind({'cmd,ctrl,alt,shift'}, mapping[1], function()
