@@ -4,16 +4,18 @@
 
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
-  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Emacs
+  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
   { 't', 'iTerm' }, -- T-erminal
+  { 'm', 'Airmail 3'}, -- e-M-ail
   { 'd', 'OmniFocus' }, -- to-D-o
+  { 'c', 'Slack' }, -- Work C-hat
   { 'b', 'Google Chrome' }, -- B-rowser
 }
 
--- { 'c', 'Slack' }, -- C-hat
+-- { 'p', 'Franz' }, -- Personal Chat
+-- { 'f', 'Firefox' }, -- B-rowser
 -- { 'r', 'Visual Studio Code' }, -- vscode
 -- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
--- { 'm', 'Airmail 3'}, -- e-M-ail
 -- { 'm', 'Spark' }, -- e-M-ail
 -- { 'm', 'Mail.app'}, -- Mail
 -- { 't', 'Hyper' }, -- T-erminal
@@ -40,7 +42,7 @@ end
 --     end tell
 --     return input]]
 --   hs.osascript.applescript(script)
--- end
+-- End
 -- hs.hotkey.bind({'cmd,ctrl,alt,shift'}, 'escape', clearNotification)
 -- hs.hotkey.bind({'cmd,ctrl,alt,shift'}, 'r', clearNotification)
 -- ---------------------------------------------------------------------------------------

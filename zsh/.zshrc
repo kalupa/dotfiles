@@ -9,12 +9,12 @@ source $HOME/.antigen.git/antigen.zsh
 antigen init $HOME/.antigenrc
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-
 source "$HOME/zsh/_aliases.zsh"
 
 # TODO test for nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"                   # This loads nvm
+
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # place this after nvm initialization!
@@ -52,5 +52,8 @@ autoload -U promptinit
 promptinit
 PURE_GIT_PULL=0
 prompt pure
+
+# /bin/launchctl setenv PATH "$PATH"
+
 
 source "$HOME/.zshrc_local"

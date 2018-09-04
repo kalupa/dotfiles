@@ -1,7 +1,5 @@
 #!/usr/local/bin/zsh
 
-# echo "loading zshenv"
-
 PATH="$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 
@@ -11,7 +9,11 @@ PATH="$PATH:$HOME/bin:./bin"
 PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
-PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+PATH="$PATH:$NVM_DIR:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+
+# some better python bin-run pathing
+USER_BASE_PATH=$(python -m site --user-base)
+PATH="$PATH:$USER_BASE_PATH/bin"
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval "$(ssh-agent -s)"
@@ -36,6 +38,7 @@ fi
 
 export GOPATH="${HOME}/gocode"
 PATH="$PATH:$GOPATH/bin"
+PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
 export ANSIBLE_NOCOWS=1 # NO. JUST NO.
 
