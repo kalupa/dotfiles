@@ -36,36 +36,37 @@ This function should only modify configuration layer settings."
     '(
        auto-completion
        better-defaults
-       coffeescript
+       ;; coffeescript
        csv
        dash
        docker
        emacs-lisp
        git
        github
-       haskell
+       ;; haskell
        helm
        html
-       java
+       ;; java
        javascript
-       lua
+       ;; lua
        markdown
+       ;; neotree
        org
        osx
-       python
+       ;; python
        react
-       restclient
+       ;; restclient
        ruby-on-rails
        (shell :variables
          shell-default-height 40
          shell-default-position 'top)
        shell-scripts
        syntax-checking
-       themes-megapack
+       ;; themes-megapack
        ;; (typescript :variables
        ;;   typescript-fmt-on-save t)
        typescript
-       vagrant
+       ;; vagrant
        version-control
        yaml
        )
