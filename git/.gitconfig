@@ -9,8 +9,6 @@
 	signingkey = 1492966B071DEDA6
 [push]
 	default = simple
-[github]
-  user = kalupa
 [init]
   templatedir = ~/.git_template
 [alias]
