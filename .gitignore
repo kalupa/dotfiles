@@ -16,3 +16,4 @@ test-builder
 
 node_modules
 
+.spacemacs.env
