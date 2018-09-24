@@ -55,5 +55,6 @@ prompt pure
 
 # /bin/launchctl setenv PATH "$PATH"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source "$HOME/.zshrc_local"
