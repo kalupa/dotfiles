@@ -4,13 +4,13 @@
 
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
-  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
-  { 't', 'iTerm' }, -- T-erminal
-  { 'd', 'OmniFocus' }, -- to-D-o
-  { 'm', 'Canary Mail'}, -- Mail
   { 'c', 'Slack' }, -- Work C-hat
+  { 'd', 'OmniFocus' }, -- to-D-o
+  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
+  -- { 'k', 'Calendar'}, -- Calendar
+  { 'm', 'Canary Mail'}, -- Mail
   { 'p', 'Franz' }, -- Personal Chat
-  { 'b', 'Google Chrome' }, -- B-rowser
+  { 't', 'iTerm' }, -- T-erminal
 }
 
 -- { 'f', 'Firefox' }, -- B-rowser
@@ -28,23 +28,14 @@ for i, mapping in ipairs(hyperModeAppMappings) do
   end)
 end
 
--- ---------------------------------------------------------------------------------------
--- Frustratingly, this doesn't work with the "hyper" configured unless it's the "F18" way.
---
--- -- clear sticky alert notifications
--- function clearNotification()
---   local script = [[
---     tell application "System Events" to tell process "Notification Center"
---       try
---         click button 1 of last item of windows
---       end try
---     end tell
---     return input]]
---   hs.osascript.applescript(script)
--- End
--- hs.hotkey.bind({'cmd,ctrl,alt,shift'}, 'escape', clearNotification)
--- hs.hotkey.bind({'cmd,ctrl,alt,shift'}, 'r', clearNotification)
--- ---------------------------------------------------------------------------------------
+-- { 'b', 'Google Chrome' }, -- B-rowser
+hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "b", function()
+    switchToChromeProfile('U')
+end)
+
+hs.hotkey.bind({'cmd,ctrl,alt,shift'}, ";", function()
+    switchToChromeProfile('Paul')
+end)
 
 fullscreen = function()
   hs.grid.maximizeWindow(hs.window.focusedWindow())
@@ -71,20 +62,6 @@ hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "Right", function()
     win:moveOneScreenEast(false, true, 0)
 end)
 
--- center window
--- hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "delete", function()
---     local win = hs.window.focusedWindow()
---     local f = win:frame()
---     local screen = win:screen()
---     local max = screen:frame()
-
---     f.x = max.x + (max.w / 4)
---     f.y = max.y + (max.h / 4)
---     -- f.w = max.w / 2
---     -- f.h = max.h / 2
---     win:setFrame(f, 0)
--- end)
-
 hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "[", function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -110,3 +87,35 @@ hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "]", function()
     f.h = max.h
     win:setFrame(f, 0)
 end)
+
+
+hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "k", function()
+    hs.osascript.applescript([[
+      tell application "Calendar"
+      switch view to day view
+      view calendar at current date
+      end tell
+      ]])
+end)
+
+switchToChromeProfile = function(profileName)
+  chromeSwitcher = 'set PROFILE to "' .. profileName .. '"' .. [[
+
+    if application "Google Chrome" is running then
+      tell application "System Events" to tell process "Google Chrome"
+        set frontmost to true
+        click menu item PROFILE of menu 1 of menu bar item "People" of menu bar 1
+      end tell
+    end if
+    if application "Google Chrome" is not running then
+      tell application "Google Chrome"
+        activate
+      end tell
+      tell application "System Events" to tell process "Google Chrome"
+        set frontmost to true
+        click menu item PROFILE of menu 1 of menu bar item "People" of menu bar 1
+      end tell
+    end if
+    ]]
+  hs.osascript.applescript(chromeSwitcher)
+end
