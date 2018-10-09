@@ -26,7 +26,7 @@
 [credential]
 	helper = osxkeychain
 [commit]
-	gpgsign = false
+	gpgsign = true
 [magithub]
 	online = false
 [magithub "status"]
