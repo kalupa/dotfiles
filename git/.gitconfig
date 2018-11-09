@@ -23,8 +23,6 @@
 	compactionHeuristic = true
 [magit]
 	hideCampaign = true
-[credential]
-	helper = osxkeychain
 [commit]
 	gpgsign = true
 [magithub]
@@ -33,3 +31,5 @@
 	includeStatusHeader = false
 	includePullRequestsSection = false
 	includeIssuesSection = false
+[github]
+	user = kalupa
