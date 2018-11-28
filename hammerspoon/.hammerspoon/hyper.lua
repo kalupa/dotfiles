@@ -6,18 +6,16 @@
 hyperModeAppMappings = {
   { 'c', 'Slack' }, -- Work C-hat
   { 'd', 'OmniFocus' }, -- to-D-o
-  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
-  -- { 'k', 'Calendar'}, -- Calendar
-  { 'm', 'Canary Mail'}, -- Mail
+  { 'e', '/Applications/Emacs.app' }, -- Text Editor
+  { 'r', 'Visual Studio Code' }, -- vscode
+  { 'm', 'Airmail 3'}, -- Mail
   { 'p', 'Franz' }, -- Personal Chat
   { 't', 'iTerm' }, -- T-erminal
 }
 
--- { 'f', 'Firefox' }, -- B-rowser
--- { 'r', 'Visual Studio Code' }, -- vscode
--- { 'e', '/usr/local/opt/emacs-mac/Emacs.app' }, -- E-ditor
--- { 'm', 'Airmail 3'}, -- e-M-ail
--- { 'm', 'Mail.app'}, -- Mail
+-- { 'k', 'Calendar'}, -- Calendar
+-- { 'e', '/usr/local/bin/emacs' }, -- Text Editor
+-- { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
 -- { 't', 'Hyper' }, -- T-erminal
 -- { 'k', 'Fantastical 2' }, -- K-alendar
 -- { 'p', 'Postman' }, -- P-ostman
