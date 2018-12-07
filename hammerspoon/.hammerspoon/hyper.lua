@@ -4,15 +4,17 @@
 
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
-  { 'c', 'Slack' }, -- Work C-hat
+  { 'c', 'Sblack' }, -- Work C-hat
   { 'd', 'OmniFocus' }, -- to-D-o
   { 'e', '/Applications/Emacs.app' }, -- Text Editor
   { 'r', 'Visual Studio Code' }, -- vscode
-  { 'm', 'Airmail 3'}, -- Mail
   { 'p', 'Franz' }, -- Personal Chat
   { 't', 'iTerm' }, -- T-erminal
 }
 
+-- { 'm', 'Airmail 3'}, -- Mail
+-- { 'c', 'Slack' }, -- Work C-hat
+-- { 'k', 'Fantastical 2'}, -- Calendar
 -- { 'k', 'Calendar'}, -- Calendar
 -- { 'e', '/usr/local/bin/emacs' }, -- Text Editor
 -- { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
@@ -87,14 +89,14 @@ hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "]", function()
 end)
 
 
-hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "k", function()
-    hs.osascript.applescript([[
-      tell application "Calendar"
-      switch view to day view
-      view calendar at current date
-      end tell
-      ]])
-end)
+-- hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "k", function()
+--     hs.osascript.applescript([[
+--       tell application "Calendar"
+--       switch view to day view
+--       view calendar at current date
+--       end tell
+--       ]])
+-- end)
 
 switchToChromeProfile = function(profileName)
   chromeSwitcher = 'set PROFILE to "' .. profileName .. '"' .. [[
