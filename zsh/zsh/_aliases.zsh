@@ -1,11 +1,9 @@
 #!/usr/local/bin/zsh
 
 # quick and dirty web server
-if ! type python > /dev/null; then
-	function psy() {
-		python -m SimpleHTTPServer 8900 && open "http://localhost:8900"
-	}
-fi
+function psy() {
+  http-server .
+}
 
 unalias gl
 alias grbm="git fetch; git rebase origin/master"

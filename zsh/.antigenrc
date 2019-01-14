@@ -1,8 +1,3 @@
-
-# antigen update
-# antigen selfupdate
-# antigen bundle unixorn/autoupdate-antigen.zshplugin
-
 antigen bundle djui/alias-tips
 antigen bundle KevinBongart/rake-fast
 
