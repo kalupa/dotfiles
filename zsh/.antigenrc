@@ -1,5 +1,5 @@
 antigen bundle djui/alias-tips
-antigen bundle KevinBongart/rake-fast
+# antigen bundle KevinBongart/rake-fast
 
 antigen bundle lukechilds/zsh-better-npm-completion
 antigen bundle zsh-users/zsh-completions
@@ -36,35 +36,36 @@ exists ()
 }
 
 antigen bundle autojump
-antigen bundle bundler
-antigen bundle cabal
-antigen bundle colorize
-antigen bundle docker
-#antigen bundle emacs
-antigen bundle git
-antigen bundle git-extras
-antigen bundle gitignore
+# antigen bundle bundler
+# antigen bundle cabal
+# antigen bundle colorize
+# antigen bundle docker
+# antigen bundle emacs
+# antigen bundle git
+antigen bundle gitfast
+# antigen bundle git-extras
+# antigen bundle gitignore
 antigen bundle gnu-utils
-antigen bundle history-substring-search
-antigen bundle kubectl
-antigen bundle lein
-antigen bundle maven
-antigen bundle mosh
-antigen bundle node
+# antigen bundle history-substring-search
+# antigen bundle kubectl
+# antigen bundle lein
+# antigen bundle maven
+# antigen bundle mosh
+# antigen bundle node
 antigen bundle npm
 # antigen bundle pip
-antigen bundle python
+# antigen bundle python
 
-if exists rails; then
-  antigen bundle gem
-  antigen bundle rails
-  antigen bundle rbenv
-  antigen bundle ruby
-fi
+# if exists rails; then
+#   antigen bundle gem
+#   antigen bundle rails
+#   antigen bundle rbenv
+#   antigen bundle ruby
+# fi
 
 antigen bundle safe-paste
 antigen bundle ssh-agent
-antigen bundle stack
-antigen bundle zsh_reload
+# antigen bundle stack
+# antigen bundle zsh_reload
 
 antigen apply

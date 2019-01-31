@@ -4,10 +4,13 @@
 
 # echo 'loading zshrc'
 
-[[ ! -d $HOME/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git $HOME/.antigen.git
+# Antigen
+# [[ ! -d $HOME/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git $HOME/.antigen.git
+export ANTIGEN_COMPDUMP=${HOME}/.zcompdump
 source $HOME/.antigen.git/antigen.zsh
 antigen init $HOME/.antigenrc
-zstyle :omz:plugins:ssh-agent agent-forwarding on
+# zstyle :omz:plugins:ssh-agent agent-forwarding on
+
 
 source "$HOME/zsh/_aliases.zsh"
 
