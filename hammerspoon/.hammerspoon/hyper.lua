@@ -10,6 +10,7 @@ hyperModeAppMappings = {
   { 'r', 'Visual Studio Code' }, -- vscode
   { 'p', 'Franz' }, -- Personal Chat
   { 't', 'iTerm' }, -- T-erminal
+  { 'm', 'Canary Mail'}, -- Mail
 }
 
 -- { 'm', 'Airmail 3'}, -- Mail
@@ -20,7 +21,6 @@ hyperModeAppMappings = {
 -- { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
 -- { 't', 'Hyper' }, -- T-erminal
 -- { 'k', 'Fantastical 2' }, -- K-alendar
--- { 'p', 'Postman' }, -- P-ostman
 
 for i, mapping in ipairs(hyperModeAppMappings) do
   hs.hotkey.bind({'cmd,ctrl,alt,shift'}, mapping[1], function()
