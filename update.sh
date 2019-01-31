@@ -1,4 +1,2 @@
 #!/usr/bin/env bash
-
-git submodule sync --recursive
-git submodule update --recursive --progress
+git submodule update --remote --recursive
