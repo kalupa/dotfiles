@@ -33,3 +33,5 @@
 	includeIssuesSection = false
 [github]
 	user = kalupa
+[pull]
+	rebase = true

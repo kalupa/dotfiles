@@ -8,12 +8,12 @@ hyperModeAppMappings = {
   { 'd', 'OmniFocus' }, -- to-D-o
   { 'e', '/Applications/Emacs.app' }, -- Text Editor
   { 'r', 'Visual Studio Code' }, -- vscode
-  { 'p', 'Franz' }, -- Personal Chat
   { 't', 'iTerm' }, -- T-erminal
-  { 'm', 'Canary Mail'}, -- Mail
+  { 'm', 'Airmail 3'}, -- Mail
 }
 
--- { 'm', 'Airmail 3'}, -- Mail
+-- { 'm', 'Canary Mail'}, -- Mail
+-- { 'p', 'Franz' }, -- Personal Chat
 -- { 'c', 'Slack' }, -- Work C-hat
 -- { 'k', 'Fantastical 2'}, -- Calendar
 -- { 'k', 'Calendar'}, -- Calendar
@@ -28,13 +28,15 @@ for i, mapping in ipairs(hyperModeAppMappings) do
   end)
 end
 
--- { 'b', 'Google Chrome' }, -- B-rowser
+-- -- { 'b', 'Google Chrome' }, -- Work B-rowser
 hs.hotkey.bind({'cmd,ctrl,alt,shift'}, "b", function()
     switchToChromeProfile('U')
 end)
 
+-- -- { ';', 'Brave Browser' }, -- Personal browsing
 hs.hotkey.bind({'cmd,ctrl,alt,shift'}, ";", function()
-    switchToChromeProfile('Paul')
+    -- switchToChromeProfile('Paul')
+    hs.application.launchOrFocus('Firefox')
 end)
 
 fullscreen = function()
