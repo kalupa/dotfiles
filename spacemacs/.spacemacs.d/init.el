@@ -92,6 +92,7 @@ This function should only modify configuration layer settings."
     '(
        editorconfig
        exec-path-from-shell
+       graphql-mode
        )
 
     ;; A list of packages that cannot be updated.
