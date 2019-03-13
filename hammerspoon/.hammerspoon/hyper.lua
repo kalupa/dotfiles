@@ -5,19 +5,19 @@
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
   { 'b', 'Google Chrome' }, -- Work B-rowser
-  { 'c', 'Sblack' }, -- Work C-hat
+  { 'c', 'Slack' }, -- Work C-hat
   { 'd', 'OmniFocus' }, -- to-D-o
   { 'e', '/Applications/Emacs.app' }, -- Text Editor
-  { 'm', 'Mail'}, -- Mail
   { 'r', 'Visual Studio Code' }, -- vscode
   { 't', 'iTerm' }, -- T-erminal
   { ';', 'Safari' }, -- Work B-rowser
+  { 'm', 'Airmail 3'}, -- Mail
 }
 
--- { 'm', 'Airmail 3'}, -- Mail
+-- { 'c', 'Sblack' }, -- Work C-hat
+-- { 'm', 'Mail'}, -- Mail
 -- { 'm', 'Canary Mail'}, -- Mail
 -- { 'p', 'Franz' }, -- Personal Chat
--- { 'c', 'Slack' }, -- Work C-hat
 -- { 'k', 'Fantastical 2'}, -- Calendar
 -- { 'k', 'Calendar'}, -- Calendar
 -- { 'e', '/usr/local/bin/emacs' }, -- Text Editor
@@ -45,9 +45,19 @@ hs.hotkey.bind(_HYPER, "k", function() switchToCalendar() end)
 
 fullscreen = function() hs.grid.maximizeWindow(hs.window.focusedWindow()) end
 
+-- hs.grid.HINTS = {
+--   { "!", "@", "{", "}", "&", "=", "7", "8", "9", "*" },
+--   { "#", "$", "(", ")", "~", "|", "4", "5", "6", "-" },
+--   { "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P" },
+--   { "A", "S", "D", "F", "G", "H", "J", "K", "L", ";" },
+--   { "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/" }
+-- }
+
 -- Set some resize grids up
 hs.grid.setGrid('10x3') -- default to something that maps nicely ...
 hs.grid.setGrid('8x3', '1680x1050')
+hs.grid.setGrid('12x4', '3440x1440')
+
 hs.grid.setMargins({0,0}) -- gapless
 hs.window.animationDuration = 0 -- disable animations
 
