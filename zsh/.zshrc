@@ -55,7 +55,7 @@ PURE_GIT_PULL=0
 prompt pure
 
 # /bin/launchctl setenv PATH "$PATH"
-
+source "/usr/local/share/zsh/site-functions"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source "$HOME/.zshrc_local"
