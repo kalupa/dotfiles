@@ -7,9 +7,9 @@ hyperModeAppMappings = {
   { 'b', 'Google Chrome' }, -- Work B-rowser
   { 'c', 'Slack' }, -- Work C-hat
   { 'd', 'OmniFocus' }, -- to-D-o
-  { 'e', '/Applications/Emacs.app' }, -- Text Editor
   { 'r', 'Visual Studio Code' }, -- vscode
   { 't', 'iTerm' }, -- T-erminal
+  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
   { ';', 'Safari' }, -- Work B-rowser
   { 'm', 'Airmail 3'}, -- Mail
 }
@@ -20,8 +20,10 @@ hyperModeAppMappings = {
 -- { 'p', 'Franz' }, -- Personal Chat
 -- { 'k', 'Fantastical 2'}, -- Calendar
 -- { 'k', 'Calendar'}, -- Calendar
+-- { 'e', '/Applications/Emacs.app' }, -- Text Editor
 -- { 'e', '/usr/local/bin/emacs' }, -- Text Editor
 -- { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
+-- { 'e', '/usr/local/Cellar/emacs-plus/26.1/Emacs.app' }, -- Text Editor
 -- { 't', 'Hyper' }, -- T-erminal
 -- { 'k', 'Fantastical 2' }, -- K-alendar
 
