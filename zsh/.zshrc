@@ -59,3 +59,6 @@ source "/usr/local/share/zsh/site-functions"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source "$HOME/.zshrc_local"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
