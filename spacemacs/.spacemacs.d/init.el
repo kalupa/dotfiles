@@ -446,7 +446,7 @@ It should only modify the values of Spacemacs settings."
     ;; %z - mnemonics of buffer, terminal, and keyboard coding systems
     ;; %Z - like %z, but including the end-of-line format
     ;; (default "%I@%S")
-    dotspacemacs-frame-title-format "%I@%S"
+    dotspacemacs-frame-title-format "%t: %b"
 
     ;; Format specification for setting the icon title format
     ;; (default nil - same as frame-title-format)
@@ -517,7 +517,7 @@ before packages are loaded."
     js2-bounce-indent-p t
     js2-highlight-external-variables t
     js2-highlight-level 3
-    js2-language-version 160
+    js2-language-version 180
     js2-missing-semi-one-line-override t
     js2-mode-show-parse-errors nil
     js2-mode-show-strict-warnings nil
@@ -527,9 +527,7 @@ before packages are loaded."
     js2-include-node-externs t
     prettier-js-args
     '(
-       "--print-width" "100"
-       "--single-quote"
-       "--jsx-bracket-same-line"
+       "--print-width" "80"
        "--trailing-comma" "es5"
        )
     ;; Just use 2 spaces FFS!
