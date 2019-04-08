@@ -1,26 +1,56 @@
 cask_args appdir: '/Applications'
 
-tap "alexanderwillner/tap"
 tap "caskformula/caskformula"
-tap "d12frosted/emacs-plus"
+
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/php"
 tap "homebrew/science"
 tap "homebrew/services"
-tap "jmespath/jmespath"
-tap "osx-cross/avr"
-tap "px4/px4"
-tap "railwaycat/emacsmacport"
-tap "sass/sass"
-tap "unbounce/taps"
-tap "mas-cli/tap"
 
-cask "xquartz"
+tap "homebrew/cask-fonts"
+cask "font-hack"
+cask "font-fira-sans"
+cask "font-fantasquesansmono-nerd-font"
+cask "font-firacode-nerd-font"
+cask "font-iosevka-nerd-font"
+
+cask "hammerspoon"
+
+# cask "iterm2"
+# cask "firefox"
+# cask "google-chrome"
+
+tap "d12frosted/emacs-plus"
+brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-emacs-icons-project-EmacsIcon3"]
+
+tap "jmespath/jmespath"
+brew "jmespath/jmespath/jp"
+
+tap "osx-cross/avr"
+brew "osx-cross/avr/avr-gcc", args: ["with-gmp", "with-libmpc", "with-mpfr"], link: false
+brew "osx-cross/avr/avr-gcc@7", link: true
+
+tap "px4/px4"
+brew "px4/px4/gcc-arm-none-eabi"
+brew "px4/px4/gcc-arm-none-eabi-49"
+
+tap "unbounce/taps"
+brew "unbounce/taps/iidy"
+brew "unbounce/taps/stack-toolkit"
+
+tap "mas-cli/tap"
+mas 'Fantastical 2', id: 975937182
+mas 'YubiKey Personalization Tool', id: 638161122
+mas 'iA Writer', id: 775737590
+mas 'Airmail 3', id: 918858936
+mas 'Deliveries', id: 924726344
+mas 'OmniFocus', id: 1346203938
+mas 'Pixelmator', id: 407963104
+mas 'Twitterrific', id: 1289378661
+
 brew "ack"
 brew "gettext"
 brew "openssl"
@@ -82,6 +112,7 @@ brew "mtr"
 brew "mysql@5.6", link: false
 brew "neovim"
 brew "openssh"
+brew "openssl"
 brew "pandoc"
 brew "parallel"
 brew "perl"
@@ -108,32 +139,3 @@ brew "autojump"
 brew "automake"
 brew "tmux"
 brew "fd"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-emacs-icons-project-EmacsIcon3"]
-brew "jmespath/jmespath/jp"
-brew "osx-cross/avr/avr-gcc", args: ["with-gmp", "with-libmpc", "with-mpfr"], link: false
-brew "osx-cross/avr/avr-gcc@7", link: true
-brew "px4/px4/gcc-arm-none-eabi"
-brew "px4/px4/gcc-arm-none-eabi-49"
-brew "unbounce/taps/iidy"
-brew "unbounce/taps/stack-toolkit"
-
-cask "chromedriver"
-cask "font-fantasquesansmono-nerd-font"
-cask "font-firacode-nerd-font"
-cask "font-hack-nerd-font"
-cask "font-iosevka-nerd-font"
-cask "hammerspoon"
-cask "unetbootin"
-cask 'vagrant'
-cask "vagrant-manager"
-cask "virtualbox"
-
-
-mas 'Fantastical 2', id: 975937182
-mas 'YubiKey Personalization Tool', id: 638161122
-mas 'iA Writer', id: 775737590
-mas 'Airmail 3', id: 918858936
-mas 'Deliveries', id: 924726344
-mas 'OmniFocus', id: 1346203938
-mas 'Pixelmator', id: 407963104
-mas 'Twitterrific', id: 1289378661
