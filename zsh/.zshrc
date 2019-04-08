@@ -1,5 +1,10 @@
 #!/usr/local/bin/zsh
 
+# homebrew gnu utils without the g prefix
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+screenfetch
+
 # source /usr/local/bin/virtualenvwrapper.sh
 
 # echo 'loading zshrc'
@@ -58,7 +63,6 @@ prompt pure
 source "/usr/local/share/zsh/site-functions"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+
 source "$HOME/.zshrc_local"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

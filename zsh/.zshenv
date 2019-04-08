@@ -3,10 +3,7 @@
 PATH="$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 
-# homebrew gnu utils without the g prefix
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
+PATH="/usr/local/opt/curl/bin:$PATH" # use gnu curl
 PATH="$PATH:./.bundle/bin" # danger!
 
 PATH="$PATH:$HOME/bin:./bin"
