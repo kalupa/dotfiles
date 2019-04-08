@@ -247,7 +247,7 @@ It should only modify the values of Spacemacs settings."
     ;;    :width normal
     ;;    )
     dotspacemacs-default-font
-    '("Hack Nerd Font"
+    '("Hack"
        :size 12
        :weight normal
        :width normal
