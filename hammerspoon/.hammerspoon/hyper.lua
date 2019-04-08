@@ -11,11 +11,11 @@ hyperModeAppMappings = {
   { 't', 'iTerm' }, -- T-erminal
   { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
   { ';', 'Safari' }, -- Work B-rowser
-  { 'm', 'Airmail 3'}, -- Mail
+  { 'm', 'Mail'}, -- Mail
 }
 
 -- { 'c', 'Sblack' }, -- Work C-hat
--- { 'm', 'Mail'}, -- Mail
+-- { 'm', 'Airmail 3'}, -- Mail
 -- { 'm', 'Canary Mail'}, -- Mail
 -- { 'p', 'Franz' }, -- Personal Chat
 -- { 'k', 'Fantastical 2'}, -- Calendar
