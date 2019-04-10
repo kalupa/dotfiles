@@ -7,13 +7,14 @@ hyperModeAppMappings = {
   { 'b', 'Google Chrome' }, -- Work B-rowser
   { 'c', 'Slack' }, -- Work C-hat
   { 'd', 'OmniFocus' }, -- to-D-o
-  { 'r', 'Visual Studio Code' }, -- vscode
-  { 't', 'iTerm' }, -- T-erminal
   { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
-  { ';', 'Safari' }, -- Work B-rowser
   { 'm', 'Mail'}, -- Mail
+  { 't', 'iTerm' }, -- T-erminal
+  { ';', 'Safari' }, -- Personal Browser
 }
 
+-- { 'k', 'Fantastical 2' }, -- K-alendar
+-- { 'r', 'Visual Studio Code' }, -- vscode
 -- { 'c', 'Sblack' }, -- Work C-hat
 -- { 'm', 'Airmail 3'}, -- Mail
 -- { 'm', 'Canary Mail'}, -- Mail
@@ -25,7 +26,6 @@ hyperModeAppMappings = {
 -- { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
 -- { 'e', '/usr/local/Cellar/emacs-plus/26.1/Emacs.app' }, -- Text Editor
 -- { 't', 'Hyper' }, -- T-erminal
--- { 'k', 'Fantastical 2' }, -- K-alendar
 
 
 local _HYPER = {'cmd,ctrl,alt,shift'}
@@ -39,7 +39,7 @@ for i, mapping in ipairs(hyperModeAppMappings) do
   end)
 end
 
-hs.hotkey.bind(_HYPER, "k", function() switchToCalendar() end)
+-- hs.hotkey.bind(_HYPER, "k", function() switchToCalendar() end)
 
 -- hs.hotkey.bind(_HYPER, "b", function()
 --     switchToChromeProfile('U')
