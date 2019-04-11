@@ -1664,8 +1664,10 @@
 	<true/>
 	<key>DisablePotentiallyInsecureEscapeSequences</key>
 	<true/>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>EnableDivisionView</key>
-	<false/>
+	<true/>
 	<key>EnableProxyIcon</key>
 	<false/>
 	<key>EnableRendezvous</key>
@@ -1783,7 +1785,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>960 0 955 1177 0 0 1920 1177 </string>
+	<string>1280 0 1277 1417 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -4673,7 +4675,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{269, 595}</string>
+		<string>{269, 596}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -4686,7 +4688,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>525741430.83444798</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>9</integer>
+	<integer>10</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -5455,7 +5457,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-03T20:27:04Z</date>
+	<date>2019-04-08T14:54:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5471,7 +5473,7 @@
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>ShowMetalFPSmeter</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -5500,6 +5502,8 @@
 	<false/>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
+	<key>TmuxUsesDedicatedProfile</key>
+	<false/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Recent Directories</string>
@@ -5530,6 +5534,8 @@
 	<integer>3</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>disableMetalWhenUnplugged</key>
+	<false/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findMode_iTerm</key>
@@ -5541,6 +5547,10 @@
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>metalMaximizeThroughput</key>
+	<false/>
+	<key>preferIntegratedGPU</key>
 	<false/>
 </dict>
 </plist>
