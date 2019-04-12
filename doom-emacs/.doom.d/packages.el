@@ -2,4 +2,6 @@
 ;;; ~/.doom.d/packages.el
 
 (package! prettier-js)
-(package! typescript-mode)
+(package! indium)
+(package! graphql-mode)
+(package! json-mode)

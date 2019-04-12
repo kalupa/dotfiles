@@ -15,6 +15,25 @@
 (after! company
   (setq company-tooltip-flip-when-above t))
 
+(add-hook! (js-mode #'indium-interaction-mode))
+
+;; (defun setup-tide-mode ()
+;;   (interactive)
+;;   (tide-setup)
+;;   (flycheck-mode +1)
+;;   (setq flycheck-check-syntax-automatically '(save mode-enabled))
+;;   (eldoc-mode +1)
+;;   (tide-hl-identifier-mode +1)
+;;   (company-mode +1))
+
+;; (setq company-tooltip-align-annotations t)
+
+;; (add-hook 'before-save-hook 'tide-format-before-save)
+;; (add-hook! (typescript-mode web-mode
+;;   #'setup-tide-mode))
+
+
+
 ;; (def-package! typescript-mode
 ;;   :mode "\\.ts$"
 ;;   :config
