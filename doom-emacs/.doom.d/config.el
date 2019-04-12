@@ -15,7 +15,7 @@
 (after! company
   (setq company-tooltip-flip-when-above t))
 
-(add-hook! (js-mode #'indium-interaction-mode))
+;; (add-hook! (js-mode #'indium-interaction-mode))
 
 ;; (defun setup-tide-mode ()
 ;;   (interactive)
