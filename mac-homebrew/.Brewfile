@@ -11,7 +11,7 @@ tap "homebrew/science"
 tap "homebrew/services"
 
 tap "homebrew/cask-fonts"
-cask "font-hack"
+cask "font-hack" # nerd font?
 cask "font-fira-sans"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-firacode-nerd-font"
@@ -24,7 +24,7 @@ cask "hammerspoon"
 # cask "google-chrome"
 
 tap "d12frosted/emacs-plus"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-emacs-icons-project-EmacsIcon3"]
+brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-emacs-icons-project-EmacsIcon3", "with-dbus", "with-no-titlebar", "without-spacemacs-icon"]
 
 tap "jmespath/jmespath"
 brew "jmespath/jmespath/jp"
@@ -97,6 +97,7 @@ brew "grep"
 brew "python@2"
 brew "intltool"
 brew "libxml2"
+brew "jansson"
 brew "jenv"
 brew "jq"
 brew "json-c"
@@ -127,6 +128,7 @@ brew "screenfetch"
 brew "shellcheck"
 brew "shfmt"
 brew "stow"
+brew "sqlite"
 brew "the_platinum_searcher"
 brew "the_silver_searcher"
 brew "watch"
