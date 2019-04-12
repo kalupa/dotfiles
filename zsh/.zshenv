@@ -4,8 +4,9 @@ PATH="$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 
 PATH="/usr/local/opt/curl/bin:$PATH" # use gnu curl
-PATH="$PATH:./.bundle/bin" # danger!
+PATH="$PATH:./.bundle/bin"           # danger!
 
+PATH="$PATH:$HOME/.emacs.d/bin"
 PATH="$PATH:$HOME/bin:./bin"
 PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
@@ -16,13 +17,13 @@ PATH="$PATH:$NVM_DIR:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin
 USER_BASE_PATH=$(python -m site --user-base)
 PATH="$PATH:$USER_BASE_PATH/bin"
 
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval "$(ssh-agent -s)"
-  ssh-add
+if [ -z "$SSH_AUTH_SOCK" ]; then
+	eval "$(ssh-agent -s)"
+	ssh-add
 fi
 
 if [ -z "$EMACS" ]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
 export TERMINFO="$HOME/.terminfo"
@@ -33,15 +34,15 @@ export TERM=xterm-256color
 # rbenv configuation
 export RBENV_ROOT="${HOME}/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
-  eval "$(rbenv init -)"
-  PATH="${RBENV_ROOT}/bin:${PATH}"
+	eval "$(rbenv init -)"
+	PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
 
 export GOPATH="${HOME}/gocode"
 PATH="$PATH:$GOPATH/bin"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
-export ANSIBLE_NOCOWS=1 # NO. JUST NO.
+export ANSIBLE_NOCOWS=1     # NO. JUST NO.
 export HUSKY_SKIP_INSTALL=1 # ALSO NO!
 
 # added by travis gem
