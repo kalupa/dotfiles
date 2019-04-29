@@ -1,5 +1,7 @@
 #!/usr/local/bin/zsh
 
+/usr/local/bin/screenfetch -d '-host;-wm;-wmtheme;-de;-pkgs'
+
 PATH="$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
 

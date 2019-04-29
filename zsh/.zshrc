@@ -3,7 +3,6 @@
 # homebrew gnu utils without the g prefix
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-screenfetch
 
 # source /usr/local/bin/virtualenvwrapper.sh
 
