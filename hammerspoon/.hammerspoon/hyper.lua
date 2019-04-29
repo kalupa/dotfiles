@@ -4,7 +4,7 @@
 
 -- Keybindings for launching apps in Hyper Mode
 hyperModeAppMappings = {
-  { 'b', 'Google Chrome' }, -- Work B-rowser
+  { 'b', 'Firefox' }, -- Work B-rowser
   { 'c', 'Slack' }, -- Work C-hat
   { 'd', 'OmniFocus' }, -- to-D-o
   { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
@@ -13,6 +13,7 @@ hyperModeAppMappings = {
   { ';', 'Safari' }, -- Personal Browser
 }
 
+-- { 'b', 'Google Chrome' }, -- Work B-rowser
 -- { 'k', 'Fantastical 2' }, -- K-alendar
 -- { 'r', 'Visual Studio Code' }, -- vscode
 -- { 'c', 'Sblack' }, -- Work C-hat
