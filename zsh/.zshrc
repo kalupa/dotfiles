@@ -62,6 +62,6 @@ prompt pure
 source "/usr/local/share/zsh/site-functions"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+eval "$(direnv hook zsh)" # local env variables (want PATH different for projects)
 
 source "$HOME/.zshrc_local"
