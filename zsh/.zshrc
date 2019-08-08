@@ -13,7 +13,8 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export ANTIGEN_COMPDUMP=${HOME}/.zcompdump
 source $HOME/.antigen.git/antigen.zsh
 antigen init $HOME/.antigenrc
-# zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 
 source "$HOME/zsh/_aliases.zsh"
@@ -44,13 +45,14 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+autoload -Uz +X compinit && compinit
+kitty + complete setup zsh | source /dev/stdin
 if ! type stack > /dev/null; then
-	autoload -U +X compinit && compinit
 	autoload -U +X bashcompinit && bashcompinit
 	eval "$(stack --bash-completion-script stack)"
 fi
 
-fpath+=("$NVM_DIR/versions/node/v8.11.1/lib/node_modules/pure-prompt/functions")
+# fpath+=("$NVM_DIR/versions/node/v8.11.1/lib/node_modules/pure-prompt/functions")
 
 # pure prompt comes from antigen loading .zshenv or .zshrc
 autoload -U promptinit

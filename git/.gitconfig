@@ -12,7 +12,6 @@
 [init]
   templatedir = ~/.git_template
 [alias]
-  ctags = !.git/hooks/ctags
   pub = "!f() { git push -u ${1:-origin} `git symbolic-ref HEAD`; }; f"
 [mergetool]
   keepBackup = true

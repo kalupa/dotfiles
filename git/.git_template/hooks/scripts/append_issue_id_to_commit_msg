@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#
+# This hook will:
+# * Remove the commit message if only an issue number is present (eg an empty commit)
+# * Add an issue number to the beginning of the message, if it can determine one from the
+#   branch, and there is a commit message present and it doesn't already contain the issue
+#   number.
+
+commit_message=$(cat $1 | sed '/>8/,$d' | grep -v '^#' | grep -v '^$' | tr -d ' *')
+branch=$(git branch 2>/dev/null | grep -e '^*' | tr -d ' *')
+
+if [[ "$branch" =~ ^[A-z]{2,5}-[0-9]+ ]]; then
+  OIFS=$IFS
+  IFS='-'
+  read -a pieces <<< "$branch"
+  IFS=$OIFS
+
+  if [ "${#pieces[@]}" -gt 1 ]; then
+    project=`tr '[a-z]' '[A-Z]' <<< "${pieces[0]}"`
+    issue="${pieces[1]}"
+    prefix="$project-$issue"
+
+    # If the commit message only contains the issue number, clear it out
+    if [[ `echo $commit_message | tr -d ' *'` == $prefix ]]; then
+      echo "" > $1
+    # If there is a message, but no issue number (as is when using -m "Commit message"),
+    # add the issue number in
+    elif [ -z "$commit_message" ] && [[ "$commit_message" != *$prefix* ]]; then
+      echo "$prefix $(cat $1)" > $1
+    fi
+  fi
+fi

@@ -16,7 +16,7 @@ antigen use oh-my-zsh
 # Load OS specific bundles
 
 if [[ `uname` == "Darwin" ]]; then
-  antigen bundle battery
+  # antigen bundle battery
   antigen bundle osx
   # antigen bundle emacs # this activates emacsclient alias
 
@@ -24,8 +24,6 @@ if [[ `uname` == "Darwin" ]]; then
   if [ -f "/usr/local/bin/brew" ]; then
     BREW_PREFIX=$(brew --prefix)
   fi
-  # antigen bundle brew
-  # antigen bundle brew-cask
 elif [[ `uname` == "Linux" ]]; then
   antigen bundle debian
 fi
@@ -38,30 +36,29 @@ exists ()
 antigen bundle autojump
 # antigen bundle bundler
 # antigen bundle cabal
-# antigen bundle colorize
+
+antigen bundle colorize
 # antigen bundle docker
 # antigen bundle emacs
-# antigen bundle git
+
+antigen bundle git
 antigen bundle gitfast
 # antigen bundle git-extras
 # antigen bundle gitignore
+
 antigen bundle gnu-utils
-# antigen bundle history-substring-search
+antigen bundle history-substring-search
+
 # antigen bundle kubectl
 # antigen bundle lein
 # antigen bundle maven
 # antigen bundle mosh
+
 # antigen bundle node
 antigen bundle npm
+
 # antigen bundle pip
 # antigen bundle python
-
-# if exists rails; then
-#   antigen bundle gem
-#   antigen bundle rails
-#   antigen bundle rbenv
-#   antigen bundle ruby
-# fi
 
 antigen bundle safe-paste
 antigen bundle ssh-agent

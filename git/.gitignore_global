@@ -92,3 +92,4 @@ emacs/*.dat
 emacs/places
 emacs/u
 .meghanada
+.envrc

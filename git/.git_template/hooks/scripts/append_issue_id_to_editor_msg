@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#
+# This hook will:
+# * Add an issue number to the beginning of the commit message for use in $EDITOR, if one can
+#   be determined from the current branch.
+
+commit_message=$(grep -v '^#' $1 | grep -v '^$')
+branch=$(git branch 2>/dev/null | grep -e '^*' | tr -d ' *')
+
+if [[ "$branch" =~ ^[A-z]{2,5}-[0-9]+ ]]; then
+  OIFS=$IFS
+  IFS='-'
+  read -a pieces <<< "$branch"
+  IFS=$OIFS
+
+  if [ "${#pieces[@]}" -gt 1 ]; then
+    project=`tr '[a-z]' '[A-Z]' <<< "${pieces[0]}"`
+    issue="${pieces[1]}"
+    prefix="$project-$issue"
+
+    # If the commit message already contains the issue number, don't add it again
+    if [[ "$commit_message" != *$prefix* ]]; then
+      echo "$prefix $(cat $1)" > $1
+    fi
+  fi
+fi
