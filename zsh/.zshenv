@@ -1,6 +1,6 @@
 #!/usr/local/bin/zsh
 
-/usr/local/bin/screenfetch -d '-host;-wm;-wmtheme;-de;-pkgs'
+# /usr/local/bin/screenfetch -d '-host;-wm;-wmtheme;-de;-pkgs'
 
 PATH="$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
@@ -44,8 +44,8 @@ export GOPATH="${HOME}/gocode"
 PATH="$PATH:$GOPATH/bin"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
-export ANSIBLE_NOCOWS=1     # NO. JUST NO.
-export HUSKY_SKIP_INSTALL=1 # ALSO NO!
+export ANSIBLE_NOCOWS=1 # NO. JUST NO.
+# export HUSKY_SKIP_INSTALL=1 # ALSO NO!
 
 # added by travis gem
 [ -f /Users/paul/.travis/travis.sh ] && source /Users/paul/.travis/travis.sh

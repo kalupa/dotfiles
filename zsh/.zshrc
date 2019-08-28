@@ -46,7 +46,7 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 autoload -Uz +X compinit && compinit
-kitty + complete setup zsh | source /dev/stdin
+# kitty + complete setup zsh | source /dev/stdin
 if ! type stack > /dev/null; then
 	autoload -U +X bashcompinit && bashcompinit
 	eval "$(stack --bash-completion-script stack)"
