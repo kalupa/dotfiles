@@ -1,5 +1,5 @@
 tap "adoptopenjdk/openjdk"
-tap "caskformula/caskformula"
+# tap "caskformula/caskformula"
 tap "d12frosted/emacs-plus"
 tap "getantibody/tap"
 tap "getsentry/tools"
@@ -9,7 +9,7 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "homebrew/science"
+# tap "homebrew/science"
 tap "homebrew/services"
 tap "jmespath/jmespath"
 tap "mas-cli/tap"
@@ -104,7 +104,7 @@ brew "libksba"
 # GNU Portable THreads
 brew "pth"
 # Server for managing certificate revocation lists
-brew "dirmngr"
+# brew "dirmngr"
 # Suite of tools for inspecting disk usage
 brew "duc"
 # Maintain consistent coding style between multiple editors
@@ -112,7 +112,7 @@ brew "editorconfig"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Collection of GNU find, xargs, and locate
-brew "findutils", args: ["with-default-names"]
+# brew "findutils", args: ["with-default-names"]
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # C library for multiple-precision floating-point computations
@@ -142,7 +142,7 @@ brew "gnupg", link: false
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # GPG key agent
-brew "gpg-agent"
+# brew "gpg-agent"
 # GNU grep, egrep and fgrep
 brew "grep"
 # Generic library support script
@@ -266,22 +266,22 @@ cask "vagrant"
 cask "vagrant-manager"
 cask "virtualbox"
 cask "adoptopenjdk/openjdk/adoptopenjdk11"
-mas "Airmail", id: 918858936
-mas "Be Focused Pro", id: 961632517
-mas "Better", id: 1121192229
-mas "Canary Mail", id: 1236045954
-mas "CCMenu", id: 603117688
-mas "Deliveries", id: 924726344
-mas "Drafts", id: 1435957248
-mas "Fantastical", id: 975937182
-mas "iA Writer", id: 775737590
-mas "Marked 2", id: 890031187
-mas "MultiMarkdown Composer", id: 1275176220
-mas "OmniFocus", id: 1346203938
-mas "Pixelmator", id: 407963104
-mas "Skitch", id: 425955336
-mas "SomaFM", id: 449155338
-mas "Tweetbot", id: 557168941
-mas "Twitterrific", id: 1289378661
-mas "Xcode", id: 497799835
-mas "YubiKey Personalization Tool", id: 638161122
+# mas "Airmail", id: 918858936
+# mas "Be Focused Pro", id: 961632517
+# mas "Better", id: 1121192229
+# mas "Canary Mail", id: 1236045954
+# mas "CCMenu", id: 603117688
+# mas "Deliveries", id: 924726344
+# mas "Drafts", id: 1435957248
+# mas "Fantastical", id: 975937182
+# mas "iA Writer", id: 775737590
+# mas "Marked 2", id: 890031187
+# mas "MultiMarkdown Composer", id: 1275176220
+# mas "OmniFocus", id: 1346203938
+# mas "Pixelmator", id: 407963104
+# mas "Skitch", id: 425955336
+# mas "SomaFM", id: 449155338
+# mas "Tweetbot", id: 557168941
+# mas "Twitterrific", id: 1289378661
+# mas "Xcode", id: 497799835
+# mas "YubiKey Personalization Tool", id: 638161122
