@@ -266,22 +266,22 @@ cask "vagrant"
 cask "vagrant-manager"
 cask "virtualbox"
 cask "adoptopenjdk/openjdk/adoptopenjdk11"
-# mas "Airmail", id: 918858936
-# mas "Be Focused Pro", id: 961632517
-# mas "Better", id: 1121192229
-# mas "Canary Mail", id: 1236045954
-# mas "CCMenu", id: 603117688
-# mas "Deliveries", id: 924726344
-# mas "Drafts", id: 1435957248
-# mas "Fantastical", id: 975937182
-# mas "iA Writer", id: 775737590
-# mas "Marked 2", id: 890031187
-# mas "MultiMarkdown Composer", id: 1275176220
-# mas "OmniFocus", id: 1346203938
-# mas "Pixelmator", id: 407963104
-# mas "Skitch", id: 425955336
-# mas "SomaFM", id: 449155338
-# mas "Tweetbot", id: 557168941
-# mas "Twitterrific", id: 1289378661
+mas "Airmail", id: 918858936
+mas "Be Focused Pro", id: 961632517
+mas "Better", id: 1121192229
+mas "Canary Mail", id: 1236045954
+mas "CCMenu", id: 603117688
+mas "Deliveries", id: 924726344
+mas "Drafts", id: 1435957248
+mas "Fantastical", id: 975937182
+mas "iA Writer", id: 775737590
+mas "Marked 2", id: 890031187
+mas "MultiMarkdown Composer", id: 1275176220
+mas "OmniFocus", id: 1346203938
+mas "Pixelmator", id: 407963104
+mas "Skitch", id: 425955336
+mas "SomaFM", id: 449155338
+mas "Tweetbot", id: 557168941
+mas "Twitterrific", id: 1289378661
 # mas "Xcode", id: 497799835
-# mas "YubiKey Personalization Tool", id: 638161122
+mas "YubiKey Personalization Tool", id: 638161122

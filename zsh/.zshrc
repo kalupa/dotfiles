@@ -47,10 +47,10 @@ load-nvmrc
 
 autoload -Uz +X compinit && compinit
 # kitty + complete setup zsh | source /dev/stdin
-if ! type stack > /dev/null; then
-	autoload -U +X bashcompinit && bashcompinit
-	eval "$(stack --bash-completion-script stack)"
-fi
+# if ! type stack > /dev/null; then
+# 	autoload -U +X bashcompinit && bashcompinit
+# 	eval "$(stack --bash-completion-script stack)"
+# fi
 
 # fpath+=("$NVM_DIR/versions/node/v8.11.1/lib/node_modules/pure-prompt/functions")
 
