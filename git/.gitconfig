@@ -34,3 +34,5 @@
 	user = kalupa
 [pull]
 	rebase = true
+[credential]
+	helper = osxkeychain
