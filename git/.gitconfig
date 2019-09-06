@@ -36,3 +36,5 @@
 	rebase = true
 [credential]
 	helper = osxkeychain
+[gpg]
+	program = gpg

@@ -24,9 +24,9 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 	ssh-add
 fi
 
-if [ -z "$EMACS" ]; then
-	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-fi
+# if [ -z "$EMACS" ]; then
+# 	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# fi
 
 export TERMINFO="$HOME/.terminfo"
 export LANG=en_US.UTF-8
@@ -56,3 +56,5 @@ export PATH
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0 --height 40% --reverse --preview 'bat --color \"always\"' {}"
+
+export GPG_TTY=$(tty)

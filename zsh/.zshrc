@@ -17,7 +17,7 @@ antigen init $HOME/.antigenrc
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 
-source "$HOME/zsh/_aliases.zsh"
+source "$HOME/.zsh/_aliases.zsh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -54,7 +54,7 @@ autoload -Uz +X compinit && compinit
 
 # fpath+=("$NVM_DIR/versions/node/v8.11.1/lib/node_modules/pure-prompt/functions")
 
-# pure prompt comes from antigen loading .zshenv or .zshrc
+fpath+=("$HOME/.zsh_pure")
 autoload -U promptinit
 promptinit
 PURE_GIT_PULL=0
