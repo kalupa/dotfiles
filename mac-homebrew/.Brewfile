@@ -108,7 +108,7 @@ brew "watch"
 brew "wget"
 brew "zlib"
 brew "zsh"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-dbus", "with-emacs-icons-project-EmacsIcon3", "with-no-titlebar", "without-spacemacs-icon"]
+brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-dbus", "with-emacs-icons-project-EmacsIcon3", "without-spacemacs-icon"]
 brew "getantibody/tap/antibody"
 brew "getsentry/tools/sentry-cli"
 brew "jmespath/jmespath/jp"
@@ -118,7 +118,9 @@ brew "px4/px4/gcc-arm-none-eabi"
 brew "px4/px4/gcc-arm-none-eabi-49", link: false
 brew "unbounce/taps/iidy"
 brew "unbounce/taps/stack-toolkit"
+cask "adobe-acrobat-reader"
 cask "bartender"
+cask "discord"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-fira-sans"
 cask "font-firacode-nerd-font"
