@@ -10,6 +10,6 @@ function reloadConfig(files)
     hs.reload()
   end
 end
-local myWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/.hammerspoon/', reloadConfig):start()
+local myWatcher = hs.pathwatcher.new(os.getenv('HOME') .. 'dotfiles/hammerspoon/.hammerspoon/', reloadConfig):start()
 
-hs.notify.new({title='Hammerspoon', informativeText='Loading complete ...'}):send()
+hs.alert.show("Config loaded")

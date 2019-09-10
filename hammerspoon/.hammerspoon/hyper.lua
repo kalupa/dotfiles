@@ -1,4 +1,5 @@
 local _HYPER = {'cmd,ctrl,alt,shift'}
+local log = hs.logger.new('hyper.lua', 'debug')
 
 hs.hotkey.bind(_HYPER, '=', hs.caffeinate.startScreensaver)
 
@@ -12,17 +13,19 @@ hyperModeAppMappings = {
   { 't', 'iTerm' }, -- T-erminal
 
 -- Personal
-  { ';', 'Firefox' }, -- Browser
+  { ';', 'Firefox.app' }, -- Browser
   { 'p', 'Sblack' }, -- Chat
   { 'd', 'OmniFocus' }, -- to-D-o
 }
 
-  -- { 't', 'Kitty' }, -- T-erminal
 for i, mapping in ipairs(hyperModeAppMappings) do
   local key = mapping[1]
   local appName = mapping[2]
 
-  hs.hotkey.bind(_HYPER, key, function()
-    hs.application.launchOrFocus(appName)
+  hs.hotkey.bind(
+    _HYPER, key,
+    function()
+      log.d('Switching to:', appName)
+      hs.application.launchOrFocus(appName)
   end)
 end
