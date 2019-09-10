@@ -57,4 +57,4 @@ export PATH
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0 --height 40% --reverse --preview 'bat --color \"always\"' {}"
 
-export GPG_TTY=$(tty)
+export DOTFILES="$HOME/dotfiles"

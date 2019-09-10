@@ -47,7 +47,7 @@ antigen bundle gitfast
 # antigen bundle gitignore
 
 antigen bundle gnu-utils
-antigen bundle history-substring-search
+# antigen bundle history-substring-search
 
 # antigen bundle kubectl
 # antigen bundle lein
@@ -62,6 +62,7 @@ antigen bundle npm
 
 antigen bundle safe-paste
 antigen bundle ssh-agent
+antigen bundle gpg-agent
 # antigen bundle stack
 # antigen bundle zsh_reload
 
