@@ -29,3 +29,14 @@ for i, mapping in ipairs(hyperModeAppMappings) do
       hs.application.launchOrFocus(appName)
   end)
 end
+
+hs.loadSpoon("MiroWindowsManager")
+
+hs.window.animationDuration = 0
+spoon.MiroWindowsManager:bindHotkeys({
+  up = {_HYPER, "up"},
+  right = {_HYPER, "]"},
+  down = {_HYPER, "down"},
+  left = {_HYPER, "["},
+  fullscreen = {_HYPER, "space"}
+})
