@@ -6,15 +6,13 @@ hs.hotkey.bind(_HYPER, '=', hs.caffeinate.startScreensaver)
 -- Launch apps with Hyper key
 hyperModeAppMappings = {
 
-  -- Work
   { 'b', 'Google Chrome' }, -- B-rowser
   { 'c', 'Slack' }, -- C-hat
-  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- Text Editor
+  { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- text E-ditor
   { 't', 'iTerm' }, -- T-erminal
+  { 'm', 'Spark' }, -- e-M-ail
 
--- Personal
-  { ';', 'Firefox.app' }, -- Browser
-  { 'p', 'Sblack' }, -- Chat
+  { ';', 'Firefox.app' }, --
   { 'd', 'OmniFocus' }, -- to-D-o
 }
 
@@ -30,13 +28,13 @@ for i, mapping in ipairs(hyperModeAppMappings) do
   end)
 end
 
-hs.loadSpoon("MiroWindowsManager")
+-- hs.loadSpoon("MiroWindowsManager")
 
-hs.window.animationDuration = 0
-spoon.MiroWindowsManager:bindHotkeys({
-  up = {_HYPER, "up"},
-  right = {_HYPER, "]"},
-  down = {_HYPER, "down"},
-  left = {_HYPER, "["},
-  fullscreen = {_HYPER, "space"}
-})
+-- hs.window.animationDuration = 0
+-- spoon.MiroWindowsManager:bindHotkeys({
+--   up = {_HYPER, "up"},
+--   right = {_HYPER, "]"},
+--   down = {_HYPER, "down"},
+--   left = {_HYPER, "["},
+--   fullscreen = {_HYPER, "space"}
+-- })
