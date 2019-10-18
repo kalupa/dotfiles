@@ -73,13 +73,13 @@ brew "json-c"
 brew "libxml2"
 brew "libyubikey"
 brew "lzop"
+brew "make"
 brew "markdown"
 brew "mas"
 brew "maven"
 brew "md5sha1sum", link: false
 brew "mosh"
 brew "mtr"
-brew "mysql@5.6"
 brew "neovim"
 brew "nethack"
 brew "openssh"
@@ -87,7 +87,9 @@ brew "pandoc"
 brew "parallel"
 brew "perl"
 brew "pipenv"
+brew "pkg-config"
 brew "pngquant"
+brew "poppler"
 brew "pth"
 brew "pv"
 brew "pyenv"
@@ -109,7 +111,6 @@ brew "wget"
 brew "zlib"
 brew "zsh"
 brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-dbus", "with-emacs-icons-project-EmacsIcon3", "without-spacemacs-icon"]
-brew "getantibody/tap/antibody"
 brew "getsentry/tools/sentry-cli"
 brew "jmespath/jmespath/jp"
 brew "osx-cross/avr/avr-gcc", link: false
@@ -159,6 +160,7 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
+mas "Spark", id: 1176895641
 mas "Twitterrific", id: 1289378661
 mas "Xcode", id: 497799835
 mas "YubiKey Personalization Tool", id: 638161122
