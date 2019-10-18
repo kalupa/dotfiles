@@ -4,9 +4,10 @@
 (setq user-full-name "Paul Kalupnieks"
       user-mail-address "paul@karrupa.com"
       doom-font (font-spec :family "Hack Nerd Font" :size 12)
-      doom-theme 'doom-vibrant
+      doom-theme 'doom-solarized-light
+      ;; doom-theme 'doom-vibrant
       magit-repository-directories '(("~/src" . 4))
-      ;; dumb-jump-prefer-searcher 'ripgrep
+      dumb-jump-prefer-searcher 'ripgrep
       )
 
 (when IS-MAC
