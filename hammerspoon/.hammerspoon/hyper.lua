@@ -10,7 +10,7 @@ hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
   { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- text E-ditor
   { 't', 'iTerm' }, -- T-erminal
-  { 'm', 'Spark' }, -- e-M-ail
+  { 'm', 'Mail.app' }, -- e-M-ail
 
   { ';', 'Firefox.app' }, --
   { 'd', 'OmniFocus' }, -- to-D-o
