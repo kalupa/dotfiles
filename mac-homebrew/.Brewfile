@@ -145,7 +145,6 @@ cask "adoptopenjdk/openjdk/adoptopenjdk11"
 mas "1Password 7", id: 1333542190
 mas "Be Focused Pro", id: 961632517
 mas "Better", id: 1121192229
-mas "Canary Mail", id: 1236045954
 mas "CCMenu", id: 603117688
 mas "Deliveries", id: 924726344
 mas "Drafts", id: 1435957248
@@ -160,7 +159,6 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
-mas "Spark", id: 1176895641
 mas "Twitterrific", id: 1289378661
 mas "Xcode", id: 497799835
 mas "YubiKey Personalization Tool", id: 638161122
