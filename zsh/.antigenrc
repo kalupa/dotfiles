@@ -1,3 +1,5 @@
+# antigen bundle chriskempson/base16-shell
+
 antigen bundle djui/alias-tips
 # antigen bundle KevinBongart/rake-fast
 
@@ -38,6 +40,7 @@ antigen bundle autojump
 # antigen bundle cabal
 
 antigen bundle colorize
+antigen bundle dotenv
 # antigen bundle docker
 # antigen bundle emacs
 
