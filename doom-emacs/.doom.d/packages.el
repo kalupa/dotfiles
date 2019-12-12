@@ -2,6 +2,12 @@
 ;;; ~/.doom.d/packages.el
 
 (package! prettier-js)
-;; (package! indium)
+(package! atomic-chrome)
 ;; (package! graphql-mode)
-;; (package! json-mode)
+
+(package! solarized-theme)
+;; (package! cyberpunk-theme)
+;; (package! gruber-darker-theme)
+;; (package! darktooth-theme)
+;; (package! base16-theme)
+

@@ -1,6 +1,12 @@
 ;;; init.el -*- lexical-binding: t; -*-
-;;; ~/.doom.d/init.el
-;;;
+
+;; Copy this file to ~/.doom.d/init.el or ~/.config/doom/init.el ('doom install'
+;; will do this for you). The `doom!' block below controls what modules are
+;; enabled and in what order they will be loaded. Remember to run 'doom refresh'
+;; after modifying it.
+;;
+;; More information about these modules (and what flags they support) can be
+;; found in modules/README.org.
 
 (doom! :input
        ;;chinese
@@ -8,9 +14,9 @@
 
        :completion
        company           ; the ultimate code completion backend
-       ;;helm             ; the *other* search engine for love and life
-       ;;ido              ; the other *other* search engine...
-       ivy              ; a search engine for love and life
+       ;;helm              ; the *other* search engine for love and life
+       ;;ido               ; the other *other* search engine...
+       ivy               ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -18,9 +24,9 @@
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        ;;fill-column       ; a `fill-column' indicator
-       hl-todo           ; highlight TODO/FIXME/NOTE tags
+       hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
-       ;;indent-guides     ; highlighted indent columns
+       indent-guides     ; highlighted indent columns
        modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink the current line after jumping
        neotree           ; a project drawer, like NERDTree for vim
@@ -28,12 +34,12 @@
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       ;;pretty-code       ; replace bits of code with pretty symbols
-       ;;tabs              ; an tab bar for Emacs
+       pretty-code       ; replace bits of code with pretty symbols
+       tabs              ; an tab bar for Emacs
        ;;treemacs          ; a project drawer, like neotree but cooler
-       ;;unicode           ; extended unicode support for various languages
+       unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
-       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+       ;; vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
 
@@ -48,8 +54,8 @@
        ;;objed             ; text object editing for the innocent
        ;;parinfer          ; turn lisp into python, sort of
        rotate-text       ; cycle region at point between text candidates
-       ;; snippets          ; my elves. They type so I don't have to
-       word-wrap         ; soft wrapping with language-aware indent
+       snippets          ; my elves. They type so I don't have to
+       ;; word-wrap         ; soft wrapping with language-aware indent
 
        :emacs
        dired             ; making dired pretty [functional]
@@ -65,7 +71,7 @@
 
        :tools
        ;;ansible
-       ;;debugger
+       ;;debugger          ; FIXME stepping through code, to help you add bugs
        direnv
        docker
        editorconfig      ; let someone else argue about tabs vs spaces
@@ -77,7 +83,7 @@
        (lookup           ; helps you navigate your code and documentation
         +docsets)        ; ...or in Dash docsets locally
        lsp
-       ;;macos             ; MacOS-specific commands
+       macos             ; MacOS-specific commands
        magit             ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -87,7 +93,6 @@
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
-       ;;wakatime
 
        :lang
        ;;agda              ; types of types of types of types...
@@ -111,11 +116,12 @@
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
-       (javascript)   ; all(hope(abandon(ye(who(enter(here))))))
+       javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;lean
+       ;;factor
        ;;ledger            ; an accounting system in Emacs
        lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
@@ -123,12 +129,11 @@
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org              ; organize your plain life in plain text
-        ;; +attach          ; custom attachment system
         +dragndrop       ; drag & drop files/images into org buffers
-        ;+hugo            ; use Emacs for hugo blogging
+        ;;+hugo            ; use Emacs for hugo blogging
         +ipython         ; ipython/jupyter support for babel
         +pandoc          ; export-with-pandoc support
-        ;+pomodoro        ; be fruitful with the tomato technique
+        ;;+pomodoro        ; be fruitful with the tomato technique
         +present)        ; using org-mode for presentations
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
@@ -138,42 +143,33 @@
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;rest              ; Emacs as a REST client
+       ;;rst               ; ReST in peace
        ruby              ; 1.step do {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
-       ;;scheme            ; a fully conniving family of lisp
-       sh                ; she sells (ba|z|fi)sh shells on the C xor
+       ;;scheme            ; a fully conniving family of lisps
+       sh                ; she sells {ba,z,fi}sh shells on the C xor
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        web               ; the tubes
 
        :email
-       ;;(mu4e +gmail)       ; WIP
-       ;;notmuch             ; WIP
-       ;;(wanderlust +gmail) ; WIP
+       ;;(mu4e +gmail)
+       ;;notmuch
+       ;;(wanderlust +gmail)
 
-       ;; Applications are complex and opinionated modules that transform Emacs
-       ;; toward a specific purpose. They may have additional dependencies and
-       ;; should be loaded late.
        :app
        ;;calendar
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
-       ;;(write            ; emacs for writers (fiction, notes, papers, etc.)
-       ;; +wordnut         ; wordnet (wn) search
-       ;; +langtool)       ; a proofreader (grammar/style check) for Emacs
+       ;;write             ; emacs for writers (fiction, notes, papers, etc.)
 
        :config
-       ;; For literate config users. This will tangle+compile a config.org
-       ;; literate config in your `doom-private-dir' whenever it changes.
        ;;literate
-
-       ;; The default module sets reasonable defaults for Emacs. It also
-       ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
-       ;; config. Use it as a reference for your own modules.
        (default +bindings +smartparens))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -181,7 +177,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("001c2ff8afde9c3e707a2eb3e810a0a36fb2b466e96377ac95968e7f8930a7c5" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "423435c7b0e6c0942f16519fa9e17793da940184a50201a4d932eafe4c94c92d" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" "2a3ffb7775b2fe3643b179f2046493891b0d1153e57ec74bbe69580b951699ca" "0713580a6845e8075113a70275b3421333cfe7079e48228c52300606fa5ce73b" "70cc30fd9d27a8d0d3ae82974ac2c409fd2cd5746470e2246778c6bec2d4857c" "1728dfd9560bff76a7dc6c3f61e9f4d3e6ef9d017a83a841c117bd9bebe18613" "7f74a3b9a1f5e3d31358b48b8f8a1154aab2534fae82c9e918fb389fca776788" "5e0b63e0373472b2e1cf1ebcc27058a683166ab544ef701a6e7f2a9f33a23726" "70ed3a0f434c63206a23012d9cdfbe6c6d4bb4685ad64154f37f3c15c10f3b90" "071f5702a5445970105be9456a48423a87b8b9cfa4b1f76d15699b29123fb7d8" "f30aded97e67a487d30f38a1ac48eddb49fdb06ac01ebeaff39439997cbdd869" "332e009a832c4d18d92b3a9440671873187ca5b73c2a42fbd4fc67ecf0379b8c" "fe76f3d5094967034192f6a505085db8db6deb0e135749d9a54dc488d6d3ee2f" "0d087b2853473609d9efd2e9fbeac088e89f36718c4a4c89c568dd1b628eae41" "2878517f049b28342d7a360fd3f4b227086c4be8f8409f32e0f234d129cee925" "cdb3e7a8864cede434b168c9a060bf853eeb5b3f9f758310d2a2e23be41a24ae" "f589e634c9ff738341823a5a58fc200341b440611aaa8e0189df85b44533692b" "018c8326bced5102b4c1b84e1739ba3c7602019c645875459f5e6dfc6b9d9437" "66d53738cc824d0bc5b703276975581b8de2b903d6ce366cd62207b5dd6d3d13" "2d392972cbe692ee4ac61dc79907af65051450caf690a8c4d36eb40c1857ba7d" "728eda145ad16686d4bbb8e50d540563573592013b10c3e2defc493f390f7d83" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "c8f959fb1ea32ddfc0f50db85fea2e7d86b72bb4d106803018be1c3566fd6c72" default))))
+    ("e6a9337674f6c967311b939bb4f81aefb65a96908c3749f4dd8d4500f6d79242" "1d3863142a1325c1d038905c82b9aaf83f7594bb6158b52ad32ed23d3a97490a" "31e9b1ab4e6ccb742b3b5395287760a0adbfc8a7b86c2eda4555c8080a9338d9" "fb44ced1e15903449772b750c081e6b8f687732147aa43cfa2e7d9a38820744b" "46720e46428c490e7b2ddeafc2112c5a796c8cf4af71bd6b758d5c19316aff06" "8e51e44e5b079b2862335fcc5ff0f1e761dc595c7ccdb8398094fb8e088b2d50" "c2efd2e2e96b052dd91940b100d86885337a37be1245167642451cf6da5b924a" "65f35d1e0d0858947f854dc898bfd830e832189d5555e875705a939836b53054" "ef403aa0588ca64e05269a7a5df03a5259a00303ef6dfbd2519a9b81e4bce95c" "99c86852decaeb0c6f51ce8bd46e4906a4f28ab4c5b201bdc3fdf85b24f88518" "fede08d0f23fc0612a8354e0cf800c9ecae47ec8f32c5f29da841fe090dfc450" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" "13a8eaddb003fd0d561096e11e1a91b029d3c9d64554f8e897b2513dbf14b277" "0fffa9669425ff140ff2ae8568c7719705ef33b7a927a0ba7c5e2ffcfac09b75" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "7f1d414afda803f3244c6fb4c2c64bea44dac040ed3731ec9d75275b9e831fe5" "001c2ff8afde9c3e707a2eb3e810a0a36fb2b466e96377ac95968e7f8930a7c5" "0fe9f7a04e7a00ad99ecacc875c8ccb4153204e29d3e57e9669691e6ed8340ce" "423435c7b0e6c0942f16519fa9e17793da940184a50201a4d932eafe4c94c92d" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" "2a3ffb7775b2fe3643b179f2046493891b0d1153e57ec74bbe69580b951699ca" "0713580a6845e8075113a70275b3421333cfe7079e48228c52300606fa5ce73b" "70cc30fd9d27a8d0d3ae82974ac2c409fd2cd5746470e2246778c6bec2d4857c" "1728dfd9560bff76a7dc6c3f61e9f4d3e6ef9d017a83a841c117bd9bebe18613" "7f74a3b9a1f5e3d31358b48b8f8a1154aab2534fae82c9e918fb389fca776788" "5e0b63e0373472b2e1cf1ebcc27058a683166ab544ef701a6e7f2a9f33a23726" "70ed3a0f434c63206a23012d9cdfbe6c6d4bb4685ad64154f37f3c15c10f3b90" "071f5702a5445970105be9456a48423a87b8b9cfa4b1f76d15699b29123fb7d8" "f30aded97e67a487d30f38a1ac48eddb49fdb06ac01ebeaff39439997cbdd869" "332e009a832c4d18d92b3a9440671873187ca5b73c2a42fbd4fc67ecf0379b8c" "fe76f3d5094967034192f6a505085db8db6deb0e135749d9a54dc488d6d3ee2f" "0d087b2853473609d9efd2e9fbeac088e89f36718c4a4c89c568dd1b628eae41" "2878517f049b28342d7a360fd3f4b227086c4be8f8409f32e0f234d129cee925" "cdb3e7a8864cede434b168c9a060bf853eeb5b3f9f758310d2a2e23be41a24ae" "f589e634c9ff738341823a5a58fc200341b440611aaa8e0189df85b44533692b" "018c8326bced5102b4c1b84e1739ba3c7602019c645875459f5e6dfc6b9d9437" "66d53738cc824d0bc5b703276975581b8de2b903d6ce366cd62207b5dd6d3d13" "2d392972cbe692ee4ac61dc79907af65051450caf690a8c4d36eb40c1857ba7d" "728eda145ad16686d4bbb8e50d540563573592013b10c3e2defc493f390f7d83" "a2286409934b11f2f3b7d89b1eaebb965fd63bc1e0be1c159c02e396afb893c8" "c8f959fb1ea32ddfc0f50db85fea2e7d86b72bb4d106803018be1c3566fd6c72" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

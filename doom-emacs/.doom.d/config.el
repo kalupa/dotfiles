@@ -1,19 +1,21 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
-
 (setq user-full-name "Paul Kalupnieks"
       user-mail-address "paul@karrupa.com"
       magit-repository-directories '(("~/src" . 4))
       dumb-jump-prefer-searcher 'ripgrep
       )
 
-(setq doom-font (font-spec :family "Hack Nerd Font" :size 13)
-      doom-variable-pitch-font (font-spec :family "Fira Sans")
-      doom-unicode-font (font-spec :family "Hack Nerd Font")
-      doom-big-font (font-spec :family "Fira Mono" :size 19)
-      )
+(setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
 
-(load-theme 'doom-vibrant t)
+;; (load-theme 'cyberpunk t)
+
+;; (load-theme 'solarized-light-high-contrast t)
+(load-theme 'solarized-dark-high-contrast t)
+(setq solarized-distinct-fringe-background t ;; make the fringe stand out from the background
+      solarized-high-contrast-mode-line t ;; make the modeline high contrast
+      solarized-use-more-italic t ;; Use more italics
+      )
 
 (when IS-MAC
   (setq ns-use-thin-smoothing t))
@@ -36,3 +38,11 @@
         web-mode-code-indent-offset 2
         web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
         web-mode-auto-close-style 2))
+
+(setq atomic-chrome-url-major-mode-alist
+      '(("github\\.com" . gfm-mode)
+        ("redmine" . textile-mode)))
+
+;; (after! atomic
+;;   (atomic-chrome-start-server)
+;; )
