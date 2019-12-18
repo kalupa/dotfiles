@@ -2,15 +2,11 @@
 
 (setq user-full-name "Paul Kalupnieks"
       user-mail-address "paul@karrupa.com"
-      magit-repository-directories '(("~/src" . 4))
       dumb-jump-prefer-searcher 'ripgrep
       )
 
 (setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
 
-;; (load-theme 'cyberpunk t)
-
-;; (load-theme 'solarized-light-high-contrast t)
 (load-theme 'solarized-dark-high-contrast t)
 (setq solarized-distinct-fringe-background t ;; make the fringe stand out from the background
       solarized-high-contrast-mode-line t ;; make the modeline high contrast
@@ -39,10 +35,13 @@
         web-mode-enable-auto-quoting nil ;; disbale adding "" after an =
         web-mode-auto-close-style 2))
 
-(setq atomic-chrome-url-major-mode-alist
-      '(("github\\.com" . gfm-mode)
-        ("redmine" . textile-mode)))
+(map! :leader
+      "h L" #'global-keycast-mode
+      "f t" #'find-in-dotfiles
+      "f T" #'browse-dotfiles)
 
-;; (after! atomic
-;;   (atomic-chrome-start-server)
-;; )
+;; magit
+(setq
+  magit-repository-directories '(("~/src" . 4))
+  magit-save-repository-buffers 'dontask
+)
