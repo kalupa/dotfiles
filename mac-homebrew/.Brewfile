@@ -160,9 +160,11 @@ mas "Fantastical", id: 975937182
 mas "GarageBand", id: 682658836
 mas "iA Writer", id: 775737590
 mas "iMovie", id: 408981434
+mas "Jira", id: 1475897096
 mas "Keynote", id: 409183694
 mas "Marked 2", id: 890031187
 mas "MultiMarkdown Composer", id: 1275176220
+mas "NextDNS", id: 1464122853
 mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
