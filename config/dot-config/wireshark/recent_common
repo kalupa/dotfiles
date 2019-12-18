@@ -1,0 +1,128 @@
+# Recent settings file for Wireshark 3.0.6.
+#
+# This file is regenerated each time Wireshark is quit.
+# So be careful, if you want to make manual changes here.
+
+######## Recent capture files (latest last), cannot be altered through command line ########
+
+recent.capture_file: /Users/paulk/Downloads/tcpdumpBluetooth.pcap
+
+######## Recent capture filters (latest last), cannot be altered through command line ########
+
+
+######## Recent display filters (latest last), cannot be altered through command line ########
+
+recent.display_filter: btle
+recent.display_filter: bthci_evt
+recent.display_filter: bluetooth
+recent.display_filter: blu
+recent.display_filter: BTH
+
+# Main window geometry.
+# Decimal numbers.
+gui.geometry_main_x: 0
+gui.geometry_main_y: 23
+gui.geometry_main_width: 1920
+gui.geometry_main_height: 1155
+
+# Main window maximized.
+# TRUE or FALSE (case-insensitive).
+gui.geometry_main_maximized: TRUE
+
+# Statusbar left pane size.
+# Decimal number.
+gui.geometry_status_pane: 250
+
+# Statusbar middle pane size.
+# Decimal number.
+gui.geometry_status_pane_right: 250
+
+# Last used Configuration Profile.
+gui.last_used_profile: Default
+
+# WLAN statistics upper pane size.
+# Decimal number.
+gui.geometry_status_wlan_stats_pane: 200
+
+# Warn if running with elevated permissions (e.g. as root).
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_elevated: TRUE
+
+# Warn if npf.sys isn't loaded on Windows >= 6.0.
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_no_npf: TRUE
+
+# Geometry and maximized state of FilterDialog window.
+# Decimal integers.
+gui.geom.FilterDialog.x: 310
+gui.geom.FilterDialog.y: 197
+gui.geom.FilterDialog.width: 1280
+gui.geom.FilterDialog.height: 770
+# TRUE or FALSE (case-insensitive).
+gui.geom.FilterDialog.maximized: FALSE
+
+# Geometry and maximized state of ManageInterfacesDialog window.
+# Decimal integers.
+gui.geom.ManageInterfacesDialog.x: 575
+gui.geom.ManageInterfacesDialog.y: 371
+gui.geom.ManageInterfacesDialog.width: 750
+gui.geom.ManageInterfacesDialog.height: 425
+# TRUE or FALSE (case-insensitive).
+gui.geom.ManageInterfacesDialog.maximized: FALSE
+
+# Geometry and maximized state of PreferencesDialog window.
+# Decimal integers.
+gui.geom.PreferencesDialog.x: 620
+gui.geom.PreferencesDialog.y: 363
+gui.geom.PreferencesDialog.width: 680
+gui.geom.PreferencesDialog.height: 475
+# TRUE or FALSE (case-insensitive).
+gui.geom.PreferencesDialog.maximized: FALSE
+
+# Geometry and maximized state of BluetoothHciSummaryDialog window.
+# Decimal integers.
+gui.geom.BluetoothHciSummaryDialog.x: 107
+gui.geom.BluetoothHciSummaryDialog.y: 177
+gui.geom.BluetoothHciSummaryDialog.width: 824
+gui.geom.BluetoothHciSummaryDialog.height: 577
+# TRUE or FALSE (case-insensitive).
+gui.geom.BluetoothHciSummaryDialog.maximized: FALSE
+
+# Geometry and maximized state of BluetoothAttServerAttributesDialog window.
+# Decimal integers.
+gui.geom.BluetoothAttServerAttributesDialog.x: 87
+gui.geom.BluetoothAttServerAttributesDialog.y: 177
+gui.geom.BluetoothAttServerAttributesDialog.width: 865
+gui.geom.BluetoothAttServerAttributesDialog.height: 577
+# TRUE or FALSE (case-insensitive).
+gui.geom.BluetoothAttServerAttributesDialog.maximized: FALSE
+
+# Geometry and maximized state of DisplayFilterExpressionDialog window.
+# Decimal integers.
+gui.geom.DisplayFilterExpressionDialog.x: 200
+gui.geom.DisplayFilterExpressionDialog.y: 32
+gui.geom.DisplayFilterExpressionDialog.width: 639
+gui.geom.DisplayFilterExpressionDialog.height: 866
+# TRUE or FALSE (case-insensitive).
+gui.geom.DisplayFilterExpressionDialog.maximized: FALSE
+
+# Geometry and maximized state of BluetoothDevicesDialog window.
+# Decimal integers.
+gui.geom.BluetoothDevicesDialog.x: 135
+gui.geom.BluetoothDevicesDialog.y: 177
+gui.geom.BluetoothDevicesDialog.width: 767
+gui.geom.BluetoothDevicesDialog.height: 577
+# TRUE or FALSE (case-insensitive).
+gui.geom.BluetoothDevicesDialog.maximized: FALSE
+
+# Custom colors.
+# List of custom colors selected in Qt color picker.
+gui.custom_colors: 
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff"
