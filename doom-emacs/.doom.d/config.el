@@ -3,7 +3,11 @@
 (setq user-full-name "Paul Kalupnieks"
       user-mail-address "paul@karrupa.com"
       dumb-jump-prefer-searcher 'ripgrep
-      )
+      display-line-numbers-type nil
+  )
+
+;; enable word-wrap (almost) everywhere
+;; (+global-word-wrap-mode +1)
 
 (setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
 
