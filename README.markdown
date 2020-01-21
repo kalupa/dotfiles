@@ -1,11 +1,7 @@
 ## On Mac
 Install homebrew, cli tools, cask apps
 ```sh
-./homebrew_install.sh
-```
-Optionally install cask-based native apps
-```sh
-./caskapps.sh
+./setup.bash
 ```
 
 ## On Linux
