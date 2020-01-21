@@ -1,0 +1,125 @@
+#!/bin/bash
+#
+# CLI Tool for reading applications based on Unbounce's AWS Tags
+#
+# Dependencies: awscli, jq
+#
+HELP=$(cat <<-EOF
+  Usage:
+
+    ec2_dns [OPTIONS] lp-leads
+
+  Options (order matters):
+
+    -d    Launch Time
+    -s    Instance State
+    -i    Instance ID
+    -r    Region with Availability Zone
+    -n    Stack Name
+    -e    Environment
+    -p    Tag: project
+    -t    Tag: app_version
+    -H    Instance Private IP
+    -h    Instance Public IP
+    -P    Tag: purpose
+
+  Should return something like:
+
+    2018-09-06T18:28:35  ru  i-059a8ceacf4b58e94  eu-west-3c     lp-leads--integration--app-471  integration  lp-leads  0.78.0-4-0xc6d4  10.248.64.169  35.180.34.181
+    2018-09-06T20:40:51  ru  i-06379b385fd7e5d93  eu-central-1a  lp-leads--production--app-114   production   lp-leads  0.79.0           10.249.38.188  3.120.146.201
+    2018-09-06T20:40:51  ru  i-0b7bddb46aa9c0042  eu-central-1c  lp-leads--production--app-114   production   lp-leads  0.79.0           10.249.75.123  18.184.46.42
+
+EOF
+     )
+
+TEMPLATE=""
+while getopts dsirneptHhP opt; do
+    case $opt in
+        d)  TEMPLATE="$TEMPLATE \$launch_time"
+            ;;
+        s)  TEMPLATE="$TEMPLATE \$instance_state"
+            ;;
+        i)  TEMPLATE="$TEMPLATE \$instance_id"
+            ;;
+        r)  TEMPLATE="$TEMPLATE \$region"
+            ;;
+        n)  TEMPLATE="$TEMPLATE \$stack_name"
+            ;;
+        e)  TEMPLATE="$TEMPLATE \$environment"
+            ;;
+        p)  TEMPLATE="$TEMPLATE \$project"
+            ;;
+        t)  TEMPLATE="$TEMPLATE \$app_version"
+            ;;
+        H)  TEMPLATE="$TEMPLATE \$private_ip"
+            ;;
+        h)  TEMPLATE="$TEMPLATE \$public_ip"
+            ;;
+        P)  TEMPLATE="$TEMPLATE \$purpose"
+            ;;
+    esac
+done
+shift "$((OPTIND-1))"
+
+if [ -z "$TEMPLATE" ]; then
+    # shellcheck disable=SC2016
+    TEMPLATE='$launch_time $instance_state $instance_id $region $stack_name $environment $project $app_version $private_ip $public_ip $purpose'
+fi
+
+NAME=$1
+if [ -z "$NAME" ]; then
+    echo "$HELP"
+    exit 0
+fi
+
+describe_instances () {
+    REGIONS=(
+        'us-west-1'
+        'us-west-2'
+        'us-east-1'
+        'eu-central-1'
+        'eu-west-1'
+        'eu-west-3'
+	'ap-southeast-1'
+        'ap-southeast-2'
+    )
+    for region in "${REGIONS[@]}"; do
+        aws --region "${region}"  ec2 describe-instances --filters "Name=tag:project,Values=*$NAME*" &
+    done
+}
+
+parse_aws_response () {
+    jq --arg ROLE "$NAME" \
+         '.Reservations[].Instances[]
+            | .tags = (.Tags | from_entries)?
+            | [ .LaunchTime[:19]
+              , .State.Name[:2]
+              , .InstanceId
+              , .Placement.AvailabilityZone
+              , .tags["aws:cloudformation:stack-name"] // "n/a"
+              , .tags["environment"] // "n/a"
+              , .tags["project"] // "n/a"
+              , .tags["lp:deployer:app-version"] // "n/a"
+              , .PrivateIpAddress // "n/a"
+              , .PublicIpAddress // "n/a"
+              , .tags["purpose"]
+              ]
+            | @csv' -r \
+    | sort -n \
+    | column -s,\" -t
+}
+
+print_results () {
+    while read -r line; do
+        # shellcheck disable=SC2034
+        IFS=" " read -r launch_time instance_state instance_id region stack_name environment project app_version private_ip public_ip purpose <<< "$line"
+        eval "echo $TEMPLATE"
+    done | column -t
+}
+
+# This function is used to cleanup empty lines when applying filters that remove empty fields, i.e. a hostname doesn't exist
+remove_empty_results () {
+    sed '/^$/d'
+}
+
+describe_instances | parse_aws_response | print_results | remove_empty_results
