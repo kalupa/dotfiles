@@ -41,6 +41,8 @@ if [ -d "${RBENV_ROOT}" ]; then
 	PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
 
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+
 export GOPATH="${HOME}/gocode"
 PATH="$PATH:$GOPATH/bin"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
@@ -59,3 +61,9 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_OPTS="--select-1 --exit-0 --height 40% --reverse --preview 'bat --color \"always\"' {}"
 
 export DOTFILES="$HOME/dotfiles"
+
+export EDITOR="te"
+export VISUAL="emacs"
+export ALTERNATE_EDITOR=""
+
+eval "$(jenv init -)"

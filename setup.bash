@@ -20,10 +20,16 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	echo ""
 	echo "Linking some other configs ..."
 	stow hammerspoon
-
+	# if [ -z "$(command -v asdf)" ]; then
+	# 	echo "asdf not found. Installing ..."
+	# 	brew install asdf
+	# 	exit 1
+	# fi
 fi
 
 stow -S zsh git file-formats home-bin
+
+# echo "Installing langs"
 
 echo "Installing nvm and node stable ..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash

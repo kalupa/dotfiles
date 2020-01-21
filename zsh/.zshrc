@@ -6,8 +6,6 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # source /usr/local/bin/virtualenvwrapper.sh
 
-# echo 'loading zshrc'
-
 # Antigen
 # [[ ! -d $HOME/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git $HOME/.antigen.git
 export ANTIGEN_COMPDUMP=${HOME}/.zcompdump
@@ -18,11 +16,10 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 source "$HOME/.zsh/_aliases.zsh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"                    # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# asdf can replace nvm, rbenv
+# source "$(brew --prefix asdf)/asdf.sh"
 
-# place this after nvm initialization!
+# nvm for node
 source "$HOME/.zsh/load-nvmrc.zsh"
 
 autoload -Uz +X compinit && compinit
@@ -39,5 +36,7 @@ source "/usr/local/share/zsh/site-functions"
 
 alias ls="ls -G --color"
 eval "$(direnv hook zsh)" # local env variables (want PATH different for projects)
+
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 source "$HOME/.zshrc_local"
