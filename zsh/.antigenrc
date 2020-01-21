@@ -42,7 +42,7 @@ antigen bundle autojump
 antigen bundle colorize
 antigen bundle dotenv
 # antigen bundle docker
-# antigen bundle emacs
+antigen bundle emacs
 
 antigen bundle git
 antigen bundle gitfast
