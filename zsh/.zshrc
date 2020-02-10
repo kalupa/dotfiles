@@ -4,8 +4,6 @@
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-# source /usr/local/bin/virtualenvwrapper.sh
-
 # Antigen
 # [[ ! -d $HOME/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git $HOME/.antigen.git
 export ANTIGEN_COMPDUMP=${HOME}/.zcompdump
