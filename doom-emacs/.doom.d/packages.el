@@ -3,7 +3,7 @@
 
 (package! prettier-js)
 (package! atomic-chrome)
-;; (package! graphql-mode)
+(package! graphql-mode)
 
 (package! solarized-theme)
 ;; (package! cyberpunk-theme)

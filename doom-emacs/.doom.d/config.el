@@ -9,7 +9,11 @@
 ;; enable word-wrap (almost) everywhere
 ;; (+global-word-wrap-mode +1)
 
-(setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
+;; (setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
+(setq
+  doom-font (font-spec :family "JetBrains Mono" :size 13)
+  line-spacing 0.2
+  )
 
 (load-theme 'solarized-dark-high-contrast t)
 (setq solarized-distinct-fringe-background t ;; make the fringe stand out from the background
@@ -27,12 +31,16 @@
 (setq js-indent-level 2
       js2-basic-offset 2)
 
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+
 (after! typescript-mode
+  (add-hook 'typescript-mode-hook #'prettier-js-mode)
   (add-hook 'typescript-mode-hook #'flycheck-mode)
   (setq typescript-indent-level 2))
 
 (after! web-mode
   (add-hook 'web-mode-hook #'flycheck-mode)
+  (add-hook 'web-mode-hook #'prettier-js-mode)
 
   (setq web-mode-markup-indent-offset 2 ;; Indentation
         web-mode-code-indent-offset 2
