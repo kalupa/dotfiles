@@ -9,11 +9,7 @@
 ;; enable word-wrap (almost) everywhere
 ;; (+global-word-wrap-mode +1)
 
-;; (setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
-(setq
-  doom-font (font-spec :family "JetBrains Mono" :size 13)
-  line-spacing 0.2
-  )
+(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 15))
 
 (load-theme 'solarized-dark-high-contrast t)
 (setq solarized-distinct-fringe-background t ;; make the fringe stand out from the background
