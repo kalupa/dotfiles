@@ -58,6 +58,7 @@ brew "exercism"
 brew "fd"
 brew "fzf"
 brew "gawk"
+brew "gifski"
 brew "git"
 brew "git-extras"
 brew "global"
@@ -175,8 +176,10 @@ mas "Better", id: 1121192229
 mas "CCMenu", id: 603117688
 mas "Deliveries", id: 924726344
 mas "Drafts", id: 1435957248
+mas "Endel", id: 1484348796
 mas "Fantastical", id: 975937182
 mas "GarageBand", id: 682658836
+mas "Gifski", id: 1351639930
 mas "iA Writer", id: 775737590
 mas "iMovie", id: 408981434
 mas "Jira", id: 1475897096
