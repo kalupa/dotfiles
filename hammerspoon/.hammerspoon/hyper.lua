@@ -11,10 +11,12 @@ hyperModeAppMappings = {
   { 'e', '/usr/local/opt/emacs-plus/Emacs.app' }, -- text E-ditor
   { 't', 'iTerm' }, -- T-erminal
   { 'm', 'Airmail 3' }, -- e-M-ail
-
   { ';', 'Firefox.app' }, --
-  { 'd', 'OmniFocus' }, -- to-D-o
+  { 'z', 'zoom.us' }, -- video chat
+  { 'd', 'Things3'}, -- to-D-o
+  { 'v', 'Visual Studio Code' } 
 }
+  -- { 'd', 'OmniFocus' }, -- to-D-o
 
 for i, mapping in ipairs(hyperModeAppMappings) do
   local key = mapping[1]

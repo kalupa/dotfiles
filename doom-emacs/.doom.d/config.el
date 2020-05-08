@@ -53,3 +53,7 @@
   magit-repository-directories '(("~/src" . 4))
   magit-save-repository-buffers 'dontask
 )
+
+(after! haskell-mode
+  (add-hook 'haskell-mode-hook #'lsp)
+  )
