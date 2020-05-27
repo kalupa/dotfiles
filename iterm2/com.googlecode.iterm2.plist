@@ -2056,7 +2056,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1610 1308 620 392 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 4 1144 1168 0 0 1920 1177 </string>
+	<string>1713 489 1725 928 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 570 452 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -6337,8 +6337,9 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.8beta1</string>
-		<string>3.3.10beta3</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.10beta4</string>
+		<string>3.3.10beta1</string>
 		<string>3.3.5beta2</string>
 		<string>3.3.8beta5</string>
 		<string>3.3.7beta1</string>
@@ -6346,13 +6347,13 @@
 		<string>3.3.5beta1</string>
 		<string>3.3.8beta4</string>
 		<string>3.3.3beta2</string>
-		<string>3.3.9beta1</string>
-		<string>3.3.5beta3</string>
 		<string>3.3.7beta2</string>
-		<string>3.3.10beta1</string>
-		<string>3.3.10beta2</string>
+		<string>3.3.9beta1</string>
 		<string>3.3.4beta1</string>
-		<string>3.3.7beta4</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.10beta2</string>
+		<string>3.3.8beta1</string>
+		<string>3.3.10beta3</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -6380,7 +6381,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>28B31A97-1238-4CBE-A473-D3C94AE94653</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>64</integer>
+	<integer>73</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -7205,7 +7206,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-09T15:04:05Z</date>
+	<date>2020-05-26T14:52:27Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -7219,7 +7220,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
@@ -7301,7 +7302,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta3</string>
+	<string>3.3.10beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
