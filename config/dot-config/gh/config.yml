@@ -1,0 +1,4 @@
+hosts:
+    github.com:
+        oauth_token: 548a1e0184fb4178ad3169b8a369e45cfeb493a0
+        user: kalupa
