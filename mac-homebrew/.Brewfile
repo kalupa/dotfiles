@@ -1,6 +1,7 @@
 tap "d12frosted/emacs-plus"
 tap "getantibody/tap"
 tap "getsentry/tools"
+tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
@@ -19,6 +20,7 @@ cask "xquartz"
 brew "ack"
 brew "openssl@1.1"
 brew "python"
+brew "librsvg"
 brew "adwaita-icon-theme"
 brew "alure"
 brew "ant"
@@ -42,7 +44,7 @@ brew "boost"
 brew "brotli"
 brew "cabal-install"
 brew "cabextract"
-brew "clingo", link: false
+brew "clingo"
 brew "cloc"
 brew "clojure"
 brew "closure-compiler"
@@ -50,6 +52,7 @@ brew "cmake"
 brew "cowsay"
 brew "ctags", link: false
 brew "curl"
+brew "deno"
 brew "dfu-programmer"
 brew "dfu-util"
 brew "direnv"
@@ -134,6 +137,7 @@ brew "zsh"
 brew "zshdb"
 brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-dbus", "with-emacs-icons-project-EmacsIcon3", "without-spacemacs-icon"]
 brew "getsentry/tools/sentry-cli"
+brew "github/gh/gh"
 brew "jmespath/jmespath/jp"
 brew "osx-cross/avr/avr-gcc", link: false
 brew "osx-cross/avr/avr-gcc@7", link: true
@@ -201,6 +205,7 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
+mas "Things", id: 904280696
 mas "Twitterrific", id: 1289378661
 mas "Xcode", id: 497799835
 mas "YubiKey Personalization Tool", id: 638161122
