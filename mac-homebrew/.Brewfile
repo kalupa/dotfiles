@@ -17,132 +17,263 @@ tap "teamookla/speedtest"
 tap "unbounce/taps"
 cask "adoptopenjdk8"
 cask "xquartz"
+# Search tool like grep, but optimized for programmers
 brew "ack"
+# Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
+# Interpreted, interactive, object-oriented programming language
 brew "python"
+# Library to render SVG files using Cairo
 brew "librsvg"
+# Icons for the GNOME project
 brew "adwaita-icon-theme"
+# Manage common tasks with OpenAL applications
 brew "alure"
+# Java build tool
 brew "ant"
+# Automatic configure script builder
 brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Spell checker with better logic than ispell
 brew "aspell"
+# Shell extension to jump to frequently used directories
 brew "autojump"
+# ELF object file access library
 brew "libelf"
+# Library for USB device access
 brew "libusb"
+# Library for USB device access
 brew "libusb-compat"
+# Library to talk to FTDI chips
 brew "libftdi0"
+# Atmel AVR MCU programmer
 brew "avrdude"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Simple command-line tool to read AWS CloudWatch logs
 brew "awslogs"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Programmable completion for Bash 3.2
 brew "bash-completion"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Collection of portable C++ source libraries
 brew "boost"
+# Generic-purpose lossless compression algorithm by Google
 brew "brotli"
+# Command-line interface for Cabal and Hackage
 brew "cabal-install"
+# Extract files from Microsoft cabinet files
 brew "cabextract"
+# ASP system to ground and solve logic programs
 brew "clingo"
+# Statistics utility to count lines of code
 brew "cloc"
+# The Clojure Programming Language
 brew "clojure"
+# JavaScript optimizing compiler
 brew "closure-compiler"
+# Cross-platform make
 brew "cmake"
+# Configurable talking characters in ASCII art
 brew "cowsay"
+# Reimplementation of ctags(1)
 brew "ctags", link: false
+# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Secure runtime for JavaScript and TypeScript
 brew "deno"
+# OWASP dependency-check
+brew "dependency-check"
+# Device firmware update based USB programmer for Atmel chips
 brew "dfu-programmer"
+# USB programmer
 brew "dfu-util"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq", restart_service: true
+# Suite of tools for inspecting disk usage
 brew "duc"
+# Maintain consistent coding style between multiple editors
 brew "editorconfig"
+# Command-line tool to interact with exercism.io
 brew "exercism"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU awk utility
 brew "gawk"
+# Highest-quality GIF encoder based on pngquant
 brew "gifski"
+# Distributed revision control system
 brew "git"
+# Small git utilities
 brew "git-extras"
+# Source code tag system
 brew "global"
+# Command-line option parsing utility
 brew "gnu-getopt"
+# C code prettifier
 brew "gnu-indent"
+# GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU version of the tar archiving utility
 brew "gnu-tar"
+# GNU typing tutor
 brew "gnu-typist"
+# X.509 and CMS library
 brew "libksba"
+# Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
+# GNU Pretty Good Privacy (PGP) package
 brew "gnupg", link: false
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# GNU grep, egrep and fgrep
 brew "grep"
+# Haskell source code suggestions
 brew "hlint"
+# Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# String tool
 brew "intltool"
+# C library for encoding, decoding, and manipulating JSON
 brew "jansson"
+# Manage your Java environment
 brew "jenv"
+# Regular expressions library
 brew "oniguruma"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# JSON parser for C
 brew "json-c"
+# Selection-based modal text editor
 brew "kakoune"
+# Graphical front-end for GCC's coverage testing tool (gcov)
 brew "lcov"
+# Build tool for Clojure
 brew "leiningen"
+# C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
+# GNOME XML library
 brew "libxml2"
+# C library for manipulating Yubico one-time passwords
 brew "libyubikey"
+# Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# File compressor
 brew "lzop"
+# Utility for directing compilation
 brew "make"
+# Text-to-HTML conversion tool
 brew "markdown"
+# Mac App Store command-line interface
 brew "mas"
+# Java-based project management
 brew "maven"
+# Hash utilities
 brew "md5sha1sum", link: false
+# Remote terminal application
 brew "mosh"
+# 'traceroute' and 'ping' in a single tool
 brew "mtr"
+# Open source relational database management system
 brew "mysql@5.6"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Single-player roguelike video game
 brew "nethack"
+# Platform built on V8 to build network applications
 brew "node"
+# OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Shell command parallelization utility
 brew "parallel"
+# Highly capable, feature-rich programming language
 brew "perl"
+# Python dependency management tool
 brew "pipenv"
+# Manage compile and link flags for libraries
 brew "pkg-config"
+# PNG image optimizing utility
 brew "pngquant"
+# PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# GNU Portable THreads
 brew "pth"
+# Monitor data's progress through a pipe
 brew "pv"
+# Install various Ruby versions and implementations
 brew "ruby-build"
+# Ruby version manager
 brew "rbenv"
+# Persistent key-value database, with built-in net interface
 brew "redis"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Wrapper around ripgrep that adds multiple rich file types
 brew "ripgrep-all"
+# Utility that provides fast incremental file transfer
 brew "rsync"
+# Generate ASCII art with terminal, shell, and OS info
 brew "screenfetch", args: ["HEAD"]
+# Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Autoformat shell script source code
 brew "shfmt"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Enables extra languages support for Tesseract
 brew "tesseract-lang"
+# Multi-platform code-search similar to ack and ag
 brew "the_platinum_searcher"
+# Code-search similar to ack
 brew "the_silver_searcher"
+# Terminal multiplexer
 brew "tmux"
+# Vi 'workalike' with many additional features
 brew "vim"
+# Executes a program periodically, showing output fullscreen
 brew "watch"
+# Internet file retriever
 brew "wget"
+# Download YouTube videos from the command-line
 brew "youtube-dl"
+# General-purpose lossless data-compression library
 brew "zlib"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Debugger for zsh
 brew "zshdb"
+# GNU Emacs text editor
 brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-dbus", "with-emacs-icons-project-EmacsIcon3", "without-spacemacs-icon"]
+# Sentry command-line client for some generic tasks
 brew "getsentry/tools/sentry-cli"
+# GitHub CLI
 brew "github/gh/gh"
+# Command-line interface to JMESPath, a query language for JSON
 brew "jmespath/jmespath/jp"
+# GNU compiler collection for AVR 8-bit and 32-bit Microcontrollers
 brew "osx-cross/avr/avr-gcc", link: false
+# GNU compiler collection for AVR 8-bit and 32-bit Microcontrollers
 brew "osx-cross/avr/avr-gcc@7", link: true
+# GNU Embedded Toolchain for ARM
 brew "px4/px4/gcc-arm-none-eabi"
+# GNU Embedded Toolchain for ARM
 brew "px4/px4/gcc-arm-none-eabi-49", link: false
+# Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 brew "unbounce/taps/iidy"
 brew "unbounce/taps/stack-toolkit"
