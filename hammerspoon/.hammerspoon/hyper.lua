@@ -1,4 +1,5 @@
-local _HYPER = {'cmd,ctrl,alt,shift'}
+local _HYPER = {'cmd,ctrl,alt,shift,f19'}
+-- local _HYPER = {'f19'}
 local log = hs.logger.new('hyper.lua', 'debug')
 
 hs.hotkey.bind(_HYPER, '=', hs.caffeinate.startScreensaver)

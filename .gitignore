@@ -1,7 +1,4 @@
 home-bin/bin/aws
 home-bin/bin/connect-jenkins
-config/dot-config/configstore/update-notifier-npm.json
-config/dot-config/configstore/update-notifier-json-server.json
-config/dot-config/configstore/update-notifier-nodemon.json
-config/dot-config/configstore/update-notifier-patch-package.json
-config/dot-config/configstore/update-notifier-zapier-platform-cli.json
+config/dot-config/configstore/update-notifier-*.json
+config/dot-config/gh/state.yml
