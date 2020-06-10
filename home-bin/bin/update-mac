@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ "$(uname)" == "Darwin" ]]; then
+	brew upgrade
+fi
+
+doom -y up

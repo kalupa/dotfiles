@@ -52,10 +52,4 @@ git submodule update
 
 # clone doom emacs from source instead of the linked version
 # bin/doom install
-# 1password (if not there by brewfile)
-# resilio
-# bartender
-# text expander
 # doom autoloads
-# spectacles
-# karabiner-elements
