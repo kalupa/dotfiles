@@ -1,7 +1,5 @@
 #!/usr/local/bin/zsh
 
-# unalias gl
-alias ls='lsd'
 alias lt='ls --tree'
 
 alias grbm="git fetch; git rebase origin/master"

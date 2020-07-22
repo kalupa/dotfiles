@@ -68,3 +68,4 @@ export DOTFILES="$HOME/dotfiles"
 export EDITOR="te"
 export VISUAL="emacs"
 export ALTERNATE_EDITOR=""
+export CLICOLOR=true
