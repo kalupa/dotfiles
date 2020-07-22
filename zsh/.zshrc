@@ -1,9 +1,5 @@
 #!/usr/local/bin/zsh
 
-# homebrew gnu utils without the g prefix
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
 # Antigen
 # [[ ! -d $HOME/.antigen.git ]] && git clone https://github.com/zsh-users/antigen.git $HOME/.antigen.git
 export ANTIGEN_COMPDUMP=${HOME}/.zcompdump
@@ -32,9 +28,15 @@ prompt pure
 source "/usr/local/share/zsh/site-functions"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
 alias ls="ls -G --color"
-eval "$(direnv hook zsh)" # local env variables (want PATH different for projects)
 
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+if [ -z "$(command -v rbenv)" ]; then
+	eval "$(rbenv init -)"
+fi
+
+if [ -z "$(command -v direnv)" ]; then
+	eval "$(direnv hook zsh)" # local env variables (want PATH different for projects)
+fi
 
 source "$HOME/.zshrc_local"

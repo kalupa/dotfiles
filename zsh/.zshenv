@@ -2,22 +2,28 @@
 
 # /usr/local/bin/screenfetch -d '-host;-wm;-wmtheme;-de;-pkgs'
 
+# homebrew gnu utils without the g prefix
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
-# PATH="/usr/local/opt/python@2/libexec/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 PATH="/usr/local/opt/curl/bin:$PATH" # use gnu curl
 PATH="$PATH:./.bundle/bin"           # danger!
 
 PATH="$PATH:$HOME/.emacs.d/bin"
 PATH="$PATH:$HOME/bin:./bin"
-PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
+# PATH="$PATH:/bin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/sbin:/opt/X11/bin"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
 
 PATH="$PATH:$NVM_DIR:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
 # some better python bin-run pathing
-USER_BASE_PATH=$(python -m site --user-base)
-PATH="$PATH:$USER_BASE_PATH/bin"
+if [ -z "$(command -v python)" ]; then
+	USER_BASE_PATH=$(python -m site --user-base)
+	PATH="$PATH:$USER_BASE_PATH/bin"
+fi
+
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
 	eval "$(ssh-agent -s)"
@@ -37,11 +43,8 @@ export LS_OPTIONS="--color"
 # rbenv configuation
 export RBENV_ROOT="${HOME}/.rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
-	eval "$(rbenv init -)"
 	PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
-
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
 
 export GOPATH="${HOME}/gocode"
 PATH="$PATH:$GOPATH/bin"
