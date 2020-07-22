@@ -1,7 +1,24 @@
 #!/usr/bin/env bash
 
-if [[ "$(uname)" == "Darwin" ]]; then
-	brew upgrade
-fi
+# stop, upgrade, start yabai
+# brew services stop yabai
+# brew upgrade yabai
+# brew services start yabai
 
+# reinstall the scripting addition
+# sudo yabai --uninstall-sa
+# sudo yabai --install-sa
+
+# echo "killing dock if running"
+# load the scripting addition
+# killall Dock
+
+# echo "upgrading other homebrew installs"
+brew upgrade
+echo "updating Brewfile"
+brew bundle dump --global --force --describe
+
+echo "upgrading doom emacs"
 doom -y up
+
+echo "upgrading zsh plugins ..."

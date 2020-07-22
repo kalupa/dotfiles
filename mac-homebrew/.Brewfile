@@ -1,4 +1,5 @@
 tap "d12frosted/emacs-plus"
+tap "derailed/k9s"
 tap "getantibody/tap"
 tap "getsentry/tools"
 tap "github/gh"
@@ -10,6 +11,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "jmespath/jmespath"
+tap "koekeishiya/formulae"
 tap "mas-cli/tap"
 tap "osx-cross/avr"
 tap "px4/px4"
@@ -22,7 +24,7 @@ brew "ack"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Interpreted, interactive, object-oriented programming language
-brew "python"
+brew "python@3.8"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Icons for the GNOME project
@@ -54,7 +56,7 @@ brew "libftdi0"
 # Atmel AVR MCU programmer
 brew "avrdude"
 # Official Amazon AWS command-line interface
-brew "awscli"
+brew "awscli", link: false
 # Simple command-line tool to read AWS CloudWatch logs
 brew "awslogs"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -87,6 +89,8 @@ brew "cowsay"
 brew "ctags", link: false
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Message bus system, providing inter-application communication
+brew "dbus", restart_service: true
 # Secure runtime for JavaScript and TypeScript
 brew "deno"
 # OWASP dependency-check
@@ -183,6 +187,8 @@ brew "mas"
 brew "maven"
 # Hash utilities
 brew "md5sha1sum", link: false
+# Run a Kubernetes cluster locally
+brew "minikube"
 # Remote terminal application
 brew "mosh"
 # 'traceroute' and 'ping' in a single tool
@@ -215,6 +221,8 @@ brew "poppler"
 brew "pth"
 # Monitor data's progress through a pipe
 brew "pv"
+# Python version management
+brew "pyenv"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # Ruby version manager
@@ -235,6 +243,8 @@ brew "shellcheck"
 brew "shfmt"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# User interface to the TELNET protocol
+brew "telnet"
 # Enables extra languages support for Tesseract
 brew "tesseract-lang"
 # Multi-platform code-search similar to ack and ag
@@ -257,8 +267,9 @@ brew "zlib"
 brew "zsh"
 # Debugger for zsh
 brew "zshdb"
-# GNU Emacs text editor
-brew "d12frosted/emacs-plus/emacs-plus", args: ["with-ctags", "with-dbus", "with-emacs-icons-project-EmacsIcon3", "without-spacemacs-icon"]
+brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-ctags", "with-dbus", "with-jansson", "with-mailutils", "with-modern-icon-sexy-v1", "with-no-frame-refocus", "with-xwidgets"]
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "derailed/k9s/k9s"
 # Sentry command-line client for some generic tasks
 brew "getsentry/tools/sentry-cli"
 # GitHub CLI
@@ -279,7 +290,9 @@ brew "unbounce/taps/iidy"
 brew "unbounce/taps/stack-toolkit"
 cask "adobe-acrobat-reader"
 cask "adoptopenjdk11"
+cask "amethyst"
 cask "bartender"
+cask "chrysalis"
 cask "discord"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-fira-sans"
@@ -318,6 +331,7 @@ mas "1Password 7", id: 1333542190
 mas "Airmail", id: 918858936
 mas "Be Focused Pro", id: 961632517
 mas "Better", id: 1121192229
+mas "Canary Mail", id: 1236045954
 mas "CCMenu", id: 603117688
 mas "Deliveries", id: 924726344
 mas "Drafts", id: 1435957248
@@ -336,6 +350,7 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
+mas "Slack", id: 803453959
 mas "Things", id: 904280696
 mas "Twitterrific", id: 1289378661
 mas "Xcode", id: 497799835
