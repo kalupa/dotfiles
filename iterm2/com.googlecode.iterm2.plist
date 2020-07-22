@@ -2056,7 +2056,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1610 1308 620 392 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1713 489 1725 928 0 0 3440 1417 </string>
+	<string>0 4 1144 1018 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 570 452 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -2065,7 +2065,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<false/>
+			<true/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
 			<key>AWDS Pane Option</key>
@@ -2726,7 +2726,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>IosevkaNerdFontComplete-Term 13</string>
+			<string>IosevkaNerdFontCompleteM-Term 13</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Place Prompt at First Column</key>
@@ -6339,28 +6339,36 @@
 	<array>
 		<string>3.3.7beta4</string>
 		<string>3.3.10beta4</string>
-		<string>3.3.10beta1</string>
+		<string>3.3.8beta1</string>
 		<string>3.3.5beta2</string>
 		<string>3.3.8beta5</string>
 		<string>3.3.7beta1</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.10beta3</string>
 		<string>3.3.5beta1</string>
 		<string>3.3.8beta4</string>
 		<string>3.3.3beta2</string>
-		<string>3.3.7beta2</string>
 		<string>3.3.9beta1</string>
-		<string>3.3.4beta1</string>
 		<string>3.3.5beta3</string>
+		<string>3.3.4beta1</string>
+		<string>3.3.7beta2</string>
 		<string>3.3.10beta2</string>
-		<string>3.3.8beta1</string>
-		<string>3.3.10beta3</string>
+		<string>3.3.10beta1</string>
+		<string>3.3.11beta1</string>
+	</array>
+	<key>NoSyncBFPFavorites</key>
+	<array>
+		<string>iA Writer Mono S</string>
+		<string>FiraCode Nerd Font Mono</string>
+		<string>FantasqueSansMono Nerd Font Mono</string>
+		<string>Iosevka Nerd Font Mono</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Hack Nerd Font</string>
-		<string>Menlo</string>
+		<string>FantasqueSansMono Nerd Font Mono</string>
+		<string>FiraCode Nerd Font</string>
 		<string>Iosevka Nerd Font</string>
-		<string>JetBrains Mono for Powerline</string>
+		<string>Iosevka Nerd Font Mono</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -6376,12 +6384,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{1149, 1100}</string>
+		<string>{1148, 1101}</string>
 	</dict>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>28B31A97-1238-4CBE-A473-D3C94AE94653</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>73</integer>
+	<integer>80</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -7206,7 +7216,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-26T14:52:27Z</date>
+	<date>2020-06-22T05:42:48Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -7302,7 +7312,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.10beta4</string>
+	<string>3.3.11beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
