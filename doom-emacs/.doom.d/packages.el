@@ -4,6 +4,7 @@
 (package! prettier-js)
 (package! atomic-chrome)
 (package! graphql-mode)
+(package! js-doc)
 
 (package! solarized-theme)
 ;; (package! cyberpunk-theme)
