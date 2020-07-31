@@ -1,5 +1,6 @@
 #!/usr/local/bin/zsh
 
+alias ls='gls --color'
 alias lt='ls --tree'
 
 alias grbm="git fetch; git rebase origin/master"
