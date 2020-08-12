@@ -33,12 +33,12 @@ fi
 # if [ -z "$EMACS" ]; then
 # 	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 # fi
-
 export TERMINFO="$HOME/.terminfo"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export TERM=xterm-256color
-export LS_OPTIONS="--color"
+# export TERM=xterm-256color
+export TERM=xterm-24bit
+# export LS_OPTIONS="--color"
 
 # rbenv configuation
 export RBENV_ROOT="${HOME}/.rbenv"
