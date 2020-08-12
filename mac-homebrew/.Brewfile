@@ -25,6 +25,8 @@ brew "ack"
 brew "openssl@1.1"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Library to render SVG files using Cairo
 brew "librsvg"
 # Icons for the GNOME project
@@ -38,7 +40,7 @@ brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # GNU File, Shell, and Text utilities
-brew "coreutils"
+brew "coreutils", link: false
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -55,8 +57,6 @@ brew "libusb-compat"
 brew "libftdi0"
 # Atmel AVR MCU programmer
 brew "avrdude"
-# Official Amazon AWS command-line interface
-brew "awscli", link: false
 # Simple command-line tool to read AWS CloudWatch logs
 brew "awslogs"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -103,6 +103,10 @@ brew "dfu-util"
 brew "direnv"
 # Lightweight DNS forwarder and DHCP server
 brew "dnsmasq", restart_service: true
+# macOS Credential Helper for Docker
+brew "docker-credential-helper"
+# Docker Credential Helper for Amazon ECR
+brew "docker-credential-helper-ecr"
 # Suite of tools for inspecting disk usage
 brew "duc"
 # Maintain consistent coding style between multiple editors
@@ -111,6 +115,8 @@ brew "editorconfig"
 brew "exercism"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
@@ -163,6 +169,8 @@ brew "jq"
 brew "json-c"
 # Selection-based modal text editor
 brew "kakoune"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
 # Graphical front-end for GCC's coverage testing tool (gcov)
 brew "lcov"
 # Build tool for Clojure
@@ -211,8 +219,6 @@ brew "parallel"
 brew "perl"
 # Python dependency management tool
 brew "pipenv"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # PNG image optimizing utility
 brew "pngquant"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -253,6 +259,8 @@ brew "the_platinum_searcher"
 brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
+# Tool to get valuable information out of AWS CloudTrail
+brew "trailscraper"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Executes a program periodically, showing output fullscreen
@@ -267,7 +275,7 @@ brew "zlib"
 brew "zsh"
 # Debugger for zsh
 brew "zshdb"
-brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-ctags", "with-dbus", "with-jansson", "with-mailutils", "with-modern-icon-sexy-v1", "with-no-frame-refocus", "with-xwidgets"]
+brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-ctags", "with-dbus", "with-jansson", "with-mailutils", "with-modern-sexy-v1-icon", "with-no-frame-refocus", "with-no-titlebar", "with-xwidgets"]
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
 # Sentry command-line client for some generic tasks
@@ -290,10 +298,10 @@ brew "unbounce/taps/iidy"
 brew "unbounce/taps/stack-toolkit"
 cask "adobe-acrobat-reader"
 cask "adoptopenjdk11"
-cask "amethyst"
 cask "bartender"
 cask "chrysalis"
 cask "discord"
+cask "docker"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-fira-sans"
 cask "font-firacode-nerd-font"
@@ -309,14 +317,15 @@ cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-powerline"
 cask "font-noto-serif"
 cask "font-victor-mono"
+cask "google-chrome-dev"
 cask "gpg-suite"
 cask "hammerspoon"
 cask "java"
-cask "jitsi-meet"
 cask "kap"
 cask "karabiner-elements"
 cask "keka"
 cask "kekadefaultapp"
+cask "kitty"
 cask "meld"
 cask "nordvpn"
 cask "postico"
@@ -324,25 +333,21 @@ cask "resilio-sync"
 cask "sequel-pro"
 cask "textexpander"
 cask "unetbootin"
-cask "vagrant"
-cask "vagrant-manager"
 cask "virtualbox"
+cask "zoomus"
 mas "1Password 7", id: 1333542190
 mas "Airmail", id: 918858936
 mas "Be Focused Pro", id: 961632517
 mas "Better", id: 1121192229
 mas "Canary Mail", id: 1236045954
-mas "CCMenu", id: 603117688
-mas "Deliveries", id: 924726344
 mas "Drafts", id: 1435957248
-mas "Endel", id: 1484348796
 mas "Fantastical", id: 975937182
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "iA Writer", id: 775737590
 mas "iMovie", id: 408981434
-mas "Jira", id: 1475897096
 mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
 mas "Marked 2", id: 890031187
 mas "MultiMarkdown Composer", id: 1275176220
 mas "NextDNS", id: 1464122853
@@ -351,6 +356,7 @@ mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
+mas "StopTheMadness", id: 1376402589
 mas "Things", id: 904280696
 mas "Twitterrific", id: 1289378661
 mas "Xcode", id: 497799835
