@@ -27,6 +27,20 @@
   solarized-use-more-italic t ;; Use more italics
   )
 
+
+(setq
+  doom-modeline-project-detection 'auto ;; How to detect the project root.
+  doom-modeline-icon (display-graphic-p) ;; Whether display icons in the mode-line. While using the server mode in GUI, should set the value explicitly.
+  doom-modeline-major-mode-icon t ;; Whether display the icon for `major-mode'. It respects `doom-modeline-icon'.
+  doom-modeline-major-mode-color-icon t ;; Whether display the colorful icon for `major-mode'. It respects `all-the-icons-color-icons'.
+  doom-modeline-buffer-state-icon t ;; Whether display the icon for the buffer state. It respects `doom-modeline-icon'.
+  doom-modeline-buffer-modification-icon t ;; Whether display the modification icon for the buffer. It respects `doom-modeline-icon' and `doom-modeline-buffer-state-icon'.
+  doom-modeline-minor-modes nil ;; Whether display the minor modes in the mode-line.
+  doom-modeline-github t ;; Whether display the GitHub notifications. It requires `ghub' package.
+  )
+
+(setq find-file-visit-truename t) ;; properly display symlink paths
+
 (when IS-MAC
   (setq ns-use-thin-smoothing t))
 
