@@ -40,7 +40,7 @@ brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # GNU File, Shell, and Text utilities
-brew "coreutils", link: false
+brew "coreutils", link: true
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -119,6 +119,8 @@ brew "fd"
 brew "gnutls"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Non-strict, functional programming language in the spirit of Haskell
+brew "frege"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU awk utility
@@ -202,7 +204,7 @@ brew "mosh"
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
 # Open source relational database management system
-brew "mysql@5.6"
+brew "mysql@5.6", link: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Single-player roguelike video game
