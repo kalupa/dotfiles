@@ -40,7 +40,7 @@ brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
 # GNU File, Shell, and Text utilities
-brew "coreutils", link: true
+brew "coreutils"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -125,6 +125,8 @@ brew "frege"
 brew "fzf"
 # GNU awk utility
 brew "gawk"
+# GitHub command-line tool
+brew "gh"
 # Highest-quality GIF encoder based on pngquant
 brew "gifski"
 # Distributed revision control system
@@ -282,8 +284,6 @@ brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-ctags", "with-dbus", "w
 brew "derailed/k9s/k9s"
 # Sentry command-line client for some generic tasks
 brew "getsentry/tools/sentry-cli"
-# GitHub CLI
-brew "github/gh/gh"
 # Command-line interface to JMESPath, a query language for JSON
 brew "jmespath/jmespath/jp"
 # GNU compiler collection for AVR 8-bit and 32-bit Microcontrollers
@@ -304,6 +304,7 @@ cask "bartender"
 cask "chrysalis"
 cask "discord"
 cask "docker"
+cask "firefox-developer-edition"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-fira-sans"
 cask "font-firacode-nerd-font"
@@ -357,6 +358,7 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
+mas "Sequel Ace", id: 1518036000
 mas "Slack", id: 803453959
 mas "StopTheMadness", id: 1376402589
 mas "Things", id: 904280696

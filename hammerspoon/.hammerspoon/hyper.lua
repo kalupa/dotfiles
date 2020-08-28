@@ -11,12 +11,13 @@ hyperModeAppMappings = {
   { 'c', 'Slack' }, -- C-hat
   { 'e', '/Applications/Emacs.app' }, -- text E-ditor
   { 't', 'iTerm' }, -- T-erminal
-  { 'm', 'Airmail 3' }, -- e-M-ail
   { ';', 'Firefox.app' }, --
+  { 'm', 'Airmail 3' }, -- e-M-ail
   { 'z', 'zoom.us' }, -- video chat
   { 'd', 'Things3'}, -- to-D-o
   { 'v', 'Visual Studio Code' } 
 }
+  -- { ';', 'Firefox Developer Edition.app' }, --
   -- { 'm', 'Canary Mail' }, -- e-M-ail
   -- { 'd', 'OmniFocus' }, -- to-D-o
 

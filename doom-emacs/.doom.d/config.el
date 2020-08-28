@@ -1,15 +1,15 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
 (setq user-full-name "Paul Kalupnieks"
-      user-mail-address "paul@karrupa.com"
-      dumb-jump-prefer-searcher 'ripgrep
-      display-line-numbers-type nil
+  user-mail-address "paul@karrupa.com"
+  dumb-jump-prefer-searcher 'ripgrep
+  display-line-numbers-type nil
   )
 
 (setq js-doc-mail-address user-mail-address
-       js-doc-author (format "%s <%s>" user-full-name js-doc-mail-address)
-       js-doc-url "https://pau.lk"
-       js-doc-license "license name")
+  js-doc-author (format "%s <%s>" user-full-name js-doc-mail-address)
+  js-doc-url "https://pau.lk"
+  js-doc-license "MIT")
 
 ;; enable to debug tide-typescript problems `tail -f /tmp/tss.log`
 ;; (setq tide-tsserver-process-environment '("TSS_LOG=-level verbose -file /tmp/tss.log"))
@@ -17,7 +17,10 @@
 ;; enable word-wrap (almost) everywhere
 ;; (+global-word-wrap-mode +1)
 
-(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 13))
+;; (setq doom-font (font-spec :family "Cascadia Code" :size 12))
+(setq doom-font (font-spec :family "Hack Nerd Font" :size 12))
+;; (setq doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 13))
+;; (setq doom-font (font-spec :family "Iosevka Nerd Font" :size 13))
 ;; (setq doom-font (font-spec :family "iA Writer Mono S" :size 12))
 
 (load-theme 'solarized-dark-high-contrast t)
@@ -68,19 +71,19 @@
   (add-hook 'web-mode-hook #'prettier-js-mode)
 
   (setq web-mode-markup-indent-offset 2 ;; Indentation
-        web-mode-code-indent-offset 2
-        web-mode-auto-close-style 2))
+    web-mode-code-indent-offset 2
+    web-mode-auto-close-style 2))
 
 (map! :leader
-      "h L" #'global-keycast-mode
-      "f t" #'find-in-dotfiles
-      "f T" #'browse-dotfiles)
+  "h L" #'global-keycast-mode
+  "f t" #'find-in-dotfiles
+  "f T" #'browse-dotfiles)
 
 ;; magit
 (setq
   magit-repository-directories '(("$HOME/src" . 4))
   magit-save-repository-buffers 'dontask
-)
+  )
 
 (after! haskell-mode
   (add-hook 'haskell-mode-hook #'lsp)

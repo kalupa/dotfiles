@@ -1935,7 +1935,7 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
-	<false/>
+	<true/>
 	<key>HideStuckTooltips</key>
 	<true/>
 	<key>HideTab</key>
@@ -2054,11 +2054,11 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>560 546 799 448 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>1612 1472 616 174 0 0 3840 2137 </string>
+	<string>652 752 616 174 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1410 768 620 392 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 38 1026 1379 0 0 3440 1417 </string>
+	<string>1147 38 1146 1379 0 0 3440 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 570 452 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -6389,16 +6389,16 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{1148, 1101}</string>
+		<string>{2201, 806}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>28B31A97-1238-4CBE-A473-D3C94AE94653</string>
 	<key>NoSyncLastOSVersion</key>
-	<string>Version 10.15.5 (Build 19F101)</string>
+	<string>Version 10.15.6 (Build 19G73)</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>85</integer>
+	<integer>87</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -7259,11 +7259,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-29T15:09:17Z</date>
+	<date>2020-08-10T15:27:27Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
