@@ -1,3 +1,4 @@
+tap "borkdude/brew"
 tap "d12frosted/emacs-plus"
 tap "derailed/k9s"
 tap "eugenmayer/dockersync"
@@ -34,6 +35,8 @@ brew "librsvg"
 brew "adwaita-icon-theme"
 # Manage common tasks with OpenAL applications
 brew "alure"
+# Development kit for the Java programming language
+brew "openjdk"
 # Java build tool
 brew "ant"
 # Automatic configure script builder
@@ -282,6 +285,8 @@ brew "zlib"
 brew "zsh"
 # Debugger for zsh
 brew "zshdb"
+# A minimal and opinionated linter for Clojure code that sparks joy.
+brew "borkdude/brew/clj-kondo"
 brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-ctags", "with-dbus", "with-jansson", "with-mailutils", "with-modern-sexy-v1-icon", "with-no-frame-refocus", "with-no-titlebar", "with-xwidgets"]
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
