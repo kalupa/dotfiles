@@ -10,7 +10,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
 
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+# antigen bundle sindresorhus/pure
 
 antigen use oh-my-zsh
 
@@ -36,7 +36,7 @@ exists ()
 }
 
 antigen bundle autojump
-# antigen bundle bundler
+antigen bundle bundler
 # antigen bundle cabal
 
 antigen bundle colorize
@@ -50,10 +50,10 @@ antigen bundle gitfast
 # antigen bundle gitignore
 
 antigen bundle gnu-utils
-# antigen bundle history-substring-search
+antigen bundle history-substring-search
 
 # antigen bundle kubectl
-# antigen bundle lein
+antigen bundle lein
 # antigen bundle maven
 # antigen bundle mosh
 
@@ -66,7 +66,7 @@ antigen bundle npm
 antigen bundle safe-paste
 antigen bundle ssh-agent
 antigen bundle gpg-agent
-# antigen bundle stack
+antigen bundle stack
 # antigen bundle zsh_reload
 
 antigen apply

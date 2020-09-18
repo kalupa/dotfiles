@@ -16,13 +16,18 @@ source "$HOME/.zsh/_aliases.zsh"
 # nvm for node
 source "$HOME/.zsh/load-nvmrc.zsh"
 
-autoload -Uz +X compinit && compinit
+# autoload -Uz +X compinit && compinit
 
-fpath+="$HOME/.zsh_pure"
-autoload -U promptinit
-promptinit
-PURE_GIT_PULL=0
-prompt pure
+# Pure Prompt
+# fpath+="$HOME/.zsh_pure"
+# autoload -U promptinit
+# promptinit
+# PURE_GIT_PULL=0
+# prompt pure
+#
+
+# Starship prompt
+eval "$(starship init zsh)"
 
 source "/usr/local/share/zsh/site-functions"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

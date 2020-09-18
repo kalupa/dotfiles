@@ -1,0 +1,6 @@
+# package.json
+[package]
+disabled = true
+
+[git_status]
+stashed = false
