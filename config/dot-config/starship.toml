@@ -4,3 +4,9 @@ disabled = true
 
 [git_status]
 stashed = false
+
+[java]
+disabled = true
+
+[kubernetes]
+disabled = true
