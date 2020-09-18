@@ -1,5 +1,6 @@
 tap "d12frosted/emacs-plus"
 tap "derailed/k9s"
+tap "eugenmayer/dockersync"
 tap "getantibody/tap"
 tap "getsentry/tools"
 tap "github/gh"
@@ -265,6 +266,8 @@ brew "the_silver_searcher"
 brew "tmux"
 # Tool to get valuable information out of AWS CloudTrail
 brew "trailscraper"
+# File synchronization tool for OSX
+brew "unison"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Executes a program periodically, showing output fullscreen
@@ -282,6 +285,8 @@ brew "zshdb"
 brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-ctags", "with-dbus", "with-jansson", "with-mailutils", "with-modern-sexy-v1-icon", "with-no-frame-refocus", "with-no-titlebar", "with-xwidgets"]
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
+# A layer for unison-fsmonitor arround either macfsevents or watchdog for usage with unison
+brew "eugenmayer/dockersync/unox"
 # Sentry command-line client for some generic tasks
 brew "getsentry/tools/sentry-cli"
 # Command-line interface to JMESPath, a query language for JSON
@@ -305,6 +310,10 @@ cask "chrysalis"
 cask "discord"
 cask "docker"
 cask "firefox-developer-edition"
+cask "font-cascadia"
+cask "font-cascadia-mono"
+cask "font-cascadia-mono-pl"
+cask "font-cascadia-pl"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-fira-sans"
 cask "font-firacode-nerd-font"
@@ -338,6 +347,7 @@ cask "textexpander"
 cask "unetbootin"
 cask "virtualbox"
 cask "zoomus"
+mas "1Blocker", id: 1107421413
 mas "1Password 7", id: 1333542190
 mas "Airmail", id: 918858936
 mas "Be Focused Pro", id: 961632517
@@ -358,6 +368,7 @@ mas "Numbers", id: 409203825
 mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
+mas "Save to Pocket", id: 1477385213
 mas "Sequel Ace", id: 1518036000
 mas "Slack", id: 803453959
 mas "StopTheMadness", id: 1376402589
