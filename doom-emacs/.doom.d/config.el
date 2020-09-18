@@ -18,7 +18,7 @@
 ;; (+global-word-wrap-mode +1)
 
 ;; (setq doom-font (font-spec :family "Cascadia Code" :size 12))
-(setq doom-font (font-spec :family "Hack Nerd Font" :size 12))
+(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 12))
 ;; (setq doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 13))
 ;; (setq doom-font (font-spec :family "Iosevka Nerd Font" :size 13))
 ;; (setq doom-font (font-spec :family "iA Writer Mono S" :size 12))
