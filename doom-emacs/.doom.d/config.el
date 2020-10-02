@@ -3,7 +3,7 @@
 (setq user-full-name "Paul Kalupnieks"
   user-mail-address "paul@karrupa.com"
   dumb-jump-prefer-searcher 'ripgrep
-  display-line-numbers-type nil
+  ;; display-line-numbers-type nil
   )
 
 (setq js-doc-mail-address user-mail-address
@@ -17,16 +17,13 @@
 ;; enable word-wrap (almost) everywhere
 ;; (+global-word-wrap-mode +1)
 
-;; (setq doom-font (font-spec :family "Cascadia Code" :size 12))
-(setq doom-font (font-spec :family "Hack Nerd Font Mono" :size 12))
-;; (setq doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 13))
-;; (setq doom-font (font-spec :family "Iosevka Nerd Font" :size 13))
-;; (setq doom-font (font-spec :family "iA Writer Mono S" :size 12))
+(setq doom-font (font-spec :family "Iosevka Nerd Font" :size 13))
 
-(load-theme 'solarized-dark-high-contrast t)
+(load-theme 'doom-solarized-dark t)
+
 (setq
-  ;; solarized-distinct-fringe-background t ;; make the fringe stand out from the background
-  ;; solarized-high-contrast-mode-line t ;; make the modeline high contrast
+  solarized-distinct-fringe-background t ;; make the fringe stand out from the background
+  solarized-high-contrast-mode-line t ;; make the modeline high contrast
   solarized-use-more-italic t ;; Use more italics
   )
 
