@@ -73,6 +73,8 @@ brew "bat"
 brew "boost"
 # Generic-purpose lossless compression algorithm by Google
 brew "brotli"
+# Glorious Glasgow Haskell Compilation System
+brew "ghc"
 # Command-line interface for Cabal and Hackage
 brew "cabal-install"
 # Extract files from Microsoft cabinet files
@@ -81,7 +83,7 @@ brew "cabextract"
 brew "clingo"
 # Statistics utility to count lines of code
 brew "cloc"
-# The Clojure Programming Language
+# Dynamic, general-purpose programming language
 brew "clojure"
 # JavaScript optimizing compiler
 brew "closure-compiler"
@@ -123,6 +125,8 @@ brew "fd"
 brew "gnutls"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
 # Non-strict, functional programming language in the spirit of Haskell
 brew "frege"
 # Command-line fuzzy finder written in Go
@@ -255,6 +259,8 @@ brew "screenfetch", args: ["HEAD"]
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # User interface to the TELNET protocol
@@ -277,6 +283,8 @@ brew "vim"
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Linter for YAML files
+brew "yamllint"
 # Download YouTube videos from the command-line
 brew "youtube-dl"
 # General-purpose lossless data-compression library
@@ -308,6 +316,7 @@ brew "px4/px4/gcc-arm-none-eabi-49", link: false
 brew "teamookla/speedtest/speedtest"
 brew "unbounce/taps/iidy"
 brew "unbounce/taps/stack-toolkit"
+cask "1password-cli"
 cask "adobe-acrobat-reader"
 cask "adoptopenjdk11"
 cask "bartender"
@@ -315,10 +324,12 @@ cask "chrysalis"
 cask "discord"
 cask "docker"
 cask "firefox-developer-edition"
+cask "font-bigblue-terminal-nerd-font"
 cask "font-cascadia"
 cask "font-cascadia-mono"
 cask "font-cascadia-mono-pl"
 cask "font-cascadia-pl"
+cask "font-daddy-time-mono-nerd-font"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-fira-sans"
 cask "font-firacode-nerd-font"
@@ -326,14 +337,21 @@ cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-hasklig"
 cask "font-hasklig-nerd-font"
+cask "font-hasklug-nerd-font"
 cask "font-ia-writer-duo"
 cask "font-ia-writer-mono"
 cask "font-ia-writer-quattro"
+cask "font-im-writing-nerd-font"
+cask "font-iosevka"
+cask "font-iosevka-curly"
+cask "font-iosevka-curly-slab"
 cask "font-iosevka-nerd-font"
+cask "font-iosevka-slab"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-powerline"
+cask "font-meslo-lg-dz"
 cask "font-noto-serif"
-cask "font-victor-mono"
+cask "font-victor-mono-nerd-font"
 cask "google-chrome-dev"
 cask "gpg-suite"
 cask "hammerspoon"
@@ -363,7 +381,6 @@ mas "Fantastical", id: 975937182
 mas "GarageBand", id: 682658836
 mas "Gifski", id: 1351639930
 mas "iA Writer", id: 775737590
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Marked 2", id: 890031187
@@ -374,7 +391,6 @@ mas "OmniFocus", id: 1346203938
 mas "Pages", id: 409201541
 mas "Pixelmator", id: 407963104
 mas "Save to Pocket", id: 1477385213
-mas "Sequel Ace", id: 1518036000
 mas "Slack", id: 803453959
 mas "StopTheMadness", id: 1376402589
 mas "Things", id: 904280696

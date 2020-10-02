@@ -12,6 +12,8 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle mafredri/zsh-async
 # antigen bundle sindresorhus/pure
 
+antigen theme romkatv/powerlevel10k
+
 antigen use oh-my-zsh
 
 # macos specific

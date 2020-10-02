@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #!/usr/local/bin/zsh
 
 # Antigen
@@ -10,24 +17,9 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 source "$HOME/.zsh/_aliases.zsh"
 
-# asdf can replace nvm, rbenv
-# source "$(brew --prefix asdf)/asdf.sh"
-
 # nvm for node
 source "$HOME/.zsh/load-nvmrc.zsh"
 
-# autoload -Uz +X compinit && compinit
-
-# Pure Prompt
-# fpath+="$HOME/.zsh_pure"
-# autoload -U promptinit
-# promptinit
-# PURE_GIT_PULL=0
-# prompt pure
-#
-
-# Starship prompt
-eval "$(starship init zsh)"
 
 source "/usr/local/share/zsh/site-functions"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -43,3 +35,6 @@ if [ -z "$(command -v direnv)" ]; then
 fi
 
 source "$HOME/.zshrc_local"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
