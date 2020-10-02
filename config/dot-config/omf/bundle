@@ -1,0 +1,11 @@
+package autojump
+package aws
+package colored-man-pages
+package direnv
+package emacs
+package foreign-env
+package gh
+package node
+package nvm
+theme default
+theme gitstatus
